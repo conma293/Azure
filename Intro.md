@@ -1,11 +1,14 @@
-Azure Active Directory (Azure AD or AAD) is "Microsoft’s cloud based identity and access management service"
-Microsoft proposes AAD as Identity as a Service (IDaaS ) solution "that span all aspects of identity, access management, and security"
+Azure Active Directory (Azure AD or AAD) is _Microsoft’s cloud based identity and access management service_
+
+Microsoft proposes AAD as Identity as a Service (IDaaS ) solution _that span all aspects of identity, access management, and security_
 
 - Azure AD can be used to access both:
   - External resources like Azure Portal, Office 365 etc. and;
   - Internal resources like on premises applications.
 
 Azure AD provides secure remote access for AD integrated apps, devices and identity governance for AD accounts.
+
+
 
 - Tenant: An instance of Azure AD and represents a single organization.
 
