@@ -3,8 +3,33 @@
 
 - [intro]
 
-* * *
 
+
+* * * 
+
+Active Directory
+
+# CRTP Resources
+
+- [Active Directory Attacks and Enumeration](https://github.com/conma293/CRTP/blob/main/%23Commands%20Ref.md)
+- [Building a Lab](https://github.com/conma293/CRTP/blob/main/#BuildLab.md)
+
+
+#### Repos
+- [AD Enumeration Scripts](https://github.com/conma293/ActiveDirectory)
+- [PrivEsc](https://github.com/conma293/CRTP/tree/main/PrivEsc)
+- [Tool dump](https://github.com/conma293/mvp)
+
+
+#### Tools
+- [GhostPack binaries](https://github.com/conma293/CRTP/tree/main/GhostPack)
+- [Impacket](https://github.com/conma293/CRTP/tree/main/Impacket)
+- [Impacket Win binaries]()
+- [Nishang](https://github.com/conma293/CRTP/tree/main/nishang-0.7.6)
+- [PowerSploit](https://github.com/conma293/CRTP/tree/main/PowerSploit)
+
+
+* * *
 
 Offensive Security
 
