@@ -21,6 +21,7 @@ subscriptions in a Directory.
 - Core Domain: The initial domain name <tenant>.onmicrosoft.com is
 the core domain. It is possible to define custom domain names too.
 
+
 In Azure, resources are divided in four levels
 - Management Groups
 - Subscriptions
