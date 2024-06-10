@@ -1,6 +1,6 @@
 
 - Module 1
-  – Introduction to Azure
+  – [Introduction to Azure]
   – Discovery and Recon of services and applications
   – Azure AD Enumeration
   – Initial Access Attacks (Enterprise Apps, App Services, Function Apps, Insecure Storage, Phishing, Consent Grant Attacks)
