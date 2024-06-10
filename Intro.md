@@ -66,7 +66,8 @@ belong only to a group.
 - It is a service principal of special type that can be used with Azure resources.
 - Managed Identity can be system assigned (tied to a resource and cannot be shared with other resources) or user assigned (independent life cycle and can be share across resources).
 
-  Managed Identity Example - _App has credential string for a DB, and admin creds for a VM. If creds of either are updated they must also be updated in the App. This is dangerous. With managed Identity the app is given roles instead, i.e., Cmd Execution for the VM; and RW for the DB._
+  Managed Identity Example - _App has credential string for a DB, and admin creds for a VM. If creds of either are updated they must also be updated in the App. This is dangerous. With managed Identity the app is given roles instead, i.e., Virtual Machine Command Execution for the VM; and RW (Reader) for the DB._
+  In the Roles tab for a VM, we will be able to see any roles assigned to the VM from an Application (App Service or Function App) in this way 
 
 #### Azure Resource Manager (ARM)
 - It is the client neutral deployment and management service for Azure that is used for lifecycle management (creating, updating and deleting) and access control of of resources.
