@@ -5,8 +5,8 @@
 
 
 * * *
+
 # Other Resources
-* * * 
 
 ## Active Directory
 
