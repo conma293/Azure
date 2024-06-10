@@ -44,8 +44,8 @@ management group
 #### Subscriptions
 - An Azure subscription is a logical unit of Azure services that links to an
 Azure account.
-- An Azure subscription is a billing and/or access control boundary in an
-Azure AD Directory.
+- An Azure subscription is _both a billing and/or access control boundary in an
+Azure AD Directory_.
 - An Azure AD Directory may have multiple subscriptions but each
 subscription can only trust a single directory.
 - An Azure role applied at the subscription level applies to all the
