@@ -73,4 +73,7 @@ belong only to a group.
 - It is the client neutral deployment and management service for Azure that is used for lifecycle management (creating, updating and deleting) and access control of of resources.
 - ARM templates can be used for consistent and dependency defined redeployment of resources.
 
+#### RBAC Assignment
+
+Azure AD Object/Principal HAS Role ON Scope
 
