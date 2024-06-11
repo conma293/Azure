@@ -15,3 +15,9 @@ https://login.microsoftonline.com/[DOMAIN]/.well-known/openid configuration
 ```
 https://login.microsoftonline.com/common/GetCredentialType
 ```
+
+OR we could just use AADInternals
+
+https://github.com/Gerenios/AADInternals 
+
+```Import-Module C:\AzAD Tools\AADInternals\AADInternals.psd1 -Verbose```
