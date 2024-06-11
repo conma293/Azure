@@ -6,7 +6,7 @@
 https://login.microsoftonline.com/getuserrealm.srf?login==[USERNAME@ DOMAIN]&xml=1
 ```
 
-- Get the Tenant ID
+- Get the Tenant ID (first GUID of returned url - used by OAuth)
 ```
 https://login.microsoftonline.com/[DOMAIN]/.well-known/openid configuration
 ```
