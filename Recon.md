@@ -7,7 +7,11 @@ https://login.microsoftonline.com/getuserrealm.srf?login==[USERNAME@ DOMAIN]&xml
 ```
 
 - Get the Tenant ID
-```https://login.microsoftonline.com/[DOMAIN]/.well-known/openid configuration```
+```
+https://login.microsoftonline.com/[DOMAIN]/.well-known/openid configuration
+```
 
 - Validate Email ID by sending requests to
-```https://login.microsoftonline.com/common/GetCredentialType```
+```
+https://login.microsoftonline.com/common/GetCredentialType
+```
