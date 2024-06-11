@@ -24,6 +24,8 @@ https://github.com/Gerenios/AADInternals
 
 ```Import-Module C:\AzAD Tools\AADInternals\AADInternals.psd1 -Verbose```
 
+
+
 Get tenant name, authentication, brand name (usually same as directory name) and domain name:
 ```
 Get-AADIntLoginInformation UserName root@defcorphq.onmicrosoft.com
