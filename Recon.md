@@ -23,3 +23,25 @@ OR we could just use AADInternals
 https://github.com/Gerenios/AADInternals 
 
 ```Import-Module C:\AzAD Tools\AADInternals\AADInternals.psd1 -Verbose```
+
+- Get tenant name, authentication, brand name (usually same as directory name) and domain name
+```
+Get-AADIntLoginInformation UserName root@defcorphq.onmicrosoft.com
+```
+
+- Get tenant ID
+```
+Get-AADIntTenantID Domain defcorphq.onmicrosoft.com
+```
+
+-Get tenant domains
+```
+Get-AADIntTenantDomains Domain defcorphq.onmicrosoft.com
+Get-AADIntTenantDomains Domain deffin.onmicrosoft.com
+Get-AADIntTenantDomains Domain microsoft.com
+```
+
+Get all the information
+```
+Invoke-AADIntReconAsOutsider DomainName defcorphq.onmicrosoft.com
+```
