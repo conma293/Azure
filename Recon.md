@@ -16,6 +16,8 @@ https://login.microsoftonline.com/[DOMAIN]/.well-known/openid configuration
 https://login.microsoftonline.com/common/GetCredentialType
 ```
 
+* * *
+
 OR we could just use AADInternals
 
 https://github.com/Gerenios/AADInternals 
