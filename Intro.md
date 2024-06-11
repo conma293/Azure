@@ -77,3 +77,6 @@ belong only to a group.
 
 Azure AD Object/Principal HAS Role ON Scope
 
+#### ABAC Assignment
+
+Similar to folder permissions - individual permissions overriding the role permissions to deny valid users from accessing specified blobs
