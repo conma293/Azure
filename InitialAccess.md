@@ -5,12 +5,11 @@
 - For Azure, password spray attack can be done against different API endpoints like Azure AD Graph, Microsoft Graph, Office 365 Reporting webservice etc
 
 
-MSOLSpray 
+#### MSOLSpray 
 https://github.com/dafthack/MSOLSpray
 
-for password spray against the accounts that we discovered.
--The tool supports fireprox to rotate source IP address on auth request.
-https://github.com/ustayready/fireprox
+We use MSOLSpray for password spray against the accounts that we discovered previously.
+-The tool supports fireprox to rotate source IP address on auth request https://github.com/ustayready/fireprox
 
 ```
 C:\AzAD\Tools\MSOLSpray\MSOLSPray.ps1
