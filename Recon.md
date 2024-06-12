@@ -1,7 +1,7 @@
-Manual browser enum
+- Manual browser enum
 - AADInternals - Domain enumeration
-- [Email]()
-- Azure services 
+- [Email](https://github.com/conma293/Azure/blob/main/Recon.md#email)
+- [Azure services]() 
 
 
 
