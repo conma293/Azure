@@ -12,6 +12,6 @@ We use MSOLSpray for password spray against the accounts that we discovered prev
 - The tool supports fireprox to rotate source IP address on auth request https://github.com/ustayready/fireprox
 
 ```
-C:\AzAD\Tools\MSOLSpray\MSOLSPray.ps1
+C:\AzAD\Tools\MSOLSpray\MSOLSpray.ps1
 Invoke-MSOLSpray -UserList C:\AzAD\Tools\validemails.txt -Password P@ssword01 -Verbose
 ```
