@@ -22,7 +22,7 @@ OR we could just use AADInternals
 
 https://github.com/Gerenios/AADInternals 
 
-```Import-Module C:\AzAD Tools\AADInternals\AADInternals.psd1 -Verbose```
+```Import-Module C:\AzAD\Tools\AADInternals\AADInternals.psd1 -Verbose```
 
 
 
