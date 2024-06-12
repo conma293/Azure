@@ -1,6 +1,6 @@
 # External Discovery and Recon
 
-#### Manual enumeration
+#### Manual browser enumeration
 - Get if Azure tenant is in use, tenant name and Federation
 ```
 https://login.microsoftonline.com/getuserrealm.srf?login==[USERNAME@ DOMAIN]&xml=1
