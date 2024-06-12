@@ -14,6 +14,5 @@ https://github.com/ustayready/fireprox
 
 ```
 C:\AzAD\Tools\MSOLSpray\MSOLSPray.ps1
-Invoke-MSOLSpray -UserList C:\AzAD\Tools\validemails.txt
-Password SuperVeryEasytoGuessPassword@1234 Verbose
+Invoke-MSOLSpray -UserList C:\AzAD\Tools\validemails.txt -Password P@ssword01 -Verbose
 ```
