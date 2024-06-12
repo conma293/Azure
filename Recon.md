@@ -1,3 +1,10 @@
+Manual browser enum
+- AADInternals - Domain enumeration
+- [Email]()
+- Azure services 
+
+
+
 # External Discovery and Recon
 
 #### Manual browser enumeration
