@@ -62,10 +62,7 @@ o365creeper to check if an email ID belongs to a tenant.
  
 - It makes requests to the GetCredentialType API that we saw earlier.
 ```
-C:\Python27\python.exe
-C:\AzAD\Tools\o365creeper o365creeper.py -f
-C:\AzAD\Tools\emails.txt -o
-C:\AzAD\Tools\validemails.txt
+C:\Python27\python.exe C:\AzAD\Tools\o365creeper\o365creeper.py -f C:\AzAD\Tools\emails.txt -o C:\AzAD\Tools\validemails.txt
 ```
 #### Azure services 
 _available at specific domains and subdomains_
