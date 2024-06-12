@@ -9,7 +9,7 @@
 https://github.com/dafthack/MSOLSpray
 
 We use MSOLSpray for password spray against the accounts that we discovered previously.
--The tool supports fireprox to rotate source IP address on auth request https://github.com/ustayready/fireprox
+- The tool supports fireprox to rotate source IP address on auth request https://github.com/ustayready/fireprox
 
 ```
 C:\AzAD\Tools\MSOLSpray\MSOLSPray.ps1
