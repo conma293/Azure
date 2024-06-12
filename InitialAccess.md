@@ -6,7 +6,7 @@
 
 
 MSOLSpray 
-https://github.com/dafthack/MSOLSpray ) 
+https://github.com/dafthack/MSOLSpray
 
 for password spray against the accounts that we discovered.
 -The tool supports fireprox to rotate source IP address on auth request.
