@@ -70,3 +70,7 @@ https://github.com/NetSPI/MicroBurst
 ```
 Import- Module C:\AzAD Tools\MicroBurst\MicroBurst.psm1 -Verbose
 ```
+- Enumerate all subdomains for an organization specified using the 'Base' parameter:
+```
+Invoke-EnumerateAzureSubDomains -Base defcorphq -Verbose
+```
