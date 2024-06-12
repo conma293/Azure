@@ -33,14 +33,14 @@ Get-AADIntLoginInformation -UserName MARIA@defcorphq.onmicrosoft.com
 
 Get tenant ID:
 ```
-Get-AADIntTenantID Domain defcorphq.onmicrosoft.com
+Get-AADIntTenantID -Domain defcorphq.onmicrosoft.com
 ```
 
 -Get tenant domains:
 ```
-Get-AADIntTenantDomains Domain defcorphq.onmicrosoft.com
-Get-AADIntTenantDomains Domain deffin.onmicrosoft.com
-Get-AADIntTenantDomains Domain microsoft.com
+Get-AADIntTenantDomains -Domain defcorphq.onmicrosoft.com
+Get-AADIntTenantDomains -Domain deffin.onmicrosoft.com
+Get-AADIntTenantDomains -Domain microsoft.com
 ```
 
 Get all the information:
