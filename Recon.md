@@ -72,7 +72,7 @@ https://github.com/NetSPI/MicroBurst
 
 - Microburst is a useful tool for security assessment of Azure. It uses Az ,AzureAD , AzurRM and MSOL tools and additional REST API calls!
 ```
-Import- Module C:\AzAD Tools\MicroBurst\MicroBurst.psm1 -Verbose
+Import-Module C:\AzAD\Tools\MicroBurst\MicroBurst.psm1 -Verbose
 ```
 - Enumerate all subdomains for an organization specified using the 'Base' parameter:
 ```
