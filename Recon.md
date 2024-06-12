@@ -1,6 +1,4 @@
-# Recon
-
-# External Discovery
+# External Discovery and Recon
 
 #### Manual enumeration
 - Get if Azure tenant is in use, tenant name and Federation
@@ -61,4 +59,14 @@ C:\Python27\python.exe
 C:\AzAD\Tools\o365creeper o365creeper.py -f
 C:\AzAD\Tools\emails.txt -o
 C:\AzAD\Tools\validemails.txt
+```
+#### Azure services 
+_available at specific domains and subdomains_
+- We can enumerate if the target organization is using any of the services by looking for such subdomains.
+
+https://github.com/NetSPI/MicroBurst
+
+- Microburst is a useful tool for security assessment of Azure. It uses Az ,AzureAD , AzurRM and MSOL tools and additional REST API calls!
+```
+Import- Module C:\AzAD Tools\MicroBurst\MicroBurst.psm1 -Verbose
 ```
