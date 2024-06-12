@@ -28,7 +28,7 @@ https://github.com/Gerenios/AADInternals
 
 Get tenant name, authentication, brand name (usually same as directory name) and domain name:
 ```
-Get-AADIntLoginInformation UserName root@defcorphq.onmicrosoft.com
+Get-AADIntLoginInformation -UserName MARIA@defcorphq.onmicrosoft.com
 ```
 
 Get tenant ID:
