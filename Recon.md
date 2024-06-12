@@ -45,7 +45,7 @@ Get-AADIntTenantDomains -Domain microsoft.com
 
 Get all the information:
 ```
-Invoke-AADIntReconAsOutsider DomainName defcorphq.onmicrosoft.com
+Invoke-AADIntReconAsOutsider -DomainName defcorphq.onmicrosoft.com
 ```
 
 #### Email
