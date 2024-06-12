@@ -1,6 +1,8 @@
-# Recce
+# Recon
 
 # External Discovery
+
+#### Manual enumeration
 - Get if Azure tenant is in use, tenant name and Federation
 ```
 https://login.microsoftonline.com/getuserrealm.srf?login==[USERNAME@ DOMAIN]&xml=1
@@ -17,7 +19,7 @@ https://login.microsoftonline.com/common/GetCredentialType
 ```
 
 * * *
-
+#### AADInternals - Domain enumeration
 OR we could just use AADInternals
 
 https://github.com/Gerenios/AADInternals 
