@@ -20,6 +20,7 @@ Or we could just look this way:
 Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember
 ```
 
+_in normal environments we would expect to see some Service Principals (that is an application) running as Global Administrator - if we were to compromise that object, or a user that is the owner of that object, we could get GA!_
 
 
 
