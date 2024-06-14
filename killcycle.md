@@ -23,6 +23,16 @@ Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-A
 _in normal environments we would expect to see some Service Principals (that is an application) running as Global Administrator - if we were to compromise that object, or a user that is the owner of that object, we could get GA!_
 
 
+Now should we check if we are the owner of a device (and therefore localadmin)?
+```
+Get-AzureADUserOwnedDevice -ObjectId test@defcorphq.onmicrosoft.com
+```
+
+lets see what devices are ACTUALLY being used (i.e., active):
+
+```
+Get-AzureADDevice -All $true | ?{$_.ApproximateLastLogonTimeStamp -ne $null}
+```
 
 
 ok we get a random GUID for the group, but what roles doe we have?
