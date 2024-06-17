@@ -1,12 +1,15 @@
 *_Got creds for a test user by password spray._
 
-Compromised a user "Test", so first thing lets see what permissions we have - in Azure this will be groups and roles:
+Compromised a user "Test", so first thing lets see what **user permissions** we have - in Azure this will be groups and roles:
 ```
 Get-AzureADUser -SearchString 'test'
 Get-AzureADUserMembership -ObjectId test@defcorphq.onmicrosoft.com
 ```
+Can we see much more information about this **group**? ```Get-AzureADGroup -ObjectId 477db607-3447-4fde-b7de-cdbef47321ed | fl *```
+**Who** else is in this **group**? (everyone):  ```Get-AzureADGroupMember -ObjectId 477db607-3447-4fde-b7de-cdbef47321ed```
 
-We could also look at the admin user:
+
+Ok lets look for **admin users**:
 ```
 Get-AzureADUser -SearchString 'admin' | Get-AzureADUserMembership
 Get-AzureADUserMembership -ObjectId admin@defcorphq.onmicrosoft.com
@@ -15,9 +18,8 @@ Get-AzureADUserMembership -ObjectId admin@defcorphq.onmicrosoft.com
 
 _in normal environments we would expect to see some Service Principals (that is an application service account) running as Global Administrator - if we were to compromise that object, or a user that is the owner of that object, we could get GA!_
 
-
-- Now should we check if we are the owner of a device (and therefore localadmin)? ```Get-AzureADUserOwnedDevice -ObjectId test@defcorphq.onmicrosoft.com```
-- lets see what devices are ACTUALLY being used (i.e., active): ```Get-AzureADDevice -All $true | ?{$_.ApproximateLastLogonTimeStamp -ne $null}```
-- OK now lets see if there are any custom roles? ```Get-AzureADMSRoleDefinition | ?{$_.IsBuiltin -eq $False}``` (May need to use preview module)
-- And lets see the users who have GA (already done this) - ```Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember```
+- Now should we check if we are the **owner of a device** (and therefore localadmin)? ```Get-AzureADUserOwnedDevice -ObjectId test@defcorphq.onmicrosoft.com```
+- lets see what **devices** are ACTUALLY being **used** (i.e., active): ```Get-AzureADDevice -All $true | ?{$_.ApproximateLastLogonTimeStamp -ne $null}```
+- OK now lets see if there are any **custom roles**? ```Get-AzureADMSRoleDefinition | ?{$_.IsBuiltin -eq $False}``` (May need to use preview module)
+- And lets see the **users who have Global admin** role: ```Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember```
 
