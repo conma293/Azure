@@ -12,7 +12,6 @@ Get-AzureADUser -SearchString 'admin' | Get-AzureADUserMembership
 Get-AzureADUserMembership -ObjectId admin@defcorphq.onmicrosoft.com
 ```
 - I wonder who else is in the Global Admins group? ```Get-AzureADGroupMember -ObjectId 9240b75e-823c-4c02-8868-a00ddbeb3fa1```
-- Or we could just look this way: ```Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember```
 
 _in normal environments we would expect to see some Service Principals (that is an application) running as Global Administrator - if we were to compromise that object, or a user that is the owner of that object, we could get GA!_
 
