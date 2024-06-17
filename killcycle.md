@@ -1,4 +1,4 @@
-Target environment through password spray.
+*_Got creds for a test user by password spray._
 
 Compromised a user "Test", so first thing lets see what permissions we have - in Azure this will be groups and roles:
 ```
