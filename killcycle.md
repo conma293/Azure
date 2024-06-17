@@ -1,5 +1,5 @@
 *_Got creds for a test user by password spray._
-
+#### AzureAD
 Compromised a user "Test", so first thing lets see what **user permissions** we have - in Azure this will be groups and roles:
 ```
 Get-AzureADUser -SearchString 'test'
@@ -23,3 +23,4 @@ _in normal environments we would expect to see some Service Principals (that is 
 - OK now lets see if there are any **custom roles**? ```Get-AzureADMSRoleDefinition | ?{$_.IsBuiltin -eq $False}``` (May need to use preview module)
 - And lets see the **users who have Global admin** role: ```Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember```
 
+#### az powershell
