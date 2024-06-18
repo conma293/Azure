@@ -25,13 +25,13 @@ _in normal environments we would expect to see some Service Principals (that is 
 
 #### az powershell
 
-•  Enumerate all resources visible to the current user:
+- Ok now lets enumerate all resources visible to the current user:
 ```Get-AzResource```
 
-•  Enumerate all Azure RBAC role assignments:
+- And enumerate all Azure RBAC role assignments for all the resources the current user has read access to (NOT just the users role assignments):
 ```Get-AzRoleAssignment```
 
-- All role assignments for all the resources the current user has read access to (NOT just the users role assignments):
+- lets output that to a table for ease of use:
 ```
 Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
 ```
