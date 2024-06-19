@@ -30,5 +30,5 @@ There is a transaction flow for basic auth and token auth (later needed for weba
 - ```/oauth2/v2.0/token``` - Authorization
   - Web Server Requests Oauth bearer token, providing ```authorization_code```, apps client_id, creds etc
   - Token endpoint of the Identity Platform returns new ```access token``` AND ```refresh token``` to Web Server
-  - Web Server now can call web api with ```access_token``` in authorization header
+  - Web Server now can call web API with ```access_token``` in authorization header
   - Web API Validates ```access token``` and returns secure data to web server app
