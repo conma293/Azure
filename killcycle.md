@@ -25,10 +25,10 @@ _in normal environments we would expect to see some Service Principals (that is 
 
 #### az powershell
 
-- Ok now lets enumerate all resources visible to the current user:
+- Ok now lets enumerate all **resources** visible to the current user:
 ```Get-AzResource```
 
-- And enumerate all Azure RBAC role assignments for all the resources the current user has read access to (NOT just the users role assignments):
+- And enumerate all **Azure RBAC role assignments** for all the resources the current user has read access to (NOT just the users role assignments):
 ```Get-AzRoleAssignment```
 
 - lets output that to a table for ease of use:
@@ -36,5 +36,5 @@ _in normal environments we would expect to see some Service Principals (that is 
 Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
 ```
 #### az cli
-a good one to use from az cli is the whoami equivalent:-
+a good one to use from az cli is the **whoami** equivalent:-
 ```az ad signed-in-user show```
