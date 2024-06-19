@@ -61,20 +61,19 @@ list all custom directory roles:
 Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
 ```
 
-- Another good thing to look for is VMs and Apps:
-- Virtual Machines: ```Get-AzVM | fl *```
-- Apps: ```Get-AzWebApp```
-  - Display just WebApp/Traditional App:
+- Ok now lets look at **Virtual Machines** the user has access to: ```Get-AzVM | fl *```
+- And any **Apps**: ```Get-AzWebApp```
+  - Display just **WebApp/Traditional App**:
 ```Get-AzWebApp | ?{$_.Kind -notmatch "functionapp"}```
-  - Display functional App:
+  - Display **functional App**:
 ```Get-AzFunctionApp```
 List table of visible apps:
 ```
 Get-AzWebApp | select name, HostNames, kind, state, identity
 ```
-- Storage:
+- Also **Storage**:
 ```Get-AzStorageAccount | fl```
--KeyVault:
+- And **KeyVault**:
  ```Get-AzKeyVault```
 
 #### az cli
