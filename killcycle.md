@@ -63,11 +63,11 @@ Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDe
 
 - Ok now lets look at **Virtual Machines** the user has access to: ```Get-AzVM | fl *```
 - And any **Apps**: ```Get-AzWebApp```
-  - Display just **WebApp/Traditional App**:
+  - We could display just **WebApp/Traditional App**:
 ```Get-AzWebApp | ?{$_.Kind -notmatch "functionapp"}```
   - Display **functional App**:
 ```Get-AzFunctionApp```
-List table of visible apps:
+- List a table of all visible apps:
 ```
 Get-AzWebApp | select name, HostNames, kind, state, identity
 ```
