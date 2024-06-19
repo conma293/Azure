@@ -60,6 +60,23 @@ list all custom directory roles:
 ```
 Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
 ```
+
+- Another good thing to look for is VMs and Apps:
+- Virtual Machines: ```Get-AzVM | fl *```
+- Apps: ```Get-AzWebApp```
+  - Display just WebApp/Traditional App:
+```Get-AzWebApp | ?{$_.Kind -notmatch "functionapp"}```
+  - Display functional App:
+```Get-AzFunctionApp```
+List table of visible apps:
+```
+Get-AzWebApp | select name, HostNames, kind, state, identity
+```
+- Storage:
+```Get-AzStorageAccount | fl```
+-KeyVault:
+ ```Get-AzKeyVault```
+
 #### az cli
 a good one to use from az cli is the **whoami** equivalent:-
 ```az ad signed-in-user show```
