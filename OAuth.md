@@ -23,12 +23,12 @@ There is a transaction flow for basic auth and token auth (later needed for weba
 
 - ```/oauth2/v2.0/authorize``` - Authentication
   - User signs in, enters credentials & consents to permissions to [Identity Provider]
-  - [Identity Provider] returns id_token AND authorization_code to browser
-  - Browser redirects id_token AND authorization_code to Redirect URI
-  - Web Server Validates id_token and sets session cookie
+  - [Identity Provider] returns ```id_token``` AND ```authorization_code``` to browser
+  - Browser redirects ```id_token``` AND ```authorization_code``` to Redirect URI
+  - Web Server Validates ```id_token``` and sets session cookie
 
 - ```/oauth2/v2.0/token``` - Authorization
-  - Web Server Requests Oauth bearer token, providing authorization_code, apps client_id, creds etc
-  - Token endpoint of the Identity Platform returns new access token AND refresh token to Web Server
-  - Web Server now can call web api with access_token in authorization header
-  - Web API Validates access token and returns secure data to web server app
+  - Web Server Requests Oauth bearer token, providing ```authorization_code```, apps client_id, creds etc
+  - Token endpoint of the Identity Platform returns new ```access token``` AND ```refresh token``` to Web Server
+  - Web Server now can call web api with ```access_token``` in authorization header
+  - Web API Validates ```access token``` and returns secure data to web server app
