@@ -1,5 +1,8 @@
 # Azure AD - Authentication and APIs
 
+## TLDR - Tokens == OAuth Credentials (and we want to steal them!)
+
+
 - Microsoft identity platform uses OpenID Connect (OIDC) for authentication and OAuth 2.0 for authorization.
 - Azure AD supports multiple types of authentication like SAML 2.0, OIDC, OAuth 2.0 and Legacy authentication protocols for synchronization like - Header based, LDAP, Kerberos Constrained Delegation etc.
 - An application (OAuth Client - web app, mobile apps, cli apps) can sign in to the Authorization server, get bearer tokens to access Resource server (Microsoft Graph and other APIs).
