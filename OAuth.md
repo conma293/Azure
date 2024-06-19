@@ -16,7 +16,7 @@
   - ID Tokens - The client receives this token from the authorization server. It contains basic information about the user. It is bound to a specific combination of user and client.
   - Refresh Tokens - Provided to the client with access token. Used to get new access and ID tokens. It is bound to a specific combination of user and client and can be revoked. Default expiry is 90 days for inactive refresh tokens and no expiry for active tokens.
 
-There is a transaction for basic auth and token auth (for webapp)
+There is a transaction flow for basic auth and token auth (later needed for webapp to access resources on users behalf):
 
 - ```/oauth2/v2.0/authorize```
   - User signs in, enters credentials & consents to permissions to [Identity Provider]
