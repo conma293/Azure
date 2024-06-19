@@ -34,6 +34,6 @@ There is a transaction flow for basic auth and token auth (later needed for weba
   - Web API Validates ```access token``` and returns secure data to web server app
  
 
-Note for Access Token - if user is deleted it is still valid because there is no check on the token, only whats inside (just like a TGT/TGS in AD)
+Note for Access Token - if user is deleted it is still valid because there is no check on the token, only whats inside (i.e., is there a role assignment for this user to this resource - if yes then grant access, whether the user still exists or not) .. (just like a TGT/TGS in AD)
 
 
