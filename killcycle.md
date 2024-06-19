@@ -35,3 +35,6 @@ _in normal environments we would expect to see some Service Principals (that is 
 ```
 Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
 ```
+#### az cli
+a good one to use from az cli is the whoami equivalent:-
+```az ad signed-in-user show```
