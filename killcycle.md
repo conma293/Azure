@@ -22,6 +22,31 @@ _in normal environments we would expect to see some Service Principals (that is 
 - lets see what **devices** are ACTUALLY being **used** (i.e., active): ```Get-AzureADDevice -All $true | ?{$_.ApproximateLastLogonTimeStamp -ne $null}```
 - OK now lets see if there are any **custom roles**? ```Get-AzureADMSRoleDefinition | ?{$_.IsBuiltin -eq $False}``` (May need to use preview module)
 - And lets see the **users who have Global admin** role: ```Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember```
+#### MG Module
+You could also use the MG Module instead if you wanted:
+```
+$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneC@nGu355ForT3stUs3r" -AsPlainText -Force 
+$creds = New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd) 
+Connect-AzAccount -Credential $creds 
+
+$Token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
+Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Force)
+```
+```
+Get-MgUser -All
+Get-MgUser -All | select UserPrincipalName
+Get-MgGroup -All
+Get-MgDevice
+```
+
+To get all the Global Administrators:
+```
+$RoleId = (Get-MgDirectoryRole -Filter "DisplayName eq 'Global Administrator'").Id
+(Get-MgDirectoryRoleMember -DirectoryRoleId $RoleId).AdditionalProperties
+```
+
+list all custom directory roles:
+```Get-MgRoleManagementDirectoryRoleDefinition | ?{$_.IsBuiltIn -eq $False} | select DisplayName```
 
 #### az powershell
 
