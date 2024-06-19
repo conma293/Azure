@@ -18,14 +18,14 @@
 
 There is a transaction for basic auth and token auth (for webapp)
 
-```/oauth2/v2.0/authorize```
-- User signs in, enters credentials & consents to permissions [to Identity Provider]
-- [Identity Provider] returns id_token AND authorization_code to browser
-- Redirects id_token AND authorization_code to Redirect URI
-- Validates id_token and sets session cookie
+- ```/oauth2/v2.0/authorize```
+  - User signs in, enters credentials & consents to permissions to [Identity Provider]
+  - [Identity Provider] returns id_token AND authorization_code to browser
+  - Redirects id_token AND authorization_code to Redirect URI
+  - Validates id_token and sets session cookie
 
-```/oauth2/v2.0/token```
-- Requests Oauth bearer token, providing authorization_code, apps client_id, creds etc
-- returns new token and refresh token
-- now can call web api with access_token in authorization header
-- Validates access token and returns secure data to web server app
+- ```/oauth2/v2.0/token```
+  - Requests Oauth bearer token, providing authorization_code, apps client_id, creds etc
+  - returns new token and refresh token
+  - now can call web api with access_token in authorization header
+  - Validates access token and returns secure data to web server app
