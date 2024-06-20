@@ -40,4 +40,19 @@ Conditional access policy is a real issue
 
 Note for Access Token - if user is deleted it is still valid because there is no check on the token, only whats inside (i.e., is there a role assignment for this user to this resource - if yes then grant access, whether the user still exists or not) .. (just like a TGT/TGS in AD)
 
+## 
+Logon:
+```
+$passwd= ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force
+$creds= New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd)
+Connect-AzureAD -Credential $creds
+```
+
+and then get token:
+```
+Get-AzAccessToken
+(Get-AzAccessToken).token
+```
+
+can decrypt with base64 on commandline or with website like https://jwt.io/
 
