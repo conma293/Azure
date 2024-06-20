@@ -79,3 +79,10 @@ Get-AzWebApp | select name, HostNames, kind, state, identity
 #### az cli
 a good one to use from az cli is the **whoami** equivalent:-
 ```az ad signed-in-user show```
+
+## Tokens
+- Steal token (If you are signed in you can dump it with ```(Get-AzAccessToken).token```)
+- reuse instead of creds (similar to TGT ticket reuse with Rubeus): ```Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com```
+- Test access to resources: ```Get-AzResource```
+
+
