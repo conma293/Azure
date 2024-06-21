@@ -40,7 +40,7 @@ Conditional access policy is a real issue
 
 Note for Access Token - if user is deleted it is still valid because there is no check on the token, only whats inside (i.e., is there a role assignment for this user to this resource - if yes then grant access, whether the user still exists or not) .. (just like a TGT/TGS in AD)
 
-## 
+## Logging on with tokens
 Logon:
 ```
 $passwd= ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force
@@ -54,9 +54,20 @@ Get-AzAccessToken
 (Get-AzAccessToken).token
 ```
 
+and then get graph token:
+```
+Get-AzAccessToken -ResourceTypeName MSGraph
+(Get-AzAccessToken -ResourceTypeName MSGraph).token
+```
+
 - can decrypt with base64 on commandline or with website like https://jwt.io/
   - Aud = Audience = the API that the Token is meant for
   - app.displayname = requesting process/app (detection possibility?)
+ 
+And now you can logon with the token(s) (you will need a graph token for users, the initial access token is ARM so you can view resources ```Get-AzResources```):
+```
+Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token -MicrosoftGraphAccessToken $msgraphtoken
+```
 
 #### Using Tokens with CLI tools - Az PowerShell
 
