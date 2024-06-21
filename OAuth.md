@@ -60,9 +60,9 @@ Aud = Audience = API Token is meant for
 
 #### Using Tokens with CLI tools - Az PowerShell
 
-•   Both Az PowerShell and AzureAD modules allow the use of Access tokens for authentication.
-•   Usually, tokens contain all the claims (including that for MFA and Conditional Access etc.) so they are useful in bypassing such security controls.
-•   If you are already connected to a tenant, request an access token for resource manager (ARM)
+- Both Az PowerShell and AzureAD modules allow the use of Access tokens for authentication.
+- Usually, tokens contain all the claims (including that for MFA and Conditional Access etc.) so they are useful in bypassing such security controls.
+- If you are already connected to a tenant, request an access token for resource manager (ARM)
 ```
 Get-AzAccessToken
 (Get-AzAccessToken).Token
