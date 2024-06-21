@@ -67,11 +67,13 @@ Aud = Audience = API Token is meant for
 Get-AzAccessToken
 (Get-AzAccessToken).Token
 ```
-•   Request an access token for AAD Graph to access Azure AD. Supported tokens - AadGraph, AnalysisServices, Arm, Attestation, Batch, DataLake, KeyVault, MSGraph, OperationalInsights, ResourceManager, Storage, Synapse
+we can then look at resources (ARM token) but not users, for thst e need adgraph or msgraph token:
+
+- Request an access token for AAD Graph to access Azure AD. Supported tokens - AadGraph, AnalysisServices, Arm, Attestation, Batch, DataLake, KeyVault, MSGraph, OperationalInsights, ResourceManager, Storage, Synapse
 ```
 Get-AzAccessToken -ResourceTypeName MSGraph
 ```
-•   From older versions of Az PowerShell, get a token for Microsoft Graph: ```(Get-AzAccessToken -Resource "https://graph.microsoft.com").Token```
+- From older versions of Az PowerShell, get a token for Microsoft Graph: ```(Get-AzAccessToken -Resource "https://graph.microsoft.com").Token```
 
 
 •  Use the access token:
