@@ -1,5 +1,6 @@
 *_Got creds for a test user by password spray._
 #### AzureAD
+Using the [AzureAD Module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azuread-module) - 
 We have compromised a user "Test", so first thing after [logging in](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azuread-module); lets see what **user permissions** we have - in Azure this will be groups and roles:
 ```
 Get-AzureADUser -SearchString 'test'
