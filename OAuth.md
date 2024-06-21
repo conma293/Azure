@@ -54,9 +54,9 @@ Get-AzAccessToken
 (Get-AzAccessToken).token
 ```
 
-can decrypt with base64 on commandline or with website like https://jwt.io/
-
-Aud = Audience = API Token is meant for
+- can decrypt with base64 on commandline or with website like https://jwt.io/
+  - Aud = Audience = API Token is meant for
+  - app.displayname = requesting process/app (detection possibility?)
 
 #### Using Tokens with CLI tools - Az PowerShell
 
