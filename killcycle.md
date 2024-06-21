@@ -87,7 +87,6 @@ a good one to use from az cli is the **whoami** equivalent:-
 
 ## Tokens
 - Steal tokens (If you are signed in you can dump it with ```(Get-AzAccessToken).token```)
-- Similar to tickets in AD - you get an ARM token even if you have no access to any resources, and the target resource endpoint will decide later if you have access or not.
 - reuse instead of creds (similar to TGT ticket reuse with Rubeus):
 ```
 Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com
