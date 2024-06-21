@@ -77,14 +77,21 @@ Get-AzAccessToken -ResourceTypeName MSGraph
 
 
 •  Use the access token:
-```Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken eyJ0eXA...```
+```
+Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken eyJ0eXA...
+```
 
-or ```$token=eyJ0eXA```
-``````Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com```
+OR:
+```
+$token='eyJ0eXA...'
+Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com
+```
 
 
 •  Use other access tokens. In the below command, use the one for MSGraph (access token is still required) for accessing Azure AD:
-```Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken eyJ0eXA... -MicrosoftGraphAccessToken eyJ0eXA...```
+```
+Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken eyJ0eXA... -MicrosoftGraphAccessToken eyJ0eXA...
+```
 
 
 #### Using Tokens with CLI tools - az cli
