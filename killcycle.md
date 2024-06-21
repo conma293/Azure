@@ -89,10 +89,12 @@ _with token replay you evade conditional access policy, and almost always mfa an
 (because its not a sign-in!) all those work only for signin, this is after, direct to api - 
 ```Web API Validates access token and returns secure data to web server app```
 
-lets get better token:
+lets get graph token:
 
 ```
 Get-AzAccessToken -ResourceTypeName MSGraph
 disConnect-AzAccount
 Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token -MicrosoftGraphAccessToken eyJ0eXA...
 ```
+
+best way is managed identity access token - not protected by CAE
