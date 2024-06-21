@@ -55,7 +55,7 @@ Get-AzAccessToken
 ```
 
 - can decrypt with base64 on commandline or with website like https://jwt.io/
-  - Aud = Audience = API Token is meant for
+  - Aud = Audience = the API that the Token is meant for
   - app.displayname = requesting process/app (detection possibility?)
 
 #### Using Tokens with CLI tools - Az PowerShell
@@ -67,7 +67,7 @@ Get-AzAccessToken
 Get-AzAccessToken
 (Get-AzAccessToken).Token
 ```
-we can then look at resources (ARM token) but not users, for thst e need adgraph or msgraph token:
+we can then look at resources (ARM token) but not users, for that we need ADgraph or MSgraph token:
 
 - Request an access token for AAD Graph to access Azure AD. Supported tokens - AadGraph, AnalysisServices, Arm, Attestation, Batch, DataLake, KeyVault, MSGraph, OperationalInsights, ResourceManager, Storage, Synapse
 ```
@@ -81,7 +81,6 @@ Get-AzAccessToken -ResourceTypeName MSGraph
 
 or ```$token=eyJ0eXA```
 ``````Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com```
-
 
 
 •  Use other access tokens. In the below command, use the one for MSGraph (access token is still required) for accessing Azure AD:
