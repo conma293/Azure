@@ -116,3 +116,4 @@ When on a machine look in - ```C:\Users\[username]\.Azure```
     -  It also stores ServicePrincipalSecret in clear-text in AzureRmContext.json if a service principal secret is used to authenticate.
  -  Another interesting method is to take a **process dump of PowerShell** and looking for tokens in it!
     -  Users can save tokens using Save-AzContext, look out for them! Search for **Save-AzContext** in PowerShell console history!
+    -  ```C:\Users\<user>\AppData\Roaming\Microsoft\Windows\Powershell\PSReadLine\ConsoleHost_History.txt```
