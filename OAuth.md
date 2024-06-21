@@ -11,6 +11,7 @@
 
 ## TLDR - Tokens == OAuth Credentials (and we want to steal them!)
 
+_Similar to tickets in AD - you get an ARM token even if you have no access to any resources, and the target resource endpoint will decide later if you have access or not._
 
 - Microsoft identity platform uses OpenID Connect (OIDC) for authentication and OAuth 2.0 for authorization.
 - Azure AD supports multiple types of authentication like SAML 2.0, OIDC, OAuth 2.0 and Legacy authentication protocols for synchronization like - Header based, LDAP, Kerberos Constrained Delegation etc.
