@@ -88,3 +88,8 @@ a good one to use from az cli is the **whoami** equivalent:-
 _with token replay you evade conditional access policy, and almost always mfa and entra id protect as well _
 (because its not a sign-in!) all those work only for signin, this is after, direct to api - 
 ```Web API Validates access token and returns secure data to web server app```
+
+lets get better token:
+```
+Get-AzAccessToken -ResourceTypeName MSGraph
+```
