@@ -87,7 +87,11 @@ a good one to use from az cli is the **whoami** equivalent:-
 
 ## Tokens
 - Steal tokens (If you are signed in you can dump it with ```(Get-AzAccessToken).token```)
-- reuse instead of creds (similar to TGT ticket reuse with Rubeus): ```Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com```
+- reuse instead of creds (similar to TGT ticket reuse with Rubeus):
+```
+Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com
+```
+
 - Test access to resources: ```Get-AzResource```
 
 _with token replay you evade conditional access policy, and almost always mfa and entra id protect as well_
@@ -95,7 +99,6 @@ _with token replay you evade conditional access policy, and almost always mfa an
 ```Web API Validates access token and returns secure data to web server app```
 
 lets get graph token:
-
 ```
 Get-AzAccessToken -ResourceTypeName MSGraph
 disConnect-AzAccount
