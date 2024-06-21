@@ -1,7 +1,7 @@
 - [Logging on with tokens](https://github.com/conma293/Azure/blob/main/OAuth.md#logging-on-with-tokens)
   -  [Using Tokens with CLI tools - Az PowerShell](https://github.com/conma293/Azure/blob/main/OAuth.md#using-tokens-with-cli-tools---az-powershell) (can request and use tokens - [Az Powershell](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration----az-powershell) )
   -  [Using Tokens with CLI tools - az cli](https://github.com/conma293/Azure/blob/main/OAuth.md#using-tokens-with-cli-tools---az-cli) (can request a token but cannot use it! [az cli](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azure-cli-az-cli) )
-  -  [Using Tokens with CLI tools - AzureAD module] (cannot request a token but can use one for AADGraph or Microsoft Graph! [AzureAD module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azuread-module) )
+  -  [Using Tokens with CLI tools - AzureAD module](https://github.com/conma293/Azure/blob/main/OAuth.md#using-tokens-with-cli-tools---azuread-module) (cannot request a token but can use one for AADGraph or Microsoft Graph! [AzureAD module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azuread-module) )
 
 
 
@@ -128,22 +128,6 @@ Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken eyJ0eXA
 az account get-access-token --resource-type ms-graph
 ```
 
-### Stealing Tokens
-
-
-- az cli (before 2.30.0 – January 2022)  in the directory C:\Users\[username]\.Azure
-  - stores access tokens in clear text in ```accessTokens.json```
-    - We can read tokens from the file, use them and request new ones too!
-  - azureProfile.json in the same directory contains information about subscriptions.
-    - You can modify accessTokens.json to use access tokens with az cli but better to use with Az PowerShell or the Azure AD module.
-  - To clear the access tokens, always use ```az logout```
-- Az PowerShell (older versions) stores access tokens in clear text in ```TokenCache.dat``` in the directory ```C:\Users\[username]\.Azure```
-  - It also stores ```ServicePrincipalSecret``` in clear-text in ```AzureRmContext.json``` if a service principal secret is used to authenticate.
-- Another interesting method is to take a process dump of PowerShell and looking for tokens in it!
-  - Users can save tokens using ```Save-AzContext```, look out for them! Search for Save-AzContext in PowerShell console history!
-  - Always use ```Disconnect-AzAccount```!!
-
-
 #### Using Tokens with CLI tools - AzureAD module
 
 •  AzureAD module cannot request a token but can use one for AADGraph or Microsoft Graph!
@@ -152,6 +136,22 @@ az account get-access-token --resource-type ms-graph
 ```
 Connect-AzureAD -AccountId test@defcorphq.onmicrosoft.com -AadAccessToken eyJ0eXA...
 ```
+
+### Stealing Tokens
+
+
+- az cli (before 2.30.0 – January 2022)  in the directory C:\Users\[username]\.Azure
+  - stores access tokens in clear text in ```accessTokens.json```
+  - We can read tokens from the file, use them and request new ones too!
+  - azureProfile.json in the same directory contains information about subscriptions.
+  - You can modify accessTokens.json to use access tokens with az cli but better to use with Az PowerShell or the Azure AD module.
+  - To clear the access tokens, always use ```az logout```
+- Az PowerShell (older versions) stores access tokens in clear text in ```TokenCache.dat``` in the directory ```C:\Users\[username]\.Azure```
+  - It also stores ```ServicePrincipalSecret``` in clear-text in ```AzureRmContext.json``` if a service principal secret is used to authenticate.
+- Another interesting method is to take a process dump of PowerShell and looking for tokens in it!
+  - Users can save tokens using ```Save-AzContext```, look out for them! Search for Save-AzContext in PowerShell console history!
+  - Always use ```Disconnect-AzAccount```!!
+
 
 
 ### Using Tokens with APIs - Management
@@ -208,34 +208,25 @@ based conditional access is present
 •  Access tokens issued for managed identities by Azure IMDS are not CAE-enabled.
 
 
+#### CAE Scenarios
+CAE works in two scenarios:
+
+
 #### CAE – Critical Event Evaluation
-
-•  CAE works in two scenarios:
-
 1.   Critical event evaluation
 
-• User account is deleted or disabled
-
-• Password change or reset for a user
-
-• MFA enabled for a user
-
-• Refresh token is revoked
-
-• High user risk detected by Azure AD identity Protection (not supported by
+- User account is deleted or disabled
+- Password change or reset for a user
+- MFA enabled for a user
+- Refresh token is revoked
+- High user risk detected by Azure AD identity Protection (not supported by
 Sharepoint online)
-
-• Only Exchange Online, Sharepoint online and Teams are supported.
+- Only Exchange Online, Sharepoint online and Teams are supported.
 
 #### CAE – Conditional Access Policy Evaluation
-
-•  CAE works in two scenarios:
-
 2.   Conditional Access policy evaluation
-
-• Only IP-based (both IPv4 and IPv6) named locations are supported. Other location conditions like MFA trusted IPs or country-based locations are not supported.
-
-• Exchange Online, SharePoint online, Teams and MS Graph are supported.
+- Only IP-based (both IPv4 and IPv6) named locations are supported. Other location conditions like MFA trusted IPs or country-based locations are not supported.
+- Exchange Online, SharePoint online, Teams and MS Graph are supported.
 
 
 
