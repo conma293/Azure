@@ -93,5 +93,6 @@ lets get better token:
 
 ```
 Get-AzAccessToken -ResourceTypeName MSGraph
+disConnect-AzAccount
 Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token -MicrosoftGraphAccessToken eyJ0eXA...
 ```
