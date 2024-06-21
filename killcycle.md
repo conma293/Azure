@@ -101,10 +101,10 @@ Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token 
 
 ### Steal token
 When on a machine look in - ```C:\Users\[username]\.Azure```
- - az cli (before 2.30.0 – January 2022) stores access tokens in clear text in ```accessTokens.json```
+ - **az cli** (before 2.30.0 – January 2022) stores access tokens in clear text in ```accessTokens.json```
     - You can modify accessTokens.json to use access tokens with az cli but better to use with Az PowerShell or the Azure AD module.
     - ```azureProfile.json``` in the same directory contains information about subscriptions.
- -  Az PowerShell (older versions) stores access tokens in clear text in ```TokenCache.dat```
+ -  **Az PowerShell** (older versions) stores access tokens in clear text in ```TokenCache.dat```
     -  It also stores ServicePrincipalSecret in clear-text in AzureRmContext.json if a service principal secret is used to authenticate.
- -  Another interesting method is to take a process dump of PowerShell and looking for tokens in it!
-    -  Users can save tokens using Save-AzContext, look out for them! Search for Save-AzContext in PowerShell console history!
+ -  Another interesting method is to take a **process dump of PowerShell** and looking for tokens in it!
+    -  Users can save tokens using Save-AzContext, look out for them! Search for **Save-AzContext** in PowerShell console history!
