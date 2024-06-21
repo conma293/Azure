@@ -64,7 +64,9 @@ Get-AzAccessToken -ResourceTypeName MSGraph
   - Aud = Audience = the API that the Token is meant for
   - app.displayname = requesting process/app (detection possibility?)
  
-And now you can logon with the token(s) (you will need a graph token for users, the initial access token is ARM so you can view resources ```Get-AzResources```):
+And now you can logon with the token(s) 
+
+You will need a graph token to enumerate users, the initial access token is ARM so you can only view resources with ```Get-AzResources```:
 ```
 Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token -MicrosoftGraphAccessToken $msgraphtoken
 ```
