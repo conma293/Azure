@@ -26,7 +26,7 @@ _in normal environments we would expect to see some Service Principals (that is 
 - OK now lets see if there are any **custom roles**? ```Get-AzureADMSRoleDefinition | ?{$_.IsBuiltin -eq $False}``` (May need to use preview module)
 - And lets see the **users who have Global admin** role: ```Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember```
 #### MG Module
-You could also use the MG Module instead if you wanted:
+You could also use the [MG Module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---mg-module) instead if you wanted:
 ```
 $passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneC@nGu355ForT3stUs3r" -AsPlainText -Force 
 $creds = New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd) 
@@ -52,6 +52,7 @@ list all custom directory roles:
 ```Get-MgRoleManagementDirectoryRoleDefinition | ?{$_.IsBuiltIn -eq $False} | select DisplayName```
 
 #### az powershell
+there is also [az Powershell](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration----az-powershell), best for resources, roles and VMs:
 
 - Ok now lets enumerate all **resources** visible to the current user:
 ```Get-AzResource```
@@ -80,6 +81,7 @@ Get-AzWebApp | select name, HostNames, kind, state, identity
  ```Get-AzKeyVault```
 
 #### az cli
+And finally [az cli](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azure-cli-az-cli)
 a good one to use from az cli is the **whoami** equivalent:-
 ```az ad signed-in-user show```
 
