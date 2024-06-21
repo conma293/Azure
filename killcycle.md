@@ -85,4 +85,5 @@ a good one to use from az cli is the **whoami** equivalent:-
 - reuse instead of creds (similar to TGT ticket reuse with Rubeus): ```Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com```
 - Test access to resources: ```Get-AzResource```
 
-
+with token replay you evade conditional access policy, and almost always mfa and entra id protect as well (because its not a sign-in! all those work only for signin, this is after, direct to api - 
+```Web API Validates access token and returns secure data to web server app```
