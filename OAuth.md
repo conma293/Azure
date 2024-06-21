@@ -1,3 +1,12 @@
+- [Logging on with tokens](https://github.com/conma293/Azure/blob/main/OAuth.md#logging-on-with-tokens)
+  -  [Using Tokens with CLI tools - Az PowerShell] ([Az Powershell](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration----az-powershell) can request and use tokens)
+  -  [Using Tokens with CLI tools - az cli] ([az cli](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azure-cli-az-cli) can request a token but cannot use it!)
+  -  [Using Tokens with CLI tools - AzureAD module] ([AzureAD module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azuread-module) cannot request a token but can use one for AADGraph or Microsoft Graph!)
+
+
+
+
+* * * 
 # Azure AD - Authentication and APIs
 
 ## TLDR - Tokens == OAuth Credentials (and we want to steal them!)
