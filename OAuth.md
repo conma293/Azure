@@ -5,6 +5,7 @@
 - [Stealing Tokens](https://github.com/conma293/Azure/blob/main/OAuth.md#stealing-tokens)
 - [Using tokens with APIs](https://github.com/conma293/Azure/blob/main/OAuth.md#using-tokens-with-apis---management)
 - [Continuous Access Evaluation (CAE)](https://github.com/conma293/Azure/blob/main/OAuth.md#continuous-access-evaluation-cae)
+-[RoadTools](https://github.com/conma293/Azure/blob/main/OAuth.md#enumeration---roadtools)
 
 
 
@@ -250,7 +251,9 @@ rtx can only enum AzureAD - NOT azure resources!
 
 •  roadrecon supports username/password, access and refresh tokens, device code flow (sign-in from another device) and PRT cookie.
 ```
-cd C:\AzAD\Tools\ROADTools .\venv\Scripts\activate roadrecon auth -u test@defcorphq.onmicrosoft.com -p SuperVeryEasytoGuessPassword@1234
+cd C:\AzAD\Tools\ROADTools
+.\venv\Scripts\activate
+roadrecon auth -u test@defcorphq.onmicrosoft.com -p V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd
 ```
 
 •  Once authentication is done, use the below command to gather data (ignore the errors): ```roadrecon gather```
