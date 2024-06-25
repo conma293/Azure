@@ -162,5 +162,7 @@ cd C:\AzAD\Tools\ROADTools
 roadrecon auth -u test@defcorphq.onmicrosoft.com -p V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd
 roadrecon gather
 roadrecon gui
-roadrecon plugin policies
 ```
+
+
+```roadrecon plugin policies``` writes to ```C:\AzAD\Tools\ROADTools```
