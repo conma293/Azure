@@ -189,6 +189,7 @@ $RequestParams = @{ Method = 'GET' Uri     = $URI Headers = @{'Authorization' = 
 
 ### Continuous Access Evaluation (CAE)
 _If you compromise a webapp and it has a managed identity, grab its access token and try using that_
+
 _If you compromise a VM or any other resource that has a managed identity request its access token and try using that - detection evasion and success will be much higher as cant do CAE_
 
 •  CAE can help in invalidating access tokens before their expiry time (default 1 hour).
