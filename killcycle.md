@@ -182,3 +182,6 @@ Connect-AzureAD -Credential $creds
 . C:\AzAD\Tools\AzureHound\AzureHound.ps1
 Invoke-AzureHound -Verbose
 ```
+
+Run ```C:\AzAD\Tools\BloodHound-win32-x64\BloodHound-win32-x64```
+
