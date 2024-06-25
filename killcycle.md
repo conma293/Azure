@@ -118,3 +118,9 @@ When on a machine look in - ```C:\Users\[username]\.Azure```
  -  Another interesting method is to take a **process dump of PowerShell** and looking for tokens in it!
     -  Users can save tokens using Save-AzContext, look out for them! Search for **Save-AzContext** in PowerShell console history!
     -  ```C:\Users\<user>\AppData\Roaming\Microsoft\Windows\Powershell\PSReadLine\ConsoleHost_History.txt```
+  
+
+
+
+
+## Tools
