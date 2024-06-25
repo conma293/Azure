@@ -6,6 +6,8 @@
 - [Using tokens with APIs](https://github.com/conma293/Azure/blob/main/OAuth.md#using-tokens-with-apis---management)
 - [Continuous Access Evaluation (CAE)](https://github.com/conma293/Azure/blob/main/OAuth.md#continuous-access-evaluation-cae)
 - [RoadTools](https://github.com/conma293/Azure/blob/main/OAuth.md#enumeration---roadtools)
+- StormSpotter (DEPRECATED)
+- [Azure Hound](https://github.com/conma293/Azure/blob/main/OAuth.md#enumeration---azurehound)
 
 
 
