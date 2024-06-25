@@ -260,6 +260,8 @@ roadrecon auth -u test@defcorphq.onmicrosoft.com -p V3ryH4rdt0Cr4ckN0OneCr4ckTh!
 
 •  Use roadrecon GUI to analyse the gathered information (starts a web server on port 5000): ```roadrecon gui```
 
+roadrecon plugin policies
+
 ### Enumeration - storm spotter
 
 •  StormSpotter (https://github.com/Azure/Stormspotter) is a tool from
