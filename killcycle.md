@@ -84,6 +84,20 @@ Get-AzWebApp | select name, HostNames, kind, state, identity
 And finally [az cli](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azure-cli-az-cli)
 a good one to use from az cli is the **whoami** equivalent:-
 ```az ad signed-in-user show```
+Also good to note, there is more information from az cli for some objects i.e., Can see the type of managed identity used for objects such as VM and Webapps:
+```
+az vm list
+az vm list --query "[].[name]" -o table
+
+az webapp list
+az webapp list --query "[].[name]" -o table
+
+az functionapp list --query "[].[name]" -o table
+
+az storage account list
+
+az keyvault list
+```
 
 ## Tokens
 - Steal tokens (If you are signed in you can dump it with ```(Get-AzAccessToken).token```)
