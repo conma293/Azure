@@ -1,4 +1,14 @@
 *_Got creds for a test user by password spray._
+
+TLDR:
+- Use [AzureAD]/[MG Module] for basic user and group AAD/Entra ID Directory stuff (i.e., users, groups, devices)
+  - This will require an [access token for the AAD or MS Graph]
+- Use [az powershell] or [az cli] for other stuff - resources, roles, vms, apps etc
+  - This will require [ARM access token] (default token)
+ 
+    
+
+
 #### AzureAD
 Using the [AzureAD Module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azuread-module) to begin
 
