@@ -211,10 +211,12 @@ based conditional access is present
 
 •  Access tokens issued for managed identities by Azure IMDS are not CAE-enabled.
 
-_If you compromise a webapp and it has a managed identity, grab its access token and try using that_
+**_If you compromise a webapp and it has a managed identity, grab its access token and try using that_**
 
 _If you compromise a VM or any other resource that has a managed identity request its access token and try using that - detection evasion and success will be much higher as cant do CAE_
 
+
+Note: Refresh tokens can be invalidated so no need to CAE
 
 #### CAE Scenarios
 CAE works in two scenarios:
