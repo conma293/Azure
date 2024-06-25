@@ -303,20 +303,6 @@ python C:\AzAD\Tools\stormspotter\stormcollector\sscollector.pyz cli
 ```
 
 ### Enumeration - azurehound
-•  Log-on to the webserver at  http://localhost:9091 using the following: 
-```
-Username: neo4j
-Password: BloodHound
-Server: bolt://localhost:7687
-```
-
-•  After login, upload the ZIP archive created by the collector.
-
-•  Use the built-in queries to visualize the data.
-
-•  Enumerate the following for the defcorphq tenant using StormSpotter with the credentials of test@defcorphq.onmicrosoft.com user :
-
-– Show All RBAC Relationships
 
 •   BloodHound's AzureHound (https://github.com/BloodHoundAD/AzureHound) supports Azure and Azure
 AD too to map attack paths!
@@ -344,7 +330,6 @@ Connect-AzureAD -Credential $creds
 . C:\AzAD\Tools\AzureHound\AzureHound.ps1
 Invoke-AzureHound -Verbose
 ```
-
 
 •   The gathered data can be uploaded to the BloodHound application (both Legacy and Community Edition)
 
