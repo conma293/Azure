@@ -271,11 +271,8 @@ Microsoft for creating attack graphs of Azure resources.
 Azure and Azure AD!
 
 •  It has following modules
-
 – Backend – This is used for ingesting the data in the Neo4j database
-
 – Frontend (WebApp) – This is the UI used for visualizing the data.
-
 – Collector – This is used to collect the data from Azure.
 
 •  Stormspotter is already setup on the student VM.
@@ -304,109 +301,89 @@ python C:\AzAD\Tools\stormspotter\stormcollector\sscollector.pyz cli
 ```
 
 ### Enumeration - azurehound
-•  Log-on to the webserver at  http://localhost:9091 using the following: Username: neo4j
+•  Log-on to the webserver at  http://localhost:9091 using the following: 
+```
+Username: neo4j
 Password: BloodHound
-
 Server: bolt://localhost:7687
+```
 
 •  After login, upload the ZIP archive created by the collector.
 
 •  Use the built-in queries to visualize the data.
 
-
 •  Enumerate the following for the defcorphq tenant using StormSpotter with the credentials of test@defcorphq.onmicrosoft.com user :
 
 – Show All RBAC Relationships
 
-
-Part of - All kill chains
-
-Topics covered - Authenticated Enumeration
-
-
 •   BloodHound's AzureHound (https://github.com/BloodHoundAD/AzureHound) supports Azure and Azure
 AD too to map attack paths!
 
-
 •   It uses Azure AD and Az PowerShell modules for gathering the data through its collectors.
-
 
 •   There are two free versions of BloodHound
 1. BloodHound Legacy -  https://github.com/BloodHoundAD/BloodHound
 2. BloodHound CE (Community Edition) -  https://github.com/SpecterOps/BloodHound
 
-
-•   BloodHound Legacy is present in the C:\AzAD\Tools directory of your student VM.
-
-
+•   BloodHound Legacy is present in the ```C:\AzAD\Tools``` directory of your student VM.
 
 •   You can have Read-only access to the pre-populated BloodHound CE UI - https://azurehound- altsecdashboard.msappproxy.net/
 Use the credentials for cartpreader@altsecdashboard.onmicrosoft.com from the lab portal -
 https://azureadlab.enterprisesecurity.io/
 
-
-
 •   Run the collector to gather data
-$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd"
--AsPlainText -Force
-$creds = New-Object System.Management.Automation.PSCredential
-("test@defcorphq.onmicrosoft.com", $passwd)
-
-
+```
+$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential("test@defcorphq.onmicrosoft.com", $passwd)
 
 Connect-AzAccount -Credential $creds
 Connect-AzureAD -Credential $creds
 
-
-
 . C:\AzAD\Tools\AzureHound\AzureHound.ps1
 Invoke-AzureHound -Verbose
+```
 
 
+•   The gathered data can be uploaded to the BloodHound application (both Legacy and Community Edition)
 
-•   The gathered data can be uploaded to the BloodHound application (both Legacy and
-Community Edition)
-
-
-
-•  Open the BloodHound application (C:\AzAD\Tools\BloodHound-win32- x64\BloodHound-win32-x64\BloodHound.exe) and login using following details bolt://localhost:7687
+•  Open the BloodHound application (C:\AzAD\Tools\BloodHound-win32- x64\BloodHound-win32-x64\BloodHound.exe) and login using following details:
+```
+bolt://localhost:7687
 Username: neo4j
-
 Password: BloodHound
-
+```
 
 •  Upload the ZIP archive to BloodHound UI (drag and drop) and use built-in or custom
 Cypher queries to query the data.
-
-
-
 
 •  You can also use Read-Only access to the prep-populated BloodHound CE -
 https://azurehound-altsecdashboard.msappproxy.net/
 
 The data uploaded above is with Reader role on subscription!
 
-
-
 •  Some examples of Cypher queriues are below (See notes for some resources)
 
-
-•     Find all users who have the Global Administrator role
+•     Find all users who have the Global Administrator role:
+```
 MATCH p =(n)-[r:AZGlobalAdmin*1..]->(m) RETURN p
+```
 
-
-•     Find all paths to an Azure VM
+•     Find all paths to an Azure VM:
+```
 MATCH p = (n)-[r]->(g: AZVM) RETURN p
+```
 
-
-•     Find all paths to an Azure KeyVault
+•     Find all paths to an Azure KeyVault:
+```
 MATCH p = (n)-[r]->(g:AZKeyVault) RETURN p
+```
 
-
-•     Find all paths to an Azure Resource Group
+•     Find all paths to an Azure Resource Group:
+```
 MATCH p = (n)-[r]->(g:AZResourceGroup) RETURN p
+```
 
-
-•     Find Owners of Azure AD Groups
+•     Find Owners of Azure AD Groups:
+```
 MATCH p = (n)-[r:AZOwns]->(g:AZGroup) RETURN p
-
+```
