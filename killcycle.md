@@ -1,5 +1,7 @@
 *_Got creds for a test user by password spray._
 
+* * *
+
 TLDR:
 - Use [AzureAD](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azuread-module)/[MG Module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---mg-module) for basic AAD/Entra ID Directory enumeration (i.e., users, groups, devices)
   - This will require an access token for AAD or MS Graph
@@ -10,7 +12,7 @@ TLDR:
 - Using tools like ROADTools or [Azurehound](https://github.com/conma293/Azure/blob/main/OAuth.md#enumeration---azurehound) is going to be our best bet anyhow (and enum isnt logged so who cares right!?)
  
     
-
+* * *
 
 #### AzureAD
 Using the [AzureAD Module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azuread-module) to begin
