@@ -7,7 +7,7 @@ TLDR:
   - This will require ARM access token (default token)
     
 
-Using tools like ROADTools or Azurehound is going to be our best bet anyhow (and enum isnt logged so who cares right!?)
+- Using tools like ROADTools or Azurehound is going to be our best bet anyhow (and enum isnt logged so who cares right!?)
  
     
 
