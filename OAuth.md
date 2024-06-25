@@ -262,7 +262,7 @@ roadrecon auth -u test@defcorphq.onmicrosoft.com -p V3ryH4rdt0Cr4ckN0OneCr4ckTh!
 
 roadrecon plugin policies
 
-### Enumeration - storm spotter
+### Enumeration - storm spotter (DEPRECATED!)
 
 •  StormSpotter (https://github.com/Azure/Stormspotter) is a tool from
 Microsoft for creating attack graphs of Azure resources.
@@ -280,37 +280,30 @@ Azure and Azure AD!
 
 •  Stormspotter is already setup on the student VM.
 
-
-
-
-
-•  Start the backend service
-
+•  Start the backend service:
+```
 cd C:\AzAD\Tools\stormspotter\backend\
 
 pipenv shell
 
 python ssbackend.pyz
-•  In a new process, Start the frontend webserver
+```
 
+•  In a new process, Start the frontend webserver:
+```
 cd C:\AzAD\Tools\stormspotter\frontend\dist\spa\
-
 quasar.cmd serve -p 9091 --history
-•  Use Stormcollector to collect the data.
+```
 
+•  Use Stormcollector to collect the data:
+```
 cd C:\AzAD\Tools\stormspotter\stormcollector\
-
 pipenv shell
-
-az login -u test@defcorphq.onmicrosoft.com -p
-SuperVeryEasytoGuessPassword@1234
-
+az login -u test@defcorphq.onmicrosoft.com -p V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd
 python C:\AzAD\Tools\stormspotter\stormcollector\sscollector.pyz cli
-
+```
 
 ### Enumeration - azurehound
-
-
 •  Log-on to the webserver at  http://localhost:9091 using the following: Username: neo4j
 Password: BloodHound
 
@@ -354,7 +347,7 @@ https://azureadlab.enterprisesecurity.io/
 
 
 •   Run the collector to gather data
-$passwd = ConvertTo-SecureString "SuperVeryEasytoGuessPassword@1234"
+$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd"
 -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential
 ("test@defcorphq.onmicrosoft.com", $passwd)
