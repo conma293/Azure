@@ -186,4 +186,4 @@ Invoke-AzureHound -Verbose
 Run ```C:\AzAD\Tools\BloodHound-win32-x64\BloodHound-win32-x64```
 
 matches :
-MATCH (n) WHERE n.azname IS NOT NULL AND n.azname <> "" AND n.name IS NULL SET n.name = n.azname
+```MATCH (n) WHERE n.azname IS NOT NULL AND n.azname <> "" AND n.name IS NULL SET n.name = n.azname```
