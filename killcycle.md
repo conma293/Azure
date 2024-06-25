@@ -1,9 +1,9 @@
 *_Got creds for a test user by password spray._
 
 TLDR:
-- Use [AzureAD](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azuread-module)/[MG Module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---mg-module) for basic user and group AAD/Entra ID Directory stuff (i.e., users, groups, devices)
-  - This will require an access token for the AAD or MS Graph
-- Use [az powershell](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration----az-powershell) or [az cli](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azure-cli-az-cli) for other stuff - resources, roles, vms, apps etc
+- Use [AzureAD](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azuread-module)/[MG Module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---mg-module) for basic AAD/Entra ID Directory enumeration (i.e., users, groups, devices)
+  - This will require an access token for AAD or MS Graph
+- Use [az powershell](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration----az-powershell) or [az cli](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azure-cli-az-cli) for other enumeration - resources, roles, vms, apps etc
   - This will require ARM access token (default token)
  
     
