@@ -2,8 +2,9 @@
   -  [Using Tokens with CLI tools - Az PowerShell](https://github.com/conma293/Azure/blob/main/OAuth.md#using-tokens-with-cli-tools---az-powershell) (can request and use tokens - [Az Powershell](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration----az-powershell) )
   -  [Using Tokens with CLI tools - az cli](https://github.com/conma293/Azure/blob/main/OAuth.md#using-tokens-with-cli-tools---az-cli) (can request a token but cannot use it! [az cli](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azure-cli-az-cli) )
   -  [Using Tokens with CLI tools - AzureAD module](https://github.com/conma293/Azure/blob/main/OAuth.md#using-tokens-with-cli-tools---azuread-module) (cannot request a token but can use one for AADGraph or Microsoft Graph! [AzureAD module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azuread-module) )
-- [Stealing Tokens](https://github.com/conma293/Azure/blob/main/OAuth.md#stealing-tokens) 
-
+- [Stealing Tokens](https://github.com/conma293/Azure/blob/main/OAuth.md#stealing-tokens)
+- [Using tokens with APIs](https://github.com/conma293/Azure/blob/main/OAuth.md#using-tokens-with-apis---management)
+- [Continuous Access Evaluation (CAE)]()
 
 
 
