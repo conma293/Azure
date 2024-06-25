@@ -5,6 +5,9 @@ TLDR:
   - This will require an access token for AAD or MS Graph
 - Use [az powershell](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration----az-powershell) or [az cli](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azure-cli-az-cli) for other enumeration - resources, roles, vms, apps etc
   - This will require ARM access token (default token)
+    
+
+Using tools like ROADTools or Azurehound is going to be our best bet anyhow (and enum isnt logged so who cares right!?)
  
     
 
