@@ -188,6 +188,9 @@ $RequestParams = @{ Method = 'GET' Uri     = $URI Headers = @{'Authorization' = 
 ```
 
 ### Continuous Access Evaluation (CAE)
+_If you compromise a webapp and it has a managed identity, grab its access token and try using that_
+_If you compromise a VM or any other resource that has a managed identity request its access token and try using that - detection evasion and success will be much higher as cant do CAE_
+
 •  CAE can help in invalidating access tokens before their expiry time (default 1 hour).
 
 - Useful in cases like:
@@ -210,21 +213,12 @@ based conditional access is present
 •  We can find xms_cc claim in MSGraph token for testuser that was requested using Az PowerShell.
 
 •  Access tokens issued for managed identities by Azure IMDS are not CAE-enabled.
-
-**_If you compromise a webapp and it has a managed identity, grab its access token and try using that_**
-
-_If you compromise a VM or any other resource that has a managed identity request its access token and try using that - detection evasion and success will be much higher as cant do CAE_
-
-
 Note: Refresh tokens can be invalidated so no need to CAE
 
-#### CAE Scenarios
+
+### CAE Scenarios
 CAE works in two scenarios:
-
-
-#### CAE – Critical Event Evaluation
-1.   Critical event evaluation
-
+#### 1 – Critical Event Evaluation
 - User account is deleted or disabled
 - Password change or reset for a user
 - MFA enabled for a user
@@ -233,8 +227,7 @@ CAE works in two scenarios:
 Sharepoint online)
 - Only Exchange Online, Sharepoint online and Teams are supported.
 
-#### CAE – Conditional Access Policy Evaluation
-2.   Conditional Access policy evaluation
+#### 2 – Conditional Access Policy Evaluation
 - Only IP-based (both IPv4 and IPv6) named locations are supported. Other location conditions like MFA trusted IPs or country-based locations are not supported.
 - Exchange Online, SharePoint online, Teams and MS Graph are supported.
 
