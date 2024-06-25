@@ -105,7 +105,8 @@ disConnect-AzAccount
 Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token -MicrosoftGraphAccessToken eyJ0eXA...
 ```
 
-**best target is managed identity access token - not protected by CAE**
+**best target is managed identity access token - not protected by CAE!**
+
 
 ### Steal token
 When on a machine look in - ```C:\Users\[username]\.Azure```
