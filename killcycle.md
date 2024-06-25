@@ -166,3 +166,15 @@ roadrecon gui
 
 
 ```roadrecon plugin policies``` writes to ```C:\AzAD\Tools\ROADTools```
+
+#### AzureHound
+```
+$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential("test@defcorphq.onmicrosoft.com", $passwd)
+
+Connect-AzAccount -Credential $creds
+Connect-AzureAD -Credential $creds
+
+. C:\AzAD\Tools\AzureHound\AzureHound.ps1
+Invoke-AzureHound -Verbose
+```
