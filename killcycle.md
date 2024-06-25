@@ -124,3 +124,10 @@ When on a machine look in - ```C:\Users\[username]\.Azure```
 
 
 ## Tools
+```
+cd C:\AzAD\Tools\ROADTools
+.\venv\Scripts\activate
+roadrecon auth -u test@defcorphq.onmicrosoft.com -p V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd
+roadrecon gather
+roadrecon gui
+```
