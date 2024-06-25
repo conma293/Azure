@@ -175,6 +175,8 @@ $passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlai
 $creds = New-Object System.Management.Automation.PSCredential("test@defcorphq.onmicrosoft.com", $passwd)
 
 Connect-AzAccount -Credential $creds
+
+Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1
 Connect-AzureAD -Credential $creds
 
 . C:\AzAD\Tools\AzureHound\AzureHound.ps1
