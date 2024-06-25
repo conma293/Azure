@@ -81,10 +81,12 @@ Get-AzWebApp | select name, HostNames, kind, state, identity
  ```Get-AzKeyVault```
 
 #### az cli
-And finally [az cli](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azure-cli-az-cli)
+And finally [az cli](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azure-cli-az-cli); 
 a good one to use from az cli is the **whoami** equivalent:-
 ```az ad signed-in-user show```
-Also good to note, there is more information from az cli for some objects i.e., Can see the type of managed identity used for objects such as VM and Webapps:
+
+
+Also good to note, there is more information returned from ```az cli``` for some objects i.e., Can see the type of managed identity used for objects such as VM and Webapps:
 ```
 az vm list
 az vm list --query "[].[name]" -o table
@@ -98,6 +100,8 @@ az storage account list
 
 az keyvault list
 ```
+
+Important to try all tools to get info!
 
 ## Tokens
 - Steal tokens (If you are signed in you can dump it with ```(Get-AzAccessToken).token```)
