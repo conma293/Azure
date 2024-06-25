@@ -348,7 +348,7 @@ https://azurehound-altsecdashboard.msappproxy.net/
 
 The data uploaded above is with Reader role on subscription!
 
-•  Some examples of Cypher queriues are below (See notes for some resources)
+#### Cypher queries
 
 •     Find all users who have the Global Administrator role:
 ```
