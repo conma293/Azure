@@ -187,3 +187,14 @@ Run ```C:\AzAD\Tools\BloodHound-win32-x64\BloodHound-win32-x64```
 
 matches :
 ```MATCH (n) WHERE n.azname IS NOT NULL AND n.azname <> "" AND n.name IS NULL SET n.name = n.azname```
+
+## Consent Abuse
+1. register a tenant (dont need credit card)
+2. register app in newly created tenant
+3. we set consent permissions we want to steal
+4. we send a phishing link (ms online link)
+5. User clicks on phish, grants consent
+6. Users access token to graph API sent to attacker controlled app 
+7. Now we can use that access token to access graph API as the phished user
+
+8. 
