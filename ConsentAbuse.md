@@ -7,21 +7,16 @@
 
 
 •  Consent policies can be set for all users
-– Do not allow user consent
-
-– Allow user consent for apps from verified publishers, for selected permissions - Only for "Low Impact" permissions for apps from same tenant and verified publisher
-
-– Allow user consents for all apps - Allows consent for apps from other tenants and unverified publishers for Low Impact permissions (Default)
-– Custom app consent policy
+- Do not allow user consent
+- Allow user consent for apps from verified publishers, for selected permissions 
+- Only for "Low Impact" permissions for apps from same tenant and verified publisher
+- Allow user consents for all apps - Allows consent for apps from other tenants and unverified publishers for Low Impact permissions (Default)
+- Custom app consent policy
+  
 •  'Allow user consent for all apps' is interesting and abusable!
-
-
 •  Only the permissions that don't need admin consent can be classified as low impact.
-
 •  Permissions required for basic sign-in are openid, profile, email, User.Read and offline_access.
-
 •  That means, if an organization allows user consent for all apps, an employee can grant consent to an app to read the above from their profile.
-
 •  There are some very interesting low impact permissions. For example: User.ReadBasic.All that allows the app to read display name, first and last name, email address, open extensions and photo for all the users!
 
 
