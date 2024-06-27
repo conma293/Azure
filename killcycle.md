@@ -195,6 +195,4 @@ matches :
 4. we send a phishing link (ms online link)
 5. User clicks on phish, grants consent
 6. Users access token to graph API sent to attacker controlled app 
-7. Now we can use that access token to access graph API as the phished user
-
-8. 
+7. Now we can use that access token to access graph API as the phished user (limited to the permissions the user consented to)
