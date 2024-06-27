@@ -3,7 +3,7 @@
 
 •  If allowed, a normal user can grant consent only for "Low Impact" permissions. In all other cases, admin consent is required.
 
-•  GA, Application Administrator, Cloud Application Administrator and a custom role including 'permission to grant permissions to applications' can provide tenant- wide consent.
+•  GA, Application Administrator, Cloud Application Administrator and a custom role including 'permission to grant permissions to applications' can provide tenant-wide consent.
 
 
 •  Consent policies can be set for all users
@@ -22,25 +22,22 @@
 
 ## Initial Access - Illicit Consent Grant
 
-•  Register a Multitenant application studentx in defcorpextcontractors tenant.
-•  Provide the Redirect URI where you would like to receive tokens. In the lab, it will be the student VM https://172.16.151.X/login/authorized (or
-172.16.150.X or 172.16.152.X depending on your location)
-•  Go to the 'Certificates & secrets' blade and create new Client secret. Copy the client secret before browsing away from the page.
-•  Go to the 'API permissions' blade and add the following Delegated
-permissions for Microsoft Graph: user.read, User.ReadBasic.All
-
+- Register a Multitenant application studentx in defcorpextcontractors tenant.
+- Provide the Redirect URI where you would like to receive tokens. In the lab, it will be the student VM https://172.16.151.X/login/authorized (or 172.16.150.X or 172.16.152.X depending on your location)
+- Go to the 'Certificates & secrets' blade and create new Client secret. Copy the client secret before browsing away from the page.
+- Go to the 'API permissions' blade and add the following Delegated permissions for Microsoft Graph: ```user.read```, ```User.ReadBasic.All```
 
 Note: In case we want to use Access tokens, following config is required - In the 'Authentication' option of the studentx app, check 'Access tokens (used for implicit flows)' and click on 'Save'. We will use Refresh token so no configuration is required.
 
 
-•  We have user privilege access to the defcorphq tenant. Check if users are allowed to consent to apps.
+- We have user privilege access to the defcorphq tenant. Check if users are allowed to consent to apps.
+- Use Azure Portal or the below command from the AzureAD Preview module:
+```
+(Get- AzureADMSAuthorizationPolicy).PermissionGrantPolicyIdsAs signedToDefaultUserRole
+```
 
-•  Use Azure Portal or the below command from the AzureAD Preview module:
-
-```(Get- AzureADMSAuthorizationPolicy).PermissionGrantPolicyIdsAs signedToDefaultUserRole```
-
-•  If the output of above is 'ManagePermissionGrantsForSelf.microsoft- user-default-legacy', that means users can consent for all apps!
-•  In a real assessment, we simply need to try to know.
+- If the output of above is 'ManagePermissionGrantsForSelf.microsoft- user-default-legacy', that means users can consent for all apps!
+- In a real assessment, we simply need to try to know.
 
 
 ### Initial Access - Illicit Consent Grant - 365 Stealer
