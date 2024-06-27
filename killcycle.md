@@ -196,3 +196,5 @@ matches :
 5. User clicks on phish, grants consent
 6. Users access token to graph API sent to attacker controlled app 
 7. Now we can use that access token to access graph API as the phished user (limited to the permissions the user consented to)
+
+NOTE - logs for application consent include permissions - VERBOSE LOG 
