@@ -244,7 +244,7 @@ We need to ready the attacker VM for incoming redirects that we are going to phi
   - need to provide the app ID and client secret (from before in the azure portal blade)
   - and:
 ```
-https://172.16.151.213/login/authorized
+https://172.16.152.213/login/authorized
 /
 [blank]
 [blank]
