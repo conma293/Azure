@@ -1,5 +1,11 @@
 *_Got creds for a test user by password spray._
 
+
+- Manual Enumeration
+- Stealing Tokens
+- Enum tools
+- [Consent Abuse](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
+
 * * *
 
 TLDR:
