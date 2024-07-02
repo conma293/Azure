@@ -198,3 +198,13 @@ matches :
 7. Now we can use that access token to access graph API as the phished user (limited to the permissions the user consented to)
 
 NOTE - logs for application consent include permissions - VERBOSE LOG 
+
+First lets check if users can even consent
+```
+$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneC@nGu355ForT3stUs3r" -AsPlainText -Force 
+$creds = New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd) 
+Connect-AzAccount -Credential $creds
+$Token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
+Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Force)
+Tools>(Get-MgPolicyAuthorizationPolicy).DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
+```
