@@ -214,3 +214,21 @@ $Token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
 Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Force)
 Tools>(Get-MgPolicyAuthorizationPolicy).DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
 ```
+
+### Step 1 - make the app
+
+- goto portal.azure.com
+
+  - signin as student213@defcorpextcontractors.onmicrosoft.com
+
+- Click Microsoft Entra ID > Manage > App registrations - New registrations
+  - Create an app called Student213_App
+  - Accounts in Multitenant
+  - Redirect URI (Web) to our attacker VM - https://172.16.151.213/login/authorized
+  - goto certificates and secrets and create a Client Secret - a client secret allows you to access the tenant as an application
+    - SAVE CLIENT SECRET!!! - 
+```
+_Qb8Q~yaLVJW5Y1li3dtzyES8j1fQp7j43xfjctR
+```
+  - now API Permissions - User.Read is there, lets add some good ones - MS Graph, Delegated permissions, User.ReadBasic.All 
+    - (have to have admin to be able to consent for Application permissions)
