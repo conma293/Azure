@@ -259,7 +259,10 @@ https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&cli
 
 
 #### Step 3 - Send the phish
-
+```
+. C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureSubDomains.ps1 
+Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
+```
 /.default - whatever is specified in permissions consent
 query mode so its easier for us to pass the output
 
