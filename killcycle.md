@@ -246,9 +246,8 @@ We need to ready the attacker VM for incoming redirects that we are going to phi
 ```
 https://172.16.151.213/login/authorized
 /
-blank
-
-blank
+[blank]
+[blank]
 1
 ```
 - save config
