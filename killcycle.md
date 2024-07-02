@@ -256,3 +256,15 @@ https://172.16.151.213/login/authorized
 ```
 https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id=9e10a3bc-7cfa-407c-8ec9-8b04a3f2cd45&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default+openid+offline_access+&redirect_uri=https%3A%2F%2F172.16.151.213%2Flogin%2Fauthorized&response_mode=query
 ```
+
+
+#### Step 3 - Send the phish
+
+/.default - whatever is specified in permissions consent
+query mode so its easier for us to pass the output
+
+- navigate to contact form to upload phish 
+- ```defcorphqcareer.azurewebsites.net```
+- need help section
+- put phishing link in the reference link field
+- shared/group mailboxes are a mess, no one has sole resposibility - exploit it 
