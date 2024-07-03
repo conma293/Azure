@@ -235,8 +235,8 @@ https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&cli
 
 #### find vulnerable website
 ```
-C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureSubDomains.ps1 
-C:\AzAD\Tools>Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
+. C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureSubDomains.ps1 
+Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
 ```
 
 #### Step 1 - make the app
