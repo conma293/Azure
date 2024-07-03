@@ -298,7 +298,7 @@ Headers = @{
 From the returned users we have identified an admin - if we can phish an admin we can get an admin consent
 
 - add more delegated permissions to the app
-  - mail.read, notes.read.all, mailboxsettings.readwrite, files.readwrite.all, mail.send
+  - ```mail.read```, ```notes.read.all```, ```mailboxsettings.readwrite```, ```files.readwrite.all```, ```mail.send```
 - email markdwalden@defcorphq.onmicrosoft.com 
 - look at token in https://jwt.io
 - using the 365Stealer webapp GUI (and the consented permissions) we can upload a file to their onedrive
