@@ -232,6 +232,13 @@ goto ```https://localhost/``` and click readmore - take url from address bar whi
 ```
 https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id=c0e39a5f-266c-4425-b6cf-d55350b868dc&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default+openid+offline_access+&redirect_uri=https%3A%2F%2F172.16.152.213%2Flogin%2Fauthorized&response_mode=query&sso_reload=true
 ```
+
+#### find vulnerable website
+```
+C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureSubDomains.ps1 
+C:\AzAD\Tools>Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
+```
+
 #### Step 1 - make the app
 
 - goto portal.azure.com
