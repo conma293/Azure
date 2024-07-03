@@ -215,6 +215,7 @@ $Token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
 
 Azure AD Graph:
 ```
+Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1
 Connect-AzureAD -Credential $creds
 (Get-AzureADMSAuthorizationPolicy).PermissionGrantPolicyIdsAssignedToDefaultUserRole 
 ManagePermissionGrantsForSelf.microsoft-user-default-legacy
