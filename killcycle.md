@@ -49,7 +49,7 @@ _in normal environments we would expect to see some Service Principals (that is 
 #### MG Module
 You could also use the [MG Module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---mg-module) instead if you wanted:
 ```
-$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneC@nGu355ForT3stUs3r" -AsPlainText -Force 
+$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force 
 $creds = New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd) 
 Connect-AzAccount -Credential $creds 
 
@@ -207,7 +207,7 @@ NOTE - logs for application consent include permissions - VERBOSE LOG
 
 First lets check if users can even consent
 ```
-$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneC@nGu355ForT3stUs3r" -AsPlainText -Force 
+$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force 
 $creds = New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd) 
 Connect-AzAccount -Credential $creds
 $Token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
