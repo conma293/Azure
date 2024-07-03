@@ -211,6 +211,17 @@ $passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneC@nGu355ForT3stUs3r" -AsPl
 $creds = New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd) 
 Connect-AzAccount -Credential $creds
 $Token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
+```
+
+Azure AD Graph:
+```
+Connect-AzureAD -Credential $creds
+(Get-AzureADMSAuthorizationPolicy).PermissionGrantPolicyIdsAssignedToDefaultUserRole 
+ManagePermissionGrantsForSelf.microsoft-user-default-legacy
+```
+
+OR MS Graph:
+```
 Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Force)
 (Get-MgPolicyAuthorizationPolicy).DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
 ```
