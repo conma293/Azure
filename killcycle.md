@@ -212,7 +212,7 @@ $creds = New-Object System.Management.Automation.PSCredential ("test@defcorphq.o
 Connect-AzAccount -Credential $creds
 $Token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
 Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Force)
-Tools>(Get-MgPolicyAuthorizationPolicy).DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
+(Get-MgPolicyAuthorizationPolicy).DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
 ```
 
 #### Step 1 - make the app
