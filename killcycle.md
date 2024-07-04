@@ -423,6 +423,8 @@ Let's see what actions are allowed using the below code:
 $URI = 'https://management.azure.com/subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Engineering/providers/Microsoft.Compute/virtualMachines/bkpadconnect/providers/Microsoft.Authorization/permissions?api-version=2015-07-01'
 ```
 
+THIS GIVES US ```{Microsoft.Compute/virtualMachines/runCommand/action}```
+
 #### WebApp Pentesting in Azure
 
 ```
