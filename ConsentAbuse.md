@@ -1,3 +1,5 @@
+[apps](https://github.com/conma293/Azure/blob/main/ConsentAbuse.md#app-services)
+
 # Consent and Permissions
 •  Applications can ask users for permissions to access their data. For example, for basic sign-in.
 
