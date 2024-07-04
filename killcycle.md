@@ -383,3 +383,5 @@ Now we can navigate to:
 ```
 https://defcorphqcareer.azurewebsites.net/uploads/studentxtoken.phtml
 ```
+and we will be returned an access token for the managed identity of the webapp
+
