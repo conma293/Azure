@@ -226,7 +226,7 @@ OR MS Graph:
 Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Force)
 (Get-MgPolicyAuthorizationPolicy).DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
 ```
-#### Tricky way to get phishing url
+#### Tricky way to get phishing redirect url template
 
 goto ```https://localhost/``` and click readmore - take url from address bar which is a good redirect template:
 ```
