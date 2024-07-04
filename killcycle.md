@@ -5,6 +5,7 @@
 - Stealing Tokens
 - Enum tools
 - [Consent Abuse](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
+- [App Service](https://github.com/conma293/Azure/blob/main/killcycle.md#app-service)
 
 * * *
 
