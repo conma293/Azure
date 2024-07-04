@@ -391,3 +391,34 @@ and we will be returned an access token for the managed identity of the webapp:
 {"access_token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1HTHFqOThWTkxvWGFGZnBKQ0JwZ0I0SmFLcyIsImtpZCI6Ik1HTHFqOThWTkxvWGFGZnBKQ0JwZ0I0SmFLcyJ9.eyJhdWQiOiJodHRwczovL21hbmFnZW1lbnQuYXp1cmUuY29tLyIsImlzcyI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzJkNTBjYjI5LTVmN2ItNDhhNC04N2NlLWZlNzVhOTQxYWRiNi8iLCJpYXQiOjE3MjAwNzY5MzYsIm5iZiI6MTcyMDA3NjkzNiwiZXhwIjoxNzIwMTYzNjM2LCJhaW8iOiJFMmRnWUdnVXZidmo3NXh1b2NJN000TnUrSHRQQlFBPSIsImFwcGlkIjoiMDY0YWFmNTctMzBhZi00MWYwLTg0MGEtMGUyMWVkMTQ5OTQ2IiwiYXBwaWRhY3IiOiIyIiwiaWRwIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMmQ1MGNiMjktNWY3Yi00OGE0LTg3Y2UtZmU3NWE5NDFhZGI2LyIsImlkdHlwIjoiYXBwIiwib2lkIjoiY2M2N2M5MGQtZDllOS00MGQyLWI1MTEtOWQ1MmQ2NzY4MmFiIiwicmgiOiIwLkFYQUFLY3RRTFh0ZnBFaUh6djUxcVVHdHRrWklmM2tBdXRkUHVrUGF3ZmoyTUJQRUFBQS4iLCJzdWIiOiJjYzY3YzkwZC1kOWU5LTQwZDItYjUxMS05ZDUyZDY3NjgyYWIiLCJ0aWQiOiIyZDUwY2IyOS01ZjdiLTQ4YTQtODdjZS1mZTc1YTk0MWFkYjYiLCJ1dGkiOiJQSGcwMTBIRTAwV3pUSjNpVmdFZEFBIiwidmVyIjoiMS4wIiwieG1zX2lkcmVsIjoiOCA3IiwieG1zX21pcmlkIjoiL3N1YnNjcmlwdGlvbnMvYjQxMzgyNmYtMTA4ZC00MDQ5LThjMTEtZDUyZDVkMzg4NzY4L3Jlc291cmNlZ3JvdXBzL0VuZ2luZWVyaW5nL3Byb3ZpZGVycy9NaWNyb3NvZnQuV2ViL3NpdGVzL2RlZmNvcnBocWNhcmVlciIsInhtc190Y2R0IjoiMTYxNTM3NTYyOSJ9.bRYpVA53dHWyHxcvjClNByYFR_Q-5iEBdvq6UNOHVD9k8o8YBMktGmo0eY1Jzo_vfUBwQuzD1u9UvJiC_I13uW3a3Hb6GmIFvUXZoAVp0cLcutSEujvowoQIjUZDzM6dAYWOuy1oHjhBcAIOw2kCAhHqcl_RXfSw9eDXLTdOlds_OADvTPpcXUzX4F87zsXTjJrXlpttmGadW_laknfDcnjVZsgWUZB9dpchzGf71c5u3NNf_Xn7lO2zC7DeyR5xBijSPpjFOdOyBAmiLVkR0e-YzyHBwzJxEiRbnqX3HrumUwZvpyUijySsDkUPqkRXpiWY6XKp4Oh1eLzc02qCXg","expires_on":"07/05/2024 07:13:55 +00:00","resource":"https://management.azure.com/","token_type":"Bearer","client_id":"064aaf57-30af-41f0-840a-0e21ed149946"}
 ```
 
+what resources do we have access to:
+```
+Connect-AzAccount -AccessToken $token -AccountId <clientID>
+Get-AzResource
+```
+
+Let's use the token with Azure REST API.
+We would need the subscription ID, use the code below to request it:
+```
+$Token = 'eyJ0eX..'
+$URI = 'https://management.azure.com/subscriptions?api-version=2020-01-01'
+$RequestParams = @{
+Method = 'GET'
+Uri = $URI
+Headers = @{
+'Authorization' = "Bearer $Token"
+}
+}
+(Invoke-RestMethod @RequestParams).value
+```
+
+List all resources accessible for the managed identity assigned to the app service. Note that the only difference is the URI
+```
+$URI = 'https://management.azure.com/subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resources?api-version=2020-10-01'
+```
+Let's see what actions are allowed using the below code:
+```
+$URI = 'https://management.azure.com/subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Engineering/providers/Microsoft.Compute/virtualMachines/bkpadconnect/providers/Microsoft.Authorization/permissions?api-version=2015-07-01'
+```
+
+
