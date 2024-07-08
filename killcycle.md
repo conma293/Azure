@@ -404,6 +404,9 @@ Let's use the token with Azure REST API.
 We would need the subscription ID, use the code below to request it:
 ```
 $Token = 'eyJ0eX..'
+```
+
+```
 $URI = 'https://management.azure.com/subscriptions?api-version=2020-01-01'
 $RequestParams = @{
 Method = 'GET'
