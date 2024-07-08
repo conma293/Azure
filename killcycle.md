@@ -6,7 +6,7 @@
 - [Enum tools]
 - [Consent Abuse](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
 - [App Service](https://github.com/conma293/Azure/blob/main/killcycle.md#app-service)
-- [Server Side Template Injection (SSTI)]
+- [Server Side Template Injection (SSTI)](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti)
 
 * * *
 
