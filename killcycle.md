@@ -1,5 +1,7 @@
 *_Got creds for a test user by password spray._
 
+- Goal is to get managed identity access token
+
 
 - Manual Enumeration
 - [Stealing Tokens](https://github.com/conma293/Azure/blob/main/killcycle.md#tokens)
