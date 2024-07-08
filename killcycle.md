@@ -1,7 +1,5 @@
 *_Got creds for a test user by password spray._
 
-- Goal is to get managed identity access token
-
 
 - Manual Enumeration
 - [Stealing Tokens](https://github.com/conma293/Azure/blob/main/killcycle.md#tokens)
@@ -17,6 +15,7 @@ TLDR:
   - This will require an access token for AAD or MS Graph
 - Use [az powershell](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration----az-powershell) or [az cli](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azure-cli-az-cli) for other enumeration - resources, roles, vms, apps etc
   - This will require ARM access token (default token)
+  - What we REALLY WANT is a **Managed Identity Access Token**
     
 
 - Using tools like ROADTools or [Azurehound](https://github.com/conma293/Azure/blob/main/OAuth.md#enumeration---azurehound) is going to be our best bet anyhow (and enum isnt logged so who cares right!?)
