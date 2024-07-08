@@ -2,8 +2,8 @@
 
 
 - Manual Enumeration
-- Stealing Tokens
-- Enum tools
+- [Stealing Tokens](https://github.com/conma293/Azure/blob/main/killcycle.md#tokens)
+- [Enum tools]
 - [Consent Abuse](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
 - [App Service](https://github.com/conma293/Azure/blob/main/killcycle.md#app-service)
 - [Server Side Template Injection (SSTI)]
