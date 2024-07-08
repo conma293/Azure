@@ -182,20 +182,15 @@ $RequestParams = @{ Method = 'GET' Uri     = $URI Headers = @{
 
 Note: There should be no need to use the above code. Get-AZRoleAssignment gives the correct result in case a user's token is used. But throws an error in case token of a manage identity is used.
 
-
-•  The career app in the defcorphq tenant allows insecure file upload functionality. Abuse the vulnerability and compromise the app service.
-
-•  Check if the service principal for the managed identity of the compromised app service has any interesting permissions on other Azure resources.
+#### Initial Access - App Service Abuse - Server Side Template Injection (SSTI)
 
 •  SSTI allows an attacker to abuse template syntax to inject payloads in a template that is executed on the server side.
 
 •  That is, we can get command execution on a server by abusing this.
 
-•  Once again, in case of an Azure App Service, we get privileges only of
-the worker process but a managed identity may allow us to access other
-Azure resources.
+•  Once again, in case of an Azure App Service, we get privileges only of the worker process but a managed identity may allow us to access other Azure resources.
 
-•  An application in the defcorphq tenant is vulnerable to SSTI. Find the application and compromise the app service.
+•  The career app in the defcorphq tenant allows insecure file upload functionality. Abuse the vulnerability and compromise the app service.
 
 •  Check if the service principal for the managed identity of the compromised app service has any interesting permissions on other Azure resources.
 
