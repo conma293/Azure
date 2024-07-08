@@ -425,7 +425,12 @@ $URI = 'https://management.azure.com/subscriptions/b413826f-108d-4049-8c11-d52d5
 
 THIS GIVES US ```{Microsoft.Compute/virtualMachines/runCommand/action}```
 
-#### WebApp Pentesting in Azure
+#### Initial Access - App Service Abuse - Server Side Template Injection (SSTI)
+
+•  SSTI allows an attacker to abuse template syntax to inject payloads in a template that is executed on the server side.
+•  That is, we can get command execution on a server by abusing this.
+•  Once again, in case of an Azure App Service, we get privileges only of the worker process but a managed identity may allow us to access other Azure resources.
+
 
 ```
 {{config.items()}}
