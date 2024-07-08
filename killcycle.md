@@ -418,10 +418,16 @@ Headers = @{
 }
 (Invoke-RestMethod @RequestParams).value
 ```
+RESPONSE:
+```
+**id                   : /subscriptions/b413826f-108d-4049-8c11-d52d5d388768**
+authorizationSource  : RoleBased
+...
+```
 
 List all resources accessible for the managed identity assigned to the app service. Note that the only difference is the URI
 ```
-$URI = 'https://management.azure.com/subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resources?api-version=2020-10-01'
+$URI = 'https://management.azure.com**/subscriptions/b413826f-108d-4049-8c11-d52d5d388768**/resources?api-version=2020-10-01'
 ```
 Let's see what actions are allowed using the below code:
 ```
