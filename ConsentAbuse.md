@@ -194,6 +194,25 @@ Note: There should be no need to use the above code. Get-AZRoleAssignment gives 
 
 •  Check if the service principal for the managed identity of the compromised app service has any interesting permissions on other Azure resources.
 
+#### Initial Access - App Service Abuse - OS Command Injection
+
+•  In case of OS command injection, it is possible to run arbitrary operating system commands on the server where requests are processed.
+
+•  This is usually due to insecure parsing of user input such as parameters,
+uploaded files and HTTP requests.
+
+•  Same as previously, in case of an Azure App Service, we get privileges only of the worker process but a managed identity may allow us to access other Azure resources.
+•  Function App (also called Azure Functions) is Azure's 'serverless' solution to run code.
+•  Languages like C#, Java, PowerShell, Python and more are supported.
+•  A Function App is supposed to be used to react to an event like:
+– HTTP Trigger
+– Processing a file upload
+– Run code on scheduled time and more
+•  App service provides the hosting infrastructure for function apps.
+•  Function apps support Managed Identities.
+
+
+
 
 
 
