@@ -425,7 +425,7 @@ authorizationSource  : RoleBased
 ...
 ```
 
-List all resources accessible for the managed identity assigned to the app service. Note that the only difference is the URI after ```'https://management.azure.com/```
+List all resources accessible for the managed identity assigned to the app service. Note that the only difference is the URI after ```https://management.azure.com```
 ```
 $URI = 'https://management.azure.com/subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resources?api-version=2020-10-01'
 ```
