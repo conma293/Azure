@@ -463,4 +463,5 @@ Connect-AzAccount -AccessToken $token -AccountId 2e91a4fe-a0f2-46ee-8214-fa2ff6a
 Get-AzResource
 ```
 
-
+#### Command Injection
+a lot of the time the EndOfLine or Special Character is a ```;``` - so just put a semi-colon and a system call after it to test!
