@@ -4,7 +4,7 @@
 - Module 1
   - [Introduction to Azure](https://github.com/conma293/Azure/blob/main/1.0_Intro.md)
   - [Discovery and Recon of services and applications](https://github.com/conma293/Azure/blob/main/1.1_Recon.md)
-  - [Azure AD Enumeration]
+  - [Azure AD Enumeration](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md)
   - [Initial Access Attacks] (Enterprise Apps, App Services, Function Apps, Insecure Storage, Phishing, Consent Grant Attacks)
 - Module 2
   - Enumeration of Azure Services (Storage Accounts, Key vaults, Blobs, Automation Accounts, Deployment History and more)
