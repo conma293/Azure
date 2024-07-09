@@ -3,7 +3,7 @@
 
 - Manual Enumeration
 - [Stealing Tokens](https://github.com/conma293/Azure/blob/main/killcycle.md#tokens)
-- [Enum tools]
+- [Enum tools](https://github.com/conma293/Azure/blob/main/killcycle.md#tools)
 - [Consent Abuse](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
 - App Services
   - [Insecure File Upload](https://github.com/conma293/Azure/blob/main/killcycle.md#insecure-file-upload)
