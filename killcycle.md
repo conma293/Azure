@@ -515,4 +515,30 @@ Now we can connect with the returned Managed Identity tokens:
 $token = 'eyJ0eX..'
 $graphaccesstoken = 'eyJ0eX..' 
 Connect-AzAccount -AccessToken $token -GraphAccessToken $graphaccesstoken -AccountId 62e44426-5c46-4e3c-8a89-f461d5d586f2
+Get-AzResource
+```
+We are returned with this, which means our Managed Identity does not have rights to any resources:
+```
+Get-AzResource : 'this.Client.SubscriptionId' cannot be null.
+At line:1 char:1
++ Get-AzResource
++ ~~~~~~~~~~~~~~
+    + CategoryInfo          : CloseError: (:) [Get-AzResource], ValidationException
+    + FullyQualifiedErrorId : Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation.GetAzureResourceCmdlet
+```
+
+Let's use the Graph API token with the REST API to list all Enterprise Applications in the defcorphq tenant:
+```
+$Token = 'eyJ0eX..'
+```
+```
+$URI = ' https://graph.microsoft.com/v1.0/applications'
+$RequestParams = @{
+Method = 'GET'
+Uri = $URI
+Headers = @{
+'Authorization' = "Bearer $Token"
+}
+}
+(Invoke-RestMethod @RequestParams).value
 ```
