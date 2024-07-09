@@ -255,7 +255,7 @@ Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
   - Accounts in Multitenant
   - Redirect URI (Web) to our attacker VM - https://172.16.151.213/login/authorized
   - goto certificates and secrets and create a Client Secret - a client secret allows you to access the tenant as an application
-    - SAVE CLIENT SECRET!!! - 
+  - **SAVE CLIENT SECRET!!!**: 
 ```
 _Qb8Q~yaLVJW5Y1li3dtzyES8j1fQp7j43xfjctR
 ```
