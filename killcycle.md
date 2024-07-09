@@ -509,4 +509,10 @@ Access Token: eyJ0eXAiOiJKV1QiLCJub25jZSI6InpSRnZKbjB6OGlQbWRJa2RUYzBNTHRibGFhTn
 ClientID: 62e44426-5c46-4e3c-8a89-f461d5d586f2
 ```
 
+Now we can connect with the returned Managed Identity tokens:
 
+```
+$token = 'eyJ0eX..'
+$graphaccesstoken = 'eyJ0eX..' 
+Connect-AzAccount -AccessToken $token -GraphAccessToken $graphaccesstoken -AccountId 62e44426-5c46-4e3c-8a89-f461d5d586f2
+```
