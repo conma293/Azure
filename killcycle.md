@@ -468,3 +468,9 @@ Get-AzResource
 
 #### Command Injection
 a lot of the time the EndOfLine or Special Character is a ```;``` - so just put a semi-colon and a system call after it to test!
+- This website says when we upload files it goes to the ```/tmp``` folder for scanning
+```
+; ls /tmp;
+; ls /tmp/uploads/studentx;
+; python /tmp/uploads/studentx/studentx.py;
+```
