@@ -539,6 +539,7 @@ Let's use the Graph API token with the REST API to list all Enterprise Applicati
 ```
 $graphaccesstoken = 'eyJ0eX..'
 ```
+
 ```
 $URI = ' https://graph.microsoft.com/v1.0/applications'
 $RequestParams = @{
