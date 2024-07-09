@@ -514,6 +514,8 @@ $graphaccesstoken = 'eyJ0eX..'
 Connect-AzAccount -AccessToken $token -GraphAccessToken $graphaccesstoken -AccountId 62e44426-5c46-4e3c-8a89-f461d5d586f2
 Get-AzResource
 ```
+
+```
 We are returned with this, which means our Managed Identity does not have rights to any resources:
 ```
 Get-AzResource : 'this.Client.SubscriptionId' cannot be null.
@@ -523,6 +525,15 @@ At line:1 char:1
     + CategoryInfo          : CloseError: (:) [Get-AzResource], ValidationException
     + FullyQualifiedErrorId : Microsoft.Azure.Commands.ResourceManager.Cmdlets.Implementation.GetAzureResourceCmdlet
 ```
+
+Or we could try other AzPowershell modules:
+
+```
+Get-AzAdUser
+Get-AzAdApplication
+```
+
+Still doesnt work!
 
 Let's use the Graph API token with the REST API to list all Enterprise Applications in the defcorphq tenant:
 ```
@@ -540,12 +551,6 @@ Headers = @{
 (Invoke-RestMethod @RequestParams).value
 ```
 
-Or we could try other AzPowershell modules:
-
-```
-Get-AzAdUser
-Get-AzAdApplication
-```
 
 We can view applications!
 - the easiest way to check if we can abuse any of the Enterprise Applications (service principals) that we have listed above is to check if we can add credentials to any. This will allow us to abuse permissions assigned to the service principal:
