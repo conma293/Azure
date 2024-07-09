@@ -5,7 +5,7 @@
 - [Stealing Tokens](https://github.com/conma293/Azure/blob/main/killcycle.md#tokens)
 - [Enum tools]
 - [Consent Abuse](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
-- [App Services](https://github.com/conma293/Azure/blob/main/2.1_InitialAccess.md#app-services)
+- App Services
   - [Insecure File Upload](https://github.com/conma293/Azure/blob/main/killcycle.md#insecure-file-upload)
   - [Server Side Template Injection (SSTI)](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti)
   - OS Command Injection
