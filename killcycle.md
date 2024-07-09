@@ -526,7 +526,7 @@ At line:1 char:1
 
 Let's use the Graph API token with the REST API to list all Enterprise Applications in the defcorphq tenant:
 ```
-$Token = 'eyJ0eX..'
+$graphaccesstoken = 'eyJ0eX..'
 ```
 ```
 $URI = ' https://graph.microsoft.com/v1.0/applications'
@@ -534,7 +534,7 @@ $RequestParams = @{
 Method = 'GET'
 Uri = $URI
 Headers = @{
-'Authorization' = "Bearer $Token"
+'Authorization' = "Bearer $graphaccesstoken"
 }
 }
 (Invoke-RestMethod @RequestParams).value
