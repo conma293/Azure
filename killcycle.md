@@ -539,3 +539,17 @@ Headers = @{
 }
 (Invoke-RestMethod @RequestParams).value
 ```
+
+Or we could try other AzPowershell modules:
+
+```
+Get-AzAdUser
+Get-AzAdApplication
+```
+
+We can view applications!
+- the easiest way to check if we can abuse any of the Enterprise Applications (service principals) that we have listed above is to check if we can add credentials to any. This will allow us to abuse permissions assigned to the service principal:
+```
+. C:\AzAD\Tools\Add-AzADAppSecret.ps1
+Add-AzADAppSecret -GraphToken $graphaccesstoken -Verbose
+```
