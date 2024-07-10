@@ -23,11 +23,19 @@ $passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlai
 $creds = New-Object System.Management.Automation.PSCredential("test@defcorphq.onmicrosoft.com", $passwd)
 Connect-AzAccount -Credential $creds
 ```
-
+Common Az Enum:
 ```
 Get-AzResource
 Get-AzAdUser
 Get-AzAdApplication
+```
+Token reuse:
+```
+Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com
+
+Get-AzAccessToken -ResourceTypeName MSGraph
+Disconnect-AzAccount
+Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token -MicrosoftGraphAccessToken eyJ0eXA...
 ```
 - Az CLI
 ```
