@@ -260,8 +260,8 @@ Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
 ```
 _Qb8Q~yaLVJW5Y1li3dtzyES8j1fQp7j43xfjctR
 ```
-  - now API Permissions - User.Read is there, lets add some good ones
-    - MS Graph, Delegated permissions, User.ReadBasic.All 
+  - now API Permissions - ```User.Read``` is already there, lets add some other good ones:
+    - MS Graph> Delegated permissions> ```User.ReadBasic.All```
     - (have to have admin to be able to consent for Application permissions)
 
 #### Step 2 - ready the handler/listener
