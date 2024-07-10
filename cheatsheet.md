@@ -23,6 +23,12 @@ $passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlai
 $creds = New-Object System.Management.Automation.PSCredential("test@defcorphq.onmicrosoft.com", $passwd)
 Connect-AzAccount -Credential $creds
 ```
+
+```
+Get-AzResource
+Get-AzAdUser
+Get-AzAdApplication
+```
 - Az CLI
 ```
 ```
