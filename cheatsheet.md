@@ -32,7 +32,11 @@ Get-AzAdApplication
 - Az CLI
 ```
 ```
-
+- Other tools
+```
+. C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureSubDomains.ps1 
+Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
+```
 
 
 
