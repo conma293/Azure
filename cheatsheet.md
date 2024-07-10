@@ -50,7 +50,8 @@ Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
 
 Storage Blobs:
 
-_We can also add permutations like common, backup, code to ```permutations.txt``` in ```C:\AzAD\Tools\Microburst\Misc``` to tune it for the specific domain we are targetting_
+- We can also add permutations like common, backup, code to ```permutations.txt``` in ```C:\AzAD\Tools\Microburst\Misc``` to tune it for the specific domain we are targetting\
+- Also use Azure Storage Explorer GUI
 ```
 . C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureBlobs.ps1 
 Invoke-EnumerateAzureBlobs -Base defcorp
