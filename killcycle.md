@@ -1,10 +1,10 @@
-*_Got creds for a test user by password spray._
+*_Got creds for a test user by password spray or granted a contractor role through creds purchased on dark web._
 
 
 - Manual Enumeration
 - [Stealing Tokens](https://github.com/conma293/Azure/blob/main/killcycle.md#tokens)
 - [Enum tools](https://github.com/conma293/Azure/blob/main/killcycle.md#tools)
-- [Consent Abuse](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
+- [Consent Abuse - phish link to malicious app for consent grab](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
 - App Services
   - [Insecure File Upload](https://github.com/conma293/Azure/blob/main/killcycle.md#insecure-file-upload)
   - [Server Side Template Injection (SSTI)](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti)
