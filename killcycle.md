@@ -585,6 +585,7 @@ within container was:
 <Blobs>
 <Blob>
 <Name>blob_client.py</Name>
+...
 ```
 
-So I can try goto this referenced python file thats stored in the blob by going to ````https://defcorpcommon.blob.core.windows.net/backup/blob_client.py```
+So I can try goto this referenced python file thats stored in the blob by going to ```https://defcorpcommon.blob.core.windows.net/backup/blob_client.py```
