@@ -9,6 +9,7 @@
   - [Insecure File Upload](https://github.com/conma293/Azure/blob/main/killcycle.md#insecure-file-upload)
   - [Server Side Template Injection (SSTI)](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti)
   - [OS Command Injection](https://github.com/conma293/Azure/blob/main/killcycle.md#command-injection)
+- Storage Blobs
 
 * * *
 
@@ -560,7 +561,7 @@ We can view applications!
 Add-AzADAppSecret -GraphToken $graphaccesstoken -Verbose
 ```
 
-# Storage blob
+## Storage blob
 For Azure services there are 2 types of roles:- management plane roles and data plane roles
   - management plane roles
     - i.e., reader, contributor; acess roles - do not provide access to the data stored inside
