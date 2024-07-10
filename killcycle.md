@@ -562,8 +562,15 @@ Add-AzADAppSecret -GraphToken $graphaccesstoken -Verbose
 ```
 
 ## Storage blob
-For Azure services there are 2 types of roles:- management plane roles and data plane roles
+
+There are multiple ways to control access to a storage account:
+
+- RBAC Roles
+- For Azure services there are 2 types of roles:- management plane roles and data plane roles
   - management plane roles
     - i.e., reader, contributor; acess roles - do not provide access to the data stored inside
   - Data plane roles
     - i.e., storage blob data reader - do not allow you to managed the storage account, only access the data stored inside
+- shared keys (not changed or rotated automatically)
+- shared access signatures (SAS)
+
