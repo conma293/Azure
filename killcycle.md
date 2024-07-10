@@ -574,3 +574,7 @@ There are multiple ways to control access to a storage account:
 - shared keys (not changed or rotated automatically)
 - shared access signatures (SAS)
 
+```
+. C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureBlobs.ps1 
+Invoke-EnumerateAzureBlobs -Base defcorp
+```
