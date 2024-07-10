@@ -578,3 +578,13 @@ There are multiple ways to control access to a storage account:
 . C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureBlobs.ps1 
 Invoke-EnumerateAzureBlobs -Base defcorp
 ```
+Results gave me a container - ```https://defcorpcommon.blob.core.windows.net/backup?restype=container&comp=list```
+within container was:
+```
+<EnumerationResults ServiceEndpoint="https://defcorpcommon.blob.core.windows.net/" ContainerName="backup">
+<Blobs>
+<Blob>
+<Name>blob_client.py</Name>
+```
+
+So I can try goto this referenced python file thats stored in the blob by going to ````https://defcorpcommon.blob.core.windows.net/backup/blob_client.py```
