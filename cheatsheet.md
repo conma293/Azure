@@ -42,12 +42,17 @@ Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token 
 ```
 
 ## Scripts
+Subdomains:
 ```
 . C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureSubDomains.ps1 
 Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
 ```
 
-
+Storage Blobs:
+```
+. C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureBlobs.ps1 
+Invoke-EnumerateAzureBlobs -Base defcorp
+```
 
 # API Call
 ```
