@@ -1,5 +1,5 @@
 # Tools
-## AzAD
+### AzAD
 ```
 Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1
 ```
@@ -10,7 +10,7 @@ $creds= New-Object System.Management.Automation.PSCredential ("test@defcorphq.on
 Connect-AzureAD -Credential $creds
 ```
 
-## MG
+### MG
 ```
 ```
 ## Azure Powershell
@@ -37,7 +37,7 @@ Get-AzAccessToken -ResourceTypeName MSGraph
 Disconnect-AzAccount
 Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token -MicrosoftGraphAccessToken eyJ0eXA...
 ```
-## Az CLI
+### Az CLI
 ```
 ```
 
