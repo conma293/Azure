@@ -50,7 +50,7 @@ Get-AzResource
 Get-AzAdUser
 Get-AzAdApplication
 ```
-Token reuse:
+### Token reuse:
 ```
 Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com
 
