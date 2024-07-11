@@ -51,7 +51,7 @@ Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
 Storage Blobs:
 
 - We can also add permutations like common, backup, code to ```permutations.txt``` in ```C:\AzAD\Tools\Microburst\Misc``` to tune it for the specific domain we are targetting\
-- Also use Azure Storage Explorer GUI
+- If the browser doesnt allow you access to the referenced blob try using Azure Storage Explorer GUI!
 ```
 . C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureBlobs.ps1 
 Invoke-EnumerateAzureBlobs -Base defcorp
@@ -75,5 +75,10 @@ Headers = @{
 
 URIs:
 ```
+$URI = 'https://graph.microsoft.com/v1.0/users'
+$URI = 'https://management.azure.com/subscriptions?api-version=2020-01-01'
+$URI = 'https://management.azure.com/subscriptions/<SubID>/resources?api-version=2020-10-01'
+$URI = 'https://management.azure.com/subscriptions/<SubID>/resourceGroups/Engineering/providers/Microsoft.Compute/virtualMachines/bkpadconnect/providers/Microsoft.Authorization/permissions?api-version=2015-07-01'
+$URI = 'https://graph.microsoft.com/v1.0/applications'
 
 ```
