@@ -4,6 +4,7 @@
 - AZ Powershell
   - Resources
   - Role Assignments, apps, storage, keyvaults
+- Token abuse
 - Scripts
   - Microburst
     - subdomains
