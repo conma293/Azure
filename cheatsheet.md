@@ -1,3 +1,16 @@
+- AzureAD
+  - Users and groups
+  - Preview Module
+- AZ Powershell
+  - Resources
+  - Role Assignments, apps, storage, keyvaults
+- Scripts
+  - Microburst
+    - subdomains
+    - storage blobs
+- Manual API URLs
+
+
 # Tools
 ### AzAD
 ```
