@@ -1,7 +1,12 @@
-*_Got creds for a test user by password spray or granted a contractor role through creds purchased on dark web._
-REFS:
+**REFS:**
+
 - [Enum](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md)
 - [Tokens](https://github.com/conma293/Azure/blob/main/1.35_Tokens.md)
+
+* * * 
+
+_Got creds for a test user by password spray or granted a contractor role through creds purchased on dark web._
+
 Enumeration and Initial Access
 - Manual Enumeration
   - [Users and Groups with AzureAD](https://github.com/conma293/Azure/blob/main/killcycle.md#azuread)
@@ -16,6 +21,7 @@ Enumeration and Initial Access
 - [Storage Blobs](https://github.com/conma293/Azure/blob/main/killcycle.md#storage-blob)
 
 Privilege Escalation and Lateral Movement
+
 * * *
 
 TLDR:
