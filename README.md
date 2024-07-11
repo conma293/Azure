@@ -7,7 +7,8 @@ CheatSheet
   - [Discovery and Recon of services and applications](https://github.com/conma293/Azure/blob/main/1.1_Recon.md)
     - [externalSpray]()
   - [Azure AD Enumeration](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md)
-  - [Initial Access Attacks] (Enterprise Apps, App Services, Function Apps, Insecure Storage, Phishing, Consent Grant Attacks)
+  - OAuth and Stealing Tokens]
+  - [Initial Access Attacks] (Phishing and Consent Grant Attacks, App stuff, insecure storage)
 - Module 2
   - Enumeration of Azure Services (Storage Accounts, Key vaults, Blobs, Automation Accounts, Deployment History and more)
   - Privilege Escalation (RBAC roles, Azure AD Roles, Across subscriptions, Custom Roles, Resource Ownership, Dynamic Groups etc.
