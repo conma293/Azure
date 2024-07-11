@@ -49,7 +49,7 @@ _in normal environments we would expect to see some Service Principals (that is 
 
 - Lets check if we are the **owner of a device** (and therefore localadmin)? ```Get-AzureADUserOwnedDevice -ObjectId test@defcorphq.onmicrosoft.com```
 - lets see what **devices** are ACTUALLY being **used** (i.e., active): ```Get-AzureADDevice -All $true | ?{$_.ApproximateLastLogonTimeStamp -ne $null}```
-- OK now lets see if there are any **custom roles**? ```Get-AzureADMSRoleDefinition | ?{$_.IsBuiltin -eq $False}``` (May need to use preview module)
+- OK now lets see if there are any **custom roles**? ```Get-AzureADMSRoleDefinition | ?{$_.IsBuiltin -eq $False}``` (May need to use [preview module](https://github.com/conma293/Azure/blob/main/killcycle.md#azure-ad-graph-preview-module))
 - And lets see the **users who have Global admin** role: ```Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember```
 #### MG Module
 You could also use the [MG Module](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration---mg-module) instead if you wanted:
@@ -209,6 +209,7 @@ matches :
 7. Now we can use that access token to access graph API as the phished user (limited to the permissions the user consented to)
 
 NOTE - logs for application consent include permissions - VERBOSE LOG 
+* * *
 
 - First lets check if users can even consent
 
@@ -231,6 +232,7 @@ $Token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
 Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Force)
 (Get-MgPolicyAuthorizationPolicy).DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
 ```
+
 #### Tricky way to get phishing redirect url template
 
 goto ```https://localhost/``` and click readmore - take url from address bar which is a good redirect template:
@@ -243,6 +245,9 @@ https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&cli
 . C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureSubDomains.ps1 
 Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
 ```
+Ok now we are ready to set the trap!
+
+* * *
 
 #### Step 1 - make the app
 
