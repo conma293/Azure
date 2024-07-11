@@ -19,6 +19,10 @@ CheatSheet
   - Defenses, Monitoring and Auditing (CAP, PIM, Microsoft Defender for Cloud, JIT, Identity Protection, CAE, MFA, MTPs, Azure Sentinel)
   - Bypassing Defenses****
 
+* * * 
+
+- Kill Chain
+- CheatSheet
 
 * * *
 
