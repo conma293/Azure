@@ -594,7 +594,7 @@ There are multiple ways to control access to a storage account:
 . C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureBlobs.ps1 
 Invoke-EnumerateAzureBlobs -Base defcorp
 ```
-Results gave me a container - ```https://defcorpcommon.blob.core.windows.net/backup?restype=container&comp=list```
+Results gave me a container "backup" within the storage account "defcorpcommon" - ```https://defcorpcommon.blob.core.windows.net/backup?restype=container&comp=list```
 within container was:
 ```
 <EnumerationResults ServiceEndpoint="https://defcorpcommon.blob.core.windows.net/" ContainerName="backup">
