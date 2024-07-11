@@ -589,5 +589,4 @@ within container was:
 ```
 
 So I can try goto this referenced python file thats stored in the blob by going to ```https://defcorpcommon.blob.core.windows.net/backup/blob_client.py```
-
-we then use Azure Storage Explorer GUI
+- If the browser doesnt allow you access to the referenced blob try using Azure Storage Explorer GUI!
