@@ -28,8 +28,17 @@ Get-AzureADGroupMember -ObjectId 8f7e7d00-12b6-45db-9b84-e221ccab7456 | select d
 
 Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember
 ```
+#### Preview Module for custom roles
+```
+Import-Module C:\AzAD\Tools\AzureADPreview\AzureADPreview.psd1
+$passwd= ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force
+$creds= New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd)
+Connect-AzureAD -Credential $creds
+```
 
-
+```
+Get-AzureADMSRoleDefinition | ?{$_.IsBuiltin -eq $False} | select DisplayName
+```
 
 ### MG
 ```
