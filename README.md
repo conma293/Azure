@@ -6,7 +6,7 @@
     - [externalSpray]()
   - [Azure AD Enumeration](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md)
   - [OAuth and Stealing Tokens]()
-  - [Initial Access Attacks] (Phishing and Consent Grant Attacks, App stuff, insecure storage)
+  - [Initial Access Attacks] (Phishing and Consent Grant Attacks; App Services - Insecure File Upload, Server Side Template Injection (SSTI), OS Command Injection; Insecure Storage)
 - Module 2
   - Enumeration of Azure Services (Storage Accounts, Key vaults, Blobs, Automation Accounts, Deployment History and more)
   - Privilege Escalation (RBAC roles, Azure AD Roles, Across subscriptions, Custom Roles, Resource Ownership, Dynamic Groups etc.
