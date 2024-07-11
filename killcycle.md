@@ -572,7 +572,7 @@ There are multiple ways to control access to a storage account:
   - Data plane roles
     - i.e., storage blob data reader - do not allow you to managed the storage account, only access the data stored inside
 - shared keys (not changed or rotated automatically)
-- shared access signatures (SAS)
+- shared access signatures (SAS); can be shared/used as URIs
 
 ```
 . C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureBlobs.ps1 
