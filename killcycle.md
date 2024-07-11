@@ -1,5 +1,7 @@
 *_Got creds for a test user by password spray or granted a contractor role through creds purchased on dark web._
-
+REFS:
+- [Enum](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md)
+- [Tokens](https://github.com/conma293/Azure/blob/main/1.35_Tokens.md)
 Enumeration and Initial Access
 - Manual Enumeration
   - [Users and Groups with AzureAD](https://github.com/conma293/Azure/blob/main/killcycle.md#azuread)
