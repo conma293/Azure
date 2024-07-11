@@ -5,7 +5,7 @@
   - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
   - [Role Assignments, apps, storage, keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#other-enum)
 - [Token abuse](https://github.com/conma293/Azure/blob/main/cheatsheet.md#token-reuse)
-- [Scripts]
+- [Scripts](https://github.com/conma293/Azure/blob/main/cheatsheet.md#scripts)
   - [Microburst]
     - [subdomains]
     - [storage blobs]
