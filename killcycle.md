@@ -212,7 +212,7 @@ NOTE - logs for application consent include permissions - VERBOSE LOG
 
 - First lets check if users can even consent
 
-Azure AD Graph PREVIEW:
+#### Azure AD Graph PREVIEW MODULE:
 ```
 Import-Module C:\AzAD\Tools\AzureADPreview\AzureADPreview.psd1
 $passwd= ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force
