@@ -9,7 +9,7 @@
   - [Microburst]
     - [subdomains]
     - [storage blobs]
-- [Manual API URLs]
+- [Manual APIs and common URLS](https://github.com/conma293/Azure/blob/main/cheatsheet.md#api-call)
 
 
 # Tools
