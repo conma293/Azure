@@ -2,7 +2,7 @@
   - [Users and groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-and-groups)
   - [Preview Module for custom role and policy](https://github.com/conma293/Azure/blob/main/cheatsheet.md#preview-module-for-custom-roles)
 - [AZ Powershell]
-  - [Resources]
+  - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
   - [Role Assignments, apps, storage, keyvaults
 - [Token abuse]
 - [Scripts]
