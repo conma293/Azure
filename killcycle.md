@@ -2,6 +2,8 @@
 
 
 - Manual Enumeration
+  - [Users and Groups with AzureAD]
+  - [Resources and vms, apps with Az Powershell]
 - [Stealing Tokens](https://github.com/conma293/Azure/blob/main/killcycle.md#tokens)
 - [Enum tools](https://github.com/conma293/Azure/blob/main/killcycle.md#tools)
 - [Consent Abuse - phish link to malicious app for consent grab](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
