@@ -542,7 +542,7 @@ $graphaccesstoken = 'eyJ0eX..'
 ```
 
 ```
-$URI = ' https://graph.microsoft.com/v1.0/applications'
+$URI = 'https://graph.microsoft.com/v1.0/applications'
 $RequestParams = @{
 Method = 'GET'
 Uri = $URI
