@@ -60,6 +60,18 @@ Get-AzResource
 Get-AzAdUser
 Get-AzAdApplication
 ```
+
+More useful enum:
+```
+Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
+Get-AzVM | fl *
+Get-AzWebApp
+Get-AzWebApp | ?{$_.Kind -notmatch "functionapp"}
+Get-AzFunctionApp
+Get-AzWebApp | select name, HostNames, kind, state, identity
+Get-AzStorageAccount | fl
+Get-AzKeyVault
+```
 ### Token reuse:
 ```
 Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com
