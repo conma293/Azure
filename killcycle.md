@@ -613,3 +613,6 @@ Home> Automation Accounts> HybridAutomation | Runbooks
 - Runbooks have a bunch of resources in them: powershell modules, python is available, credentials, certificates, etc. in GUI form. 
 - Also they are very likely to be associated with a Managed Identity because they need to access other resources
 - There is another account called "Run as" accounts - they are retired but if you find one = profit! Contributor role, easily abusable, and was by default
+- Can run them as:
+  - Azure Sandbox - spins up temporary container to execute code
+  - Hybrid Runbook Worker - 
