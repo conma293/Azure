@@ -2,7 +2,7 @@
 
 
 - Manual Enumeration
-  - [Users and Groups with AzureAD]
+  - [Users and Groups with AzureAD](https://github.com/conma293/Azure/blob/main/killcycle.md#azuread)
   - [Resources and vms, apps with Az Powershell]
 - [Stealing Tokens](https://github.com/conma293/Azure/blob/main/killcycle.md#tokens)
 - [Enum tools](https://github.com/conma293/Azure/blob/main/killcycle.md#tools)
