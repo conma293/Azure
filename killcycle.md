@@ -1,6 +1,6 @@
 *_Got creds for a test user by password spray or granted a contractor role through creds purchased on dark web._
 
-
+Enumeration and Initial Access
 - Manual Enumeration
   - [Users and Groups with AzureAD](https://github.com/conma293/Azure/blob/main/killcycle.md#azuread)
   - [Resources and vms, apps with Az Powershell](https://github.com/conma293/Azure/blob/main/killcycle.md#az-powershell)
@@ -13,6 +13,7 @@
   - [OS Command Injection](https://github.com/conma293/Azure/blob/main/killcycle.md#command-injection)
 - [Storage Blobs](https://github.com/conma293/Azure/blob/main/killcycle.md#storage-blob)
 
+Privilege Escalation and Lateral Movement
 * * *
 
 TLDR:
