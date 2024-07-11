@@ -609,6 +609,7 @@ So I can try goto this referenced python file thats stored in the blob by going 
 - Right click on Storage Accounts > Add Azure Storage > Blob Container/Storage Account > Using SAS > Paste the link
 
 # Runbooks
-Runbooks have a bunch of resources in them: powershell modules, python is available, credentials, certificates, etc. in GUI form. 
+Home> Automation Accounts> HybridAutomation | Runbooks
+- Runbooks have a bunch of resources in them: powershell modules, python is available, credentials, certificates, etc. in GUI form. 
 - Also they are very likely to be associated with a Managed Identity because they need to access other resources
 - There is another account called "Run as" accounts - they are retired but if you find one = profit! Contributor role, easily abusable, and was by default
