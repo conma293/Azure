@@ -9,6 +9,25 @@ $passwd= ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlain
 $creds= New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd)
 Connect-AzureAD -Credential $creds
 ```
+#### Useful enum
+```
+Get-AzureADUserMembership -ObjectId test@defcorphq.onmicrosoft.com
+
+Get-AzureADGroup -ObjectId e6870783-1378-4078-b242-84c08c6dc0d7 | fl *
+Get-AzureADGroupMember -ObjectId e6870783-1378-4078-b242-84c08c6dc0d7
+
+Get-AzureADUser -SearchString 'admin'
+Get-AzureADUser -SearchString 'admin' | Get-AzureADUserMembership
+
+Get-AzureADUserMembership -ObjectId admin@defcorphq.onmicrosoft.com
+Get-AzureADUserMembership -ObjectId admin@defcorphq.onmicrosoft.com | select displayname, mail, objecttype
+
+Get-AzureADGroupMember -ObjectId 9240b75e-823c-4c02-8868-a00ddbeb3fa1
+Get-AzureADGroupMember -ObjectId 8f7e7d00-12b6-45db-9b84-e221ccab7456
+Get-AzureADGroupMember -ObjectId 8f7e7d00-12b6-45db-9b84-e221ccab7456 | select displayname, mail, objecttype
+```
+
+
 
 ### MG
 ```
