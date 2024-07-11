@@ -1,15 +1,15 @@
-- AzureAD
-  - Users and groups
-  - Preview Module
-- AZ Powershell
-  - Resources
-  - Role Assignments, apps, storage, keyvaults
-- Token abuse
-- Scripts
-  - Microburst
-    - subdomains
-    - storage blobs
-- Manual API URLs
+- [AzureAD]
+  - [Users and groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-and-groups)
+  - [Preview Module](
+- [AZ Powershell]
+  - [Resources]
+  - [Role Assignments, apps, storage, keyvaults
+- [Token abuse]
+- [Scripts]
+  - [Microburst]
+    - [subdomains]
+    - [storage blobs]
+- [Manual API URLs]
 
 
 # Tools
