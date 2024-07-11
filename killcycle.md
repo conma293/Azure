@@ -21,7 +21,7 @@ Enumeration and Initial Access
 - [Storage Blobs](https://github.com/conma293/Azure/blob/main/killcycle.md#storage-blob)
 
 Privilege Escalation and Lateral Movement
-
+- Runbooks
 * * *
 
 TLDR:
@@ -607,3 +607,7 @@ within container was:
 So I can try goto this referenced python file thats stored in the blob by going to ```https://defcorpcommon.blob.core.windows.net/backup/blob_client.py```
 - The browser doesnt allow access to the referenced blob so we try using Azure Storage Explorer GUI!
 - Right click on Storage Accounts > Add Azure Storage > Blob Container/Storage Account > Using SAS > Paste the link
+
+# Runbooks
+Runbooks have a bunch of resources in them: powershell modules, python is available, credentials, certificates, etc. in GUI form. 
+- Also they are very likely to be associated with a Managed Identity because they need to access other resources
