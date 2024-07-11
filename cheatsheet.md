@@ -38,6 +38,7 @@ Connect-AzureAD -Credential $creds
 
 ```
 Get-AzureADMSRoleDefinition | ?{$_.IsBuiltin -eq $False} | select DisplayName
+(Get-AzureADMSAuthorizationPolicy).PermissionGrantPolicyIdsAssignedToDefaultUserRole
 ```
 
 ### MG
