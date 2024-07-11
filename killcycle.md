@@ -212,12 +212,6 @@ matches :
 NOTE - logs for application consent include permissions - VERBOSE LOG 
 
 First lets check if users can even consent
-```
-$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force 
-$creds = New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd) 
-Connect-AzAccount -Credential $creds
-$Token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
-```
 
 Azure AD Graph PREVIEW:
 ```
@@ -227,10 +221,14 @@ $creds= New-Object System.Management.Automation.PSCredential ("test@defcorphq.on
 Connect-AzureAD -Credential $creds
 (Get-AzureADMSAuthorizationPolicy).PermissionGrantPolicyIdsAssignedToDefaultUserRole
 ```
-**ManagePermissionGrantsForSelf.microsoft-user-default-legacy**
+**ManagePermissionGrantsForSelf.microsoft-user-default-legacy** means we can
 
 OR MS Graph:
 ```
+$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force 
+$creds = New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd) 
+Connect-AzAccount -Credential $creds
+$Token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
 Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Force)
 (Get-MgPolicyAuthorizationPolicy).DefaultUserRolePermissions.PermissionGrantPoliciesAssigned
 ```
