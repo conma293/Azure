@@ -35,11 +35,10 @@ We have compromised a user "Test", so first thing after [logging in](https://git
 Get-AzureADUser -SearchString 'test'
 Get-AzureADUserMembership -ObjectId test@defcorphq.onmicrosoft.com
 ```
-Can we see much more information about this **group**? ```Get-AzureADGroup -ObjectId e6870783-1378-4078-b242-84c08c6dc0d7 | fl *```
-**Who** else is in this **group**? (everyone):  ```Get-AzureADGroupMember -ObjectId e6870783-1378-4078-b242-84c08c6dc0d7```
+- Can we see much more information about this **group**? ```Get-AzureADGroup -ObjectId e6870783-1378-4078-b242-84c08c6dc0d7 | fl *```
+- **Who** else is in this **group**?:  ```Get-AzureADGroupMember -ObjectId e6870783-1378-4078-b242-84c08c6dc0d7```
 
-
-Ok lets look for **admin users**:
+- Ok lets look for **admin users**:
 ```
 Get-AzureADUser -SearchString 'admin' | Get-AzureADUserMembership
 Get-AzureADUserMembership -ObjectId admin@defcorphq.onmicrosoft.com
