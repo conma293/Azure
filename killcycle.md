@@ -21,7 +21,7 @@ Enumeration and Initial Access
 - [Storage Blobs](https://github.com/conma293/Azure/blob/main/killcycle.md#storage-blob)
 
 Privilege Escalation and Lateral Movement
-- [Runbooks](https://github.com/conma293/Azure/blob/main/killcycle.md#runbooks)
+- [Runbooks - latmove and privesc](https://github.com/conma293/Azure/blob/main/killcycle.md#runbooks)
 * * *
 
 TLDR:
