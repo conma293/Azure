@@ -211,7 +211,7 @@ matches :
 
 NOTE - logs for application consent include permissions - VERBOSE LOG 
 
-First lets check if users can even consent
+- First lets check if users can even consent
 
 Azure AD Graph PREVIEW:
 ```
@@ -221,7 +221,7 @@ $creds= New-Object System.Management.Automation.PSCredential ("test@defcorphq.on
 Connect-AzureAD -Credential $creds
 (Get-AzureADMSAuthorizationPolicy).PermissionGrantPolicyIdsAssignedToDefaultUserRole
 ```
-**ManagePermissionGrantsForSelf.microsoft-user-default-legacy** means we can
+_**ManagePermissionGrantsForSelf.microsoft-user-default-legacy**_ means we can!
 
 OR MS Graph:
 ```
