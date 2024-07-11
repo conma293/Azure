@@ -615,4 +615,5 @@ Home> Automation Accounts> HybridAutomation | Runbooks
 - There is another account called "Run as" accounts - they are retired but if you find one = profit! Contributor role, easily abusable, and was by default
 - Can run them as:
   - Azure Sandbox - spins up temporary container to execute code
-  - Hybrid Runbook Worker - want to run the code on a non-azure machine i.e., on-prem, GCP or whatever. You run an agent on the target machine - runs as SYSTEM on Windows; nxautomation on Linux 
+  - Hybrid Runbook Worker - An installed agent on a non-azure machine i.e., on-prem, GCP - runs as SYSTEM on Windows; nxautomation on Linux
+    - therefore if we can find a hybrid workers group and we can create runbooks we effectively have RCE on that host
