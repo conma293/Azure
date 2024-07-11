@@ -3,7 +3,7 @@
   - [Preview Module for custom role and policy](https://github.com/conma293/Azure/blob/main/cheatsheet.md#preview-module-for-custom-roles)
 - [AZ Powershell]
   - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
-  - [Role Assignments, apps, storage, keyvaults
+  - [Role Assignments, apps, storage, keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#other-enum)
 - [Token abuse]
 - [Scripts]
   - [Microburst]
