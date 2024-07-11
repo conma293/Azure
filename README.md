@@ -1,5 +1,6 @@
 # CARTP
-
+Kill Chain
+CheatSheet
 
 - Module 1
   - [Introduction to Azure](https://github.com/conma293/Azure/blob/main/1.0_Intro.md)
