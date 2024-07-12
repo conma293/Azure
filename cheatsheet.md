@@ -108,7 +108,6 @@ Get-AzRoleAssignment -Scope </sub/resources/etc> | select RoleDefinitionName, Ob
 
 #### Hybrid Worker Groups
 ```
-Get-AzAutomationHybridWorkerGroup 
 Get-AzAutomationHybridWorkerGroup -AutomationAccountName HybridAutomation -ResourceGroupName Engineering
 ```
 
