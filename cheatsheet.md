@@ -4,14 +4,14 @@
 - [AZ Powershell]
   - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
   - [Role Assignments, apps, storage, keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#other-enum)
-- [Token abuse](https://github.com/conma293/Azure/blob/main/cheatsheet.md#token-reuse)
-  - [Pivot with tokens](https://github.com/conma293/Azure/blob/main/cheatsheet.md#pivot-from-shell-stealing-tokens)
 - [Az CLI](https://github.com/conma293/Azure/blob/main/cheatsheet.md#az-cli)
   - [probing logged on user interactive](https://github.com/conma293/Azure/blob/main/cheatsheet.md#az-cli)
 - [Scripts](https://github.com/conma293/Azure/blob/main/cheatsheet.md#scripts)
   - [Microburst]
     - [subdomains]
     - [storage blobs]
+- [Token abuse](https://github.com/conma293/Azure/blob/main/cheatsheet.md#token-reuse)
+  - [Pivot with tokens](https://github.com/conma293/Azure/blob/main/cheatsheet.md#pivot-from-shell-stealing-tokens)
 - [Manual APIs and common URLS](https://github.com/conma293/Azure/blob/main/cheatsheet.md#api-call)
 
 
@@ -89,31 +89,6 @@ Get-AzWebApp | select name, HostNames, kind, state, identity
 Get-AzStorageAccount | fl
 Get-AzKeyVault
 ```
-### Token reuse:
-```
-Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com
-
-Get-AzAccessToken -ResourceTypeName MSGraph
-Disconnect-AzAccount
-Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token -MicrosoftGraphAccessToken eyJ0eXA...
-```
-
-#### Pivot from shell stealing tokens
-- On victim shell:
-```
-az account get-access-token
-az account get-access-token --resource-type aad-graph
-```
-
-- Open another Powershell console:
-```
-PS C:\AzAD\Tools> $AccessToken = 'eyJ0…'
-PS C:\AzAD\Tools> $AADToken = 'eyJ0…'
-```
-Now you can connect; ```-AccountID``` is victimID you stole the tokens from:
-```
-Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
-```
 
 ### Az CLI 
 
@@ -144,6 +119,32 @@ To be able to interact with Azure AD:
 ```
 . C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureSubDomains.ps1 
 Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
+```
+
+### Token reuse:
+```
+Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com
+
+Get-AzAccessToken -ResourceTypeName MSGraph
+Disconnect-AzAccount
+Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token -MicrosoftGraphAccessToken eyJ0eXA...
+```
+
+#### Pivot from shell stealing tokens
+- On victim shell:
+```
+az account get-access-token
+az account get-access-token --resource-type aad-graph
+```
+
+- Open another Powershell console:
+```
+PS C:\AzAD\Tools> $AccessToken = 'eyJ0…'
+PS C:\AzAD\Tools> $AADToken = 'eyJ0…'
+```
+Now you can connect; ```-AccountID``` is victimID you stole the tokens from:
+```
+Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
 ```
 
 #### Storage Blobs:
