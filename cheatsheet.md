@@ -3,9 +3,9 @@
   - [Preview Module for custom role and policy](https://github.com/conma293/Azure/blob/main/cheatsheet.md#preview-module-for-custom-roles)
 - AZ Powershell
   - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
-  - [VMS, apps, storage, keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#other-enum)
-  - [Role Assignments]
-  - [Runbooks and Hybrid Worker Groups]
+  - [VMS, apps, storage, keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vms-apps-storage-keyvaults)
+  - [Role Assignments](
+  - [Runbooks and Hybrid Worker Groups](
 - Az CLI
   - [Current user and objects](https://github.com/conma293/Azure/blob/main/cheatsheet.md#current-users-and-objects)
   - list
