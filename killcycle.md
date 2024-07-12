@@ -741,7 +741,7 @@ Publish-AzAutomationRunbook -RunbookName studentx -AutomationAccountName HybridA
 #### Run runbook
 - Start a netcat listener on your student VM. Remember to listen on the port that you specified in the runbook studentx:
 ```
-C:\AzAD\Tools\netcat-win32-1.12\nc.exe -lvp 4444
+C:\AzAD\Tools\netcat-win32-1.12\nc64.exe -lvp 4444
 ```
 
 Finally, start the runbook: 
