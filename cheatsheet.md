@@ -97,6 +97,10 @@ Disconnect-AzAccount
 Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token -MicrosoftGraphAccessToken eyJ0eXA...
 ```
 ### Az CLI 
+To retrieve the account ID (also known as the subscription ID) using the Azure Command Line Interface (CLI):
+```
+az account show --query "id" -o tsv
+```
 
 ```
 az ad signed-in-user show
