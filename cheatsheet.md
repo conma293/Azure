@@ -94,6 +94,10 @@ Get-AzKeyVault
 ```
 
 ### Az CLI 
+```
+--query "[].{roleDefinitionName, principalName, scope}" -o table
+--query "[].{name: displayName, type: objectType, id: objectId}" --output table
+```
 #### Current users and objects
 ```
 az ad signed-in-user show
