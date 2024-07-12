@@ -1,10 +1,10 @@
-- [AzureAD]
+- AzureAD
   - [Users and groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-and-groups)
   - [Preview Module for custom role and policy](https://github.com/conma293/Azure/blob/main/cheatsheet.md#preview-module-for-custom-roles)
-- [AZ Powershell]
+- AZ Powershell
   - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
   - [Role Assignments, apps, storage, keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#other-enum)
-- [Az CLI](https://github.com/conma293/Azure/blob/main/cheatsheet.md#az-cli)
+- Az CLI
   - [Current user and objects](https://github.com/conma293/Azure/blob/main/cheatsheet.md#current-users-and-objects))
   - list
   - automation
