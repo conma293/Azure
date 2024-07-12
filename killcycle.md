@@ -668,7 +668,8 @@ Connect-AzureAD -AadAccessToken $aadToken -TenantId 2d50cb29-5f7b-48a4-87ce-fe75
 
 
 #### Adding to group 
-- Now, let's add Mark as a member of the group. 
+- To be able to enumerate resources to the group we need a reader role for the group (even though we are the owner?)
+- So, let's add Mark (the owner) as a member of the group. 
   - MG:
   - In the below command ```–GroupId``` is for the group object id.
 ```
