@@ -49,12 +49,6 @@ Get-AzureADGroupMember -ObjectId 8f7e7d00-12b6-45db-9b84-e221ccab7456 | select d
 Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember
 ```
 
-#### Role Assignments
-```
-Get-AzRoleAssignment
-Get-AzRoleAssignment -Scope </sub/resources/etc>
-```
-
 
 #### Preview Module for custom roles
 ```
@@ -91,7 +85,6 @@ Get-AzAdApplication
 
 #### Other enum:
 ```
-Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
 Get-AzVM | fl *
 Get-AzWebApp
 Get-AzWebApp | ?{$_.Kind -notmatch "functionapp"}
@@ -99,6 +92,17 @@ Get-AzFunctionApp
 Get-AzWebApp | select name, HostNames, kind, state, identity
 Get-AzStorageAccount | fl
 Get-AzKeyVault
+```
+
+#### Role Assignments
+```
+Get-AzRoleAssignment
+Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
+
+Pivot on all scope:
+Get-AzRoleAssignment -Scope </sub/resources/etc>
+Get-AzRoleAssignment -Scope </sub/resources/etc> | select RoleDefinitionName, ObjectId, ObjectType
+
 ```
 
 ### Az CLI 
