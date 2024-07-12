@@ -661,6 +661,12 @@ Or using AzureAD:
 Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1
 Connect-AzureAD -AadAccessToken $aadToken -TenantId 2d50cb29-5f7b-48a4-87ce-fe75a941adb6 -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
 ```
+To retrieve the account ID (also known as the subscription ID) using the Azure Command Line Interface (CLI), you can use the following command:
+```
+az account show --query "id" -o tsv
+```
+
+
 #### Adding to group 
 - Now, let's add Mark as a member of the group. In the below command ```–GroupId``` is for the group object id.
   - MG:
