@@ -635,6 +635,8 @@ az automation account list
 - check for objects owned by the current user:
 ```az ad signed-in-user list-owned-objects```
 
+#### Further recon on Student VM
+
 - To be able to interact with Azure AD, request a token for the ms-graph. We can use that token with the MS Graph module: 
 ```
 az account get-access-token --resource-type ms-graph
