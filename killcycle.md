@@ -636,7 +636,9 @@ az automation account list
 ```az ad signed-in-user list-owned-objects```
 
 - To be able to interact with Azure AD, request a token for the ms-graph. We can use that token with the MS Graph module: 
-```az account get-access-token --resource-type ms-graph```
+```
+az account get-access-token --resource-type ms-graph
+```
 
 - Now that we have his token, we can use it from our student VM, not rely on the brittle Reverse shell:
 ```
