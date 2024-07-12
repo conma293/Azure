@@ -26,7 +26,7 @@ Privilege Escalation and Lateral Movement
   - [Steal tokens from Az CLI for latmove](https://github.com/conma293/Azure/blob/main/killcycle.md#steal-tokens-for-student-vm)
   - [Add user to group in stolen session so we can enum resources](https://github.com/conma293/Azure/blob/main/killcycle.md#adding-to-group)
   - [enum Role Assignments (automation groups)](https://github.com/conma293/Azure/blob/main/killcycle.md#enumerate-resources-ie-role-assignments-for-automation-account)
-  - [Create runbook](
+  - [Create runbook](https://github.com/conma293/Azure/blob/main/killcycle.md#create-runbook)
 * * *
 
 TLDR:
@@ -618,7 +618,8 @@ So I can try goto this referenced python file thats stored in the blob by going 
 Home> Automation Accounts> HybridAutomation | Runbooks
 - Runbooks have a bunch of resources in them: powershell modules, python is available, credentials, certificates, etc. in GUI form. 
 - Also they are very likely to be associated with a Managed Identity because they need to access other resources
-- There is another account called "Run as" accounts - they are retired but if you find one = profit! Contributor role, easily abusable, and was by default
+- There is another account called "Run as" accounts - they are retired but if you find one = profit!
+- **Contributor** role, easily abusable, and was by default
 - Can run them as:
   - Azure Sandbox - spins up temporary container to execute code
   - Hybrid Runbook Worker - An installed agent on a non-azure machine i.e., on-prem, GCP - runs as SYSTEM on Windows; nxautomation on Linux
