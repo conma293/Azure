@@ -9,12 +9,13 @@
 - Az CLI
   - [Current user and objects](https://github.com/conma293/Azure/blob/main/cheatsheet.md#current-users-and-objects)
   - [Automation account](https://github.com/conma293/Azure/blob/main/cheatsheet.md#automation-account)
+- [Tokens Az Powershell](https://github.com/conma293/Azure/blob/main/cheatsheet.md#token-reuse)
+- [Pivot with tokens (Az CLI to Az Powershell)](https://github.com/conma293/Azure/blob/main/cheatsheet.md#pivot-from-shell-stealing-tokens)    
 - [Scripts](https://github.com/conma293/Azure/blob/main/cheatsheet.md#scripts)
   - [Microburst]
     - [subdomains]
     - [storage blobs]
-- [Token abuse](https://github.com/conma293/Azure/blob/main/cheatsheet.md#token-reuse)
-  - [Pivot with tokens](https://github.com/conma293/Azure/blob/main/cheatsheet.md#pivot-from-shell-stealing-tokens)
+
 - [Manual APIs and common URLS](https://github.com/conma293/Azure/blob/main/cheatsheet.md#api-call)
 
 
@@ -130,20 +131,11 @@ az ad signed-in-user list-owned-objects --query "[].{name: displayName, type: ob
 az extension add --upgrade -n automation
 az automation account list
 ```
-
-
 To be able to interact with Azure AD:
 - request a token for the ms-graph: ```az account get-access-token --resource-type ms-graph```
 - or request a token for the aad-graph: ```az account get-access-token --resource-type aad-graph```
 - And request a token for resources (ARM): ```az account get-access-token```
 - And then connect: ```Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId <VictimObjectId>```
-
-## Scripts
-#### Subdomains:
-```
-. C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureSubDomains.ps1 
-Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
-```
 
 ### Token reuse:
 ```
@@ -170,6 +162,16 @@ Now you can connect; ```-AccountID``` is victimID you stole the tokens from:
 ```
 Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
 ```
+
+
+## Scripts
+#### Subdomains:
+```
+. C:\AzAD\Tools\MicroBurst\Misc\Invoke-EnumerateAzureSubDomains.ps1 
+Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
+```
+
+
 
 #### Storage Blobs:
 
