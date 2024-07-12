@@ -683,7 +683,7 @@ New-MgGroupMemberByRef -GroupId e6870783-1378-4078-b242-84c08c6dc0d7 -BodyParame
 ```
 Add-AzureADGroupMember -ObjectId e6870783-1378-4078-b242-84c08c6dc0d7 -RefObjectId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3 -Verbose
 ```
-#### Enumerate resources i.e., Automation Account
+#### Enumerate resources i.e., Role Assignments for Automation Account
 - Now moving back to the shell, and having added Mark to the group, we should be able to enum resources i.e., Automation Accounts
 - Now, we can use az cli to check for automation accounts. Run the below command on the reverse shell:
 ```az automation account list```
