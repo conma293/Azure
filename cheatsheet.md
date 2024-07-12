@@ -110,9 +110,9 @@ az account get-access-token --resource-type aad-graph
 PS C:\AzAD\Tools> $AccessToken = 'eyJ0…'
 PS C:\AzAD\Tools> $AADToken = 'eyJ0…'
 ```
-Now you can connect:
+Now you can connect; ```-AccountID``` is victimID you stole the tokens from:
 ```
-Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken
+Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
 ```
 
 ### Az CLI 
