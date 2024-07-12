@@ -22,6 +22,9 @@ Enumeration and Initial Access
 
 Privilege Escalation and Lateral Movement
 - [Runbooks - latmove and privesc](https://github.com/conma293/Azure/blob/main/killcycle.md#runbooks)
+  - first
+  - pivot
+  - add to group
 * * *
 
 TLDR:
