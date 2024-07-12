@@ -48,6 +48,14 @@ Get-AzureADGroupMember -ObjectId 8f7e7d00-12b6-45db-9b84-e221ccab7456 | select d
 
 Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember
 ```
+
+#### Role Assignments
+```
+Get-AzRoleAssignment
+Get-AzRoleAssignment -Scope </sub/resources/etc>
+```
+
+
 #### Preview Module for custom roles
 ```
 Import-Module C:\AzAD\Tools\AzureADPreview\AzureADPreview.psd1
@@ -111,11 +119,6 @@ az extension add --upgrade -n automation
 az automation account list
 ```
 
-#### Role Assignments
-```
-Get-AzRoleAssignment
-Get-AzRoleAssignment -Scope </sub/resources/etc>
-```
 
 To be able to interact with Azure AD:
 - request a token for the ms-graph: ```az account get-access-token --resource-type ms-graph```
