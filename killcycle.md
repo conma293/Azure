@@ -25,7 +25,8 @@ Privilege Escalation and Lateral Movement
   - Az CLI Recon
   - [Steal tokens from Az CLI for latmove](https://github.com/conma293/Azure/blob/main/killcycle.md#steal-tokens-for-student-vm)
   - Add user to group in stolen session so we can enum resources
-  - enum resources (automation groups)
+  - enum roles (automation groups)
+  - Create runbook
 * * *
 
 TLDR:
@@ -710,6 +711,8 @@ PS C:\AzAD\Tools> Get-AzRoleAssignment -Scope /subscriptions/b413826f-108d-4049-
 
 - Sweet! The above output means Mark has Contributor role on the automation account.
 - This means we can create and execute Runbooks!
+
+#### Create Runbook
 - Use the below command to check if a hybrid worker group is in use by the automation account:
 ```
 PS C:\AzAD\Tools> Get-AzAutomationHybridWorkerGroup -AutomationAccountName HybridAutomation -ResourceGroupName Engineering
