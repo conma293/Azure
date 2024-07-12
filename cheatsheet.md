@@ -83,7 +83,7 @@ Get-AzAdUser
 Get-AzAdApplication
 ```
 
-#### Other enum:
+#### VMs, Apps, Storage, Keyvaults:
 ```
 Get-AzVM | fl *
 Get-AzWebApp
@@ -102,10 +102,17 @@ Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDe
 Pivot on all scope:
 Get-AzRoleAssignment -Scope </sub/resources/etc>
 Get-AzRoleAssignment -Scope </sub/resources/etc> | select RoleDefinitionName, ObjectId, ObjectType
-
 ```
 
-### Az CLI 
+#### Hybrid Worker Groups
+```
+Get-AzAutomationHybridWorkerGroup 
+Get-AzAutomationHybridWorkerGroup -AutomationAccountName HybridAutomation -ResourceGroupName Engineering
+```
+
+
+
+## Az CLI 
 ```
 --query "[].{roleDefinitionName, principalName, scope}" -o table
 --query "[].{name: displayName, type: objectType, id: objectId}" --output table
