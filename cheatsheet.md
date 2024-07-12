@@ -99,8 +99,16 @@ Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token 
 ### Az CLI
 ```
 az ad signed-in-user show
+az ad signed-in-user list-owned-objects
+```
 
 ```
+az extension add --upgrade -n automation
+az automation account list
+```
+
+To be able to interact with Azure AD, request a token for the ms-graph: ```az account get-access-token --resource-type ms-graph```
+
 
 ## Scripts
 #### Subdomains:
