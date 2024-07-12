@@ -99,7 +99,9 @@ Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token 
 ### Az CLI
 ```
 az ad signed-in-user show
+
 az ad signed-in-user list-owned-objects
+az ad signed-in-user list-owned-objects --query "[].{name: displayName, type: objectType, id: objectId}" --output table
 ```
 
 ```
