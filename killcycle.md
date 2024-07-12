@@ -712,11 +712,13 @@ PS C:\AzAD\Tools> Get-AzRoleAssignment -Scope /subscriptions/b413826f-108d-4049-
 - Sweet! The above output means Mark has Contributor role on the automation account.
 - This means we can create and execute Runbooks!
 
-#### Create Runbook
 - Use the below command to check if a hybrid worker group is in use by the automation account:
 ```
 PS C:\AzAD\Tools> Get-AzAutomationHybridWorkerGroup -AutomationAccountName HybridAutomation -ResourceGroupName Engineering
 ```
+
+#### Create Runbook
+
 
 - Import ```C:\AzAD\Tools\studentx.ps1``` as a PowerShell runbook. This script downloads the Invoke-PowerShellTCP.ps1 reverse shell from your student VM and runs on the hybrid worker.
 ```
