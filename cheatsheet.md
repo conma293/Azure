@@ -96,7 +96,9 @@ Get-AzAccessToken -ResourceTypeName MSGraph
 Disconnect-AzAccount
 Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token -MicrosoftGraphAccessToken eyJ0eXA...
 ```
-### Az CLI
+### Az CLI 
+```--query "[].{name, type, object, resourceGroup, id}" -o```
+
 ```
 az ad signed-in-user show
 
