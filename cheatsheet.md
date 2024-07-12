@@ -116,10 +116,6 @@ Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -Account
 ```
 
 ### Az CLI 
-To retrieve the account ID (also known as the subscription ID) using the Azure Command Line Interface (CLI):
-```
-az account show --query "id" -o tsv
-```
 
 ```
 az ad signed-in-user show
@@ -132,9 +128,16 @@ az ad signed-in-user list-owned-objects --query "[].{name: displayName, type: ob
 az extension add --upgrade -n automation
 az automation account list
 ```
+Role Assignments:
+```
+Get-AzRoleAssignment -Scope </sub/resources/etc>
+```
 
-To be able to interact with Azure AD, request a token for the ms-graph: ```az account get-access-token --resource-type ms-graph```
-
+To be able to interact with Azure AD:
+- request a token for the ms-graph: ```az account get-access-token --resource-type ms-graph```
+- or request a token for the aad-graph: ```az account get-access-token --resource-type aad-graph```
+- And request a token for resources (ARM): ```az account get-access-token```
+- And then connect: ```Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId <VictimObjectId>```
 
 ## Scripts
 #### Subdomains:
