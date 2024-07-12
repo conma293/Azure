@@ -5,6 +5,8 @@
   - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
   - [Role Assignments, apps, storage, keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#other-enum)
 - [Token abuse](https://github.com/conma293/Azure/blob/main/cheatsheet.md#token-reuse)
+- [Az CLI]
+  - [probing logged on user interactive]
 - [Scripts](https://github.com/conma293/Azure/blob/main/cheatsheet.md#scripts)
   - [Microburst]
     - [subdomains]
@@ -96,6 +98,8 @@ Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token 
 ```
 ### Az CLI
 ```
+az ad signed-in-user show
+
 ```
 
 ## Scripts
