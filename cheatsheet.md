@@ -100,8 +100,10 @@ Get-AzKeyVault
 ```
 Get-AzRoleAssignment
 Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
+```
 
 Pivot on all scope:
+```
 Get-AzRoleAssignment -Scope </sub/resources/etc>
 Get-AzRoleAssignment -Scope </sub/resources/etc> | select RoleDefinitionName, ObjectId, ObjectType
 ```
