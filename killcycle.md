@@ -640,10 +640,14 @@ az automation account list
 
 #### Steal tokens for Student VM
 
-- To be able to interact with Azure AD, request a token for graph. We can use that token with either module: 
+- To be able to interact with Azure AD, request a token for graph. We can use that token with either module
+- MG:
 ```
 az account get-access-token --resource-type ms-graph
 $mgToken = 'eyJ0..'
+```
+or AAD:
+```
 az account get-access-token --resource-type aad-graph
 $aadToken = 'eyJ0..'
 ```
