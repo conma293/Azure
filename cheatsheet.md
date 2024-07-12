@@ -91,20 +91,22 @@ Get-AzKeyVault
 ```
 
 ### Az CLI 
-
+#### Current users and objects
 ```
 az ad signed-in-user show
 
 az ad signed-in-user list-owned-objects
 az ad signed-in-user list-owned-objects --query "[].{name: displayName, type: objectType, id: objectId}" --output table
 ```
-
+#### Automation Account
 ```
 az extension add --upgrade -n automation
 az automation account list
 ```
-Role Assignments:
+
+#### Role Assignments
 ```
+Get-AzRoleAssignment
 Get-AzRoleAssignment -Scope </sub/resources/etc>
 ```
 
