@@ -8,9 +8,7 @@
   - [Runbooks and Hybrid Worker Groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#hybrid-worker-groups)
 - Az CLI
   - [Current user and objects](https://github.com/conma293/Azure/blob/main/cheatsheet.md#current-users-and-objects)
-  - list
-  - automation
-  - role assignments
+  - [Automation account](https://github.com/conma293/Azure/blob/main/cheatsheet.md#automation-account)
 - [Scripts](https://github.com/conma293/Azure/blob/main/cheatsheet.md#scripts)
   - [Microburst]
     - [subdomains]
