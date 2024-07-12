@@ -5,7 +5,7 @@
   - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
   - [VMS, apps, storage, keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vms-apps-storage-keyvaults)
   - [Role Assignments](https://github.com/conma293/Azure/blob/main/cheatsheet.md#role-assignments)
-  - [Runbooks and Hybrid Worker Groups](
+  - [Runbooks and Hybrid Worker Groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#hybrid-worker-groups)
 - Az CLI
   - [Current user and objects](https://github.com/conma293/Azure/blob/main/cheatsheet.md#current-users-and-objects)
   - list
