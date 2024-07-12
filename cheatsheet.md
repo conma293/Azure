@@ -5,7 +5,10 @@
   - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
   - [Role Assignments, apps, storage, keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#other-enum)
 - [Az CLI](https://github.com/conma293/Azure/blob/main/cheatsheet.md#az-cli)
-  - [probing logged on user interactive](https://github.com/conma293/Azure/blob/main/cheatsheet.md#az-cli)
+  - [Current user and objects](https://github.com/conma293/Azure/blob/main/cheatsheet.md#current-users-and-objects))
+  - list
+  - automation
+  - role assignments
 - [Scripts](https://github.com/conma293/Azure/blob/main/cheatsheet.md#scripts)
   - [Microburst]
     - [subdomains]
