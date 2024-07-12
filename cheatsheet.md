@@ -5,6 +5,7 @@
   - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
   - [Role Assignments, apps, storage, keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#other-enum)
 - [Token abuse](https://github.com/conma293/Azure/blob/main/cheatsheet.md#token-reuse)
+  - [Pivot with tokens](https://github.com/conma293/Azure/blob/main/cheatsheet.md#pivot-from-shell-stealing-tokens)
 - [Az CLI](https://github.com/conma293/Azure/blob/main/cheatsheet.md#az-cli)
   - [probing logged on user interactive](https://github.com/conma293/Azure/blob/main/cheatsheet.md#az-cli)
 - [Scripts](https://github.com/conma293/Azure/blob/main/cheatsheet.md#scripts)
@@ -108,10 +109,8 @@ az account get-access-token --resource-type aad-graph
 ```
 PS C:\AzAD\Tools> $AccessToken = 'eyJ0…'
 PS C:\AzAD\Tools> $AADToken = 'eyJ0…'
-
-PS C:\AzAD\Tools> Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
 ```
-OR
+Now you can connect:
 ```
 Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken
 ```
