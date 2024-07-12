@@ -105,7 +105,7 @@ az account get-access-token --resource-type aad-graph
 ```
 
 - Open another Powershell console:
-
+```
 PS C:\AzAD\Tools> $AccessToken = 'eyJ0…'
 PS C:\AzAD\Tools> $AADToken = 'eyJ0…'
 
