@@ -24,7 +24,8 @@ Privilege Escalation and Lateral Movement
 - [Runbooks - latmove and privesc](https://github.com/conma293/Azure/blob/main/killcycle.md#runbooks)
   - Az CLI Recon
   - [Steal tokens from Az CLI for latmove](https://github.com/conma293/Azure/blob/main/killcycle.md#steal-tokens-for-student-vm)
-  - Add user to group in stolen session
+  - Add user to group in stolen session so we can enum resources
+  - enum resources (automation groups)
 * * *
 
 TLDR:
