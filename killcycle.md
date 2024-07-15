@@ -22,7 +22,7 @@ Enumeration and Initial Access
 
 Privilege Escalation and Lateral Movement
 - [Runbooks - latmove and privesc](https://github.com/conma293/Azure/blob/main/killcycle.md#runbooks)
-  - Az CLI Recon
+  - [Az CLI Recon](https://github.com/conma293/Azure/blob/main/killcycle.md#az-cli-recon)
   - [Steal tokens from Az CLI for latmove](https://github.com/conma293/Azure/blob/main/killcycle.md#steal-tokens-for-student-vm)
   - [Add user to group in stolen session so we can enum resources](https://github.com/conma293/Azure/blob/main/killcycle.md#adding-to-group)
   - [enum Role Assignments (automation groups)](https://github.com/conma293/Azure/blob/main/killcycle.md#enumerate-resources-ie-role-assignments-for-automation-account)
