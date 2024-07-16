@@ -27,7 +27,7 @@ Privilege Escalation and Lateral Movement
   - [Add user to group in stolen session so we can enum resources](https://github.com/conma293/Azure/blob/main/killcycle.md#adding-to-group)
   - [enum Role Assignments (automation groups)](https://github.com/conma293/Azure/blob/main/killcycle.md#enumerate-resources-ie-role-assignments-for-automation-account)
   - [Create runbook](https://github.com/conma293/Azure/blob/main/killcycle.md#create-runbook)
-- [RunCommand](
+- [RunCommand](https://github.com/conma293/Azure/blob/main/killcycle.md#run-command)
 - [Add user to VM](
 - [Get public IP](
 - [Connect to VM](
