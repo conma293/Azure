@@ -771,7 +771,7 @@ Now we can run the script via VMRumCommand:
 Invoke-AzVMRunCommand -VMName bkpadconnect -ResourceGroupName Engineering -CommandId 'RunPowerShellScript' -ScriptPath 'C:\AzAD\Tools\adduser.ps1' -Verbose
 ```
 
-#### Get Public IP
+#### Get Public IP of VM
 ```
 Get-AzVM -Name bkpadconnect -ResourceGroupName Engineering
 Get-AzVM -Name bkpadconnect -ResourceGroupName Engineering | select -ExpandProperty NetworkProfile
