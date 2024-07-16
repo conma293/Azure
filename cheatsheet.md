@@ -18,6 +18,7 @@
     - [subdomains]
     - [storage blobs]
   - [Create Runbook]
+  - [RunCommand - connect to VM]
 
 
 
