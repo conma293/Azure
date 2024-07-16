@@ -789,3 +789,11 @@ $creds = New-Object System.Management.Automation.PSCredential('student213', $Pas
 $sess = New-PSSession -ComputerName 20.52.148.232 -Credential $creds -SessionOption (New-PSSessionOption -ProxyAccessType NoProxyServer) 
 Enter-PSSession $sess
 ```
+#### Extract Credentials from VM
+Main Credentials to extract from host:
+- lsass (heavily scrutinised)
+- LSA Secrets regkey
+- SAM hive
+- Credential Manager
+- Scheduled Tasks
+
