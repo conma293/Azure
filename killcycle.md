@@ -791,9 +791,11 @@ Enter-PSSession $sess
 ```
 #### Extract Credentials from VM
 Main Credentials to extract from host:
-- lsass (heavily scrutinised)
+- lsass (heavily scrutinised - try all below first)
 - LSA Secrets regkey
 - SAM hive
 - Credential Manager
 - Scheduled Tasks
+- powershell history
+- browser credentials & cookies (DPAPI Protected)
 
