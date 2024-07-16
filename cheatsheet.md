@@ -245,3 +245,36 @@ Invoke-EnumerateAzureBlobs -Base defcorp
 Import-AzAutomationRunbook -Name studentx -Path C:\AzAD\Tools\studentx.ps1 -AutomationAccountName HybridAutomation -ResourceGroupName Engineering -Type PowerShell -Force -Verbose
 ```
 
+## RunCommand
+
+#### Run a script 
+A powershell script to add users below:
+```
+$passwd = ConvertTo-SecureString "Stud213Password@123" -AsPlainText -Force
+New-LocalUser -Name student213 -Password $passwd
+Add-LocalGroupMember -Group Administrators -Member student213
+```
+Now we can run the script via VMRumCommand:
+```
+Invoke-AzVMRunCommand -VMName bkpadconnect -ResourceGroupName Engineering -CommandId 'RunPowerShellScript' -ScriptPath 'C:\AzAD\Tools\adduser.ps1' -Verbose
+```
+
+## Connect to VM
+#### Get Public IP
+```
+Get-AzVM -Name bkpadconnect -ResourceGroupName Engineering
+Get-AzVM -Name bkpadconnect -ResourceGroupName Engineering | select -ExpandProperty NetworkProfile
+
+Get-AzNetworkInterface -Name bkpadconnect368
+
+Get-AzPublicIpAddress -Name bkpadconnectIP
+```
+
+#### Connect to VM
+Now we are a user on the VM and we know the publically addressable IP, we can connect directly to it using PS Remoting
+```
+$password = ConvertTo-SecureString 'Stud213Password@123' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('student213', $Password) 
+$sess = New-PSSession -ComputerName 20.52.148.232 -Credential $creds -SessionOption (New-PSSessionOption -ProxyAccessType NoProxyServer) 
+Enter-PSSession $sess
+```
