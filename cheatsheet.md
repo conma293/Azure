@@ -122,7 +122,7 @@ Get-AzAutomationHybridWorkerGroup -AutomationAccountName HybridAutomation -Resou
 
 #### AzContext
 
-If you compromise a machine worth checking out azcontext, similar to sessions, if we steal an azcontext with ```select-azcontext``` we may be able to grab all the permissions (== Role Assignments) of that context/session. Good to check, similar to rubeus checking sessions 
+If you compromise a machine worth checking out azcontext, similar to sessions, if we steal an azcontext with ```select-azcontext``` we may be able to grab all the permissions(_i.e., Role Assignments_) of that context/session. Good to check, similar to rubeus checking cached tickets from LogonID sessions.
 ```
 get-azcontext
 select-azcontext -Name <copy pasted>
