@@ -1,7 +1,7 @@
 - AzureAD
   - [Users and groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-and-groups)
   - [Preview Module for custom role and policy](https://github.com/conma293/Azure/blob/main/cheatsheet.md#preview-module-for-custom-roles)
-- AZ Powershell
+- [AZ Powershell](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azure-powershell)
   - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
   - [VMS, apps, storage, keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vms-apps-storage-keyvaults)
   - [Role Assignments](https://github.com/conma293/Azure/blob/main/cheatsheet.md#role-assignments)
