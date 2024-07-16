@@ -796,6 +796,9 @@ Main Credentials to extract from host:
 - SAM hive
 - Credential Manager
 - Scheduled Tasks
-- powershell history
+- powershell history (EXTREMELY common now due to the way cloud works for sysadmins to connect - always putting creds on the commandline)
 - browser credentials & cookies (DPAPI Protected)
 
+```
+cat C:\Users\bkpadconnect\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+```
