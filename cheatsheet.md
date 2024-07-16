@@ -18,7 +18,7 @@
     - [subdomains]
     - [storage blobs]
 - Playbooks
-  - [Create Runbook]
+  - [Create Runbook](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runbooks)
   - [RunCommand](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runcommand)
   - [Connect to VM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#connect-to-vm)
 
