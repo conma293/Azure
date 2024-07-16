@@ -18,7 +18,8 @@
     - [subdomains]
     - [storage blobs]
   - [Create Runbook]
-  - [RunCommand - connect to VM]
+  - [RunCommand
+  - [Connect to VM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#connect-to-vm)
 
 
 
