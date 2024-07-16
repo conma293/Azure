@@ -264,7 +264,7 @@ Start-AzAutomationRunbook -RunbookName studentx -RunOn Workergroup1 -AutomationA
 ## RunCommand
 
 #### Run a script 
-A powershell script to add users below:
+Create a script to be used in the runcommand, below is a powershell script to add a user to local administrators group:
 ```
 $passwd = ConvertTo-SecureString "Stud213Password@123" -AsPlainText -Force
 New-LocalUser -Name student213 -Password $passwd
