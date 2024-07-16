@@ -119,7 +119,15 @@ Get-AzRoleAssignment -Scope </sub/resources/etc> | select RoleDefinitionName, Ob
 Get-AzAutomationHybridWorkerGroup -AutomationAccountName HybridAutomation -ResourceGroupName Engineering
 ```
 
+#### AzContext
 
+If you compromise a machine worth checking out azcontext, similar to sessions, if we steal an azcontext with ```select-azcontext``` we may be able to grab all the permissions (== Role Assignments) of that context/session. Good to check, similar to rubeus checking sessions 
+```
+get-azcontext
+select-azcontext -Name <copy pasted>
+```
+
+* * * 
 
 ## Az CLI 
 ```
