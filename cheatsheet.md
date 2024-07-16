@@ -79,6 +79,11 @@ $passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlai
 $creds = New-Object System.Management.Automation.PSCredential("test@defcorphq.onmicrosoft.com", $passwd)
 Connect-AzAccount -Credential $creds
 ```
+OR Token:-
+```
+$AccessToken = 'eyJ0…'
+Connect-AzAccount -AccessToken $AccessToken -AccountId <"client_id">
+```
 #### Resources:
 ```
 Get-AzResource
