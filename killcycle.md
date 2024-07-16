@@ -28,9 +28,9 @@ Privilege Escalation and Lateral Movement
   - [enum Role Assignments (automation groups)](https://github.com/conma293/Azure/blob/main/killcycle.md#enumerate-resources-ie-role-assignments-for-automation-account)
   - [Create runbook](https://github.com/conma293/Azure/blob/main/killcycle.md#create-runbook)
 - [RunCommand](https://github.com/conma293/Azure/blob/main/killcycle.md#run-command)
-- [Add user to VM](
-- [Get public IP](
-- [Connect to VM](
+  - [Add user to VM](
+  - [Get public IP](
+  - [Connect to VM](
 * * *
 
 TLDR:
