@@ -17,6 +17,7 @@
   - [Microburst]
     - [subdomains]
     - [storage blobs]
+- Playbooks
   - [Create Runbook]
   - [RunCommand](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runcommand)
   - [Connect to VM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#connect-to-vm)
