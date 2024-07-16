@@ -6,6 +6,7 @@
   - [VMS, apps, storage, keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vms-apps-storage-keyvaults)
   - [Role Assignments](https://github.com/conma293/Azure/blob/main/cheatsheet.md#role-assignments)
   - [Runbooks and Hybrid Worker Groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#hybrid-worker-groups)
+  - [AzContext] (similar to logonID sessions)()
 - Az CLI
   - [Current user and objects](https://github.com/conma293/Azure/blob/main/cheatsheet.md#current-users-and-objects)
   - [Automation account](https://github.com/conma293/Azure/blob/main/cheatsheet.md#automation-account)
