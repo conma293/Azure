@@ -21,6 +21,7 @@
   - [Create Runbook](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runbooks)
   - [RunCommand](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runcommand)
   - [Connect to VM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#connect-to-vm)
+  - [Powershell History]
 
 
 
@@ -294,4 +295,8 @@ $password = ConvertTo-SecureString 'Stud213Password@123' -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential('student213', $Password) 
 $sess = New-PSSession -ComputerName 20.52.148.232 -Credential $creds -SessionOption (New-PSSessionOption -ProxyAccessType NoProxyServer) 
 Enter-PSSession $sess
+```
+#### Powershell history - credentials
+```
+cat C:\Users\bkpadconnect\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 ```
