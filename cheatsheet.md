@@ -255,6 +255,7 @@ $passwd = ConvertTo-SecureString "Stud213Password@123" -AsPlainText -Force
 New-LocalUser -Name student213 -Password $passwd
 Add-LocalGroupMember -Group Administrators -Member student213
 ```
+#### RunCommand
 Now we can run the script via VMRumCommand:
 ```
 Invoke-AzVMRunCommand -VMName bkpadconnect -ResourceGroupName Engineering -CommandId 'RunPowerShellScript' -ScriptPath 'C:\AzAD\Tools\adduser.ps1' -Verbose
