@@ -1,3 +1,12 @@
+
+*** 
+Kill Chains
+- Kill Chain 1
+- Kill Chain 2
+- Kill Chain 3
+- Kill Chain 4
+
+
 **REFS:**
 
 - [Enum](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md)
