@@ -881,6 +881,21 @@ Get-AzADGroup -DisplayName 'VM Admins'
 Get-AzADGroupMember -GroupDisplayName 'VM Admins' | select DisplayName
 ```
 
+Ok lets do some manual API enum:
+```
+$token=(Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token
+$URI = ' https://graph.microsoft.com/v1.0/users/VMContributorX@defcorphq.onmicrosoft.com/memberOf'
+$RequestParams = @{
+Method = 'GET'
+Uri = $URI
+Headers = @{
+'Authorization' = "Bearer $Token"
+}
+}
+(Invoke-RestMethod @RequestParams).value
+```
+
+
 ok lets bring in AzureAD:
 ```
 Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1
