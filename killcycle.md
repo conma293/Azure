@@ -823,7 +823,7 @@ cat C:\Users\bkpadconnect\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLin
 ```
 
 ## Keyvault
-We already [enumerated]() that the managed identity of the 'vaultfrontend' app service (https://vaultfrontend.azurewebsites.net) can access the keyvault 'ResearchKeyVault'.
+We already [enumerated](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti) that the managed identity of the 'vaultfrontend' app service (https://vaultfrontend.azurewebsites.net) can access the keyvault 'ResearchKeyVault'.
 
 To be able to access the keyvault, we need to request a keyvault access token:
 ```
