@@ -867,3 +867,10 @@ Connect-AzAccount -Credential $creds
 
 We are in, lets see what we have access to:
 ```Get-AzResources```
+
+A VM! Interesting... what roles do we have access to:
+```
+Get-AzRoleAssignment
+Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
+Get-AzRoleDefinition -Name "Virtual Machine Command Executor"
+```
