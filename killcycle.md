@@ -2,7 +2,7 @@
 *** 
 Kill Chains
 - Kill Chain 1
-  - [Illicit Consent Grant attack]
+  - [Illicit Consent Grant attack](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
   - [Insecure file upload]
   - [Automation Account Runbook on Hybrid Worker]
   - [RunCommand to acquire Reverse Shell on VM]
