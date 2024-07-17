@@ -1,3 +1,27 @@
+## TEMPLATES
+### Credential template
+```
+$password = ConvertTo-SecureString '<PASSWD>' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('<USER>', $password)
+Connect-AzAccount -Credential $creds
+```
+### Token template
+```
+$AccessToken = 'eyJ0…'
+$AADToken = 'eyJ0…'
+
+Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId <TargetUserId>
+```
+### Powershell Remoting template
+```
+$password = ConvertTo-SecureString '<PASSWD>' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('<USER>', $Password) 
+$sess = New-PSSession -ComputerName <TargetIP> -Credential $creds -SessionOption (New-PSSessionOption -ProxyAccessType NoProxyServer) 
+Enter-PSSession $sess
+```
+
+* * * 
+
 - AzureAD
   - [Users and groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-and-groups)
   - [Administrative Unit](https://github.com/conma293/Azure/blob/main/cheatsheet.md#administrative-unit)
@@ -391,31 +415,3 @@ cat C:\Users\bkpadconnect\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLin
 
 
 
-
-
-
-
-
-
-
-# TEMPLATES
-## Credential template
-```
-$password = ConvertTo-SecureString '<PASSWD>' -AsPlainText -Force
-$creds = New-Object System.Management.Automation.PSCredential('<USER>', $password)
-Connect-AzAccount -Credential $creds
-```
-## Token template
-```
-$AccessToken = 'eyJ0…'
-$AADToken = 'eyJ0…'
-
-Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId <TargetUserId>
-```
-## Powershell Remoting template
-```
-$password = ConvertTo-SecureString '<PASSWD>' -AsPlainText -Force
-$creds = New-Object System.Management.Automation.PSCredential('<USER>', $Password) 
-$sess = New-PSSession -ComputerName <TargetIP> -Credential $creds -SessionOption (New-PSSessionOption -ProxyAccessType NoProxyServer) 
-Enter-PSSession $sess
-```
