@@ -1,4 +1,4 @@
-## TEMPLATES
+
 ### Credential template
 ```
 $password = ConvertTo-SecureString '<PASSWD>' -AsPlainText -Force
