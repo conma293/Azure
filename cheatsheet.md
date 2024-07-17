@@ -60,7 +60,7 @@ Get-AzureADGroupMember -ObjectId 8f7e7d00-12b6-45db-9b84-e221ccab7456 | select d
 
 Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-AzureADDirectoryRoleMember
 ```
-#### Administrative Unit
+#### Administrative Unit (Organisational Unit OU equiv for cloud)
 _we get the ID of the administrative unit via API call for '/users/userx/memberOf'_
 ```
 Get-AzureADMSAdministrativeUnit -Id e1e26d93-163e-42a2-a46e-1b7d52626395
