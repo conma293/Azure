@@ -52,12 +52,6 @@ Enter-PSSession $sess
     - [Get Public IP](https://github.com/conma293/Azure/blob/main/cheatsheet.md#get-public-ip)
   - [Powershell History]
   - [NEW USER ENUM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#new-identity-enum)
-- Templates
-  - Credential template
-  - Token template
-  - PowerShell Remoting Template
-
-
 
 # Tools
 ### AzAD
