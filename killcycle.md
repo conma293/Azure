@@ -846,6 +846,6 @@ Connect-AzAccount -AccessToken $token -KeyVaultAccessToken $keyvaulttoken -Accou
 #### Keyvault
 Now we can actually interact with the keyvault:
 ```
-Get-AzKeyVaultSecret
+Get-AzKeyVault
 Get-AzKeyVaultSecret -VaultName ResearchKeyVault
 ```
