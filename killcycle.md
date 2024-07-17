@@ -880,7 +880,7 @@ Let's get some information about the VM admins group and its membership:
 Get-AzADGroup -DisplayName 'VM Admins' 
 Get-AzADGroupMember -GroupDisplayName 'VM Admins' | select DisplayName
 ```
-
+#### Administrative Units
 Ok lets do some manual API enum:
 
 ```
@@ -901,4 +901,17 @@ ok lets bring in AzureAD:
 Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1
 Connect-AzureAD -Credential $creds 
 Get-AzureADMSAdministrativeUnit -Id e1e26d93-163e-42a2-a46e-1b7d52626395
+```
+Let's check for any roles scoped to this administrative unit: 
+```
+Get-AzureADMSScopedRoleMembership -Id e1e26d93-163e-42a2-a46e-1b7d52626395 | fl *
+```
+Let's check the role using the RoleId we got above: 
+```
+Get-AzureADDirectoryRole -ObjectId 5b3935ed-b52d-4080-8b05-3a1832194d3a
+```
+So, know we know that the user Roy has Authentication Administrator privileges scoped to the Control Unit administrative unit!
+Get some more details about the user Roy:
+```
+Get-AzureADUser -ObjectId 8c088359-66fb-4253-ad0d-a91b82fd548a | fl *
 ```
