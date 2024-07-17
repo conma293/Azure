@@ -954,6 +954,7 @@ Connect-AzAccount -Credential $creds
 
 Now more ENUM:
 ```
+Get-AzVM -Name jumpvm
 Get-AzVM -Name jumpvm -ResourceGroupName RESEARCH | fl *
 Get-AzVM -Name jumpvm -ResourceGroupName RESEARCH | select -ExpandProperty NetworkProfile
 Get-AzPublicIpAddress -Name jumpvm-ip
