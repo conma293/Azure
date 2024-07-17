@@ -9,7 +9,7 @@
   - [INSTRUCTOR ONLY - ADSync and?]
 - Kill Chain 2
   - [Initial Access - Server Side Template Injection (SSTI)](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti)
-  - now Keyvault
+  - [Keyvault](https://github.com/conma293/Azure/blob/main/killcycle.md#keyvault)
 - Kill Chain 3
 - Kill Chain 4
 
