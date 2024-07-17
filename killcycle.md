@@ -49,7 +49,7 @@ Privilege Escalation and Lateral Movement
   - [Add user to VM](https://github.com/conma293/Azure/blob/main/killcycle.md#run-a-script)
   - [Get public IP](https://github.com/conma293/Azure/blob/main/killcycle.md#get-public-ip-of-vm)
   - [Connect to VM](
-- [KeyVault]()
+- [KeyVault](https://github.com/conma293/Azure/blob/main/killcycle.md#keyvault)
 * * *
 # Enumeration 
 TLDR:
