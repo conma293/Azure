@@ -50,8 +50,8 @@ Privilege Escalation and Lateral Movement
   - [Get public IP](https://github.com/conma293/Azure/blob/main/killcycle.md#get-public-ip-of-vm)
   - [Connect to VM](
 - [KeyVault](https://github.com/conma293/Azure/blob/main/killcycle.md#keyvault)
-  - [keyvault]
-  - [enum]
+  - [keyvault](https://github.com/conma293/Azure/blob/main/killcycle.md#keyvault-1)
+  - [enum new user]
   - [Administrative Units](https://github.com/conma293/Azure/blob/main/killcycle.md#administrative-units)
 * * *
 # Enumeration 
