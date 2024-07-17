@@ -10,6 +10,7 @@
   - [Runbooks and Hybrid Worker Groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#hybrid-worker-groups)
   - [AzContext(similar to logonID sessions)](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azcontext)
   - [NEW USER ENUM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#new-identity-enum)
+  - [GET VM PUBLIC IP]()
 - Az CLI
   - [Current user and objects](https://github.com/conma293/Azure/blob/main/cheatsheet.md#current-users-and-objects)
   - [Automation account](https://github.com/conma293/Azure/blob/main/cheatsheet.md#automation-account)
@@ -176,6 +177,14 @@ Get-AzRoleDefinition -Name "Virtual Machine Command Executor"
 
 Get-AzADGroup -DisplayName 'VM Admins' 
 Get-AzADGroupMember -GroupDisplayName 'VM Admins' | select DisplayName
+```
+### VM Public IP
+```
+```
+Get-AzVM -Name jumpvm -ResourceGroupName RESEARCH | fl *
+Get-AzVM -Name jumpvm -ResourceGroupName RESEARCH | select -ExpandProperty NetworkProfile
+Get-AzPublicIpAddress -Name jumpvm-ip
+```
 ```
 
 * * * 
