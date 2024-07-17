@@ -3,6 +3,7 @@
   - [Administrative Unit](https://github.com/conma293/Azure/blob/main/cheatsheet.md#administrative-unit)
   - [Preview Module for custom role and policy](https://github.com/conma293/Azure/blob/main/cheatsheet.md#preview-module-for-custom-roles)
 - [AZ Powershell](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azure-powershell)
+  - [whoami](https://github.com/conma293/Azure/blob/main/cheatsheet.md#whoami)
   - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
   - [VMS, apps, storage](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vms-apps-storage)
   - [Keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#keyvault)
