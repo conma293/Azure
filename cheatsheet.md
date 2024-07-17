@@ -65,6 +65,15 @@ Get-AzureADDirectoryRole -Filter "DisplayName eq 'Global Administrator'" | Get-A
 Get-AzureADMSAdministrativeUnit -Id e1e26d93-163e-42a2-a46e-1b7d52626395
 (we get the ID of the administrative unit via API call for '/users/userx/memberOf')
 ```
+```
+Get-AzureADMSScopedRoleMembership -Id e1e26d93-163e-42a2-a46e-1b7d52626395 | fl *
+```
+
+Check specific role and user:
+```
+Get-AzureADDirectoryRole -ObjectId 5b3935ed-b52d-4080-8b05-3a1832194d3a
+Get-AzureADUser -ObjectId 8c088359-66fb-4253-ad0d-a91b82fd548a | fl *
+```
 
 #### Preview Module for custom roles
 ```
