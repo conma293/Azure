@@ -820,3 +820,6 @@ Main Credentials to extract from host:
 ```
 cat C:\Users\bkpadconnect\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 ```
+
+## Keyvault
+We already [enumerated]() that the managed identity of the 'vaultfrontend' app service (https://vaultfrontend.azurewebsites.net) can access the keyvault 'ResearchKeyVault'.
