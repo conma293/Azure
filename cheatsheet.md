@@ -26,6 +26,7 @@
   - [Create Runbook](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runbooks)
   - [RunCommand](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runcommand)
   - [Connect to VM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#connect-to-vm)
+    - [Get Public IP](https://github.com/conma293/Azure/blob/main/cheatsheet.md#get-public-ip)
   - [Powershell History]
   - [NEW USER ENUM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#new-identity-enum)
 
