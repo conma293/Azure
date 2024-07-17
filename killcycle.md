@@ -864,7 +864,7 @@ $password = ConvertTo-SecureString 'KathyFoUndInth3KeyVault@Azur3' -AsPlainText 
 $creds = New-Object System.Management.Automation.PSCredential('kathynschaefer@defcorphq.onmicrosoft.com', $password)
 Connect-AzAccount -Credential $creds
 ```
-
+#### New User Enumeration
 We are in, lets see what we have access to:
 ```Get-AzResources```
 
@@ -873,4 +873,10 @@ A VM! Interesting... what roles do we have access to:
 Get-AzRoleAssignment
 Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
 Get-AzRoleDefinition -Name "Virtual Machine Command Executor"
+```
+
+Let's get some information about the VM admins group and its membership:
+```
+Get-AzADGroup -DisplayName 'VM Admins' 
+Get-AzADGroupMember -GroupDisplayName 'VM Admins' | select DisplayName
 ```
