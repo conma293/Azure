@@ -7,7 +7,7 @@
   - [latmove/privesc - Automation Account Runbook on Hybrid Worker](https://github.com/conma293/Azure/blob/main/killcycle.md#runbooks)
   - [latmove/privesc - RunCommand to acquire Reverse Shell on VM](https://github.com/conma293/Azure/blob/main/killcycle.md#run-command)
   - [INSTRUCTOR ONLY - ADSync and?]
-- Kill Chain 2 (_Authenticated Enumeration, Privilege Escalation and Data Mining_)
+- Kill Chain 2 _Authenticated Enumeration, Privilege Escalation and Data Mining_
   - [Initial Access - Server Side Template Injection (SSTI)](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti)
   - [Keyvault](https://github.com/conma293/Azure/blob/main/killcycle.md#keyvault)
 - Kill Chain 3
