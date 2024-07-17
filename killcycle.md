@@ -895,7 +895,7 @@ Headers = @{
 }
 (Invoke-RestMethod @RequestParams).value
 ```
-
+Ok the user is part of an Administrative Unit called controlx (an is similar to an Organisational Unit - OU, from AD)
 ok lets bring in AzureAD:
 ```
 Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1
