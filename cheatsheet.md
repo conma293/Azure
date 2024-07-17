@@ -150,6 +150,18 @@ get-azcontext
 select-azcontext -Name <copy pasted>
 ```
 
+### New Identity ENUM
+```
+Get-AzResources
+
+Get-AzRoleAssignment
+Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
+Get-AzRoleDefinition -Name "Virtual Machine Command Executor"
+
+Get-AzADGroup -DisplayName 'VM Admins' 
+Get-AzADGroupMember -GroupDisplayName 'VM Admins' | select DisplayName
+```
+
 * * * 
 
 ## Az CLI 
