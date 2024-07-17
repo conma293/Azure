@@ -219,7 +219,7 @@ Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -Account
 ```
 $token=''
 OR
-$TOKEN='(Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token'
+$TOKEN=(Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token
 ```
 
 ```
