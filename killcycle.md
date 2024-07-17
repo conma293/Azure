@@ -857,5 +857,6 @@ Result:
 username: kathynschaefer@defcorphq.onmicrosoft.com ; password: KathyFoUndInth3KeyVault@Azur3
 ```
 
+ok we cant logon to the Azure Portal and it doesnt tell us why.... Conditional Access Policy!!
 
-```
+
