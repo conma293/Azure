@@ -50,7 +50,7 @@ Privilege Escalation and Lateral Movement
   - [Get public IP](https://github.com/conma293/Azure/blob/main/killcycle.md#get-public-ip-of-vm)
   - [Connect to VM](
 * * *
-
+# Enumeration 
 TLDR:
 - Use [AzureAD](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration---azuread-module)/[MG Module](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration---mg-module) for basic AAD/Entra ID Directory enumeration (i.e., users, groups, devices)
   - This will require an access token for AAD or MS Graph
