@@ -1,6 +1,6 @@
 
-*** 
-Kill Chains
+
+## Kill Chains
 - Kill Chain 1
   - [Initial Access - Phishing with Illicit Consent Grant attack](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
   - [Initial Access - Insecure file upload](https://github.com/conma293/Azure/blob/main/killcycle.md#insecure-file-upload)
@@ -20,7 +20,7 @@ Kill Chains
 - [Tokens](https://github.com/conma293/Azure/blob/main/1.35_Tokens.md)
 
 * * * 
-
+## TOC
 _Got creds for a test user by password spray or granted a contractor role through creds purchased on dark web._
 
 Enumeration 
