@@ -882,21 +882,9 @@ Get-AzADGroupMember -GroupDisplayName 'VM Admins' | select DisplayName
 ```
 
 Ok lets do some manual API enum:
-```
-$token=(Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token
-$URI = ' https://graph.microsoft.com/v1.0/users/VMContributorX@defcorphq.onmicrosoft.com/memberOf'
-$RequestParams = @{
-Method = 'GET'
-Uri = $URI
-Headers = @{
-'Authorization' = "Bearer $Token"
-}
-}
-(Invoke-RestMethod @RequestParams).value
-```
 
 ```
-
+$Token=(Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token
 $URI = 'https://graph.microsoft.com/v1.0/users/VMContributor213@defcorphq.onmicrosoft.com/memberOf'
 $RequestParams = @{
 Method = 'GET'
