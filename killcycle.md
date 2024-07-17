@@ -2,7 +2,14 @@
 *** 
 Kill Chains
 - Kill Chain 1
+  - [Illicit Consent Grant attack]
+  - [Insecure file upload]
+  - [Automation Account Runbook on Hybrid Worker]
+  - [RunCommand to acquire Reverse Shell on VM]
+  - [INSTRUCTOR ONLY - ADSync and?]
 - Kill Chain 2
+  - SSTI from?
+  - now Keyvault
 - Kill Chain 3
 - Kill Chain 4
 
