@@ -9,6 +9,7 @@
   - [Runbooks and Hybrid Worker Groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#hybrid-worker-groups)
   - [AzContext(similar to logonID sessions)](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azcontext)
   - [NEW USER ENUM]()
+  - [Jump to Graph]
 - Az CLI
   - [Current user and objects](https://github.com/conma293/Azure/blob/main/cheatsheet.md#current-users-and-objects)
   - [Automation account](https://github.com/conma293/Azure/blob/main/cheatsheet.md#automation-account)
