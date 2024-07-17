@@ -847,5 +847,15 @@ Connect-AzAccount -AccessToken $token -KeyVaultAccessToken $keyvaulttoken -Accou
 Now we can actually interact with the keyvault:
 ```
 Get-AzKeyVault
+
 Get-AzKeyVaultSecret -VaultName ResearchKeyVault
+Get-AzKeyVaultSecret -VaultName ResearchKeyVault -Name Reader
+Get-AzKeyVaultSecret -VaultName ResearchKeyVault -Name Reader -AsPlainText
+```
+Result:
+```
+username: kathynschaefer@defcorphq.onmicrosoft.com ; password: KathyFoUndInth3KeyVault@Azur3
+```
+
+
 ```
