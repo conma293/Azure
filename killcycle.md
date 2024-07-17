@@ -864,3 +864,6 @@ $password = ConvertTo-SecureString 'KathyFoUndInth3KeyVault@Azur3' -AsPlainText 
 $creds = New-Object System.Management.Automation.PSCredential('kathynschaefer@defcorphq.onmicrosoft.com', $password)
 Connect-AzAccount -Credential $creds
 ```
+
+We are in, lets see what we have access to:
+```Get-AzResources```
