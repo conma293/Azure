@@ -10,6 +10,7 @@
 - Kill Chain 2 (_Topics Covered: Authenticated Enumeration, Privilege Escalation and Data Mining_)
   - [Initial Access - Server Side Template Injection (SSTI)](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti)
   - [Keyvault](https://github.com/conma293/Azure/blob/main/killcycle.md#keyvault)
+    - [evilginx]() and then [add/modify users]()
 - Kill Chain 3
 - Kill Chain 4
 
