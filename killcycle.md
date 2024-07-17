@@ -23,12 +23,14 @@ Kill Chains
 
 _Got creds for a test user by password spray or granted a contractor role through creds purchased on dark web._
 
-Enumeration and Initial Access
+Enumeration 
 - Manual Enumeration
   - [Users and Groups with AzureAD](https://github.com/conma293/Azure/blob/main/killcycle.md#azuread)
   - [Resources and vms, apps with Az Powershell](https://github.com/conma293/Azure/blob/main/killcycle.md#az-powershell)
 - [Stealing Tokens](https://github.com/conma293/Azure/blob/main/killcycle.md#tokens)
 - [Enum tools](https://github.com/conma293/Azure/blob/main/killcycle.md#tools)
+
+Initial Access
 - [Consent Abuse - phish link to malicious app for consent grab](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
 - App Services
   - [Insecure File Upload](https://github.com/conma293/Azure/blob/main/killcycle.md#insecure-file-upload)
