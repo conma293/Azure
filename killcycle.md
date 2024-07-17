@@ -858,5 +858,9 @@ username: kathynschaefer@defcorphq.onmicrosoft.com ; password: KathyFoUndInth3Ke
 ```
 
 ok we cant logon to the Azure Portal and it doesnt tell us why.... Conditional Access Policy!!
-
-
+OK so lets try with AZ Powershell (may just be browser that is blocked):
+```
+$password = ConvertTo-SecureString 'KathyFoUndInth3KeyVault@Azur3' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('kathynschaefer@defcorphq.onmicrosoft.com', $password)
+Connect-AzAccount -Credential $creds
+```
