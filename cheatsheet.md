@@ -132,6 +132,11 @@ Get-AzRoleAssignment -Scope </sub/resources/etc>
 Get-AzRoleAssignment -Scope </sub/resources/etc> | select RoleDefinitionName, ObjectId, ObjectType
 ```
 
+Look at specific role:
+```
+Get-AzRoleDefinition -Name "Virtual Machine Command Executor"
+```
+
 #### Hybrid Worker Groups
 ```
 Get-AzAutomationHybridWorkerGroup -AutomationAccountName HybridAutomation -ResourceGroupName Engineering
