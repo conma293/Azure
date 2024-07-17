@@ -51,7 +51,7 @@ Privilege Escalation and Lateral Movement
   - [Connect to VM](
 - [KeyVault](https://github.com/conma293/Azure/blob/main/killcycle.md#keyvault)
   - [keyvault](https://github.com/conma293/Azure/blob/main/killcycle.md#keyvault-1)
-  - [enum new user]
+  - [enum with new user creds](https://github.com/conma293/Azure/blob/main/killcycle.md#new-user-enumeration)
   - [Administrative Units](https://github.com/conma293/Azure/blob/main/killcycle.md#administrative-units)
 * * *
 # Enumeration 
