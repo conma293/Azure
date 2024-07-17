@@ -952,6 +952,27 @@ $creds = New-Object System.Management.Automation.PSCredential('VMContributor213@
 Connect-AzAccount -Credential $creds
 ```
 
+Now more ENUM:
+```
+Get-AzVM -Name jumpvm -ResourceGroupName RESEARCH | fl *
+Get-AzVM -Name jumpvm -ResourceGroupName RESEARCH | select -ExpandProperty NetworkProfile
+Get-AzPublicIpAddress -Name jumpvm-ip
+```
+
+Finally, run a PowerShell script on jumpVM and add a user to it. Remember to modify the C:\AzAD\Tools\adduser.ps1 if not done already:
+```
+Invoke-AzVMRunCommand -ScriptPath C:\AzAD\Tools\adduser.ps1 -CommandId 'RunPowerShellScript' -VMName 'jumpvm' -ResourceGroupName 'Research' –Verbose
+```
+
+And we can now connect to the VM using the user that we just added ((here we are assuming that the VM's configuration allows local users to connect remotely)):
+```
+$password = ConvertTo-SecureString 'Stud213Password@123' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('student213', $password)
+$jumpvm = New-PSSession -ComputerName 51.116.180.87 -Credential $creds -SessionOption (New-PSSessionOption -ProxyAccessType NoProxyServer)
+Enter-PSSession -Session $jumpvm
+```
+
+
 
 
 
