@@ -96,16 +96,28 @@ Get-AzAdUser
 Get-AzAdApplication
 ```
 
-#### VMs, Apps, Storage, Keyvaults:
+#### VMs, Apps, Storage:
 ```
 Get-AzVM | fl *
+
 Get-AzWebApp
+Get-AzWebApp | select name, HostNames, kind, state, identity
+
 Get-AzWebApp | ?{$_.Kind -notmatch "functionapp"}
 Get-AzFunctionApp
-Get-AzWebApp | select name, HostNames, kind, state, identity
+
 Get-AzStorageAccount | fl
-Get-AzKeyVault
 ```
+
+#### Keyvault
+```
+Get-AzKeyVault
+
+Get-AzKeyVaultSecret -VaultName ResearchKeyVault
+Get-AzKeyVaultSecret -VaultName ResearchKeyVault -Name Reader
+Get-AzKeyVaultSecret -VaultName ResearchKeyVault -Name Reader -AsPlainText
+```
+
 
 #### Role Assignments
 ```
