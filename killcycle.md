@@ -53,6 +53,7 @@ Privilege Escalation and Lateral Movement
   - [keyvault](https://github.com/conma293/Azure/blob/main/killcycle.md#keyvault-1)
   - [enum with new user creds](https://github.com/conma293/Azure/blob/main/killcycle.md#new-user-enumeration)
   - [Administrative Units](https://github.com/conma293/Azure/blob/main/killcycle.md#administrative-units)
+  - [Phish](https://github.com/conma293/Azure/blob/main/killcycle.md#phish-and-use-roys-creds)
 * * *
 # Enumeration 
 TLDR:
