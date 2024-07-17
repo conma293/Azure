@@ -8,7 +8,7 @@ Kill Chains
   - [latmove/privesc - RunCommand to acquire Reverse Shell on VM](https://github.com/conma293/Azure/blob/main/killcycle.md#run-command)
   - [INSTRUCTOR ONLY - ADSync and?]
 - Kill Chain 2
-  - SSTI from?
+  - [Initial Access - Server Side Template Injection (SSTI)]
   - now Keyvault
 - Kill Chain 3
 - Kill Chain 4
