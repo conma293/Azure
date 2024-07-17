@@ -107,6 +107,11 @@ OR Token:-
 $AccessToken = 'eyJ0…'
 Connect-AzAccount -AccessToken $AccessToken -AccountId <"client_id">
 ```
+#### whoami
+```
+(Get-AzContext).Account
+```
+
 #### Resources:
 ```
 Get-AzResource
