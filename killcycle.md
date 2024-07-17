@@ -5,7 +5,7 @@ Kill Chains
   - [Illicit Consent Grant attack](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
   - [Insecure file upload](https://github.com/conma293/Azure/blob/main/killcycle.md#insecure-file-upload)
   - [Automation Account Runbook on Hybrid Worker](https://github.com/conma293/Azure/blob/main/killcycle.md#runbooks)
-  - [RunCommand to acquire Reverse Shell on VM]
+  - [RunCommand to acquire Reverse Shell on VM](https://github.com/conma293/Azure/blob/main/killcycle.md#run-command)
   - [INSTRUCTOR ONLY - ADSync and?]
 - Kill Chain 2
   - SSTI from?
