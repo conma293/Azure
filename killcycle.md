@@ -880,3 +880,10 @@ Let's get some information about the VM admins group and its membership:
 Get-AzADGroup -DisplayName 'VM Admins' 
 Get-AzADGroupMember -GroupDisplayName 'VM Admins' | select DisplayName
 ```
+
+ok lets bring in AzureAD:
+```
+Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1
+Connect-AzureAD -Credential $creds 
+Get-AzureADMSAdministrativeUnit -Id e1e26d93-163e-42a2-a46e-1b7d52626395
+```
