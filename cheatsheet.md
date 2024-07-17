@@ -248,6 +248,7 @@ And Graph:
 ```
 $URI = 'https://graph.microsoft.com/v1.0/users'
 $URI = 'https://graph.microsoft.com/v1.0/applications'
+$URI = ' https://graph.microsoft.com/v1.0/users/VMContributorX@defcorphq.onmicrosoft.com/memberOf'
 Groups
 Roles
 Devices
