@@ -895,6 +895,18 @@ Headers = @{
 (Invoke-RestMethod @RequestParams).value
 ```
 
+```
+
+$URI = 'https://graph.microsoft.com/v1.0/users/VMContributor213@defcorphq.onmicrosoft.com/memberOf'
+$RequestParams = @{
+Method = 'GET'
+Uri = $URI
+Headers = @{
+'Authorization' = "Bearer $Token"
+}
+}
+(Invoke-RestMethod @RequestParams).value
+```
 
 ok lets bring in AzureAD:
 ```
