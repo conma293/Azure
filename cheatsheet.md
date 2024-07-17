@@ -13,8 +13,9 @@
   - [Current user and objects](https://github.com/conma293/Azure/blob/main/cheatsheet.md#current-users-and-objects)
   - [Automation account](https://github.com/conma293/Azure/blob/main/cheatsheet.md#automation-account)
 - [Tokens Az Powershell](https://github.com/conma293/Azure/blob/main/cheatsheet.md#token-reuse)
-- [Pivot with tokens (Az CLI to Az Powershell)](https://github.com/conma293/Azure/blob/main/cheatsheet.md#pivot-from-shell-stealing-tokens)
+  - [Pivot with tokens (Az CLI to Az Powershell)](https://github.com/conma293/Azure/blob/main/cheatsheet.md#pivot-from-shell-stealing-tokens)
 - [Manual APIs and common URLS](https://github.com/conma293/Azure/blob/main/cheatsheet.md#api-call)
+  - URLs
 - [Scripts](https://github.com/conma293/Azure/blob/main/cheatsheet.md#scripts)
   - [Microburst]
     - [subdomains]
