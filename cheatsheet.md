@@ -25,6 +25,7 @@ Enter-PSSession $sess
 ```
 (Get-AzContext).Account
 Get-AzResource
+Get-AzResourceGroup
 
 Get-AzRoleAssignment
 Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
