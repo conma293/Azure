@@ -989,7 +989,7 @@ If there is a client secret for the service principal of an Enterprise Applicati
 First lets check where we got to from [last time] where we got a secret for an app
 ```
 Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1 
-$passwd = ConvertTo-SecureString "ThP@ssW0rd1sVeryH4rDT0GuessN0tB3Crack3d" -AsPlainText -Force
+$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd)
 Connect-AzureAD -Credential $creds 
 ```
