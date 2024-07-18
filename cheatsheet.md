@@ -43,6 +43,7 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
 - [AZ Powershell](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azure-powershell)
   - [whoami](https://github.com/conma293/Azure/blob/main/cheatsheet.md#whoami)
   - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
+  - [ResourceGroups]()
   - [VMS, apps, storage](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vms-apps-storage)
   - [Keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#keyvault)
   - [Role Assignments](https://github.com/conma293/Azure/blob/main/cheatsheet.md#role-assignments)
@@ -162,6 +163,7 @@ Get-AzAdApplication
 #### Resource Group
 ```
 Get-AzResourceGroupDeployment -ResourceGroupName SAP
+Save-AzResourceGroupDeploymentTemplate -ResourceGroupName SAP -DeploymentName stevencking_defcorphq.onmicrosoft.com.sapsrv
 ```
 
 #### VMs, Apps, Storage:
