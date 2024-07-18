@@ -56,6 +56,7 @@ Privilege Escalation and Lateral Movement
   - [enum with new user creds](https://github.com/conma293/Azure/blob/main/killcycle.md#new-user-enumeration)
   - [Administrative Units](https://github.com/conma293/Azure/blob/main/killcycle.md#administrative-units)
   - [Phish and Add Users](https://github.com/conma293/Azure/blob/main/killcycle.md#phish-and-use-roys-creds)
+- [Enterprise App]
 * * *
 # Enumeration 
 TLDR:
@@ -976,6 +977,8 @@ $jumpvm = New-PSSession -ComputerName 51.116.180.87 -Credential $creds -SessionO
 Enter-PSSession -Session $jumpvm
 ```
 
+## Enterprise Applications
+If there is a client secret for the service principal of an Enterprise Application - very low touch. Never seen workload identity getting detected as risky
 
 
 
