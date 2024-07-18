@@ -24,15 +24,15 @@ Enter-PSSession $sess
 ### New Identity - Enumerate whenever we get access to a new user or workload identity - AzResources, then enumerate the resources we have access to by choosing from the below...
 ```
 (Get-AzContext).Account
-
-Get-AzResources
+Get-AzResource
 
 Get-AzRoleAssignment
 Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
+
 Get-AzRoleDefinition -Name "<Virtual Machine Command Executor>"
 
 Get-AzADGroup -DisplayName '<VM Admins>' 
-Get-AzADGroupMember -GroupDisplayName 'VM Admins' | select DisplayName
+Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
 ```
 * * *
 - AzureAD
