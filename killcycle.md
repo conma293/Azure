@@ -14,9 +14,11 @@ Never ever use user Identity - use workload identities: Service Principals; Mana
   - [latmove/privesc - add/modify users](https://github.com/conma293/Azure/blob/main/killcycle.md#phish-and-use-roys-creds)
 - Kill Chain 3 (_Topics covered - Authenticated Enumeration, Privilege Escalation and Data Mining_)
   - [Initial Access - Insecure File upload and OS Command Injection](https://github.com/conma293/Azure/blob/main/killcycle.md#command-injection)
-  - [Ent App?](https://github.com/conma293/Azure/blob/main/killcycle.md#enterprise-applications)
+  - [Ent App - ARM Templates Deployment History](https://github.com/conma293/Azure/blob/main/killcycle.md#enterprise-applications)
   - 
-- Kill Chain 4
+- Kill Chain 4 (_Topics covered - Authenticated Enumeration, Privilege Escalation and Data Mining_)
+  - Insecure Storage Blob
+  - Function App - Continuous Development CD/DC
 
 
 **REFS:**
@@ -1047,6 +1049,12 @@ Your sign-in was successful but does not meet the criteria to access this resour
 Sign out and sign in with a different account
 ```
 Conditional access policy == Toxic relationship. It is upset but doesnt tell you why
+
+## Functional apps
+Using the creds we [got] for Github lets login
+creds work but we need mfa... dont worry we have the backup too!
+
+
 
 
 - Press F12 and choose another device type lol > iPad Pro
