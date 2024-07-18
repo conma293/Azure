@@ -1048,5 +1048,6 @@ Sign out and sign in with a different account
 ```
 Conditional access policy == Toxic relationship. It is upset but doesnt tell you why
 
-Press F12 and choose another device type lol
+- Press F12 and choose another device type lol > iPad Pro
+- Now within the Portal goto ```Resources> Resource Groups> StagingEnv> Settings> Deployments```
 
