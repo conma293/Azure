@@ -12,7 +12,7 @@ Never ever use user Identity - use workload identities: Service Principals; Mana
   - [Gather Credentials - Keyvault](https://github.com/conma293/Azure/blob/main/killcycle.md#keyvault)
   - [Initial Access - Phish using recovered creds with evilginx](https://github.com/conma293/Azure/blob/main/2.12_Evilginx2.md)
   - [latmove/privesc - add/modify users](https://github.com/conma293/Azure/blob/main/killcycle.md#phish-and-use-roys-creds)
-- Kill Chain 3
+- Kill Chain 3 (_Topics covered - Authenticated Enumeration, Privilege Escalation and Data Mining_)
 - Kill Chain 4
 
 
