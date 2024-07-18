@@ -60,7 +60,7 @@ Privilege Escalation and Lateral Movement
   - [Administrative Units](https://github.com/conma293/Azure/blob/main/killcycle.md#administrative-units)
   - [Phish and Add Users](https://github.com/conma293/Azure/blob/main/killcycle.md#phish-and-use-roys-creds)
 - [Enterprise App]
-  - Enumerate Service Principal of App we have secret to
+  - [Enumerate Service Principal of App we have secret to]
   - Continue blah
   - keyvault?
 * * *
@@ -1009,7 +1009,7 @@ ServicePrincipalType : ManagedIdentity_
 - In fact, that is the most common use case of function aps.
 - In this case, the processfile function app is processing the fileuploads to the virusscanner app service.
 
-#### Pushing forward with the client secret
+#### Enumerate with client secret
 - Recall that we added credentials to the fileapp application in Azure AD. 
 - Let's use the credentials now to authenticate as that service principal. 
 - Please remember you may need to change the secret in the command below to the one that you added earlier
@@ -1032,7 +1032,7 @@ Sweet! Access to a key vault! Check if we can list and read any secrets!
 Get-AzKeyVaultSecret -VaultName credvault-fileapp
 Get-AzKeyVaultSecret -VaultName credvault-fileapp -Name MobileUsersBackup -AsPlainText
 ```
-
+#### Deployment Template
 Let's use the above credentials to authenticate:
 ```
 $password = ConvertTo-SecureString 'IpadPr0@M0b1leUs3r@t0rganization' -AsPlainText -Force
@@ -1048,6 +1048,7 @@ Sign out and sign in with a different account
 ```
 Conditional access policy == Toxic relationship. It is upset but doesnt tell you why
 
+
 - Press F12 and choose another device type lol > iPad Pro
-- Now within the Portal goto ```Resources> Resource Groups> StagingEnv> Settings> Deployments```
+- Now within the Portal goto ```Resources> Resource Groups> StagingEnv> Settings> Deployments> Template```
 
