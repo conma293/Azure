@@ -97,7 +97,11 @@ Check specific roles and users within the administrative unit (grab the ```RoleI
 Get-AzureADDirectoryRole -ObjectId 5b3935ed-b52d-4080-8b05-3a1832194d3a
 Get-AzureADUser -ObjectId 8c088359-66fb-4253-ad0d-a91b82fd548a | fl *
 ```
-
+#### Service Principal
+```
+Get-AzureADServicePrincipal
+Get-AzureADServicePrincipal -All $True | ?{$_.AppId -eq "62e44426-5c46-4e3c-8a89-f461d5d586f2"} | fl
+```
 #### Preview Module for custom roles
 ```
 Import-Module C:\AzAD\Tools\AzureADPreview\AzureADPreview.psd1
