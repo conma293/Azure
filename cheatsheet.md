@@ -159,6 +159,11 @@ Get-AzAdUser
 Get-AzAdApplication
 ```
 
+#### Resource Group
+```
+Get-AzResourceGroupDeployment -ResourceGroupName SAP
+```
+
 #### VMs, Apps, Storage:
 ```
 Get-AzVM | fl *
