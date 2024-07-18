@@ -984,9 +984,9 @@ Enter-PSSession -Session $jumpvm
 ```
 
 ## Enterprise Applications
-If there is a client secret for the service principal of an Enterprise Application - very low touch. Never seen workload identity getting detected as risky
-
-First lets check where we got to from [last time] where we got a secret for an app
+- [Earlier] we found out that the managed identity for the VirusScanner webapp has permissions to add secrets to the enterprise application ```fileapp```
+- Managed identities are special service principals.
+- That means, we can enumerate the service principals in Azure AD and check the service principal that the AppID ```62e44426-5c46-4e3c-8a89-f461d5d586f2``` belongs to:
 ```
 Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1 
 $passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force
