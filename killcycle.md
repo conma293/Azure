@@ -60,9 +60,9 @@ Privilege Escalation and Lateral Movement
   - [Administrative Units](https://github.com/conma293/Azure/blob/main/killcycle.md#administrative-units)
   - [Phish and Add Users](https://github.com/conma293/Azure/blob/main/killcycle.md#phish-and-use-roys-creds)
 - [Enterprise App]
-  - [Enumerate Service Principal of App we have secret to]
-  - Continue blah
-  - keyvault?
+  - [Enumerate service principal type]
+  - [Enumerate with Service Principal managed identity Client Secret]
+  - [Deployment Template - creds]
 * * *
 # Enumeration 
 TLDR:
