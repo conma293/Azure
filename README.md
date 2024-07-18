@@ -16,7 +16,15 @@
   - PrivEsc
     - runbook
     - runcommand
-    - 
+    - Keyvaults
+    - Enterprise Apps
+    - Functional Apps
+  - Something
+  - Hybrid
+ 
+
+
+
 - Module 2
   - Enumeration of Azure Services (Storage Accounts, Key vaults, Blobs, Automation Accounts, Deployment History and more)
   - Privilege Escalation (RBAC roles, Azure AD Roles, Across subscriptions, Custom Roles, Resource Ownership, Dynamic Groups etc.
