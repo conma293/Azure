@@ -1000,10 +1000,10 @@ Get-AzureADServicePrincipal -All $True | ?{$_.AppId -eq "62e44426-5c46-4e3c-8a89
 ```
 
 _DisplayName : processfile [snip] 
+
 ServicePrincipalType : ManagedIdentity_
 
 - So the token we got is actually for the managed identity of the function app processfile!
-
 - Note that this will not impact further attacks. We looked at it just to understand that function apps may be in use behind app services.
 - In fact, that is the most common use case of function aps.
 - In this case, the processfile function app is processing the fileuploads to the virusscanner app service.
