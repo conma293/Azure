@@ -1019,5 +1019,9 @@ $password = ConvertTo-SecureString 'mCL8Q~Kg~bAOBm3d0WhtbFiuuRP53Ix6eQ5qTbrJ' -A
 $creds = New-Object System.Management.Automation.PSCredential('f072c4a6-b440-40de-983f-a7f3bd317d8f', $password)
 Connect-AzAccount -ServicePrincipal -Credential $creds -Tenant 2d50cb29-5f7b-48a4-87ce-fe75a941adb6
 ```
-
 **WARNING: The provided service principal secret will be included in the 'AzureRmContext.json' file found in the user profile ( C:\Users\studentuserx\.Azure). Please ensure that this directory has appropriate protections.**
+
+Now, list the resources readable by the service principal:
+```
+Get-AzResource
+```
