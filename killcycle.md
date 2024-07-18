@@ -61,7 +61,7 @@ Privilege Escalation and Lateral Movement
   - [Phish and Add Users](https://github.com/conma293/Azure/blob/main/killcycle.md#phish-and-use-roys-creds)
 - [Enterprise App]
   - [Enumerate service principal type]
-  - [Enumerate with Service Principal managed identity Client Secret]
+  - [Use Managed Identity of function app Client Secret]
   - [Deployment Template - creds]
 * * *
 # Enumeration 
