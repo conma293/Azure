@@ -180,6 +180,7 @@ Get-AzFunctionApp
 
 ####  Storage
 Remember to use Storage Explorer GUI as soon as possible!
+- Right click storage account > connect to azure storage > subscription (if you have user) or storage account/blob
 
 ```
 Get-AzStorageAccount | fl
