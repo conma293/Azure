@@ -10,7 +10,7 @@
 - Kill Chain 2 (_Topics Covered: Authenticated Enumeration, Privilege Escalation and Data Mining_)
   - [Initial Access - Server Side Template Injection (SSTI)](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti)
   - [Keyvault](https://github.com/conma293/Azure/blob/main/killcycle.md#keyvault)
-    - Phish user with [evilginx](https://github.com/conma293/Azure/blob/main/2.12_Evilginx2.md) and then [add/modify users](https://github.com/conma293/Azure/blob/main/killcycle.md#phish-and-use-roys-creds)
+    - [Phish with new creds with evilginx](https://github.com/conma293/Azure/blob/main/2.12_Evilginx2.md) and then [add/modify users](https://github.com/conma293/Azure/blob/main/killcycle.md#phish-and-use-roys-creds)
 - Kill Chain 3
 - Kill Chain 4
 
