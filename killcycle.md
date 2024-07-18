@@ -617,6 +617,7 @@ We can view applications!
 . C:\AzAD\Tools\Add-AzADAppSecret.ps1
 Add-AzADAppSecret -GraphToken $graphaccesstoken -Verbose
 ```
+- SAVE THE SECRET OUTPUT!!
 
 ## Storage blob
 
