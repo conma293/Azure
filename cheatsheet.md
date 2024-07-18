@@ -21,7 +21,7 @@ Enter-PSSession $sess
 ```
 
 * * * 
-### New Identity - Enumerate whenever we get access to a new user or workload identity - AzResources, then enumerate the resources we have access to...
+### New Identity - Enumerate whenever we get access to a new user or workload identity - AzResources, then enumerate the resources we have access to by choosing from the below...
 ```
 Get-AzResources
 
