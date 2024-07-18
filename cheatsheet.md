@@ -27,9 +27,9 @@ Get-AzResources
 
 Get-AzRoleAssignment
 Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
-Get-AzRoleDefinition -Name "Virtual Machine Command Executor"
+Get-AzRoleDefinition -Name "<Virtual Machine Command Executor>"
 
-Get-AzADGroup -DisplayName 'VM Admins' 
+Get-AzADGroup -DisplayName '<VM Admins>' 
 Get-AzADGroupMember -GroupDisplayName 'VM Admins' | select DisplayName
 ```
 * * *
