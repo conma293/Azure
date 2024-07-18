@@ -1,6 +1,12 @@
 # CARTP
 
-- Module 1
+
+- [Kill Chain](https://github.com/conma293/Azure/blob/main/killcycle.md)
+- [CheatSheet](https://github.com/conma293/Azure/blob/main/cheatsheet.md)
+
+
+* * * 
+
   - [Introduction to Azure](https://github.com/conma293/Azure/blob/main/1.0_Intro.md)
   - [Discovery and Recon of services and applications](https://github.com/conma293/Azure/blob/main/1.1_Recon.md)
     - [externalSpray]()
@@ -22,9 +28,13 @@
   - Something
   - Hybrid
  
+* * * 
 
-
-
+- Module 1
+  - Introduction to Azure
+  - Discovery and Recon of services and applications
+  - Azure AD Enumeration
+  - Initial Access Attacks (Enterprise Apps, App Services, Function Apps, Insecure Storage, Phishing, Consent Grant Attacks)
 - Module 2
   - Enumeration of Azure Services (Storage Accounts, Key vaults, Blobs, Automation Accounts, Deployment History and more)
   - Privilege Escalation (RBAC roles, Azure AD Roles, Across subscriptions, Custom Roles, Resource Ownership, Dynamic Groups etc.
@@ -37,11 +47,6 @@
   - Bypassing Defenses****
 
 * * * 
-
-- [Kill Chain](https://github.com/conma293/Azure/blob/main/killcycle.md)
-- [CheatSheet](https://github.com/conma293/Azure/blob/main/cheatsheet.md)
-
-* * *
 
 # Other Resources
 
