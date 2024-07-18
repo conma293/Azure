@@ -1040,4 +1040,10 @@ $creds = New-Object System.Management.Automation.PSCredential('DavidDHenriques@d
 Connect-AzAccount -Credential $creds
 ```
 
-
+We try to sign into azure.portal and get this:
+```
+You cannot access this right now
+Your sign-in was successful but does not meet the criteria to access this resource. For example, you might be signing in from a browser, app, or location that is restricted by your admin.
+Sign out and sign in with a different account
+```
+Conditional access policy == Toxic relationship. It is upset but doesnt tell you why
