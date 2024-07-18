@@ -997,4 +997,9 @@ Connect-AzureAD -Credential $creds
 Get-AzureADServicePrincipal -All $True | ?{$_.AppId -eq "62e44426-5c46-4e3c-8a89-f461d5d586f2"} | fl
 ```
 
+_DisplayName : processfile [snip] 
+ServicePrincipalType : ManagedIdentity_
+
+So the token we got is actually for the managed identity of the function app processfile!
+
 
