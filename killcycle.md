@@ -984,6 +984,8 @@ Enter-PSSession -Session $jumpvm
 ```
 
 ## Enterprise Applications
+#### Initial enumeration of Frontend Enterprise App and Functional App we were able to add a client secret to
+
 - [Earlier] we found out that the managed identity for the VirusScanner webapp has permissions to add secrets to the enterprise application ```fileapp```
 - Managed identities are special service principals.
 - That means, we can enumerate the service principals in Azure AD and check the service principal that the AppID ```62e44426-5c46-4e3c-8a89-f461d5d586f2``` belongs to:
@@ -1000,6 +1002,22 @@ Get-AzureADServicePrincipal -All $True | ?{$_.AppId -eq "62e44426-5c46-4e3c-8a89
 _DisplayName : processfile [snip] 
 ServicePrincipalType : ManagedIdentity_
 
-So the token we got is actually for the managed identity of the function app processfile!
+- So the token we got is actually for the managed identity of the function app processfile!
 
+- Note that this will not impact further attacks. We looked at it just to understand that function apps may be in use behind app services.
+- In fact, that is the most common use case of function aps.
+- In this case, the processfile function app is processing the fileuploads to the virusscanner app service.
 
+#### Pushing forward with the client secret
+- Recall that we added credentials to the fileapp application in Azure AD. 
+- Let's use the credentials now to authenticate as that service principal. 
+- Please remember you may need to change the secret in the command below to the one that you added earlier
+
+The below User field for our creds object is the ```AppId``` value for the Functional App ```FileApp```, which was returned when we added a secret to it:
+```
+$password = ConvertTo-SecureString 'mCL8Q~Kg~bAOBm3d0WhtbFiuuRP53Ix6eQ5qTbrJ' -AsPlainText -Force 
+$creds = New-Object System.Management.Automation.PSCredential('f072c4a6-b440-40de-983f-a7f3bd317d8f', $password)
+Connect-AzAccount -ServicePrincipal -Credential $creds -Tenant 2d50cb29-5f7b-48a4-87ce-fe75a941adb6
+```
+
+**WARNING: The provided service principal secret will be included in the 'AzureRmContext.json' file found in the user profile ( C:\Users\studentuserx\.Azure). Please ensure that this directory has appropriate protections.**
