@@ -179,6 +179,8 @@ Get-AzFunctionApp
 ```
 
 ####  Storage
+Remember to use Storage Explorer GUI as soon as possible!
+
 ```
 Get-AzStorageAccount | fl
 Get-AzStorageContainer -Context (New-AzStorageContext -StorageAccountName defcorpcodebackup)
