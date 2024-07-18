@@ -44,7 +44,8 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
   - [whoami](https://github.com/conma293/Azure/blob/main/cheatsheet.md#whoami)
   - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
   - [ResourceGroups]()
-  - [VMS, apps, storage](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vms-apps-storage)
+  - [VMS, apps](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vms-apps)
+  - [Storage](https://github.com/conma293/Azure/blob/main/cheatsheet.md#storage)
   - [Keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#keyvault)
   - [Role Assignments](https://github.com/conma293/Azure/blob/main/cheatsheet.md#role-assignments)
   - [Runbooks and Hybrid Worker Groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#hybrid-worker-groups)
@@ -166,7 +167,7 @@ Get-AzResourceGroupDeployment -ResourceGroupName SAP
 Save-AzResourceGroupDeploymentTemplate -ResourceGroupName SAP -DeploymentName stevencking_defcorphq.onmicrosoft.com.sapsrv
 ```
 
-#### VMs, Apps, Storage:
+#### VMs, Apps
 ```
 Get-AzVM | fl *
 
@@ -175,8 +176,12 @@ Get-AzWebApp | select name, HostNames, kind, state, identity
 
 Get-AzWebApp | ?{$_.Kind -notmatch "functionapp"}
 Get-AzFunctionApp
+```
 
+####  Storage
+```
 Get-AzStorageAccount | fl
+Get-AzStorageContainer -Context (New-AzStorageContext -StorageAccountName defcorpcodebackup)
 ```
 
 #### Keyvault
