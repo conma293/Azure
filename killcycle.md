@@ -1,4 +1,4 @@
-
+Never ever use user Identity - use workload identities: Service Principals; Managed Identities
 
 ## Kill Chains
 - Kill Chain 1
