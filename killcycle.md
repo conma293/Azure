@@ -1047,3 +1047,6 @@ Your sign-in was successful but does not meet the criteria to access this resour
 Sign out and sign in with a different account
 ```
 Conditional access policy == Toxic relationship. It is upset but doesnt tell you why
+
+Press F12 and choose another device type lol
+
