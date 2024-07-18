@@ -21,7 +21,23 @@ Enter-PSSession $sess
 ```
 
 * * * 
+### New Identity - Enumerate whenever we get access to a new user or workload identity - AzResources, then enumerate the resources we have access to...
+```
+Get-AzResources
 
+Get-AzRoleAssignment
+Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
+Get-AzRoleDefinition -Name "Virtual Machine Command Executor"
+
+Get-AzADGroup -DisplayName 'VM Admins' 
+Get-AzADGroupMember -GroupDisplayName 'VM Admins' | select DisplayName
+
+...
+
+
+
+```
+* * *
 - AzureAD
   - [Users and groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-and-groups)
   - [Administrative Unit](https://github.com/conma293/Azure/blob/main/cheatsheet.md#administrative-unit)
@@ -197,19 +213,6 @@ If you compromise a machine worth checking out azcontext, similar to sessions, i
 get-azcontext
 select-azcontext -Name <copy pasted>
 ```
-
-### New Identity ENUM
-```
-Get-AzResources
-
-Get-AzRoleAssignment
-Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
-Get-AzRoleDefinition -Name "Virtual Machine Command Executor"
-
-Get-AzADGroup -DisplayName 'VM Admins' 
-Get-AzADGroupMember -GroupDisplayName 'VM Admins' | select DisplayName
-```
-
 
 * * * 
 
