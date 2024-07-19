@@ -1110,3 +1110,24 @@ we see a storage blob, lets see whats inside:
 ```
 Get-AzStorageContainer -Context (New-AzStorageContext -StorageAccountName defcorpcodebackup)
 ```
+
+We can use Azure Storage Explore to navigate to these containers for download: ```Right click storage account > connect to azure storage > subscription (if you have user) or storage account/blob```
+
+We get what looks like an SSH Key in the form of ```id_rsa```
+
+We can copy that directly into our users ```.ssh``` folder and use the key:
+```
+mkdir C:\Users\studentuserx\.ssh
+copy C:\Users\studentuser213\Downloads\defcorp\Storage blobs\stephenking\id_rsa C:\Users\studentuserx\.ssh\id_rsa
+```
+
+Then connect:
+```
+ssh -T git@github.com
+```
+
+When prompted use the creds we found earlier (cred re-use/stuffing): ```sL3B9zvf6@wCar8dYWqm7e```
+
+
+```
+
