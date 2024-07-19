@@ -1140,7 +1140,12 @@ Let’s use that file! Go to the CreateUsers directory, create a directory for y
 
 user.json==
 ```
-{ "accountEnabled": true, "displayName": "studentx", "mailNickname": "studentx", "userPrincipalName": "studentx@defcorphq.onmicrosoft.com", "passwordProfile" : { "forceChangePasswordNextSignIn": false, "password": "StudxPassword@123" } }
+{ "accountEnabled": true,
+"displayName": "studentx",
+"mailNickname": "studentx",
+"userPrincipalName": "studentx@defcorphq.onmicrosoft.com",
+"passwordProfile" : { "forceChangePasswordNextSignIn": false, "password": "StudxPassword@123" }
+}
 ```
 
 
