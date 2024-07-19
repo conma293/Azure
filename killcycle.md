@@ -18,7 +18,7 @@ Never ever use user Identity - use workload identities: Service Principals; Mana
   - 
 - Kill Chain 4 (_Topics covered - Authenticated Enumeration, Privilege Escalation and Data Mining_)
   - Insecure Storage Blob
-  - Function App - Continuous Development CD/DC
+  - Function App - Continuous Development CD/DC leveraging github
 
 
 **REFS:**
