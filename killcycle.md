@@ -17,8 +17,8 @@ Never ever use user Identity - use workload identities: Service Principals; Mana
   - [Ent App - ARM Templates Deployment History](https://github.com/conma293/Azure/blob/main/killcycle.md#enterprise-applications)
   - 
 - Kill Chain 4 (_Topics covered - Authenticated Enumeration, Privilege Escalation and Data Mining_)
-  - Insecure Storage Blob
-  - Function App - Continuous Development CD/DC leveraging github
+  - [Insecure Storage Blob](https://github.com/conma293/Azure/blob/main/killcycle.md#storage-blob)
+  - [Function App - Continuous Development CD/DC leveraging github]
 
 
 **REFS:**
