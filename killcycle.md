@@ -65,7 +65,7 @@ Privilege Escalation and Lateral Movement
   - [Enumerate service principal type]
   - [Use Managed Identity of function app Client Secret]
   - [Deployment Template - creds]
-- FunctionApp?
+- [FunctionApp](https://github.com/conma293/Azure/blob/main/killcycle.md#function-apps)
   - Github and Authenticator
 * * *
 # Enumeration 
