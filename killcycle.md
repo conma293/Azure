@@ -1059,6 +1059,7 @@ Conditional access policy == Toxic relationship. It is upset but doesnt tell you
 - Grab the creds within the ARM Template development history
 
 ## Function Apps
+#### Github and CI/CD exploit
 Using the creds we [got] for Github lets login - goto ```https://github.com/DefCorp/SimpleApps```
 creds work but we need mfa... dont worry we have the backup too - put it into google authenticator extension for chrome
 
