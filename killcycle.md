@@ -1115,10 +1115,10 @@ We can use Azure Storage Explore to navigate to these containers for download: `
 
 We get what looks like an SSH Key in the form of ```id_rsa```
 
-We can copy that directly into our users ```.ssh``` folder and use the key:
+We can copy that directly into our users ```.ssh``` folder and use the key (run as admin):
 ```
-mkdir C:\Users\studentuserx\.ssh
-copy C:\Users\studentuser213\Downloads\defcorp\Storage blobs\stephenking\id_rsa C:\Users\studentuserx\.ssh\id_rsa
+mkdir C:\Users\studentuser213\.ssh
+copy C:\Users\studentuser213\Downloads\defcorp\Storage blobs\stephenking\id_rsa C:\Users\studentuser213\.ssh\id_rsa
 ```
 
 Then connect:
