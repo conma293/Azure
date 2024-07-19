@@ -18,7 +18,7 @@ Never ever use user Identity - use workload identities: Service Principals; Mana
   - 
 - Kill Chain 4 (_Topics covered - Authenticated Enumeration, Privilege Escalation and Data Mining_)
   - [Insecure Storage Blob](https://github.com/conma293/Azure/blob/main/killcycle.md#storage-blob)
-  - [Function App - Continuous Development CD/DC leveraging github]
+  - [Function App - Continuous Development CD/DC leveraging github](https://github.com/conma293/Azure/blob/main/killcycle.md#function-apps)
 
 
 **REFS:**
