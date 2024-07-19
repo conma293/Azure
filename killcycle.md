@@ -1157,7 +1157,7 @@ Finally, commit the changes to the CreateUsers repo using the following commands
 git add .
 git config --global user.email "81172144+jenniferazad@users.noreply.github.com" 
 git config --global user.name "jenniferazad"
-C:\AzAD\Tools\CreateUsers\studentx>git push
+git push
 ```
 
 Now browse to the function app and it should create a user for us: ```https://createusersapp.azurewebsites.net/api/CreateUsersApp?id=213```
