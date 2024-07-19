@@ -59,7 +59,7 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
   - [URLs](https://github.com/conma293/Azure/blob/main/cheatsheet.md#uris)
 - [Scripts](https://github.com/conma293/Azure/blob/main/cheatsheet.md#scripts)
   - [Microburst]
-    - [subdomains]
+    - [subdomains](https://github.com/conma293/Azure/blob/main/cheatsheet.md#subdomains)
     - [storage blobs]
 - Playbooks
   - [Create Runbook](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runbooks)
@@ -67,7 +67,7 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
   - [Connect to VM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#connect-to-vm)
     - [Get Public IP](https://github.com/conma293/Azure/blob/main/cheatsheet.md#get-public-ip)
   - [Powershell History]
-  - [NEW USER ENUM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#new-identity-enum)
+
 
 # Tools
 ### AzAD
