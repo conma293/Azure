@@ -67,6 +67,12 @@ Privilege Escalation and Lateral Movement
   - [Deployment Template - creds]
 - [FunctionApp](https://github.com/conma293/Azure/blob/main/killcycle.md#function-apps)
   - Github and Authenticator
+
+Lateral Movemement
+- VM User Data
+- Script Extension
+- Primary Refresh Token
+
 * * *
 # Enumeration 
 TLDR:
@@ -1168,3 +1174,8 @@ git push
 
 Now browse to the function app and it should create a user for us: ```https://createusersapp.azurewebsites.net/api/CreateUsersApp?id=213```
 
+# Lateral Movemement
+Hardcoding Credentials is the easiest way to get things done!
+## VM User Data
+## Script Extension
+## Primary Refresh Token
