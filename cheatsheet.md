@@ -36,7 +36,7 @@ Get-AzADGroup -DisplayName '<VM Admins>'
 Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
 ```
 * * *
-- AzureAD
+- [AzureAD](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azad)
   - [Users and groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-and-groups)
   - [Administrative Unit](https://github.com/conma293/Azure/blob/main/cheatsheet.md#administrative-unit)
   - [Preview Module for custom role and policy](https://github.com/conma293/Azure/blob/main/cheatsheet.md#preview-module-for-custom-roles)
