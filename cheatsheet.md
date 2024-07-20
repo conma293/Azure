@@ -346,11 +346,11 @@ Location          : germanywestcentral
 ResourceId*        : /subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Research/providers/Microsoft.Compute/virtualMachines/infradminsrv/extensions/MicrosoftMonitoringAgent
 Tags              :
 ```
-
-
+- Take the following portion of the ResourceId: **/subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Research/providers/Microsoft.Compute/virtualMachines/infradminsrv**
+- You could also try ```../virtualMachines/``` without specifying the specific VM to see if you can read ALL VMs... but if not, specify the specific resource you are returned from ```Get-AzResource```:
 ```
 $URI = 'https://management.azure.com/
-/subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Research/providers/Microsoft.Compute/virtualMachines/
+/subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Research/providers/Microsoft.Compute/virtualMachines/infradminsrv/
 /providers/Microsoft.Authorization/permissions?api-version=2015-07-01'
 ```
 * * *
