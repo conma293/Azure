@@ -69,8 +69,8 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
   - [Connect to VM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#connect-to-vm)
     - [Get Public IP](https://github.com/conma293/Azure/blob/main/cheatsheet.md#get-public-ip)
 - Interesting File Locations
-  - [Powershell History]
-  - 
+  - [Powershell History](https://github.com/conma293/Azure/blob/main/cheatsheet.md#powershell-history---credentials)
+  - [AzureRMContext.json]()
 
 
 # Tools
