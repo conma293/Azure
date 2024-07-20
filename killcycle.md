@@ -45,7 +45,7 @@ Initial Access
   - [OS Command Injection](https://github.com/conma293/Azure/blob/main/killcycle.md#command-injection)
 - [Storage Blobs](https://github.com/conma293/Azure/blob/main/killcycle.md#storage-blob)
 
-Privilege Escalation and Lateral Movement
+Privilege Escalation (and Lateral Movement)
 - [Runbooks - latmove and privesc](https://github.com/conma293/Azure/blob/main/killcycle.md#runbooks)
   - [Az CLI Recon](https://github.com/conma293/Azure/blob/main/killcycle.md#az-cli-recon)
   - [Steal tokens from Az CLI for latmove](https://github.com/conma293/Azure/blob/main/killcycle.md#steal-tokens-for-student-vm)
