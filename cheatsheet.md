@@ -178,7 +178,8 @@ Save-AzResourceGroupDeploymentTemplate -ResourceGroupName SAP -DeploymentName st
 Get-AzVM | fl *
 
 Get-AzVMExtension -ResourceGroupName "Research" -VMName "infradminsrv"
-Get-AzVMExtension -ResourceGroupName "Research" -VMName "infradminsrv" | select VMName, ExtensionType, Name, PublicSettings | fl *
+
+Set-AzVMExtension -ResourceGroupName "Research" -ExtensionName "ExecCmd" -VMName "infradminsrv" -Location "Germany West Central" -Publisher Microsoft.Compute -ExtensionType CustomScriptExtension -TypeHandlerVersion 1.8 -SettingString '{"commandToExecute":"powershell net users student213 StudxPassword@123 /add /Y; net localgroup administrators student213 /add"}'
 
 Get-AzWebApp
 Get-AzWebApp | select name, HostNames, kind, state, identity
