@@ -64,7 +64,7 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
 - IMDS
   - [VM User Data](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vm-userdata)
 - Playbooks
-  - [Create Runbook](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runbooks)
+  - [Create Runbook](https://github.com/conma293/Azure/blob/main/cheatsheet.md#create-runbooks)
   - [RunCommand](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runcommand)
   - [Connect to VM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#connect-to-vm)
     - [Get Public IP](https://github.com/conma293/Azure/blob/main/cheatsheet.md#get-public-ip)
