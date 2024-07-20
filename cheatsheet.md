@@ -58,7 +58,7 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
 - Manual APIs and common URLS
   - [API Call Template](https://github.com/conma293/Azure/blob/main/cheatsheet.md#api-call)
   - [URLs](https://github.com/conma293/Azure/blob/main/cheatsheet.md#uris)
-  - [Example Call]()
+  - [Example API Enumeration](https://github.com/conma293/Azure/blob/main/cheatsheet.md#example-api-enumeration)
 - [Scripts](https://github.com/conma293/Azure/blob/main/cheatsheet.md#scripts)
   - Microburst
     - [subdomains](https://github.com/conma293/Azure/blob/main/cheatsheet.md#subdomains)
