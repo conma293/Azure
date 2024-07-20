@@ -55,8 +55,10 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
   - [Automation account](https://github.com/conma293/Azure/blob/main/cheatsheet.md#automation-account)
 - [Tokens Az Powershell](https://github.com/conma293/Azure/blob/main/cheatsheet.md#token-reuse)
   - [Pivot with tokens (Az CLI to Az Powershell)](https://github.com/conma293/Azure/blob/main/cheatsheet.md#pivot-from-shell-stealing-tokens)
-- [Manual APIs and common URLS](https://github.com/conma293/Azure/blob/main/cheatsheet.md#api-call)
+- Manual APIs and common URLS
+  - [API Call Template](https://github.com/conma293/Azure/blob/main/cheatsheet.md#api-call)
   - [URLs](https://github.com/conma293/Azure/blob/main/cheatsheet.md#uris)
+  - [Example Call]()
 - [Scripts](https://github.com/conma293/Azure/blob/main/cheatsheet.md#scripts)
   - Microburst
     - [subdomains](https://github.com/conma293/Azure/blob/main/cheatsheet.md#subdomains)
