@@ -1184,5 +1184,11 @@ Now browse to the function app and it should create a user for us: ```https://cr
 # Lateral Movemement
 Hardcoding Credentials is the easiest way to get things done!
 ## VM User Data
+[Remote into JumpVM with credentials of user we added previously](https://github.com/conma293/Azure/blob/main/killcycle.md#phish-and-use-roys-creds)
+Now we can probe Instance MetaData Service(IMDS):-
+```
+$userData = Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Uri "http://169.254.169.254/metadata/instance/compute/userData?api-version=2021-01-01&format=text"
+[System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($userData))
+```
 ## Script Extension
 ## Primary Refresh Token
