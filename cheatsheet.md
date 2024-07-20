@@ -44,7 +44,7 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
   - [whoami](https://github.com/conma293/Azure/blob/main/cheatsheet.md#whoami)
   - [Resources](https://github.com/conma293/Azure/blob/main/cheatsheet.md#resources)
   - [ResourceGroups]()
-  - [VMS, apps](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vms-apps)
+  - [VMS, VMExtension, Apps](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vms-apps)
   - [Storage](https://github.com/conma293/Azure/blob/main/cheatsheet.md#storage)
   - [Keyvaults](https://github.com/conma293/Azure/blob/main/cheatsheet.md#keyvault)
   - [Role Assignments](https://github.com/conma293/Azure/blob/main/cheatsheet.md#role-assignments)
