@@ -343,7 +343,7 @@ Name              : infradminsrv/MicrosoftMonitoringAgent
 ResourceGroupName : Research
 ResourceType      : Microsoft.Compute/virtualMachines/extensions
 Location          : germanywestcentral
-ResourceId        : ***/subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Research/providers/Microsoft.Compute/virtualMachines/infradminsrv/extensions/MicrosoftMonitoringAgent***
+ResourceId*        : /subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Research/providers/Microsoft.Compute/virtualMachines/infradminsrv/extensions/MicrosoftMonitoringAgent
 Tags              :
 ```
 
