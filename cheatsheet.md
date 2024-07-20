@@ -334,6 +334,23 @@ App Registrations
 Service Principals
 ```
 
+## Example API Enumeration:
+```Get-AzResource```:
+```
+Name              : infradminsrv/MicrosoftMonitoringAgent
+ResourceGroupName : Research
+ResourceType      : Microsoft.Compute/virtualMachines/extensions
+Location          : germanywestcentral
+ResourceId        : /subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Research/providers/Microsoft.Compute/virtualMachines/infradminsrv/extensions/MicrosoftMonitoringAgent
+Tags              :
+```
+
+$URI =
+```
+'https://management.azure.com/
+/subscriptions/b413826f-108d-4049-8c11-d52d5d388768/resourceGroups/Research/providers/Microsoft.Compute/virtualMachines/
+/providers/Microsoft.Authorization/permissions?api-version=2015-07-01'
+```
 * * *
 
 ## Scripts
