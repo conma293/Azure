@@ -1221,6 +1221,10 @@ Great we have permissions, so now lets have a read of the extension:
 Get-AzVMExtension -ResourceGroupName "Research" -VMName "infradminsrv"
 ```
 
+Great now lets set the extension to run a command to add a user to localadmin of the VM:
+```
+Set-AzVMExtension -ResourceGroupName "Research" -ExtensionName "ExecCmd" -VMName "infradminsrv" -Location "Germany West Central" -Publisher Microsoft.Compute -ExtensionType CustomScriptExtension -TypeHandlerVersion 1.8 -SettingString '{"commandToExecute":"powershell net users student213 Stud213Password@123 /add /Y; net localgroup administrators student213 /add"}'
+```
 
 ## Script Extension
 ## Primary Refresh Token
