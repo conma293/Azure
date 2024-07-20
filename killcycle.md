@@ -70,8 +70,14 @@ Privilege Escalation (and Lateral Movement)
 
 Lateral Movemement
 - VM User Data
-- Script Extension
+- Custom Script Extension
 - Primary Refresh Token
+
+Hybrid
+- PHT
+- PHS
+- ADFS
+- SSO
 
 * * *
 # Enumeration 
