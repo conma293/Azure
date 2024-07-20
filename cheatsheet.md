@@ -174,6 +174,7 @@ Save-AzResourceGroupDeploymentTemplate -ResourceGroupName SAP -DeploymentName st
 #### VMs, Apps
 ```
 Get-AzVM | fl *
+Get-AzVMExtension -ResourceGroupName "Research" -VMName "infradminsrv"
 
 Get-AzWebApp
 Get-AzWebApp | select name, HostNames, kind, state, identity
