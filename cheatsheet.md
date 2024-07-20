@@ -256,7 +256,11 @@ To be able to interact with Azure AD:
 - And request a token for resources (ARM): ```az account get-access-token```
 - And then connect: ```Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId <VictimObjectId>```
 
-### Token reuse:
+* * *
+
+## Token reuse
+
+#### Azure Powershell:
 ```
 Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com
 
@@ -281,6 +285,8 @@ Now you can connect; ```-AccountID``` is victimID you stole the tokens from:
 ```
 Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
 ```
+
+* * *
 
 # API Call
 ```
@@ -327,6 +333,7 @@ App Registrations
 Service Principals
 ```
 
+* * *
 
 ## Scripts
 #### Subdomains:
