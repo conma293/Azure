@@ -70,7 +70,7 @@ Privilege Escalation (and Lateral Movement)
   - Github and Authenticator
 
 Lateral Movemement
-- VM User Data(https://github.com/conma293/Azure/blob/main/killcycle.md#vm-user-data)
+- [VM User Data](https://github.com/conma293/Azure/blob/main/killcycle.md#vm-user-data)
 - Custom Script Extension
 - Primary Refresh Token
 
