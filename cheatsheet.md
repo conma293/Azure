@@ -24,7 +24,8 @@ Enter-PSSession $sess
 $password = ConvertTo-SecureString '<PASSWD>' -AsPlainText -Force 
 $creds = New-Object System.Management.Automation.PSCredential('.\<user>', $Password)
 $targethost = New-PSSession -ComputerName <TargetIP> -Credential $creds
-Invoke-Command -Session $targethost -ScriptBlock{hostname/whoami/ipconfig/env/...}
+Invoke-Command -Session $targethost -ScriptBlock{hostname}
+Invoke-Command -Session $targethost -ScriptBlock{dsregcmd /status}
 ```
 * * * 
 ### New Identity - Enumerate whenever we get access to a new user or workload identity - AzResources, then enumerate the resources we have access to by choosing from the below ToC...
