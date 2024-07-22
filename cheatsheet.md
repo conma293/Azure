@@ -19,12 +19,12 @@ $creds = New-Object System.Management.Automation.PSCredential('<USER>', $Passwor
 $sess = New-PSSession -ComputerName <TargetIP> -Credential $creds -SessionOption (New-PSSessionOption -ProxyAccessType NoProxyServer) 
 Enter-PSSession $sess
 ```
-### Powershell Remoting - 2nd Jump
+### Powershell Remoting - 2nd Jump RCE (You cant have a 
 ```
 $password = ConvertTo-SecureString '<PASSWD>' -AsPlainText -Force 
 $creds = New-Object System.Management.Automation.PSCredential('.\<user>', $Password)
-$targetsess = New-PSSession -ComputerName <TargetIP> -Credential $creds
-Invoke-Command -Session $targetsess -ScriptBlock{hostname} <TargetHostName>
+$targethost = New-PSSession -ComputerName <TargetIP> -Credential $creds
+Invoke-Command -Session $targethost -ScriptBlock{hostname/whoami/ipconfig/env/...}
 ```
 * * * 
 ### New Identity - Enumerate whenever we get access to a new user or workload identity - AzResources, then enumerate the resources we have access to by choosing from the below ToC...
