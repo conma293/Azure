@@ -1244,3 +1244,5 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{dsregcmd /status}
 
 ## Script Extension
 ## Primary Refresh Token
+The Primary Refresh Token (PRT) is basically an authentication cookie for single sign-on - that is once a user is signed on they shouldnt have to sign on, or even present MFA, for any other applications or services, they just present the PRT.
+- It literally is used as a cookie by being passed within the browser to security endpoints as ```x-ms-RefreshTokenCredential```
