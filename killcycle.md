@@ -1237,6 +1237,10 @@ $infradminsrv = New-PSSession -ComputerName 10.0.1.5 -Credential $creds
 Invoke-Command -Session $infradminsrv -ScriptBlock{hostname} infradminsrv
 ```
 
+Now on new host Confirm if infradminsrv is joined to AzureAD:
+```
+Invoke-Command -Session $infradminsrv -ScriptBlock{dsregcmd /status}
+```
 
 ## Script Extension
 ## Primary Refresh Token
