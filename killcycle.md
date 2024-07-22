@@ -1234,7 +1234,7 @@ ok great, now back on JumpVM if we do a little investigating with ```netstat -an
 $password = ConvertTo-SecureString 'Stud213Password@123' -AsPlainText -Force 
 $creds = New-Object System.Management.Automation.PSCredential('.\student213', $Password)
 $infradminsrv = New-PSSession -ComputerName 10.0.1.5 -Credential $creds
-Invoke-Command -Session $infradminsrv -ScriptBlock{hostname} infradminsrv
+Invoke-Command -Session $infradminsrv -ScriptBlock{hostname}
 ```
 
 Now on new host Confirm if infradminsrv is joined to AzureAD:
