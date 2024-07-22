@@ -75,10 +75,12 @@ Lateral Movemement
 - Primary Refresh Token
 
 Hybrid
-- PHT
-- PHS
-- ADFS
-- SSO
+- Application Server
+- AD Connect
+	- Password Hash Sync (PHS) 
+	- Pass-Through Authentication (PTA)
+- Active Directory Federated Services (ADFS)
+- Seamless Single-SignOn (SSO)
 
 * * *
 # Enumeration 
