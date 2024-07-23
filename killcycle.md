@@ -13,6 +13,7 @@ Never ever use user Identity - use workload identities: Service Principals; Mana
   - [Initial Access - Phish using recovered creds with evilginx](https://github.com/conma293/Azure/blob/main/2.12_Evilginx2.md)
   - [latmove/privesc - add/modify users](https://github.com/conma293/Azure/blob/main/killcycle.md#phish-and-use-roys-creds)
   - [Latmove - VM User Data + Custom Script Extension](https://github.com/conma293/Azure/blob/main/killcycle.md#vm-user-data)
+  - [Latmove - Primary Refresh Token]
 - Kill Chain 3 (_Topics covered - Authenticated Enumeration, Privilege Escalation and Data Mining_)
   - [Initial Access - Insecure File upload and OS Command Injection](https://github.com/conma293/Azure/blob/main/killcycle.md#command-injection)
   - [Ent App - ARM Templates Deployment History](https://github.com/conma293/Azure/blob/main/killcycle.md#enterprise-applications)
