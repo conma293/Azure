@@ -63,7 +63,7 @@ Privilege Escalation (and Lateral Movement)
   - [enum with new user creds](https://github.com/conma293/Azure/blob/main/killcycle.md#new-user-enumeration)
   - [Administrative Units](https://github.com/conma293/Azure/blob/main/killcycle.md#administrative-units)
   - [Phish and Add Users](https://github.com/conma293/Azure/blob/main/killcycle.md#phish-and-use-roys-creds)
-- [Enterprise App]
+- [Enterprise App](https://github.com/conma293/Azure/blob/main/killcycle.md#enterprise-applications)
   - [Enumerate service principal type]
   - [Use Managed Identity of function app Client Secret]
   - [Deployment Template - creds]
