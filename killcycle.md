@@ -73,7 +73,7 @@ Privilege Escalation (and Lateral Movement)
 Lateral Movemement
 - [VM User Data](https://github.com/conma293/Azure/blob/main/killcycle.md#vm-user-data)
 - [Custom Script Extension](https://github.com/conma293/Azure/blob/main/killcycle.md#script-extension)
-- Primary Refresh Token
+- [Primary Refresh Token](https://github.com/conma293/Azure/blob/main/killcycle.md#primary-refresh-token)
 - InTune and dynamic groups
 
 Hybrid
