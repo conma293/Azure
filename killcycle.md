@@ -1204,7 +1204,7 @@ Now enum with ```Get-AzResource```:
 ```
 Get-AzRoleAssignment -SignInName samcgray@defcorphq.onmicrosoft.com
 ```
-
+### Script Extension
 Doesnt work so fall back to API Call:
 ```
 $Token = (Get-AzAccessToken).Token
@@ -1242,7 +1242,11 @@ Now on new host Confirm if infradminsrv is joined to AzureAD:
 Invoke-Command -Session $infradminsrv -ScriptBlock{dsregcmd /status}
 ```
 
-## Script Extension
+
 ## Primary Refresh Token
 The Primary Refresh Token (PRT) is basically an authentication cookie for single sign-on - that is once a user is signed on they shouldnt have to sign on, or even present MFA, for any other applications or services, they just present the PRT.
 - It literally is used as a cookie by being passed within the browser to security endpoints as ```x-ms-RefreshTokenCredential```
+- we have jumped onto ```infradminsrv``` from ```JumpVM```, lets continue from there:
+```
+Invoke-Command -Session $infradminsrv -ScriptBlock{mkdir C:\Users\Public\studentx}
+```
