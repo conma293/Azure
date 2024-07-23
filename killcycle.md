@@ -1311,6 +1311,11 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\Users\Public\student21
 
 #### Using the stolen PRT
 
-- goto ```login.microsoftonline.com```
-- clear all cookies
-- goto ```login.microsoftonline.com``` again (not just refresh)
+- goto ```https://login.microsoftonline.com/login.srf```
+- clear all cookies - Press F12 (Chrome dev tools) -> Application -> Cookies
+- goto ```https://login.microsoftonline.com/login.srf``` again (not just refresh)
+- Press F12 (Chrome dev tools) -> Application -> Cookies
+	- Add ```x-ms-RefreshTokenCredential``` and set value from stolen PRT
+	- Mark HTTPOnly and Secure for the cookie
+ - Visit ```https://login.microsoftonline.com/login.srf``` again (hit F5?)
+ - 
