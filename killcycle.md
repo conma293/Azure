@@ -1264,7 +1264,7 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{mkdir C:\Users\Public\student
 exit
 ```
 
-Let's copy over some tools to the jumpvm. Remember to exit from the PSRemoting session before running the below commands: 
+Now let's copy over some tools to the jumpvm. Remember to do this from the attacker machine, not the PSRemoting session: 
 ```
 PS C:\AzAD\Tools> Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\ROADToken.exe -Destination C:\Users\studentx.jumpvm\Documents –Verbose 
 PS C:\AzAD\Tools> Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\PsExec64.exe -Destination C:\Users\studentx.jumpvm\Documents –Verbose 
