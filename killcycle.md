@@ -1288,8 +1288,13 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{ls C:\Users\Public\studentx}
 ```
 $TenantId = "2d50cb29-5f7b-48a4-87ce-fe75a941adb6"
 $URL = "https://login.microsoftonline.com/$TenantId/oauth2/token"
-$Params = @{ "URI" = $URL "Method" = "POST" }
-$Body = @{ "grant_type" = "srv_challenge" }
+$Params = @{
+		"URI" = $URL
+		"Method" = "POST"
+}
+$Body = @{
+		"grant_type" = "srv_challenge"
+}
 $Result = Invoke-RestMethod @Params -UseBasicParsing -Body $Body
 $Result.Nonce
 ```
