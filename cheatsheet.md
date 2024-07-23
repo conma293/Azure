@@ -77,10 +77,9 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
   - [RunCommand](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runcommand)
   - [Connect to VM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#connect-to-vm)
     - [Get Public IP](https://github.com/conma293/Azure/blob/main/cheatsheet.md#get-public-ip)
-  - [Steal Primary Refresh Token (PRT)]
+  - [Steal Primary Refresh Token (PRT)](https://github.com/conma293/Azure/blob/main/cheatsheet.md#steal-primary-refresh-token)
     - [Get nonce]
     - [Get PRT]
-    - [Pass-the PRT]
 - Interesting File Locations
   - [Powershell History](https://github.com/conma293/Azure/blob/main/cheatsheet.md#powershell-history---credentials)
   - [AzureRMContext.json]()
