@@ -1308,3 +1308,9 @@ Alright show me the PRT:
 ```
 Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\Users\Public\student213\PRT.txt}
 ```
+
+#### Using the stolen PRT
+
+- goto ```login.microsoftonline.com```
+- clear all cookies
+- goto ```login.microsoftonline.com``` again (not just refresh)
