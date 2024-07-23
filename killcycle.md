@@ -1271,7 +1271,7 @@ Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\PsExec64.exe -Destination C:\Us
 Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\SessionExecCommand.exe -Destination C:\Users\student213\jumpvm\Documents –Verbose
 ```
 
-Now, connect back to jumpvm and now copy tools to infradminsrv using the PSRemoting Session that we created earlier: 
+Now, connect back to jumpvm with ```Enter-PSSession -Session $jumpvm``` and copy tools to infradminsrv using the PSRemoting Session that we created earlier: 
 ```
 Copy-Item -ToSession $infradminsrv -Path C:\Users\student213\jumpvm\Documents\ROADToken.exe -Destination C:\Users\Public\studentx –Verbose
 Copy-Item -ToSession $infradminsrv -Path C:\Users\student213\jumpvm\Documents\PsExec64.exe -Destination C:\Users\Public\studentx –Verbose
