@@ -1251,3 +1251,7 @@ The Primary Refresh Token (PRT) is basically an authentication cookie for single
 ```
 Invoke-Command -Session $infradminsrv -ScriptBlock{mkdir C:\Users\Public\studentx}
 ```
+
+How do we know which user's PRT is available?
+- basic enumeration using a tool like seatbelt (also checkout LSA Whisperer?)
+- run `qwinsta` or `get-process` - users will be listed as `AzureAD\User`
