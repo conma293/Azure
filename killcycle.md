@@ -1315,11 +1315,14 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\Users\Public\student21
 - goto ```https://login.microsoftonline.com/login.srf```
 - clear all cookies - Press F12 (Chrome dev tools) -> Application -> Cookies
 - goto ```https://login.microsoftonline.com/login.srf``` again (not just refresh)
-- Press F12 (Chrome dev tools) -> Application -> Cookies
+- clear all cookies - Press F12 (Chrome dev tools) -> Application -> Cookies
 	- Add ```x-ms-RefreshTokenCredential``` and set value from stolen PRT
 	- Mark HTTPOnly and Secure for the cookie
- - Visit ```https://login.microsoftonline.com/login.srf``` again (hit F5?)
- - 
+ - Visit ```https://login.microsoftonline.com/login.srf``` again 
+ - As that ```office.com``` is spinning, open up a few new tabs and navigate, it should grab the cookie:
+   - ```https://endpoint.microsoft.com/#home```
+   - ```portal.azure.com```
+   
 #### Once logged on
 - Go to Devices -> All Devices to check devices enrolled to Intune:
 - Go to Scripts and Click on Add for Windows 10.
