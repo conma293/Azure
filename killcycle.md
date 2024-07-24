@@ -1319,7 +1319,7 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\Users\Public\student21
 	- Add ```x-ms-RefreshTokenCredential``` and set value from stolen PRT
 	- Mark HTTPOnly and Secure for the cookie
  - Visit ```https://login.microsoftonline.com/login.srf``` again 
- - As that ```office.com``` is spinning, open up a few new tabs and navigate, it should grab the cookie:
+ - As the redirect to office.com is spinning and not loading, open up a few new tabs and navigate, it should grab the cookie:
    - ```https://endpoint.microsoft.com/#home```
    - ```portal.azure.com```
    
