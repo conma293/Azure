@@ -1325,7 +1325,7 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\Users\Public\student21
    
 #### Once logged on
 - Go to Devices -> All Devices to check devices enrolled to Intune:
-- Go to Scripts and Click on Add for Windows 10.
+- Go to ```Scripts and Remediations``` Click on Add for Windows 10.
 - In the Add PowerShell script, add a new script and name it student213
 - On the script settings page, use ```adduser.ps1``` from the C:\AzAD\Tools directory.
   - Make sure to modify the adduser.ps1 script so that it adds a studentx on the target machine.
