@@ -471,7 +471,7 @@ $Result.Nonce
 ```
 #### Steal PRT
 
-[Stage](https://github.com/conma293/Azure/blob/main/killcycle.md#session-play) the binaries ```PsExec64.exe``` ```SessionExecCommand.exe``` and ```ROADToken.exe``` on the machine with the user who has a PRT.
+[Stage](https://github.com/conma293/Azure/blob/main/killcycle.md#session-play) the binaries ```PsExec64.exe``` ```SessionExecCommand.exe``` and ```ROADToken.exe``` on the machine with the user PRT
 ```
 Copy-Item -ToSession $TargetVM -Path C:\AzAD\Tools\ROADToken.exe -Destination C:\ProgramData\ –Verbose 
 ```
