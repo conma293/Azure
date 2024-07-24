@@ -1329,6 +1329,14 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\Users\Public\student21
 - In the Add PowerShell script, add a new script and name it student213
 - On the script settings page, use ```adduser.ps1``` from the C:\AzAD\Tools directory.
   - Make sure to modify the adduser.ps1 script so that it adds a studentx on the target machine.
+  - You could also upload a invoke-tcp script to the portal, and listen on a port.
+
+Once you have a user added we can connect as normal:
+```
+$password = ConvertTo-SecureString 'StudxPassword@123' -AsPlainText -Force 
+$creds = New-Object System.Management.Automation.PSCredential('studentx', $password) 
+Enter-PSSession -ComputerName 172.16.2.24 -Credential $creds
+```
  
 ## Alternative: Extract PRT using Mimikatz and use with roadtx
 
