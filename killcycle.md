@@ -75,7 +75,7 @@ Lateral Movemement
 - [Custom Script Extension](https://github.com/conma293/Azure/blob/main/killcycle.md#script-extension)
 - [Primary Refresh Token](https://github.com/conma293/Azure/blob/main/killcycle.md#primary-refresh-token)
   - [Mimikatz way](https://github.com/conma293/Azure/blob/main/killcycle.md#alternative-extract-prt-using-mimikatz-and-use-with-roadtx)
-- InTune and dynamic groups
+- Dynamic groups
 
 Hybrid
 - Application Server
@@ -1394,6 +1394,8 @@ Get-AzResource
 Get-AzADUser
 ```
 
+## Dynamic Groups
+we logon with Thomas credentials
 
 
 
