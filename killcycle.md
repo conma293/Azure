@@ -1330,7 +1330,7 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\Users\Public\student21
 
 Copy Mimikatz on jumpvm using the below command: 
 ```
-Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\mimikatz.exe -Destination C:\Users\student1\Documents -Verbose
+Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\mimikatz.exe -Destination C:\Users\student213\Documents -Verbose
 ```
 
 Copy Mimikatz from jumpvm to infradminsrv: 
