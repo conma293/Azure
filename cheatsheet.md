@@ -472,7 +472,14 @@ $Result.Nonce
 #### Steal PRT
 
 #### Pass PRT
-
+- goto ```https://login.microsoftonline.com/login.srf``` in incognito browser
+- clear all cookies - Press F12 (Chrome dev tools) -> Application -> Cookies (may want to revisit site after clear before adding cookie as below)
+	- Add x-ms-RefreshTokenCredential and set value from stolen PRT
+	- Mark HTTPOnly and Secure for the cookie
+	- Visit https://login.microsoftonline.com/login.srf again
+- As the redirect to office.com is spinning and not loading, open up a few new tabs and navigate, it should grab the cookie:
+	- https://endpoint.microsoft.com/#home
+	- portal.azure.com
 
 ## Interesting File Locations
 #### Powershell history - credentials
