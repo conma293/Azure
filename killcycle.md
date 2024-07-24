@@ -1333,8 +1333,8 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\Users\Public\student21
 
 Once you have a user added we can connect as normal:
 ```
-$password = ConvertTo-SecureString 'StudxPassword@123' -AsPlainText -Force 
-$creds = New-Object System.Management.Automation.PSCredential('studentx', $password) 
+$password = ConvertTo-SecureString 'Stud213Password@123' -AsPlainText -Force 
+$creds = New-Object System.Management.Automation.PSCredential('student213', $password) 
 Enter-PSSession -ComputerName 172.16.2.24 -Credential $creds
 ```
  
