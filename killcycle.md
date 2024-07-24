@@ -1365,8 +1365,8 @@ One interesting way would be to use the browser-based authentication that roadtx
 Another way of using PRT would be to request access tokens for ARM and MSGraph (or AADGraph) and use that with the Az PowerShell module.
 In the below commands, we are requesting access tokens for ARM and MSGraph using client ID of the Az PowerShell module (Check out roadtx listaliases for more options): 
 ```
-(venv) PS C:\AzAD\Tools\ROADTools> roadtx prtauth -c azps -r azrm --tokens-stdout 
-(venv) PS C:\AzAD\Tools\ROADTools> roadtx prtauth -c azps -r msgraph --tokens-stdout
+roadtx prtauth -c azps -r azrm --tokens-stdout 
+roadtx prtauth -c azps -r msgraph --tokens-stdout
 ```
 
 Copy the ARM and MSGraph access tokens and save them to ```$token``` and ```$msgraphaccesstoken``` as we have been doing up to now. 
