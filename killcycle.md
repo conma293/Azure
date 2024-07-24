@@ -1395,7 +1395,11 @@ Get-AzADUser
 ```
 
 ## Dynamic Groups
-we logon with Thomas credentials
-
+- we logon with Thomas credentials
+- goto Groups > ITOPS | Dynamic membership rules
+	- The rule means that any Guest user whose secondary email contains the string 'vendor' will be added to this group!
+- Now, invite your studentx@defcorpextcontractors.onmicrosoft.com as a guest user.
+	- Go to Azure Active Directory -> Users
+	- Click on New User -> Invite external user and invite studentx@defcorpextcontractors.onmicrosoft.com where x is your user ID.
 
 
