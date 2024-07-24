@@ -21,6 +21,7 @@ Never ever use user Identity - use workload identities: Service Principals; Mana
 - Kill Chain 4 (_Topics covered - Authenticated Enumeration, Privilege Escalation and Data Mining_)
   - [Insecure Storage Blob](https://github.com/conma293/Azure/blob/main/killcycle.md#storage-blob)
   - [Function App - Continuous Development CD/DC leveraging github](https://github.com/conma293/Azure/blob/main/killcycle.md#function-apps)
+  - [Application Proxy]
 
 
 **REFS:**
@@ -1425,3 +1426,6 @@ Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Forc
 ```
 Update-MgUser -UserId 4a3395c9-be40-44ba-aff2-be502edd9619 -OtherMails vendorx@defcorpextcontractors.onmicrosoft.com
 ```
+
+## Application Proxy
+Is a connector service that is actually on-prem behind a portal. However if we can compromise the crappy on-prem app, we will then have access to Azure!
