@@ -489,7 +489,7 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\ProgramData\PRT.txt}
 ```
 #### Pass PRT
 - goto ```https://login.microsoftonline.com/login.srf``` in incognito browser
-- clear all cookies - Press F12 (Chrome dev tools) -> Application -> Cookies (may want to revisit site after clear before adding cookie as below)
+- clear all cookies - Press F12 (Chrome dev tools) -> Application -> Cookies (may try clearing several times)
 	- Add x-ms-RefreshTokenCredential and set value from stolen PRT
 	- Mark HTTPOnly and Secure for the cookie
 	- Visit https://login.microsoftonline.com/login.srf again
