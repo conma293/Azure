@@ -74,6 +74,7 @@ Lateral Movemement
 - [VM User Data](https://github.com/conma293/Azure/blob/main/killcycle.md#vm-user-data)
 - [Custom Script Extension](https://github.com/conma293/Azure/blob/main/killcycle.md#script-extension)
 - [Primary Refresh Token](https://github.com/conma293/Azure/blob/main/killcycle.md#primary-refresh-token)
+  - [Mimikatz way](https://github.com/conma293/Azure/blob/main/killcycle.md#alternative-extract-prt-using-mimikatz-and-use-with-roadtx)
 - InTune and dynamic groups
 
 Hybrid
