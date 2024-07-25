@@ -400,8 +400,8 @@ Invoke-EnumerateAzureBlobs -Base defcorp
 
 #### Users able to access AppProxy
 ```
-PS C:\AzAD\Tools> . C:\AzAD\Tools\Get-ApplicationProxyAssignedUsersAndGroups.ps1 
-PS C:\AzAD\Tools> Get-ApplicationProxyAssignedUsersAndGroups -ObjectId ec350d24-e4e4-4033-ad3f-bf60395f0362
+. C:\AzAD\Tools\Get-ApplicationProxyAssignedUsersAndGroups.ps1 
+Get-ApplicationProxyAssignedUsersAndGroups -ObjectId ec350d24-e4e4-4033-ad3f-bf60395f0362
 ```
 * * * 
 
