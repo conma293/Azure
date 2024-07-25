@@ -46,7 +46,7 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
 - [AzureAD](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azad)
   - [Users and groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-and-groups)
   - [Administrative Unit](https://github.com/conma293/Azure/blob/main/cheatsheet.md#administrative-unit)
-  - [Service Principal]
+  - [Service Principal - Will ALWAYS have the same (display)name as the Application]
   - [Application Proxy]
   - [Preview Module for custom role and policy](https://github.com/conma293/Azure/blob/main/cheatsheet.md#preview-module-for-custom-roles)
 - [AZ Powershell](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azure-powershell)
