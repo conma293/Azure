@@ -77,9 +77,9 @@ Lateral Movemement
 - [Primary Refresh Token](https://github.com/conma293/Azure/blob/main/killcycle.md#primary-refresh-token)
   - [Mimikatz way](https://github.com/conma293/Azure/blob/main/killcycle.md#alternative-extract-prt-using-mimikatz-and-use-with-roadtx)
 - [Dynamic groups](https://github.com/conma293/Azure/blob/main/killcycle.md#dynamic-groups)
+- [Application Proxy]()
 
 Hybrid
-- Application Server
 - AD Connect
 	- Password Hash Sync (PHS) 
 	- Pass-Through Authentication (PTA)
