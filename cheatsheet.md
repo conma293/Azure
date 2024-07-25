@@ -70,6 +70,7 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
   - Microburst
     - [subdomains](https://github.com/conma293/Azure/blob/main/cheatsheet.md#subdomains)
     - [storage blobs](https://github.com/conma293/Azure/blob/main/cheatsheet.md#storage-blobs)
+    - [AppProxy access]()
 - IMDS
   - [VM User Data](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vm-userdata)
 - Playbooks
