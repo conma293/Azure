@@ -46,6 +46,8 @@ Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
 - [AzureAD](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azad)
   - [Users and groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-and-groups)
   - [Administrative Unit](https://github.com/conma293/Azure/blob/main/cheatsheet.md#administrative-unit)
+  - [Service Principal]
+  - [Application Proxy]
   - [Preview Module for custom role and policy](https://github.com/conma293/Azure/blob/main/cheatsheet.md#preview-module-for-custom-roles)
 - [AZ Powershell](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azure-powershell)
   - [whoami](https://github.com/conma293/Azure/blob/main/cheatsheet.md#whoami)
@@ -135,6 +137,12 @@ Get-AzureADUser -ObjectId 8c088359-66fb-4253-ad0d-a91b82fd548a | fl *
 Get-AzureADServicePrincipal
 Get-AzureADServicePrincipal -All $True | ?{$_.AppId -eq "62e44426-5c46-4e3c-8a89-f461d5d586f2"} | fl
 ```
+
+#### Application Proxy
+```
+Get-AzureADApplication | %{try{Get-AzureADApplicationProxyApplication -ObjectId $_.ObjectID;$_.DisplayName;$_.ObjectID}catch{}}
+```
+
 #### Preview Module for custom roles
 ```
 Import-Module C:\AzAD\Tools\AzureADPreview\AzureADPreview.psd1
