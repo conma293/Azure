@@ -140,7 +140,7 @@ Get-AzureADServicePrincipal -All $true | ?{$_.DisplayName -eq "Finance Managemen
 ```
 
 #### Application Proxy
-*Find Service Principal owner with same name - then run script to get users
+*Find Service Principal owner with same name - then run [script](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-able-to-access-appproxy) to get users
 ```
 Get-AzureADApplication | %{try{Get-AzureADApplicationProxyApplication -ObjectId $_.ObjectID;$_.DisplayName;$_.ObjectID}catch{}}
 ```
