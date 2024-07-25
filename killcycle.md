@@ -1323,6 +1323,7 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\Users\Public\student21
  - As the redirect to office.com is spinning and not loading, open up a few new tabs and navigate, it should grab the cookie:
    - ```https://endpoint.microsoft.com/#home```
    - ```portal.azure.com```
+   - ```https://login.microsoftonline.com```
    
 #### Once logged on
 - Go to Devices -> All Devices to check devices enrolled to Intune:
