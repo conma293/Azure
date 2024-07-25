@@ -67,7 +67,7 @@ Privilege Escalation (and Lateral Movement)
 - [Enterprise App](https://github.com/conma293/Azure/blob/main/killcycle.md#enterprise-applications)
   - [Enumerate service principal type](https://github.com/conma293/Azure/blob/main/killcycle.md#initial-enumeration-of-frontend-enterprise-app-and-functional-app-we-were-able-to-add-a-client-secret-to)
   - [Use Managed Identity of function app Client Secret](https://github.com/conma293/Azure/blob/main/killcycle.md#enumerate-with-client-secret)
-  - [Deployment Template - creds](
+  - [Deployment Template - creds](https://github.com/conma293/Azure/blob/main/killcycle.md#deployment-template)
 - [FunctionApp](https://github.com/conma293/Azure/blob/main/killcycle.md#function-apps)
   - Github and Authenticator
 
