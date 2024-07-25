@@ -136,6 +136,7 @@ Get-AzureADUser -ObjectId 8c088359-66fb-4253-ad0d-a91b82fd548a | fl *
 ```
 Get-AzureADServicePrincipal
 Get-AzureADServicePrincipal -All $True | ?{$_.AppId -eq "62e44426-5c46-4e3c-8a89-f461d5d586f2"} | fl
+Get-AzureADServicePrincipal -All $true | ?{$_.DisplayName -eq "Finance Management System"}
 ```
 
 #### Application Proxy
