@@ -140,6 +140,7 @@ Get-AzureADServicePrincipal -All $true | ?{$_.DisplayName -eq "Finance Managemen
 ```
 
 #### Application Proxy
+*Find Service Principal owner with same name - then run script to get users
 ```
 Get-AzureADApplication | %{try{Get-AzureADApplicationProxyApplication -ObjectId $_.ObjectID;$_.DisplayName;$_.ObjectID}catch{}}
 ```
@@ -194,6 +195,7 @@ Save-AzResourceGroupDeploymentTemplate -ResourceGroupName SAP -DeploymentName st
 ```
 
 #### VMs, Apps
+*For Apps find Service Principal owner with same name
 ```
 Get-AzVM | fl *
 
