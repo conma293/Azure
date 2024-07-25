@@ -21,7 +21,7 @@ Never ever use user Identity - use workload identities: Service Principals; Mana
 - Kill Chain 4 (_Topics covered - Authenticated Enumeration, Privilege Escalation and Data Mining_)
   - [Insecure Storage Blob](https://github.com/conma293/Azure/blob/main/killcycle.md#storage-blob)
   - [Function App - Continuous Development CD/DC leveraging github](https://github.com/conma293/Azure/blob/main/killcycle.md#function-apps)
-  - [Application Proxy]
+  - [Application Proxy](https://github.com/conma293/Azure/blob/main/killcycle.md#application-proxy)
 
 
 **REFS:**
@@ -77,7 +77,7 @@ Lateral Movemement
 - [Primary Refresh Token](https://github.com/conma293/Azure/blob/main/killcycle.md#primary-refresh-token)
   - [Mimikatz way](https://github.com/conma293/Azure/blob/main/killcycle.md#alternative-extract-prt-using-mimikatz-and-use-with-roadtx)
 - [Dynamic groups](https://github.com/conma293/Azure/blob/main/killcycle.md#dynamic-groups)
-- [Application Proxy]()
+- [Application Proxy](https://github.com/conma293/Azure/blob/main/killcycle.md#application-proxy)
 
 Hybrid
 - AD Connect
