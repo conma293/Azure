@@ -1430,3 +1430,27 @@ Update-MgUser -UserId 4a3395c9-be40-44ba-aff2-be502edd9619 -OtherMails vendorx@d
 
 ## Application Proxy
 Is a connector service that is actually on-prem behind a portal. However if we can compromise the crappy on-prem app, we will then have access to Azure!
+
+Let's connect to Azure AD using credentials of studentx@defcorphq.onmicrosoft.com:
+```
+Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1
+$password = ConvertTo-SecureString 'StudxPassword@123' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('studentx@defcorphq.onmicrosoft.com', $Password)
+Connect-AzureAD -Credential $creds -TenantId 2d50cb29-5f7b-48a4-87ce-fe75a941adb6
+```
+
+Enumerate all the applications that has application proxy configured (may take a few minutes to complete): 
+```
+Get-AzureADApplication | %{try{Get-AzureADApplicationProxyApplication -ObjectId $_.ObjectID;$_.DisplayName;$_.ObjectID}catch{}}
+```
+
+So, an app Finance Management System seems to be using application proxy. Get the service principal (Enterprise Application) for it: 
+```
+Get-AzureADServicePrincipal -All $true | ?{$_.DisplayName -eq "Finance Management System"}
+```
+
+Use ```C:\AzAD\Tools\Get-ApplicationProxyAssignedUsersAndGroups.ps1``` to find users and groups allowed to access the application:
+```
+PS C:\AzAD\Tools> . C:\AzAD\Tools\Get-ApplicationProxyAssignedUsersAndGroups.ps1 
+PS C:\AzAD\Tools> Get-ApplicationProxyAssignedUsersAndGroups -ObjectId ec350d24-e4e4-4033-ad3f-bf60395f0362
+```
