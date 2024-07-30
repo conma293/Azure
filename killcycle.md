@@ -1582,6 +1582,7 @@ Get-AADIntPTASpyLog -DecodePasswords
 ## ADFS
 
 Immutable ID important here - literal ms GUID - ```ms-DS-ConsistencyGuid```
+**And for that reason Cloud-only users DO NOT HAVE Immutable ID!**
 
 We compromised adfsadmin@deffin.com by compromising the deffin-approxy machine. Assuming that we know the IP of the AD FS server for deffin.com and the user actually has DA privileges (as many organizations setup ADFS role on the domain controller) try to access it using PSRemoting:
 ```
