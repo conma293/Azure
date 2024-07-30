@@ -6,7 +6,7 @@ Never ever use user Identity - use workload identities: Service Principals; Mana
   - [Initial Access - Insecure file upload](https://github.com/conma293/Azure/blob/main/killcycle.md#insecure-file-upload)
   - [latmove/privesc - Automation Account Runbook on Hybrid Worker](https://github.com/conma293/Azure/blob/main/killcycle.md#runbooks)
   - [latmove/privesc - RunCommand to acquire Reverse Shell on VM](https://github.com/conma293/Azure/blob/main/killcycle.md#run-command)
-  - [INSTRUCTOR ONLY - ADSync and Password Hash Sync](https://github.com/conma293/Azure/blob/main/killcycle.md#password-hash-sync)
+  - [INSTRUCTOR ONLY - ADSync and Password Hash Sync](https://github.com/conma293/Azure/blob/main/killcycle.md#password-hash-sync) - to Secure Tenant
 - Kill Chain 2 (_Topics Covered: Authenticated Enumeration, Privilege Escalation and Data Mining_)
   - [Initial Access - Server Side Template Injection (SSTI)](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti)
   - [Gather Credentials - Keyvault](https://github.com/conma293/Azure/blob/main/killcycle.md#keyvault)
@@ -14,7 +14,7 @@ Never ever use user Identity - use workload identities: Service Principals; Mana
   - [latmove/privesc - add/modify users](https://github.com/conma293/Azure/blob/main/killcycle.md#phish-and-use-roys-creds)
   - [Latmove - VM User Data + Custom Script Extension](https://github.com/conma293/Azure/blob/main/killcycle.md#vm-user-data)
   - [Latmove - Primary Refresh Token](https://github.com/conma293/Azure/blob/main/killcycle.md#primary-refresh-token)
-  - [INSTRUCTOR ONLY - ADSync and PTASpy - Passthru Authentication]
+  - [INSTRUCTOR ONLY - ADSync and PTASpy - Passthru Authentication](https://github.com/conma293/Azure/blob/main/killcycle.md#pta-agent) - to Research Tenant
 - Kill Chain 3 (_Topics covered - Authenticated Enumeration, Privilege Escalation and Data Mining_)
   - [Initial Access - Insecure File upload and OS Command Injection](https://github.com/conma293/Azure/blob/main/killcycle.md#command-injection)
   - [Ent App - ARM Templates Deployment History](https://github.com/conma293/Azure/blob/main/killcycle.md#enterprise-applications)
@@ -23,7 +23,7 @@ Never ever use user Identity - use workload identities: Service Principals; Mana
   - [Insecure Storage Blob](https://github.com/conma293/Azure/blob/main/killcycle.md#storage-blob)
   - [Function App - Continuous Development CD/DC leveraging github](https://github.com/conma293/Azure/blob/main/killcycle.md#function-apps)
   - [Application Proxy](https://github.com/conma293/Azure/blob/main/killcycle.md#application-proxy)
-  - [ADFS](https://github.com/conma293/Azure/blob/main/killcycle.md#adfs)
+  - [ADFS](https://github.com/conma293/Azure/blob/main/killcycle.md#adfs) - to Finance Tenant
 
 
 **REFS:**
