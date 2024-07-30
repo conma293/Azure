@@ -1,29 +1,29 @@
 Never ever use user Identity - use workload identities: Service Principals; Managed Identities
 
 ## Kill Chains
-- Kill Chain 1
+- Kill Chain 1 (_Topics covered - Authenticated Enumeration, Privilege Escalation and On-prem to Cloud Lateral Movement_) - to Secure Tenant
   - [Initial Access - Phishing with Illicit Consent Grant attack](https://github.com/conma293/Azure/blob/main/killcycle.md#consent-abuse)
   - [Initial Access - Insecure file upload](https://github.com/conma293/Azure/blob/main/killcycle.md#insecure-file-upload)
   - [latmove/privesc - Automation Account Runbook on Hybrid Worker](https://github.com/conma293/Azure/blob/main/killcycle.md#runbooks)
   - [latmove/privesc - RunCommand to acquire Reverse Shell on VM](https://github.com/conma293/Azure/blob/main/killcycle.md#run-command)
-  - [INSTRUCTOR ONLY - ADSync and Password Hash Sync](https://github.com/conma293/Azure/blob/main/killcycle.md#password-hash-sync) - to Secure Tenant
-- Kill Chain 2 (_Topics Covered: Authenticated Enumeration, Privilege Escalation and Data Mining_)
+  - [INSTRUCTOR ONLY - ADSync and Password Hash Sync](https://github.com/conma293/Azure/blob/main/killcycle.md#password-hash-sync) 
+- Kill Chain 2 (_Topics Covered: Authenticated Enumeration, Privilege Escalation and Data Mining_) - to Research Tenant
   - [Initial Access - Server Side Template Injection (SSTI)](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti)
   - [Gather Credentials - Keyvault](https://github.com/conma293/Azure/blob/main/killcycle.md#keyvault)
   - [Initial Access - Phish using recovered creds with evilginx](https://github.com/conma293/Azure/blob/main/2.12_Evilginx2.md)
   - [latmove/privesc - add/modify users](https://github.com/conma293/Azure/blob/main/killcycle.md#phish-and-use-roys-creds)
   - [Latmove - VM User Data + Custom Script Extension](https://github.com/conma293/Azure/blob/main/killcycle.md#vm-user-data)
   - [Latmove - Primary Refresh Token](https://github.com/conma293/Azure/blob/main/killcycle.md#primary-refresh-token)
-  - [INSTRUCTOR ONLY - ADSync and PTASpy - Passthru Authentication](https://github.com/conma293/Azure/blob/main/killcycle.md#pta-agent) - to Research Tenant
+  - [INSTRUCTOR ONLY - ADSync and PTASpy - Passthru Authentication](https://github.com/conma293/Azure/blob/main/killcycle.md#pta-agent) 
 - Kill Chain 3 (_Topics covered - Authenticated Enumeration, Privilege Escalation and Data Mining_)
   - [Initial Access - Insecure File upload and OS Command Injection](https://github.com/conma293/Azure/blob/main/killcycle.md#command-injection)
   - [Ent App - ARM Templates Deployment History](https://github.com/conma293/Azure/blob/main/killcycle.md#enterprise-applications)
   - [Dynamic Groups](https://github.com/conma293/Azure/blob/main/killcycle.md#dynamic-groups)
-- Kill Chain 4 (_Topics covered - Authenticated Enumeration, Privilege Escalation and Data Mining_)
+- Kill Chain 4 (_Topics covered - Authenticated Enumeration, Privilege Escalation and Data Mining_) - to Finance Tenant
   - [Insecure Storage Blob](https://github.com/conma293/Azure/blob/main/killcycle.md#storage-blob)
   - [Function App - Continuous Development CD/DC leveraging github](https://github.com/conma293/Azure/blob/main/killcycle.md#function-apps)
   - [Application Proxy](https://github.com/conma293/Azure/blob/main/killcycle.md#application-proxy)
-  - [ADFS](https://github.com/conma293/Azure/blob/main/killcycle.md#adfs) - to Finance Tenant
+  - [ADFS](https://github.com/conma293/Azure/blob/main/killcycle.md#adfs)
 
 
 **REFS:**
