@@ -1486,6 +1486,8 @@ AD Connect vs CloudSync??
   
 ## Password Hash Sync
 
+Even if password expired this will still work
+
 The "Cloud anchor" is ```User_``` followed by the objectId e.g., =
 
 - Recall that we extracted credentials for ```defeng-adcnct\administrator``` from PowerShell history of a user from the bkpadconnect VM.
