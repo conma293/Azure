@@ -23,7 +23,7 @@ Never ever use user Identity - use workload identities: Service Principals; Mana
   - [Insecure Storage Blob](https://github.com/conma293/Azure/blob/main/killcycle.md#storage-blob)
   - [Function App - Continuous Development CD/DC leveraging github](https://github.com/conma293/Azure/blob/main/killcycle.md#function-apps)
   - [Application Proxy](https://github.com/conma293/Azure/blob/main/killcycle.md#application-proxy)
-  - [ADFS]
+  - [ADFS](https://github.com/conma293/Azure/blob/main/killcycle.md#adfs)
 
 
 **REFS:**
@@ -84,9 +84,9 @@ Lateral Movemement
 Hybrid
 - AD Connect
 	- [Password Hash Sync (PHS)](https://github.com/conma293/Azure/blob/main/killcycle.md#password-hash-sync)
-	- Pass-Through Authentication (PTA)
-- Active Directory Federated Services (ADFS)
-- Seamless Single-SignOn (SSO)
+	- [Pass-Through Authentication (PTA)]
+- [Active Directory Federated Services (ADFS)](https://github.com/conma293/Azure/blob/main/killcycle.md#adfs)
+
 
 * * *
 # Enumeration 
