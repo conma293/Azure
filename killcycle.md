@@ -1481,7 +1481,13 @@ AD Connect vs CloudSync??
 	- Password Hash Sync (PHS) 
 	- Pass-Through Authentication (PTA)
 - Active Directory Federated Services (ADFS)
+
+
+  
 ## Password Hash Sync
+
+The "Cloud anchor" is ```User_``` followed by the objectId e.g., =
+
 ## Passthry
 ## ADFS
 
