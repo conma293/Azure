@@ -1544,6 +1544,7 @@ Finally, use the onpremadmin user's credentials to access the defcorpsecure tena
 
 
 
-## Passthry
+## Passthru
+## SSO
 ## ADFS
 
