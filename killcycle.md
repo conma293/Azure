@@ -6,7 +6,7 @@ Never ever use user Identity - use workload identities: Service Principals; Mana
   - [Initial Access - Insecure file upload](https://github.com/conma293/Azure/blob/main/killcycle.md#insecure-file-upload)
   - [latmove/privesc - Automation Account Runbook on Hybrid Worker](https://github.com/conma293/Azure/blob/main/killcycle.md#runbooks)
   - [latmove/privesc - RunCommand to acquire Reverse Shell on VM](https://github.com/conma293/Azure/blob/main/killcycle.md#run-command)
-  - [INSTRUCTOR ONLY - ADSync and Password Hash Sync]
+  - [INSTRUCTOR ONLY - ADSync and Password Hash Sync](https://github.com/conma293/Azure/blob/main/killcycle.md#password-hash-sync)
 - Kill Chain 2 (_Topics Covered: Authenticated Enumeration, Privilege Escalation and Data Mining_)
   - [Initial Access - Server Side Template Injection (SSTI)](https://github.com/conma293/Azure/blob/main/killcycle.md#server-side-template-injection-ssti)
   - [Gather Credentials - Keyvault](https://github.com/conma293/Azure/blob/main/killcycle.md#keyvault)
@@ -82,7 +82,7 @@ Lateral Movemement
 
 Hybrid
 - AD Connect
-	- Password Hash Sync (PHS) 
+	- [Password Hash Sync (PHS)](https://github.com/conma293/Azure/blob/main/killcycle.md#password-hash-sync)
 	- Pass-Through Authentication (PTA)
 - Active Directory Federated Services (ADFS)
 - Seamless Single-SignOn (SSO)
