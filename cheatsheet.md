@@ -340,27 +340,30 @@ Headers = @{
 
 #### URIs
 ARM:
+- vms
+- webapp
+- storage blob
+- keyvault
 ```
 $URI = 'https://management.azure.com/subscriptions?api-version=2020-01-01'
 $URI = 'https://management.azure.com/subscriptions/<SubID>/resources?api-version=2020-10-01'
+
+$URI = 'https://management.azure.com/subscriptions/<SubID>/<resource>/providers/Microsoft.Authorization/permissions?api-version=2015-07-01'
 $URI = 'https://management.azure.com/subscriptions/<SubID>/resourceGroups/Engineering/providers/Microsoft.Compute/virtualMachines/bkpadconnect/providers/Microsoft.Authorization/permissions?api-version=2015-07-01'
-vms
-webapp
-storage blob
-keyvault
+
 ```
 
 And Graph:
+- Groups
+- Roles
+- Devices
+- Applications
+- App Registrations
+- Service Principals
 ```
 $URI = 'https://graph.microsoft.com/v1.0/users'
 $URI = 'https://graph.microsoft.com/v1.0/applications'
 $URI = 'https://graph.microsoft.com/v1.0/users/VMContributor213@defcorphq.onmicrosoft.com/memberOf'
-Groups
-Roles
-Devices
-Applications
-App Registrations
-Service Principals
 ```
 
 ## Example API Enumeration:
