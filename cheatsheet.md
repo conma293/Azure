@@ -37,6 +37,7 @@ Get-AzResourceGroup
 Get-AzRoleAssignment
 Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
 Get-AzRoleAssignment -Scope //
+//MAY NEED TO USE MANUAL API CALL IF THIS DOESNT WORK
 
 Get-AzRoleDefinition -Name "<Virtual Machine Command Executor>"
 
