@@ -36,11 +36,13 @@ Get-AzResourceGroup
 
 Get-AzRoleAssignment
 Get-AzRoleAssignment | select DisplayName, RoleDefinitionName, ObjectType, CanDelegate
+Get-AzRoleAssignment -Scope //
 
 Get-AzRoleDefinition -Name "<Virtual Machine Command Executor>"
 
 Get-AzADGroup -DisplayName '<VM Admins>' 
 Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
+
 ```
 * * *
 - [AzureAD](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azad)
