@@ -211,7 +211,7 @@ Get-AzFunctionApp
 ```
 
 ####  Storage
-Remember to use _Azure Storage Explorer GUI_ to download storage containers/blobs!
+**Remember to use _Azure Storage Explorer GUI_ to download storage containers/blobs!**
 - Right click storage account > connect to azure storage > subscription (if you have user) or storage account/blob
 
 ```
