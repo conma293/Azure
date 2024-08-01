@@ -298,6 +298,11 @@ To be able to interact with Azure AD:
 - And request a token for resources (ARM): ```az account get-access-token```
 - And then connect: ```Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId <VictimObjectId>```
 
+#### App Config Key
+```
+az appconfig kv list --connection-string "Endpoint=https://escrow3.azconfig.io;Id=q63q-lab-s0:IkiICUfj7aoiWdfW+fLf;Secret=j50xk3bTCW3uZ4R+jMAyu/feCaKRXrAucE5dJs5OHmY="
+```
+
 * * *
 
 ## Token reuse
