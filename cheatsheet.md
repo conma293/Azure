@@ -45,6 +45,16 @@ Get-AzADGroup -DisplayName '<VM Admins>'
 Get-AzADGroupMember -GroupDisplayName '<VM Admins>' | select DisplayName
 
 ```
+
+```
+Get-AzVM
+Get-AzWebApp
+Get-AzFunctionApp
+Get-AzStorageAccount | fl
+Get-AzStorageContainer -Context (New-AzStorageContext -StorageAccountName defcorpcodebackup)
+Get-AzKeyVault
+```
+
 * * *
 - [AzureAD](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azad)
   - [Users and groups](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-and-groups)
