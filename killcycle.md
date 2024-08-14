@@ -131,7 +131,7 @@ _in normal environments we would expect to see some Service Principals (that is 
 #### MG Module
 You could also use the [MG Module](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md#enumeration---mg-module) instead if you wanted:
 ```
-$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force 
+$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCanGu3ssP@ssw0rd" -AsPlainText -Force 
 $creds = New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd) 
 Connect-AzAccount -Credential $creds 
 
@@ -249,7 +249,7 @@ When on a machine look in - ```C:\Users\[username]\.Azure```
 ```
 cd C:\AzAD\Tools\ROADTools
 .\venv\Scripts\activate
-roadrecon auth -u test@defcorphq.onmicrosoft.com -p V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd
+roadrecon auth -u test@defcorphq.onmicrosoft.com -p V3ryH4rdt0Cr4ckN0OneCanGu3ssP@ssw0rd
 roadrecon gather
 roadrecon gui
 ```
@@ -259,7 +259,7 @@ roadrecon gui
 
 #### AzureHound
 ```
-$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force
+$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCanGu3ssP@ssw0rd" -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential("test@defcorphq.onmicrosoft.com", $passwd)
 
 Connect-AzAccount -Credential $creds
@@ -293,7 +293,7 @@ NOTE - logs for application consent include permissions - VERBOSE LOG
 #### Azure AD Graph PREVIEW MODULE:
 ```
 Import-Module C:\AzAD\Tools\AzureADPreview\AzureADPreview.psd1
-$passwd= ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force
+$passwd= ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCanGu3ssP@ssw0rd" -AsPlainText -Force
 $creds= New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd)
 Connect-AzureAD -Credential $creds
 (Get-AzureADMSAuthorizationPolicy).PermissionGrantPolicyIdsAssignedToDefaultUserRole
@@ -302,7 +302,7 @@ _**ManagePermissionGrantsForSelf.microsoft-user-default-legacy**_ means we can!
 
 OR MS Graph:
 ```
-$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force 
+$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCanGu3ssP@ssw0rd" -AsPlainText -Force 
 $creds = New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd) 
 Connect-AzAccount -Credential $creds
 $Token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
@@ -1017,7 +1017,7 @@ Enter-PSSession -Session $jumpvm
 - That means, we can enumerate the service principals in Azure AD and check the service principal that the AppID ```62e44426-5c46-4e3c-8a89-f461d5d586f2``` belongs to:
 ```
 Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1 
-$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCr4ckTh!sP@ssw0rd" -AsPlainText -Force
+$passwd = ConvertTo-SecureString "V3ryH4rdt0Cr4ckN0OneCanGu3ssP@ssw0rd" -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential ("test@defcorphq.onmicrosoft.com", $passwd)
 Connect-AzureAD -Credential $creds 
 ```
