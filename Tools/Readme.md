@@ -24,3 +24,10 @@ Install-Module AADInternals -Force -Confirm -AllowClobber -Scope AllUsers
 Import-Module Az
 Import-Module AzureAD
 ```
+
+Download:
+XAMPP
+evilginx2
+Bloodhound
+Neo4j
+ROADTools
