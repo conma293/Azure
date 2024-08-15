@@ -19,7 +19,7 @@
       - Server Side Template Injection (SSTI)
       - OS Command Injection
     - Insecure Storage
-  - PrivEsc
+  - [PrivEsc]
     - Runbook
     - Runcommand
     - Keyvaults
