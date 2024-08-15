@@ -27,7 +27,7 @@
     - Enterprise Apps
     - Functional Apps
     - [Evilginx2](https://github.com/conma293/Azure/blob/main/2.12_Evilginx2.md)
-  - [Lateral Movemement]()
+  - [Lateral Movemement](https://github.com/conma293/Azure/blob/main/2.2_LateralMovement.md)
   - [Hybrid]()
   - [Persistence]()
  
