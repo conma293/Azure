@@ -26,8 +26,8 @@ Import-Module AzureAD
 ```
 
 Download:
-XAMPP
-evilginx2
-Bloodhound
-Neo4j
+- XAMPP
+- evilginx2
+- Bloodhound
+- Neo4j
 ROADTools
