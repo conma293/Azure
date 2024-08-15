@@ -21,7 +21,7 @@
     - Insecure Storage
   - [PrivEsc](https://github.com/conma293/Azure/blob/main/2.1_PrivEsc.md)
     - Runbook
-    - Runcommand
+      - Runcommand
     - Keyvaults
     - Enterprise Apps
     - Functional Apps
