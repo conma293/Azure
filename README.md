@@ -19,7 +19,7 @@
       - Server Side Template Injection (SSTI)
       - OS Command Injection
     - Insecure Storage
-  - [PrivEsc]
+  - [PrivEsc](https://github.com/conma293/Azure/blob/main/2.1_PrivEsc.md)
     - Runbook
     - Runcommand
     - Keyvaults
