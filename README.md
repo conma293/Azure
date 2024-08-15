@@ -26,7 +26,7 @@
     - Keyvaults
     - Enterprise Apps
     - Functional Apps
-    - [Evilginx2]()
+    - [Evilginx2](https://github.com/conma293/Azure/blob/main/2.12_Evilginx2.md)
   - [Lateral Movemement]()
   - [Hybrid]()
   - [Persistence]()
