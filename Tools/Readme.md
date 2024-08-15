@@ -30,4 +30,10 @@ Download:
 - evilginx2
 - Bloodhound
 - Neo4j
-ROADTools
+- ROADTools
+
+Put in `C:\xampp\htdocs`:
+- 365 Stealer
+- ```Invoke-Mimikatz.ps1```
+- ```Invoke-PowerShellTcp.ps1```
+- ```studentx.ps1``` (uses the invoke-powershell.ps1 script to establish revshell)
