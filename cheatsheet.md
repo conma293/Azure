@@ -362,6 +362,8 @@ Headers = @{
 ```
 
 #### URIs
+https://learn.microsoft.com/en-us/graph/api/serviceprincipal-get?view=graph-rest-1.0&tabs=http
+
 ARM:
 - vms
 - webapp
@@ -386,6 +388,7 @@ And Graph:
 ```
 $URI = 'https://graph.microsoft.com/v1.0/users'
 $URI = 'https://graph.microsoft.com/v1.0/applications'
+$URI = 'https://graph.microsoft.com/v1.0/servicePrincipals'
 $URI = 'https://graph.microsoft.com/v1.0/users/VMContributor213@defcorphq.onmicrosoft.com/memberOf'
 ```
 
