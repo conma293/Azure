@@ -105,6 +105,7 @@ Get-AzKeyVault
 - Interesting File Locations
   - [Powershell History](https://github.com/conma293/Azure/blob/main/cheatsheet.md#powershell-history---credentials)
   - [AzureRMContext.json]()
+  - [Token Stealing]()
 
 
 # Tools
