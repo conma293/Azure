@@ -387,9 +387,11 @@ And Graph:
 - Service Principals
 ```
 $URI = 'https://graph.microsoft.com/v1.0/users'
+$URI = 'https://graph.microsoft.com/v1.0/groups'
 $URI = 'https://graph.microsoft.com/v1.0/applications'
 $URI = 'https://graph.microsoft.com/v1.0/servicePrincipals'
 $URI = 'https://graph.microsoft.com/v1.0/users/VMContributor213@defcorphq.onmicrosoft.com/memberOf'
+$URI = 'https://graph.microsoft.com/v1.0/users/VMContributor213@defcorphq.onmicrosoft.com/appRoleAssignments'
 ```
 
 ## Example API Enumeration:
