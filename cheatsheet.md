@@ -244,9 +244,9 @@ Get-AzStorageContainer -Context (New-AzStorageContext -StorageAccountName defcor
 ```
 Get-AzKeyVault
 
-Get-AzKeyVaultSecret -VaultName ResearchKeyVault
-Get-AzKeyVaultSecret -VaultName ResearchKeyVault -Name Reader
-Get-AzKeyVaultSecret -VaultName ResearchKeyVault -Name Reader -AsPlainText
+Get-AzKeyVaultSecret -VaultName <ResearchKeyVault>
+Get-AzKeyVaultSecret -VaultName <ResearchKeyVault> -Name <Reader>
+Get-AzKeyVaultSecret -VaultName <ResearchKeyVault> -Name <Reader> -AsPlainText
 ```
 
 
