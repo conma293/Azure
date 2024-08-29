@@ -536,14 +536,11 @@ Enter-PSSession $sess
 
 
 ## Interesting File Locations
-#### Localhost enumeration
-```
-Get-LocalUser
-```
 
 #### Powershell history - credentials
 ```
-cat C:\Users\bkpadconnect\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+Get-LocalUser
+cat C:\Users\<USER>\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 ```
 
 #### AzureRmContext.json - credentials inc Client Secret for Managed Identity
