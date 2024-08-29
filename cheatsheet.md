@@ -485,7 +485,7 @@ Therefore we can just use the popen call from the os module:
 {{config.__class__.__init__.__globals__['os'].popen('env').read()}}
 ```
 
-ENV will give us the Identity Header which is the ClientID and the Identity Endpoint - copy these down to notepad as per usual
+ENV will give us the ```Identity Header``` which is the ClientID and the ```Identity Endpoint``` - copy these down to notepad!!
 
 Now Let's request the access token for the managed identity now using the following code:
 ```
