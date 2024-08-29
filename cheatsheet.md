@@ -92,8 +92,6 @@ Get-AzKeyVault
     - [subdomains](https://github.com/conma293/Azure/blob/main/cheatsheet.md#subdomains)
     - [storage blobs](https://github.com/conma293/Azure/blob/main/cheatsheet.md#storage-blobs)
     - [Application Proxy - Users who can access](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-able-to-access-appproxy)
-- Web Application Exploitation
-  - [Insecure WebApp FILE UPLOAD]()
 - IMDS
   - [VM User Data](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vm-userdata)
 - Playbooks
@@ -108,6 +106,8 @@ Get-AzKeyVault
   - [Powershell History](https://github.com/conma293/Azure/blob/main/cheatsheet.md#powershell-history---credentials)
   - [AzureRMContext.json]()
   - [Token Stealing]()
+- Web Application Exploitation
+  - [Insecure WebApp FILE UPLOAD](https://github.com/conma293/Azure/blob/main/cheatsheet.md#web-application-file-upload)
 
 
 # Tools
