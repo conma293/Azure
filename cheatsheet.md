@@ -585,8 +585,11 @@ For tokens browse to:
 /uploads/studentxtoken.phtml
 ```
 
+```"client_id":```: ```-AccountId```
 
-
+```
+Connect-AzAccount -AccessToken $Token -AccountId <client_id>
+```
 
 
 
