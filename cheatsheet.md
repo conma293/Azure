@@ -1,4 +1,9 @@
+**REFS:**
+- [KillChain](https://github.com/conma293/Azure/blob/main/killcycle.md)
+- [Enum](https://github.com/conma293/Azure/blob/main/1.3_Enumeration.md)
+- [Tokens](https://github.com/conma293/Azure/blob/main/1.35_Tokens.md)
 
+  
 ### Credential template
 ```
 $password = ConvertTo-SecureString '<PASSWD>' -AsPlainText -Force
