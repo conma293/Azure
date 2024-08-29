@@ -163,7 +163,7 @@ Get-AzureADMSAdministrativeUnit -Id e1e26d93-163e-42a2-a46e-1b7d52626395
 Get-AzureADMSScopedRoleMembership -Id e1e26d93-163e-42a2-a46e-1b7d52626395 | fl *
 ```
 
-Check specific roles and users within the administrative unit (grab the ```RoleId``` and ```RoleMemberInfo Id:```):
+Check specific roles and users within the administrative unit (grab the ```RoleId``` and ```RoleMemberInfo Id:``` (which is the User ObjectId)):
 ```
 Get-AzureADDirectoryRole -ObjectId 5b3935ed-b52d-4080-8b05-3a1832194d3a
 Get-AzureADUser -ObjectId 8c088359-66fb-4253-ad0d-a91b82fd548a | fl *
