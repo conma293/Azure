@@ -99,7 +99,7 @@ Get-AzKeyVault
   - [RunCommand](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runcommand)
   - [Connect to VM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#connect-to-vm)
     - [Get Public IP](https://github.com/conma293/Azure/blob/main/cheatsheet.md#get-public-ip)
-- Interesting File Locations
+- Interesting File Locations - localhost enumeration
   - [Powershell History](https://github.com/conma293/Azure/blob/main/cheatsheet.md#powershell-history---credentials)
   - [AzureRMContext.json]()
   - [Token Stealing]()
