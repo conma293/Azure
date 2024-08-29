@@ -536,6 +536,11 @@ Enter-PSSession $sess
 
 
 ## Interesting File Locations
+#### Localhost enumeration
+```
+Get-LocalUser
+```
+
 #### Powershell history - credentials
 ```
 cat C:\Users\bkpadconnect\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
