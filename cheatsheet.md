@@ -23,7 +23,7 @@ $creds = New-Object System.Management.Automation.PSCredential('<USER>', $Passwor
 $sess = New-PSSession -ComputerName <TargetIP> -Credential $creds -SessionOption (New-PSSessionOption -ProxyAccessType NoProxyServer) 
 Enter-PSSession $sess
 ```
-### Powershell Remoting - 2nd Jump RCE (You cant have a 
+### Powershell Remoting - 2nd Jump RCE (cant have session within session)
 ```
 $password = ConvertTo-SecureString '<PASSWD>' -AsPlainText -Force 
 $creds = New-Object System.Management.Automation.PSCredential('.\<user>', $Password)
