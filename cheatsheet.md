@@ -102,7 +102,6 @@ Get-AzKeyVault
 - Interesting File Locations - localhost enumeration
   - [Powershell History](https://github.com/conma293/Azure/blob/main/cheatsheet.md#powershell-history---credentials)
   - [AzureRMContext.json]()
-  - [Token Stealing]()
 - IMDS
   - [VM User Data](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vm-userdata)    
 - Steal Primary Refresh Token (PRT)
