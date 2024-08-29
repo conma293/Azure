@@ -92,6 +92,7 @@ Get-AzKeyVault
     - [subdomains](https://github.com/conma293/Azure/blob/main/cheatsheet.md#subdomains)
     - [storage blobs](https://github.com/conma293/Azure/blob/main/cheatsheet.md#storage-blobs)
     - [Application Proxy - Users who can access](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-able-to-access-appproxy)
+- [Insecure WebApp FILE UPLOAD]()
 - IMDS
   - [VM User Data](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vm-userdata)
 - Playbooks
