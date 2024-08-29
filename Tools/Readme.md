@@ -24,6 +24,11 @@ Install-Module AADInternals -Force -Confirm -AllowClobber -Scope AllUsers
 Import-Module Az
 Import-Module AzureAD
 ```
+OR get AzureRT to download all modules automagically:
+```
+. .\AzureRT.ps1
+Import-ARTModules
+```
 
 Download:
 - XAMPP
