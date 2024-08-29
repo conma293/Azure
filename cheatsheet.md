@@ -465,7 +465,8 @@ For tokens browse to:
 /uploads/studentxtoken.phtml
 ```
 
-Now we can launch an session
+Now we can reuse that token to launch a session:
+
 ```"client_id":``` ==  ```-AccountId```
 
 ```
