@@ -105,8 +105,8 @@ Get-AzKeyVault
   - [Token Stealing]()
 - Web Application Exploitation
   - [Insecure WebApp FILE UPLOAD](https://github.com/conma293/Azure/blob/main/cheatsheet.md#web-application-file-upload)
-- [Steal Primary Refresh Token (PRT)](https://github.com/conma293/Azure/blob/main/cheatsheet.md#steal-primary-refresh-token)
-   - [Get nonce]
+- Steal Primary Refresh Token (PRT)
+   - [Get nonce](https://github.com/conma293/Azure/blob/main/cheatsheet.md#get-nonce)
    - [Get PRT]
 
 # Tools
