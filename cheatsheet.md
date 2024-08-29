@@ -471,7 +471,7 @@ Now we can launch an session
 ```
 Connect-AzAccount -AccessToken $Token -AccountId <client_id>
 ```
-## SSTI
+## Server-Side Template Injection
 OR FOR SSTI:
 
 
