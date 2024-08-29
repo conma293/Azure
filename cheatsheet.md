@@ -9,6 +9,7 @@ Connect-AzAccount -Credential $creds
 ```
 - If you also want AzureAD (Users and Groups enum):
 ```
+Import-Module C:\AzAD\Tools\AzureAD\AzureAD.psd1
 Connect-AzureAD -Credential $creds
 ```
   
