@@ -375,6 +375,8 @@ $URI = 'https://management.azure.com/subscriptions?api-version=2020-01-01'
 $URI = 'https://management.azure.com/subscriptions/<SubID>/resources?api-version=2020-10-01'
 
 $URI = 'https://management.azure.com/subscriptions/<SubID>/<resource>/providers/Microsoft.Authorization/permissions?api-version=2015-07-01'
+
+EXAMPLE:
 $URI = 'https://management.azure.com/subscriptions/<SubID>/resourceGroups/Engineering/providers/Microsoft.Compute/virtualMachines/bkpadconnect/providers/Microsoft.Authorization/permissions?api-version=2015-07-01'
 
 ```
