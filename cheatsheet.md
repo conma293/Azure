@@ -7,6 +7,11 @@ $password = ConvertTo-SecureString '<PASSWD>' -AsPlainText -Force
 $creds = New-Object System.Management.Automation.PSCredential('<USER>', $password)
 Connect-AzAccount -Credential $creds
 ```
+- If you also want AzureAD (Users and Groups enum):
+```
+Connect-AzureAD -Credential $creds
+```
+  
 ### Token template
 ```
 $AccessToken = 'eyJ0…'
