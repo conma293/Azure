@@ -94,7 +94,7 @@ Get-AzKeyVault
     - [Application Proxy - Users who can access](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-able-to-access-appproxy)
 - Web Application Exploitation
     - [Insecure WebApp FILE UPLOAD](https://github.com/conma293/Azure/blob/main/cheatsheet.md#web-application-file-upload)
-    - [Server-Side Template Injection]() 
+    - [Server-Side Template Injection](https://github.com/conma293/Azure/blob/main/cheatsheet.md#server-side-template-injection) 
 - Runbooks & RunCommand
   - [Create Runbook](https://github.com/conma293/Azure/blob/main/cheatsheet.md#create-runbooks)
   - [RunCommand](https://github.com/conma293/Azure/blob/main/cheatsheet.md#runcommand)
