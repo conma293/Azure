@@ -1,5 +1,5 @@
-$passwd = ConvertTo-SecureString "StudXPassword@123" -AsPlainText -Force
+$passwd = ConvertTo-SecureString "Stud213Password@123" -AsPlainText -Force
 
 
-New-LocalUser -Name studentX -Password $passwd 
-Add-LocalGroupMember -Group Administrators -Member studentX
+New-LocalUser -Name student213 -Password $passwd 
+Add-LocalGroupMember -Group Administrators -Member student213
