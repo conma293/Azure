@@ -365,7 +365,7 @@ $TOKEN=(Get-AzAccessToken).Token
 OR
 $TOKEN=(Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token
 ```
-
+**MAKE SURE YOU HAVE TOKEN!** - ```$Token = (Get-AzAccessToken).Token```
 ```
 $RequestParams = @{
 Method = 'GET'
@@ -380,14 +380,14 @@ Headers = @{
 #### URIs
 https://learn.microsoft.com/en-us/graph/api/serviceprincipal-get?view=graph-rest-1.0&tabs=http
 
-**MAKE SURE YOU HAVE TOKEN!**
-```$Token = (Get-AzAccessToken).Token```
 
 ARM:
 - vms
 - webapp
 - storage blob
 - keyvault
+  
+**MAKE SURE YOU HAVE TOKEN!** - ```$Token = (Get-AzAccessToken).Token```
 ```
 $URI = 'https://management.azure.com/subscriptions?api-version=2020-01-01'
 $URI = 'https://management.azure.com/subscriptions/<SubID>/resources?api-version=2020-10-01'
@@ -406,6 +406,9 @@ And Graph:
 - Applications
 - App Registrations
 - Service Principals
+
+  
+**MAKE SURE YOU HAVE TOKEN!** - ```$Token = (Get-AzAccessToken).Token```
 ```
 $URI = 'https://graph.microsoft.com/v1.0/users'
 $URI = 'https://graph.microsoft.com/v1.0/groups'
