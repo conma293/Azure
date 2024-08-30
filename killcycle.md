@@ -979,8 +979,25 @@ Because Roy has ```authentication administrator``` role scoped to the ```Control
 $password = "VM@Contributor@123@321" | ConvertTo-SecureString -AsPlainText –Force
 (Get-AzureADUser -All $true | ?{$_.UserPrincipalName -eq "VMContributor213@defcorphq.onmicrosoft.com"}).ObjectId | Set-AzureADUserPassword -Password $Password –Verbose
 ```
+OR VIA MS GRAPH:
+```
+Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Force)
+```
 
-Disconnect from Azure AD and connect using the credentials of the VMContributor213@defcorphq.onmicrosoft.com user:
+```
+$params = @{ 
+	passwordProfile = @{
+	forceChangePasswordNextSignIn = $false
+	password = " VM@Contributor@123@321"
+	}
+}
+```
+
+```
+Update-MgUser -UserId "VMContributor213@defcorphq.onmicrosoft.com" -BodyParameter $params
+```
+
+Now we can Disconnect from Azure AD and connect using the credentials of the VMContributor213@defcorphq.onmicrosoft.com user:
 ```
 Disconnect-AzureAD
 $password = ConvertTo-SecureString 'VM@Contributor@123@321' -AsPlainText -Force
