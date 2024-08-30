@@ -616,6 +616,12 @@ $userData = Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Uri "ht
 [System.Text.Encoding]::UTF8.GetString([Convert]::FromBase64String($userData))
 ```
 
+### Hybrid
+Is is joined to AzureAD?
+```
+Invoke-Command -Session $infradminsrv -ScriptBlock{dsregcmd /status}
+```
+
 * * * 
 
 ## Steal Primary Refresh Token
