@@ -604,10 +604,16 @@ Get-LocalUser
 cat C:\Users\<USER>\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\ConsoleHost_history.txt
 ```
 
+#### Powershell Transcript
+```
+cat C:\Transcripts\20210422\PowerShell_transcript.DESKTOP-M7C1AFM.6sZJrDuN.20210422230739.txt
+```
+
 #### AzureRmContext.json - credentials inc Client Secret for Managed Identity
 ```
 cat C:\Users\studentuserx\.Azure\AzureRmContext.json
 ```
+
 
 ### IMDS
 #### VM UserData:
