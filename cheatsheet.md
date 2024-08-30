@@ -111,8 +111,8 @@ Get-AzKeyVault
 - Interesting File Locations - localhost enumeration
   - [Powershell History](https://github.com/conma293/Azure/blob/main/cheatsheet.md#powershell-history---credentials)
   - [AzureRMContext.json](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azurermcontextjson---credentials-inc-client-secret-for-managed-identity)
-- IMDS
-  - [VM User Data](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vm-userdata)    
+  - IMDS
+    - [VM User Data](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vm-userdata)    
 - Steal Primary Refresh Token (PRT)
    - [Get nonce](https://github.com/conma293/Azure/blob/main/cheatsheet.md#get-nonce)
    - [Get PRT]
@@ -603,10 +603,7 @@ cat C:\Users\<USER>\AppData\Roaming\Microsoft\Windows\PowerShell\PSReadLine\Cons
 cat C:\Users\studentuserx\.Azure\AzureRmContext.json
 ```
 
-
-
-* * *
-## IMDS
+### IMDS
 #### VM UserData:
 ```
 $userData = Invoke-RestMethod -Headers @{"Metadata"="true"} -Method GET -Uri "http://169.254.169.254/metadata/instance/compute/userData?api-version=2021-01-01&format=text"
