@@ -981,6 +981,7 @@ $password = "VM@Contributor@123@321" | ConvertTo-SecureString -AsPlainText –Fo
 ```
 OR VIA MS GRAPH:
 ```
+$Token = (Get-AzAccessToken -ResourceTypeName MSGraph).Token
 Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Force)
 ```
 
