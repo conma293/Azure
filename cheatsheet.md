@@ -380,6 +380,9 @@ Headers = @{
 #### URIs
 https://learn.microsoft.com/en-us/graph/api/serviceprincipal-get?view=graph-rest-1.0&tabs=http
 
+**MAKE SURE YOU HAVE TOKEN!**
+```$Token = (Get-AzAccessToken).Token```
+
 ARM:
 - vms
 - webapp
