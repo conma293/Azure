@@ -989,7 +989,7 @@ Connect-MgGraph -AccessToken ($Token | ConvertTo-SecureString -AsPlainText -Forc
 $params = @{ 
 	passwordProfile = @{
 	forceChangePasswordNextSignIn = $false
-	password = " VM@Contributor@123@321"
+	password = "VM@Contributor@123@321"
 	}
 }
 ```
