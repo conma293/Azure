@@ -7,7 +7,10 @@ A
 Install-Module AzureAD -Force -Confirm -AllowClobber -Scope AllUsers
 
 A
-echo "Next part is optional"
+echo "##########################################################################"
+echo "###########################Next part is optional###########################"
+echo "##########################################################################"
+
 Install-Module Microsoft.Graph -Force -Confirm -AllowClobber -Scope AllUsers
 
 A
