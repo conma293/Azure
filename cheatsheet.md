@@ -110,6 +110,7 @@ Get-AzKeyVault
     - [Get Public IP](https://github.com/conma293/Azure/blob/main/cheatsheet.md#get-public-ip)
 - Interesting File Locations - localhost enumeration
   - [Powershell History](https://github.com/conma293/Azure/blob/main/cheatsheet.md#powershell-history---credentials)
+  - [Powershell Transcript](https://github.com/conma293/Azure/blob/main/cheatsheet.md#powershell-transcript)
   - [AzureRMContext.json](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azurermcontextjson---credentials-inc-client-secret-for-managed-identity)
   - IMDS
     - [VM User Data](https://github.com/conma293/Azure/blob/main/cheatsheet.md#vm-userdata)    
