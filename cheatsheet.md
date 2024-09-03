@@ -100,7 +100,7 @@ Get-AzKeyVault
     - [subdomains](https://github.com/conma293/Azure/blob/main/cheatsheet.md#subdomains)
     - [storage blobs](https://github.com/conma293/Azure/blob/main/cheatsheet.md#storage-blobs)
     - [Application Proxy - Users who can access](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-able-to-access-appproxy)
-  - [AzADAppSecret - add user to application we can access]
+  - [AzADAppSecret - add user to application we can access](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azadappsecret)
 - Web Application Exploitation
     - [Insecure WebApp FILE UPLOAD](https://github.com/conma293/Azure/blob/main/cheatsheet.md#web-application-file-upload)
     - [Server-Side Template Injection](https://github.com/conma293/Azure/blob/main/cheatsheet.md#server-side-template-injection)
@@ -420,6 +420,7 @@ $URI = 'https://graph.microsoft.com/v1.0/servicePrincipals'
 $URI = 'https://graph.microsoft.com/v1.0/users/VMContributor213@defcorphq.onmicrosoft.com/memberOf'
 $URI = 'https://graph.microsoft.com/v1.0/users/VMContributor213@defcorphq.onmicrosoft.com/appRoleAssignments'
 ```
+If we can access applications then use [azadappsecret](https://github.com/conma293/Azure/blob/main/cheatsheet.md#azadappsecret) to determine privilege (and add users) 
 
 ## Example API Enumeration:
 ```Get-AzResource```:
