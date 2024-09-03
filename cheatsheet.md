@@ -22,7 +22,9 @@ Connect-AzAccount -AccessToken $Token -GraphAccessToken $graphaccesstoken -Accou
 ```
 ### Service Principal
 ```
-Connect-AzAccount -ServicePrincipal -Credential $creds -Tenant 2d50cb29-5f7b-48a4-87ce-fe75a941adb6
+$password = ConvertTo-SecureString '<key>' -AsPlainText -Force 
+$creds = New-Object System.Management.Automation.PSCredential('<usrGUID>', $password)
+Connect-AzAccount -ServicePrincipal -Credential $creds -Tenant <TenantId>
 ```
 ### Powershell Remoting template
 ```
