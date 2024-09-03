@@ -456,7 +456,7 @@ $URI = 'https://management.azure.com/
 ```
 * * *
 
-## Scripts
+# Scripts
 ## MicroBurst
 #### Subdomains:
 ```
