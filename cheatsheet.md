@@ -410,8 +410,21 @@ And Graph:
 - App Registrations
 - Service Principals
 
+  **MAKE SURE YOU HAVE TOKEN!** - ```$graphaccesstoken=(Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token```
+
   
-**MAKE SURE YOU HAVE TOKEN!** - ```$Token = (Get-AzAccessToken).Token```
+```
+$RequestParams = @{
+Method = 'GET'
+Uri = $URI
+Headers = @{
+'Authorization' = "Bearer $graphaccesstoken"
+}
+}
+(Invoke-RestMethod @RequestParams).value
+```
+  
+
 ```
 $URI = 'https://graph.microsoft.com/v1.0/users'
 $URI = 'https://graph.microsoft.com/v1.0/groups'
