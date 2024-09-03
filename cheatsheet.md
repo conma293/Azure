@@ -97,8 +97,8 @@ Get-AzKeyVault
   - [API Call Template](https://github.com/conma293/Azure/blob/main/cheatsheet.md#api-call)
   - [URLs](https://github.com/conma293/Azure/blob/main/cheatsheet.md#uris)
   - [Example API Enumeration](https://github.com/conma293/Azure/blob/main/cheatsheet.md#example-api-enumeration)
-- [Scripts](https://github.com/conma293/Azure/blob/main/cheatsheet.md#scripts)
-  - Microburst
+- Scripts
+  - [Microburst](https://github.com/conma293/Azure/blob/main/cheatsheet.md#microburst)
     - [subdomains](https://github.com/conma293/Azure/blob/main/cheatsheet.md#subdomains)
     - [storage blobs](https://github.com/conma293/Azure/blob/main/cheatsheet.md#storage-blobs)
     - [Application Proxy - Users who can access](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-able-to-access-appproxy)
