@@ -410,9 +410,7 @@ And Graph:
 - App Registrations
 - Service Principals
 
-  **MAKE SURE YOU HAVE TOKEN!** - ```$graphaccesstoken=(Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token```
 
-  
 ```
 $RequestParams = @{
 Method = 'GET'
@@ -423,7 +421,8 @@ Headers = @{
 }
 (Invoke-RestMethod @RequestParams).value
 ```
-  
+
+**MAKE SURE YOU HAVE TOKEN!** - ```$graphaccesstoken=(Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token```
 
 ```
 $URI = 'https://graph.microsoft.com/v1.0/users'
