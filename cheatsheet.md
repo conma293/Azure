@@ -366,7 +366,7 @@ $Token=''
 OR
 $Token=(Get-AzAccessToken).Token
 OR
-$Token=(Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token
+$graphaccesstoken=(Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token
 ```
 **MAKE SURE YOU HAVE TOKEN!** - ```$Token = (Get-AzAccessToken).Token```
 ```
