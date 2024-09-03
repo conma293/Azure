@@ -15,10 +15,10 @@ Connect-AzureAD -Credential $creds
   
 ### Token template
 ```
-$AccessToken = 'eyJ0…'
-$AADToken = 'eyJ0…'
+$Token = 'eyJ0…'
+$graphaccesstoken = 'eyJ0…'
 
-Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId <TargetUserId>
+Connect-AzAccount -AccessToken $Token -GraphAccessToken $graphaccesstoken -AccountId <TargetUserId>
 ```
 ### Service Principal
 ```
@@ -212,8 +212,8 @@ Connect-AzAccount -Credential $creds
 ```
 OR Token:-
 ```
-$AccessToken = 'eyJ0…'
-Connect-AzAccount -AccessToken $AccessToken -AccountId <"client_id">
+$Token = 'eyJ0…'
+Connect-AzAccount -AccessToken $Token -AccountId <"client_id">
 ```
 #### whoami
 ```
@@ -321,7 +321,7 @@ To be able to interact with Azure AD:
 - request a token for the ms-graph: ```az account get-access-token --resource-type ms-graph```
 - or request a token for the aad-graph: ```az account get-access-token --resource-type aad-graph```
 - And request a token for resources (ARM): ```az account get-access-token```
-- And then connect: ```Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId <VictimObjectId>```
+- And then connect: ```Connect-AzAccount -AccessToken $Token -GraphAccessToken $graphaccesstoken -AccountId <VictimObjectId>```
 
 #### App Config Key
 ```
@@ -334,11 +334,11 @@ az appconfig kv list --connection-string "Endpoint=https://escrow3.azconfig.io;I
 
 #### Azure Powershell:
 ```
-Connect-AzAccount -AccessToken $token -AccountId test@defcorphq.onmicrosoft.com
+Connect-AzAccount -AccessToken $Token -AccountId test@defcorphq.onmicrosoft.com
 
 Get-AzAccessToken -ResourceTypeName MSGraph
 Disconnect-AzAccount
-Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $token -MicrosoftGraphAccessToken eyJ0eXA...
+Connect-AzAccount -AccountId test@defcorphq.onmicrosoft.com -AccessToken $Token -MicrosoftGraphAccessToken eyJ0eXA...
 ```
 
 #### Pivot from shell stealing tokens
@@ -350,23 +350,23 @@ az account get-access-token --resource-type aad-graph
 
 - Open a new Powershell console and use Az Powershell:
 ```
-PS C:\AzAD\Tools> $AccessToken = 'eyJ0…'
-PS C:\AzAD\Tools> $AADToken = 'eyJ0…'
+PS C:\AzAD\Tools> $Token = 'eyJ0…'
+PS C:\AzAD\Tools> $graphaccesstoken = 'eyJ0…'
 ```
 Now you can connect; ```-AccountID``` is victimID you stole the tokens from:
 ```
-Connect-AzAccount -AccessToken $AccessToken -GraphAccessToken $AADToken -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
+Connect-AzAccount -AccessToken $Token -GraphAccessToken $graphaccesstoken -AccountId f66e133c-bd01-4b0b-b3b7-7cd949fd45f3
 ```
 
 * * *
 
 # API Call
 ```
-$token=''
+$Token=''
 OR
-$TOKEN=(Get-AzAccessToken).Token
+$Token=(Get-AzAccessToken).Token
 OR
-$TOKEN=(Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token
+$Token=(Get-AzAccessToken -ResourceUrl https://graph.microsoft.com).Token
 ```
 **MAKE SURE YOU HAVE TOKEN!** - ```$Token = (Get-AzAccessToken).Token```
 ```
@@ -374,7 +374,7 @@ $RequestParams = @{
 Method = 'GET'
 Uri = $URI
 Headers = @{
-'Authorization' = "Bearer $token"
+'Authorization' = "Bearer $Token"
 }
 }
 (Invoke-RestMethod @RequestParams).value
