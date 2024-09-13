@@ -474,7 +474,17 @@ Invoke-EnumerateAzureSubDomains -Base defcorphq –Verbose
 Invoke-EnumerateAzureBlobs -Base defcorp
 ```
 
-#### Users able to access AppProxy
+### Not Syllabus but very good (Primary) scripts
+```
+Get-AzPasswords
+Get-AzDomainInfo
+Get-AzKeyVaultsAutomation
+Invoke-AzVMBulkCMD
+```
+
+
+
+## Users able to access AppProxy
 ```
 . C:\AzAD\Tools\Get-ApplicationProxyAssignedUsersAndGroups.ps1 
 Get-ApplicationProxyAssignedUsersAndGroups -ObjectId ec350d24-e4e4-4033-ad3f-bf60395f0362
